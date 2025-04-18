@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="loan.product.quantity.node" id="node_1">
+            <field name="node_name">申请</field>
+            <field name="enum_code">1</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="loan.product.quantity.node" id="node_2">
+            <field name="node_name">机审通过</field>
+            <field name="enum_code">2</field>
+            <field name="sequence">2</field>
+        </record>
+    </data>
+</odoo>

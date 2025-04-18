@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <menuitem name="Settings" id="loan_setting_menu_root" sequence="6"/>
+
+        <menuitem name="User Management" id="loan_setting_user_management_menu" sequence="1"
+                  parent="loan_setting_menu_root"/>
+        <menuitem name="Role&amp;Permission Management" id="loan_settings_role_permission_menu" sequence="2"
+                  parent="loan_setting_menu_root"/>
+
+        <menuitem name="User" id="loan_setting_user_menu" sequence="1" parent="loan_setting_user_management_menu"
+                  action="window_loan_setting_user_act"/>
+        <menuitem name="Team" id="loan_setting_team_menu" sequence="2" parent="loan_setting_user_management_menu"
+                  action="window_loan_setting_team_act"/>
+        <menuitem name="Merchant" id="loan_setting_merchant_menu" sequence="3"
+                  parent="loan_setting_user_management_menu"
+                  action="window_loan_setting_merchant_act"/>
+
+        <menuitem name="Role" id="loan_settings_role_menu" sequence="1" parent="loan_settings_role_permission_menu"
+                  action="window_loan_settings_role_act"/>
+    </data>
+</odoo>

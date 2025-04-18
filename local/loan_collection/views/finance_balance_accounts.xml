@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="loan_finance_balance_accounts_list">
+        <field name="name">财务平账</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <field name="order_no" string="订单编号" optional="show"/>
+                <field name="loan_user_phone" optional="show" string="手机号码"/>
+                <field name="product_id" optional="show" string="产品名称"/>
+                <!--
+                <field name="repay_date" string="应还日期" optional="show"/>
+                <field name="repay_platform_order_no" string="还款序列号" optional="show"/>
+                <field name="contract_amount" string="合同金额" optional="show"/>
+                <field name="overdue_fee" string="罚息" optional="show"/>
+                <field name="late_fee" string="滞纳金" optional="show"/>
+                <field name="account_amount" string="挂账金额" optional="show"/>
+                <field name="balance_accounts" string="平账金额" optional="show"/>
+                <button name="square_an_account" type="object" string="平账"/>
+                -->
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- search view -->
+    <record model="ir.ui.view" id="loan_finance_balance_accounts_search">
+        <field name="name">财务平账</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no" optional="show"/>
+                <field name="loan_user_phone" optional="show"/>
+                <!--<field name="repay_platform_order_no" optional="show"/>-->
+                <field name="product_id" optional="show"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="loan_finance_balance_accounts_action">
+        <field name="name">财务平账</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="loan_collection.model_loan_order"/>
+        <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+        <field name="code">
+            action = model.action_server_reductio_record()
+        </field>
+    </record>
+
+  </data>
+</odoo>

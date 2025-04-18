@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <menuitem name="贷超" id="menu_root_loan_markt" sequence="1">
+            <menuitem name="APP管理" id="menu_app_manage" sequence="1">
+                <menuitem name="APP名称配置" id="menu_app" sequence="1" action="act_app" />
+                <menuitem name="APP配置" id="menu_app_setting" sequence="2" action="act_app_setting" />
+                <menuitem name="APP版本配置" id="menu_app_version" sequence="3" action="act_app_version" />
+            </menuitem>
+
+            <menuitem name="产品管理" id="menu_product_manage" sequence="2">
+                <menuitem name="产品配置" id="menu_product" sequence="1" action="act_product" />
+                <menuitem name="合集配置" id="menu_combined_set" sequence="2" action="act_combined_set" />
+                <menuitem name="单量配置" id="menu_product_quantity" sequence="3" action="act_product_quantity" />
+            </menuitem>
+
+            <menuitem name="共贷管理" id="menu_joint_loan_manage" sequence="3">
+                <menuitem name="共贷矩阵配置" id="menu_joint_loan_matrix" sequence="1" action="act_joint_loan_matrix" />
+                <menuitem name="共贷配置" id="menu_joint_loan_setting" sequence="2" action="act_joint_loan_setting" />
+            </menuitem>
+
+            <menuitem name="短信管理" id="menu_sms_manage" sequence="4">
+                <menuitem name="短信渠道配置" id="menu_sms_channel_setting" sequence="1" action="act_sms_channel_setting" />
+                <menuitem name="APP短信配置" id="menu_sms_app_setting" sequence="2" action="act_sms_app_setting" />
+                <menuitem name="催收短信配置" id="menu_sms_urge_setting" sequence="3" action="act_sms_urge_setting" />
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

@@ -1,0 +1,114 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_product">
+        <field name="name">产品列表</field>
+        <field name="model">loan.product</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <header>
+                    <button class="btn-primary" name="action_create" type="object" string="新增" display="always"/>
+                </header>
+                <field name="product_code" optional="show"/>
+                <field name="product_name" optional="show"/>
+                <field name="display_first_loan_amount" optional="show"/>
+                <field name="status" widget="boolean_toggle" readonly='1' optional="show"/>
+                
+                <field name="merchant_id" optional="show"/>
+                <field name="defer_allowed" optional="show" widget="boolean_toggle" readonly='1'/>
+                <field name="defer_min_on_credit_amount" optional="show"/>
+                <field name="display_defer_period" optional="show"/>
+                <field name="display_defer_interest_rate" optional="show"/>
+                <field name="defer_total_amount_type_id" optional="show"/>
+                <field name="display_penalty_interest_rate" optional="show"/>
+                <field name="overdue_fine" optional="show"/>
+                <field name="display_admin_fee_rate" optional="show"/>
+                <field name="matrix_id" optional="show"/>
+
+                <field name="write_uid" optional="hide"/>
+                <field name="write_date" optional="hide"/>
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="hide"/>
+                <button name="action_edit" type="object" string="编辑"/>
+                <!-- <button name="toggle_active" type="object" string="删除" confirm="删除后不可恢复, 确认删除?"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- search view -->
+    <record model="ir.ui.view" id="search_product">
+        <field name="name">产品搜索</field>
+        <field name="model">loan.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_name"/>
+                <field name="merchant_id" />
+                <field name="status" widget="boolean_selection" options="{'selection':[['', '状态'], ['1', '已开启'], ['0', '已关闭']]}"/>
+                <field name="matrix_id" />
+            </search>
+        </field>
+    </record>
+
+    <!-- form view -->
+    <record model="ir.ui.view" id="form_product">
+        <field name="name">产品详情</field>
+        <field name="model">loan.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_name" placeholder="请输入"/>
+                            <label for="min_amount" string="首贷金额"/>
+                            <div>
+                                <field name="min_amount" placeholder="请输入" class="oe_inline"/>
+                                <span class="oe_inline" style="margin: auto 10px">——</span>
+                                <field name="max_amount" placeholder="请输入" class="oe_inline"/>
+                            </div>
+                            <field name="defer_allowed" widget="boolean_selection" options="{'selection':[['1', '允许'], ['0', '禁止']]}"/>
+                            
+                            <label for="defer_period_from" string="允许展期时间" invisible="defer_allowed==False"/>
+                            <div invisible="defer_allowed==False">
+                                <field name="defer_period_from" placeholder="起始日" class="oe_inline"  force_save="1"/>
+                                <span class="oe_inline" style="margin: auto 10px">——</span>
+                                <field name="defer_period_to" placeholder="终止日" class="oe_inline" force_save="1"/>
+                                <span class="oe_inline">天</span>
+                            </div>
+
+                            <field name="defer_min_on_credit_amount" placeholder="请输入" invisible="defer_allowed==False"/>
+
+                            <field name="overdue_fine" placeholder="请输入"/>
+                            <field name="admin_fee_rate" widget="percentage" placeholder="请输入数值(0-100)"/>
+                            
+                        </group>
+                        <group>
+                            <field name="status" widget="boolean_toggle" options="{'autosave': 0}" />
+                            <field name="merchant_id" options="{'no_edit': True}" placeholder="请选择"/>
+                            <separator />
+                            <field name="defer_interest_rate" widget="percentage" placeholder="请输入数值(0-100)" invisible="defer_allowed==False" force_save="1"/>
+                            <field name="defer_total_amount_type_id" widget="selection" placeholder="请选择" invisible="defer_allowed==False"/>
+                            
+                            <field name="penalty_interest_rate" widget="percentage" placeholder="请输入数值(0-100)" />
+                            <field name="matrix_id" options="{'no_open': True, 'no_create_edit': True}" placeholder="请选择"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="act_product">
+        <field name="name">产品配置</field>
+        <field name="res_model">loan.product</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+  </data>
+</odoo>

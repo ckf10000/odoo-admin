@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="loan.sms.template" id="sms_template_1">
+            <field name="name">登录验证码</field>
+            <field name="channel_type_id" ref="channel_type_1" />
+            <field name="content">Your verification code is ##CODE##, DO NOT SHARE IT to anyone who asks you. Beware of scammers!</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record model="loan.sms.template" id="sms_template_2">
+            <field name="name">语音验证码</field>
+            <field name="channel_type_id" ref="channel_type_1" />
+            <field name="content">Your verification code is ##CODE##, DO NOT SHARE IT to anyone who asks you. Beware of scammers!</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record model="loan.sms.template" id="sms_template_3">
+            <field name="name">修改密码验证码</field>
+            <field name="channel_type_id" ref="channel_type_1" />
+            <field name="content">Your verification code is ##CODE##, DO NOT SHARE IT to anyone who asks you. Beware of scammers!</field>
+            <field name="sequence">3</field>
+        </record>
+        
+    </data>
+</odoo>

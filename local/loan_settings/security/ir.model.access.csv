@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loan_setting_user,access_loan_setting_user,model_loan_settings_user,base.group_user,1,1,1,1
+access_loan_setting_team,access_loan_setting_team,model_loan_settings_team,base.group_user,1,1,1,1
+access_loan_setting_merchant,access_loan_setting_merchant,model_loan_settings_merchant,base.group_user,1,1,1,1
+access_loan_setting_role,access_loan_setting_role,model_loan_settings_role,base.group_user,1,1,1,1
+access_loan_setting_menu,access_loan_setting_menu,model_ir_ui_menu,base.group_user,1,0,0,0

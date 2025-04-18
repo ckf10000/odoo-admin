@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="loan.app.update.mode" id="update_mode_1">
+            <field name="enum_code">1</field>
+            <field name="mode_name">弱提示更新</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="loan.app.update.mode" id="update_mode_2">
+            <field name="enum_code">2</field>
+            <field name="mode_name">强提示更新</field>
+            <field name="sequence">2</field>
+        </record>
+        <record model="loan.app.update.mode" id="update_mode_3">
+            <field name="enum_code">3</field>
+            <field name="mode_name">强制更新</field>
+            <field name="sequence">3</field>
+        </record>
+    </data>
+</odoo>

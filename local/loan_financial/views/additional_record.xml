@@ -1,0 +1,160 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="form_additional_record">
+        <field name="name">Reorder Record Form</field>
+        <field name="model">additional.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="repay_order_id" string="Repayment Order" invisible="1" />
+                        <field name="order_id" string="Financial Order" invisible="1" />
+                        <field name="order_no" string="Order ID" />
+                        <field name="order_user_id" string="UserID"/>
+                        <field name='utr' required="1" string="UTR"/>
+                        <field name="amount" required="1" string="Reorder Amount"/>
+                        <field name="addition_type"  string="Business Category" required="1"/>
+                        <field name="voucher_img" string="Credentials" required="1" />
+                    </group>
+                    <footer>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                        <button string="Submit" special="save" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_additional_record">
+        <field name="name">补单记录列表</field>
+        <field name="model">additional.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <field name="order_no" optional="show" />
+                <field name="is_process" optional="show" />
+                <field name="order_user_id" optional="show" />
+                <field name="addition_type" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="order_user_name" optional="show" />
+                <field name="order_user_phone" optional="show" />
+                <field name="apply_time" optional="show" string="补单时间" />
+                <field name="utr" optional="show" />
+                <field name="amount" optional="show" />
+                <field name="attachment_id" widget="btn_field" />
+                <field name="status" optional="show" />
+                <field name="approval_user_id" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                <field name="apply_user_id" optional="show" />
+                <field name="close_reason" optional="show" />
+                
+                <button name="action_show_additional_record" type="object" string="补单" invisible="status in ['2', '3']"/>
+                <button name="action_show_update_payment_setting" type="object" string="通过" invisible="status != '1'"/>
+                <button name="action_show_close_record" type="object" string="关单" invisible="status not in ['1', '2']"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_additional_record">
+        <field name="name">补单记录搜索</field>
+        <field name="model">additional.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id" />
+                <field name="order_user_name"/>
+                <field name="platform_order_no"/>
+                <field name="product_id" string="产品名称"/>
+                <field name="status" />
+                <field name="addition_type" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_additional_record_pass">
+        <field name="name">补单审核通过</field>
+        <field name="model">additional.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="payment_setting_id" required="1" options="{'no_create': True}"/>
+                    </group>
+                    <footer>
+                        <button string="取消" class="btn btn-default" special="cancel"/>
+                        <button string="确定" name="action_approval_pass" type="object" class="oe_highlight"/>
+
+                        <button name="action_test_pay" type="object" string="模拟通过"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_additional_record_close">
+        <field name="name">补单记录关单</field>
+        <field name="model">additional.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="addition_type" readonly="1"/>
+                        <field name="amount" readonly="1"/>
+                        <field name="close_reason" invisible="1"/>
+                        <field name="close_reason_id" required="1" options="{'no_create_edit': true, 'no_open': false, 'quick_create': false }"/>
+                    </group>
+                    <footer>
+                        <button string="取消" class="btn btn-default" special="cancel"/>
+                        <button string="确定" name="action_close_record" type="object" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_additional_record_close_reason">
+        <field name="name">关单原因列表</field>
+        <field name="model">additional.record.close.reason</field>
+        <field name="arch" type="xml">
+            <tree import="0" export_xlsx="0"  editable="bottom" delete="1">
+                <field name="sequence" widget="handle"/>
+                <field name="text"/>
+                <button name="unlink" type="object" string="删除"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_additional_record_close_reason">
+        <field name="name">关单原因表单</field>
+        <field name="model">additional.record.close.reason</field>
+        <field name="arch" type="xml">
+            <form import="0" export_xlsx="0">
+                <group>
+                    <field name="text" nolabel="1" colspan="2"/>
+                </group>
+                
+            </form>
+        </field>
+    </record>
+
+    <!-- action views -->
+    <record model="ir.actions.act_window" id="act_additional_record">
+        <field name="name">补单审核</field>
+        <field name="res_model">additional.record</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_additional_record'
+        }
+        </field>
+        <field name="search_view_id" ref="search_additional_record" />
+    </record>
+<!-- 
+    <record model="ir.actions.act_window" id="act_additional_record_close_reason">
+        <field name="name">关单原因</field>
+        <field name="res_model">additional.record.close.reason</field>
+        <field name="view_mode">tree</field>
+        <field name="context"></field>
+    </record> -->
+
+  </data>
+</odoo>

@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loan_platform,loan.platform,model_loan_platform,base.group_user,1,1,1,1
+access_loan_package,loan.package,model_loan_package,base.group_user,1,1,1,1
+access_loan_app,loan.app,model_loan_app,base.group_user,1,1,1,1
+
+access_loan_app_update_mode,loan.app.update.mode,model_loan_app_update_mode,base.group_user,1,1,1,1
+access_loan_app_version,loan.app.version,model_loan_app_version,base.group_user,1,1,1,1
+
+
+access_loan_order,loan.order,model_loan_order,base.group_user,1,1,1,1
+
+access_loan_merchant,loan.merchant,model_loan_merchant,base.group_user,1,1,1,1
+access_loan_product_total_amount_type,loan.product.total.amount.type,model_loan_product_total_amount_type,base.group_user,1,1,1,1
+access_loan_product,loan.product,model_loan_product,base.group_user,1,1,1,1

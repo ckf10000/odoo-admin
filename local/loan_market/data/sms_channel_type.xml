@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="sms.channel.type" id="channel_type_1">
+            <field name="type_name">验证码短信渠道</field>
+            <field name="enum_code">1</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="sms.channel.type" id="channel_type_2">
+            <field name="type_name">通知类短信渠道</field>
+            <field name="enum_code">2</field>
+            <field name="sequence">2</field>
+        </record>
+    </data>
+</odoo>

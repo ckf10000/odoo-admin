@@ -1,0 +1,35 @@
+.mobile_view {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    min-height: 740px;
+  }
+.mobile_view .phone {
+    width: 360px;
+    height: 745px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+.mobile_view  .phone_content {
+    /* background-color: red; */
+    width: 83%;
+    height: 80%;
+    margin-top: 109px;
+    margin-left: 31px;
+    border-radius: 10px;
+    padding-top: 10px;
+    overflow-y: scroll;;
+}
+
+.mobile_view .phone::-webkit-scrollbar {
+    display: none;
+  }
+
+.mobile_view .phone_content::-webkit-scrollbar {
+    display: none;
+  }

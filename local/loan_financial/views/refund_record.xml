@@ -1,0 +1,444 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_refund_order">
+        <field name="name">待退款订单列表</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="apply_time desc">
+                <header>
+                    <button class="btn-primary" name="action_show_refund_wizard" type="object" string="新建退款" display="always" context="{'refund_type': '2'}"/>
+                </header>
+                <field name="order_no" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="bank_name" optional="show" />
+                <field name="bank_account_no" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="contract_amount" optional="show" />
+                <field name="loan_period" optional="show" />
+                <field name="apply_time" optional="show" />
+                <field name="platform_profit" optional="show" />
+                <field name="payment_setting_id" optional="show"  string="退款渠道"/>
+                <field name="payment_way_id" optional="show"  string="退款方式"/>
+                <field name="loan_user_unrepay_order_count" optional="show" />
+                
+                <button name="action_show_refund_wizard" type="object" string="退款" context="{'refund_type': '1'}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_refund_order">
+        <field name="name">待退款订单搜索</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="order_type" />
+                <field name="product_id" />
+                <field name="payment_way_id"/>
+                <field name="apply_time" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_order_refund_record">
+        <field name="name">新建订单退款记录</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_id" invisible="1"/>
+                        <field name="refund_type" invisible="1"/>
+                        <field name="status" invisible="1"/>
+                        <field name="bank_name" invisible="1"/>
+                        <field name="bank_ifsc_code" invisible="1"/>
+                        <field name="order_no" readonly="1" force_save="1"/>
+                        <field name="loan_uid" readonly="1" force_save="1"/>
+                        <field name="loan_user_name" readonly="1" force_save="1"/>
+                        <field name="loan_user_phone" readonly="1" force_save="1"/>
+                        <field name="payment_setting_id" readonly="1" force_save="1"/>
+                        <field name="payment_way_id" readonly="1" force_save="1"/>
+                        <field name="bank_account_no"  readonly="1" force_save="1"/>
+                        <field name="platform_profit" readonly="1" force_save="1"/>
+                        <field name="refund_amount" required="1"/>
+                        <field name="refund_remark" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_user_refund_record">
+        <field name="name">新建用户退款记录</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="refund_type" invisible="1"/>
+                        <field name="status" invisible="1"/>
+                        <field name="bank_name" invisible="1"/>
+                        <field name="loan_user_phone" required="1" />
+                    </group>
+                    <group invisible="not loan_user_phone">
+                        <field name="loan_uid" readonly="1" force_save="1"/>
+                        <field name="loan_user_name" readonly="1" force_save="1"/>
+                        <field name="refund_amount" required="1"/>
+                        <field name="bank_ifsc_code" required="1"/>
+                        <field name="bank_account_no" required="1" />
+                        <field name="payment_setting_id" required="1" options="{'no_create': True}"/>
+                        <field name="payment_way_id" required="1" options="{'no_create': True}"/>
+                        <field name="refund_remark" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_refund_record_s2">
+        <field name="name">退款中订单列表</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="refund_apply_time desc">
+                <field name="order_no" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="contract_amount" optional="show" />
+                <field name="platform_profit" optional="show" />
+                <field name="refund_amount" optional="show" />
+                <field name="bank_name" optional="show" />
+                <field name="bank_account_no" optional="show" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="refund_remark" optional="show" />
+                <field name="refund_type" optional="show" />
+                <field name="refund_apply_time" optional="show" />
+                <field name="wait_duration_tip" column_invisible="1"/>
+                <field name="wait_duration" decoration-danger="wait_duration_tip" optional="show"  string="已处理时长"/>
+                <field name="refund_user_id" string="操作人" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_refund_record_s2">
+        <field name="name">退款中订单搜索</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="bank_account_no" />
+                <field name="product_id" />
+                <field name="payment_way_id"/>
+                <field name="refund_apply_time" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_refund_record_s3">
+        <field name="name">已退款订单列表</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="refund_complete_time desc">
+                <field name="order_no" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                <field name="merchant_order_no" optional="show" />
+                <field name="contract_amount" optional="show" />
+                <field name="platform_profit" optional="show" />
+                <field name="refund_amount" optional="show" />
+                <field name="refund_fee" optional="show" />
+                <field name="refund_tax" optional="hide" />
+                <field name="real_refund_amount" optional="show" />
+                <field name="bank_name" optional="show" />
+                <field name="bank_account_no" optional="show" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="refund_remark" optional="show" />
+                <field name="refund_apply_time" optional="show" />
+                <field name="refund_complete_time" string="退款成功时间" optional="show" />
+                <field name="refund_type" optional="show" />
+                <field name="refund_user_id" string="操作人" optional="show" />
+
+                <button name="action_show_voucher" type="object" string="退款凭证"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_refund_record_s3">
+        <field name="name">已退款订单搜索</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="platform_order_no" />
+                <field name="product_id"/>
+                <field name="payment_setting_id"/>
+                <field name="payment_way_id"/>
+                <field name="refund_type" />
+                <field name="refund_apply_time"/>
+                <field name="refund_complete_time" string="退款成功时间" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_refund_record_s4">
+        <field name="name">已失败订单列表</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="refund_complete_time desc">
+                <field name="order_no" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="contract_amount" optional="show" />
+                <field name="platform_profit" optional="show" />
+                <field name="refund_amount" optional="show" />
+                <field name="refund_fee" optional="show" />
+                <field name="refund_tax" optional="hide" />
+                <field name="real_refund_amount" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                <field name="bank_name" optional="show" />
+                <field name="bank_account_no" optional="show" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="refund_remark" optional="show" />
+                <field name="refund_type" optional="show" />
+                <field name="refund_apply_time" optional="show" />
+                <field name="refund_complete_time" string="退款失败时间" optional="show" />
+                <field name="refund_count" optional="show" />
+                <field name="refund_fail_reason" optional="show" />
+                <field name="wait_duration_tip" column_invisible="1"/>
+                <field name="wait_duration" decoration-danger="wait_duration_tip" optional="show" />
+
+                <button name="action_refund_again" type="object" string="退款" confirm="是否确定重新退款？"/>
+                <button name="action_show_refuse_wizard" type="object" string="拒绝"/>
+                <button name="action_show_update_bank_info_wizard" type="object" string="修改账户"/>
+
+                <button name="test_refund" type="object" string="模拟成功退款"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_refund_record_s4">
+        <field name="name">已失败订单搜索</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="bank_account_no" />
+                <field name="platform_order_no" />
+                <field name="product_id" />
+                <field name="payment_setting_id"/>
+                <field name="payment_way_id"/>
+                <field name="refund_type" />
+                <field name="refund_apply_time"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_refund_record_s5">
+        <field name="name">已拒绝订单列表</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="refuse_time desc">
+                <field name="order_no" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="contract_amount" optional="show" />
+                <field name="platform_profit" optional="show" />
+                <field name="refund_amount" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                <field name="merchant_order_no" optional="show" />
+                <field name="refund_count" optional="show" />
+                <field name="bank_name" optional="show" />
+                <field name="bank_account_no" optional="show" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="refund_remark" optional="show" />
+                <field name="refund_type" optional="show" />
+                <field name="refund_apply_time" optional="show" />
+                <field name="refuse_time" optional="show" />
+                <field name="refuse_reason" optional="show" />
+                <field name="refuse_user_id" optional="show"  string="操作人"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_refuse_refund">
+        <field name="name">拒绝退款记录</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="refuse_reason" force_save="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_refund_update_bank">
+        <field name="name">修改账户表单</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="loan_user_phone" readonly="1" />
+                        <field name="loan_uid" readonly="1"/>
+                        <field name="loan_user_name" readonly="1"/>
+                        <field name="refund_amount" required="1"/>
+                        <field name="bank_ifsc_code" required="1"/>
+                        <field name="bank_account_no" required="1" />
+                        <field name="payment_setting_id" required="1" options="{'no_create': True}"/>
+                        <field name="payment_way_id" required="1" options="{'no_create': True}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_refund_record_s5">
+        <field name="name">已拒绝订单搜索</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="platform_order_no" />
+                <field name="product_id" />
+                <field name="payment_setting_id"/>
+                <field name="payment_way_id"/>
+                <field name="refund_apply_time"/>
+                <field name="refuse_time" />
+            </search>
+        </field>
+    </record>
+
+    <!-- 退款凭证 -->
+    <record model="ir.ui.view" id="form_refund_voucher">
+        <field name="name">退款凭证</field>
+        <field name="model">refund.record</field>
+        <field name="arch" type="xml">
+            <form edit="0">
+                <sheet>
+                    <group>
+                        <field name="refund_amount" string="Amount"/>
+                        <field name="refund_voucher" string="Description"/>
+                        <field name="refund_complete_time" string="Time" readonly="1"/>
+                        <field name="loan_user_name" string="Name"/>
+                        <field name="bank_account_no" string="Account Number"/>
+                        <field name="payment_way_id" string="Method" options="{'no_open': 1}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="下载凭证" type="object" name="action_download_voucher" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_refund_order">
+        <field name="name">待退款订单</field>
+        <field name="res_model">loan.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('order_status', '=', '8'), ('platform_profit_amount', '>', 0)]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_refund_order'
+        }
+        </field>
+        <field name="search_view_id" ref="search_refund_order" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_refund_record_s2">
+        <field name="name">退款中订单</field>
+        <field name="res_model">refund.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('status', '=', '2')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_refund_record_s2'
+        }
+        </field>
+        <field name="search_view_id" ref="search_refund_record_s2" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_refund_record_s3">
+        <field name="name">已退款订单</field>
+        <field name="res_model">refund.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('status', '=', '3')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_refund_record_s3'
+        }
+        </field>
+        <field name="search_view_id" ref="search_refund_record_s3" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_refund_record_s4">
+        <field name="name">已失败订单</field>
+        <field name="res_model">refund.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('status', '=', '4')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_refund_record_s4'
+        }
+        </field>
+        <field name="search_view_id" ref="search_refund_record_s4" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_refund_record_s5">
+        <field name="name">已拒绝订单</field>
+        <field name="res_model">refund.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('status', '=', '5')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_refund_record_s5'
+        }
+        </field>
+        <field name="search_view_id" ref="search_refund_record_s5" />
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,170 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_repay_order_s1">
+        <field name="name">待还款订单列表</field>
+        <field name="model">repay.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="create_date desc">
+                <field name="order_no" optional="show" />
+                <field name="order_user_id" optional="show" />
+                <field name="order_user_name" optional="show" />
+                <field name="order_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                <field name="order_contract_amount" optional="show" />
+                <field name="order_loan_period" optional="show" />
+                <field name="order_loan_amount" optional="show" />
+                <field name="repay_amount" optional="show" />
+                <field name="pending_amount" optional="show" />
+                <field name="overdue_fee" optional="show" />
+                <field name="late_fee" optional="show" />
+                <field name="repay_date" optional="show" />
+                <field name="overdue_days" optional="show" />
+                <field name="correction_amount" optional="show" />
+                <field name="pay_complete_time" optional="show" />
+                <field name="withdraw_time" optional="show" />
+
+                <button name="action_show_additional_record" type="object" string="补单"/>
+                <button name="test_action_repay" type="object" string="模拟部分还款" context="{'flag': False}"/>
+                <button name="test_action_repay" type="object" string="模拟全部还款" context="{'flag': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_repay_order_s1">
+        <field name="name">待还款订单搜索</field>
+        <field name="model">repay.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_user_phone"/>
+                <field name="platform_order_no"/>
+                <field name="product_id"/>
+                <field name="is_overdue" widget="boolean_selection" options="{'selection':[['', '逾期状态'], ['1', '已逾期'], ['0', '未逾期']]}"/>
+                <field name="pay_complete_time"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_repay_order_s2">
+        <field name="name">已还款订单列表</field>
+        <field name="model">repay.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="repay_time desc">
+                <field name="order_no" optional="show" />
+                <field name="order_user_id" optional="show" />
+                <field name="order_user_name" optional="show" />
+                <field name="order_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="merchant_order_no" optional="show" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                
+                <field name="order_contract_amount" optional="show" />
+                <field name="order_loan_period" optional="show" />
+                <field name="order_loan_amount" optional="show" />
+                <field name="repay_amount" optional="show" />
+                <field name="pending_amount" optional="show" />
+                <field name="repayed_amount" string="实还金额" optional="show" />
+                <field name="platform_profit" optional="hide" />
+                <field name="repayed_fee" optional="show" />
+                <field name="repayed_tax" optional="show" />
+                <field name="actual_entry_amount" optional="show" />
+                <field name="overdue_fee" optional="show" />
+                <field name="late_fee" optional="show" />
+                <field name="repay_date" optional="show" />
+                 <field name="repay_time" optional="show" />
+                <field name="overdue_days" optional="show" />
+                <field name="correction_amount" optional="show" />
+                <field name="pay_complete_time" string="放款成功时间" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="repay_type" optional="show" />
+
+                <button name="action_show_additional_record" type="object" string="补单"/> 
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_repay_order_s2">
+        <field name="name">已还款订单搜索</field>
+        <field name="model">repay.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_user_phone"/>
+                <field name="platform_order_no"/>
+                <field name="product_id"/>
+                <!-- <field name="is_overdue" widget="boolean_selection" options="{'selection':[['', '逾期状态'], ['1', '已逾期'], ['0', '未逾期']]}"/>  -->
+                <field name="payment_setting_id"/>
+                <field name="payment_way_id"/>
+                <field name="repay_type"/>
+                <field name="repay_time" string="还款时间"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_order_additional_record">
+        <field name="name">Pending Repayment List - Reorder Record</field>
+        <field name="model">repay.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="additional_record_ids" string="Reorder Record" nolabel="1" colspan="2" options="{'create': 0}">
+                            <tree create="0" edit="0" editable="bottom" delete="0">
+                                <field name="apply_time" optional="show" string="Reorder Time" />
+                                <field name="addition_type" optional="show" string="Business Category"/>
+                                <field name="order_user_id" optional="show" string="UserID"/>
+                                <field name="order_no" optional="show" string="Order ID"/>
+                                <field name="utr" optional="show" string="UTR"/>
+                                <field name="amount" optional="show" string="Reorder Amount"/>
+                                <field name="attachment_id" widget="btn_field" string="Credentials Image"/>
+                                <field name="apply_user_id" optional="show" string="Applicant"/>
+                                <field name="close_reason_id" optional="show"
+                                       string="Associated Reason for Closing the Account"/>
+                                <field name="approval_user_id" optional="show" string="Auditor"/>
+                                <field name="status" optional="show" string="Status"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    <button string="Upload Credentials" name="action_show_create_additional_record"
+                            type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="act_repay_order_s1">
+        <field name="name">待还款订单</field>
+        <field name="res_model">repay.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('repay_status', '=', '1')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_repay_order_s1'
+        }
+        </field>
+        <field name="search_view_id" ref="search_repay_order_s1" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_repay_order_s2">
+        <field name="name">已还款订单</field>
+        <field name="res_model">repay.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('repay_status', '=', '2')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_repay_order_s2'
+        }
+        </field>
+        <field name="search_view_id" ref="search_repay_order_s2" />
+    </record>
+
+  </data>
+</odoo>

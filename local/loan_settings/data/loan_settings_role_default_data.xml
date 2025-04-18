@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- 定义 loan.settings.role 数据 -->
+        <record id="role_super_admin" model="loan.settings.role">
+            <field name="name">超级管理员</field>
+            <field name="description">系统所有页面</field>
+        </record>
+        <record id="role_system_admin" model="loan.settings.role">
+            <field name="name">系统管理员</field>
+            <field name="description">贷超模块所有页面</field>
+        </record>
+        <record id="role_financial_manager" model="loan.settings.role">
+            <field name="name">财务经理</field>
+            <field name="description">财务模块所有页面</field>
+        </record>
+        <record id="role_financial_supervisor" model="loan.settings.role">
+            <field name="name">财务主管</field>
+            <field name="description">财务模块所有页面</field>
+        </record>
+        <record id="role_collection_manager" model="loan.settings.role">
+            <field name="name">催收经理</field>
+            <field name="description">催收模块所有页面</field>
+        </record>
+        <record id="role_collection_supervisor" model="loan.settings.role">
+            <field name="name">催收主管</field>
+            <field name="description">催收模块所有页面</field>
+        </record>
+        <record id="role_collection_specialist" model="loan.settings.role">
+            <field name="name">催收专员</field>
+            <field name="description">催收订单管理-待处理订单、处理中订单；金额减免记录、补单记录、展期记录、黑名单管理
+            </field>
+        </record>
+        <record id="role_credit_audit_manager" model="loan.settings.role">
+            <field name="name">信审经理</field>
+            <field name="description">信审模块所有页面</field>
+        </record>
+        <record id="role_credit_audit_supervisor" model="loan.settings.role">
+            <field name="name">信审主管</field>
+            <field name="description">信审模块所有页面</field>
+        </record>
+        <record id="role_credit_audit_specialist" model="loan.settings.role">
+            <field name="name">信审专员</field>
+            <field name="description">已分配订单页面</field>
+        </record>
+    </data>
+</odoo>

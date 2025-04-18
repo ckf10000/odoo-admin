@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="cron_collection_stage_setting_data" model="ir.cron">
+            <field name="name">催收阶段管理：每日重新分单</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="model_id" ref="model_collection_stage_setting"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_collection_stage_setting()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now().replace(day=1, hour=17, minute=0)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="doall" eval="False" />
+        </record>
+    </data>
+</odoo>

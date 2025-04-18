@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <!-- views -->
+        <record model="ir.ui.view" id="collection_stage_setting_list">
+            <field name="name">Collection Phase Management</field>
+            <field name="model">collection.stage.setting</field>
+            <field name="arch" type="xml">
+                <tree create='0' import="0" export_xlsx="0" limit="20" default_order="create_date desc">
+                    <header>
+                        <button class="btn-primary" name="action_create" type="object" string="Add" display="always"/>
+                    </header>
+                    <field name="collection_stage" optional="show"/>
+                    <field name="overdue_days" optional="show"/>
+                    <field name="write_date" optional="show"/>
+                    <field name="status" optional="show" widget="boolean_toggle"/>
+                    <field name="write_uid" options="{'no_open': 'True','no_create':True}" optional="show"/>
+                    <button name="action_edit" type="object" string="Edit"/>
+                    <button name="action_delete" type="object" string="Delete"/>
+                    <button name="action_history" type="object" string="History Record"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="collection_stage_setting_form">
+            <field name="name">Collection Phase Management</field>
+            <field name="model">collection.stage.setting</field>
+            <field name="arch" type="xml">
+                <form string="Collection Phase Management">
+                    <sheet>
+                        <group>
+                            <field name="collection_stage" placeholder="Please Enter" required="1"/>
+                            <label for="min_day" string="Overdue Days"/>
+                            <div>
+                                <field name="min_day" placeholder="Please Enter" class="oe_inline"/>
+                                <span class="oe_inline" style="margin: auto 10px">～</span>
+                                <field name="max_day" placeholder="Please Enter" class="oe_inline"/>
+                                <span class="oe_inline">Days</span>
+                            </div>
+                            <field name="status" soptional="show" widget="boolean_toggle"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="collection_stage_setting_search">
+            <field name="name">Collection Phase Management</field>
+            <field name="model">collection.stage.setting</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="collection_stage" optional="show"/>
+                    <field name="status_select" optional="show"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="collection_stage_setting_action">
+            <field name="name">Collection Phase Management</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="loan_collection.model_collection_stage_setting"/>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="code">
+                action = model.action_server_collection_stage_setting()
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.FormLabel" t-inherit-mode="extension">
+        <xpath expr="//t[@t-esc='props.string']" position="before">
+            <t t-if="props.fieldInfo.required">
+                <span style="color:red">* </span>
+            </t>
+        </xpath>
+    </t>
+</templates>

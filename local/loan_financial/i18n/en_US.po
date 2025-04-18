@@ -1,0 +1,2775 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* loan_financial
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-04 07:39+0000\n"
+"PO-Revision-Date: 2024-11-04 07:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+msgid "<span class=\"oe_inline\"> %*交易金额/笔 </span>"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+msgid "<span class=\"oe_inline\"> + </span>"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__app_id
+msgid "APP名称"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__app_version
+msgid "APP版本"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_black_list
+msgid "Black User List"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.server,name:loan_financial.ir_cron_close_extension_record_ir_actions_server
+msgid "Close Extension Record"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.server,name:loan_financial.ir_cron_compute_order_overdue_ir_actions_server
+msgid "Compute Order Overdue"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__create_uid
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__create_date
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__display_name
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__id
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__id
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__id
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__id
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__id
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__id
+msgid "ID"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__bank_ifsc_code
+msgid "IFSC code"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__write_uid
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__write_date
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.server,name:loan_financial.ir_cron_derate_lose_efficacy_ir_actions_server
+msgid "Lose Efficacy Derate Record"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__order_id
+msgid "Order"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_channel_fee_wizard
+#: model:ir.model,name:loan_financial.model_payment_channel_fee_wizard_line
+msgid "Payment Channel Fee Wizard"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_setting
+msgid "Payment Setting"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_setting_trade_record
+msgid "Payment Setting Trade Record"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_platform_flow
+msgid "PlatForm Flow"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_loan_product
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__product_id
+msgid "Product"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__repay_order_id
+msgid "Repay Order"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__utr
+msgid "UTR"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__order_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__loan_uid
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__loan_uid
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__loan_uid
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__loan_uid
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__loan_uid
+msgid "UserID"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__key
+msgid "key"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__value
+msgid "value"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_order_additional_record
+msgid "上传凭证"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record
+msgid "上传图片"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+msgid "下载凭证"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__addition_type
+msgid "业务类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_start_time
+msgid "交易发起时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_end_time
+msgid "交易完成时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__payment_way_id
+msgid "交易方式"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_no
+msgid "交易流水号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__payment_setting_id
+msgid "交易渠道"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_status
+msgid "交易状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_type
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__trade_type
+msgid "交易类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_data
+msgid "交易结果数据"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__trade_record_ids
+msgid "交易记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__trade_amount
+msgid "交易金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__product_id
+msgid "产品"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__product_id
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__product_id
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_settle_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_derate_record_s1
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_loan_order
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_repay_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_settle_record
+msgid "产品名称"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting_trade_record__trade_type__2
+msgid "代付"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting_trade_record__trade_type__1
+msgid "代收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__credit_fee
+msgid "信用费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__modify_account_status__1
+msgid "修改中"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__new_name
+msgid "修改后姓名"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__modify_account_status__3
+msgid "修改失败"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+msgid "修改姓名"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__modify_account_status__2
+msgid "修改成功"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__update_type
+msgid "修改类型"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s4
+msgid "修改账户"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__modify_account_status
+msgid "修改账户状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_loan_period
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_loan_period
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__loan_period
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_loan_period
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__loan_period
+msgid "借款期限"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__col_approval_remark
+msgid "催收备注"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record_approval_wizard__stage__1
+msgid "催收审核"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__col_approval_user_id
+msgid "催收审核人员"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__col_approval_time
+msgid "催收审核时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__col_approval_status
+msgid "催收审核状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__flow_type__2
+msgid "入账"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__company_id
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__company_id
+msgid "公司"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+msgid "公式"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_additional_record
+msgid "关单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__close_reason_id
+msgid "关单原因"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__res_id
+msgid "关联记录ID"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__res_model
+msgid "关联记录模型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__correction_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__correction_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__correction_amount
+msgid "冲正金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.ui.menu,name:loan_financial.menu_reduction_manage
+msgid "减免管理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__derate_type
+msgid "减免类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__derate_no
+msgid "减免编号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_derate_record
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__derate_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__derate_record_ids
+msgid "减免记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_derate_record_approval_wizard
+msgid "减免记录审核向导"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__derate_amount
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__derate_amount
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__21
+msgid "减免金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__22
+msgid "减免金额退回"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__voucher_img
+msgid "凭证"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__attachment_id
+msgid "凭证图片"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__flow_type__1
+msgid "出账"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_black_list
+msgid "删除"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_black_list
+msgid "删除后不可恢复, 确认删除?"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_interest
+msgid "利息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__pending_amount
+msgid "剩余挂账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_pay_order_approval_wizard
+msgid "单个审核向导"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__order_repay_date
+msgid "原到期日"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__text
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__reason
+msgid "原因"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__old_name
+msgid "原姓名"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__order_pending_amount
+msgid "原挂账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record_close
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record_pass
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_black_list
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_derate_record_apply
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_extension_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_extension_settle_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_order_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_order_refund_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_refund_update_bank
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_refuse_refund
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_settle_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_user_refund_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_derate_approval
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_approval
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_batch_approval
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_update
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_repay_record_cancel
+msgid "取消"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__cancel_remark
+msgid "取消备注"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__cancel_time
+msgid "取消时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__13
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_record
+msgid "取消还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__new_pending_amount
+msgid "取消还款后挂账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_repay_record_cancel_wizard
+msgid "取消还款向导"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__amount
+msgid "取消还款金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__withdraw_time
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__withdraw_time
+msgid "取现时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__flow_time
+msgid "变动时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__flow_type
+msgid "变动类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__flow_amount
+msgid "变动金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__can_settle_amount
+msgid "可平账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__order_contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_contract_amount
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_settle_order
+msgid "合同金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__active
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__active
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__active
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_settings__active
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__active
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__active
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__active
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__active
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__active
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__active
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__active
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__active
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__active
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__active
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__active
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__active
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__active
+msgid "启用"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__merchant_no
+msgid "商户id"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__merchant_key
+msgid "商户密钥"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__merchant_order_no
+msgid "商户订单号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__call_back_url
+msgid "回调地址"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+msgid "固定费用(>=0)"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__base_fee
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__base_fee
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__base_fee
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__base_fee
+msgid "基础费用"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__additional_record__status__2
+msgid "处理中"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_pay_order_s2
+#: model:ir.ui.menu,name:loan_financial.menu_pay_order_s2
+msgid "处理中订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__remark
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__remark
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__remark
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__remark
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__refuse_remark
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_remark
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__remark
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__remark
+msgid "备注"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__order_type__2
+msgid "复贷"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__fail_reason
+msgid "失败原因"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__order_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__user_name
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__loan_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__loan_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__loan_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__loan_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__loan_user_name
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__loan_user_name
+msgid "姓名"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order_update_wizard__update_type__1
+msgid "姓名修改"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__repayed_amount
+msgid "实付金额"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_order_s2
+msgid "实还金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__actual_entry_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__actual_entry_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__actual_repay_amount
+msgid "实际入账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__actual_pay_amount
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__real_refund_amount
+msgid "实际出账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__approval_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__user_id
+msgid "审核人"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__desc
+msgid "审核描述"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__approval_time
+msgid "审核时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__approval_result
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__approval_result
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_derate_record
+msgid "审核结果"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__stage
+msgid "审核阶段"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+msgid "展期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__extension_days
+msgid "展期天数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__repayed_amount
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_extension_record
+msgid "展期实付金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__24
+msgid "展期平账"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_extension_settle_record
+msgid "展期平账记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__platform_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__platform_order_no
+msgid "展期序列号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__extension_amount
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_extend_pay_amount
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_extend_pay_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_extend_pay_amount
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_extension_record
+msgid "展期应付金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__extension_start_date
+msgid "展期开始日期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__success_time
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__extend_success_time
+msgid "展期成功时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__repayed_fee
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__19
+msgid "展期手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_type__2
+msgid "展期放款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__status
+msgid "展期状态"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+msgid "展期申请"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__apply_time
+msgid "展期申请时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__20
+msgid "展期税收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__extension_end_date
+msgid "展期结束日期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__additional_record__addition_type__2
+msgid "展期补单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_extension_record
+#: model:ir.model,name:loan_financial.model_extension_record
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__extension_record_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__extension_record_id
+#: model:ir.ui.menu,name:loan_financial.menu_extension_record
+msgid "展期记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__17
+msgid "展期费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__extension_amount
+msgid "展期费用"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_order__repay_type__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_record__repay_type__2
+msgid "展期还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__repay_count
+msgid "展期还款次数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__extend_pay_amount
+msgid "展期金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__additional_record__status__4
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "已关闭"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__additional_record__status__3
+msgid "已到账"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting_trade_record__trade_status__1
+msgid "已发起"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__extension_record__status__6
+msgid "已失效"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting_trade_record__trade_status__3
+msgid "已失败"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_pay_order_s4
+#: model:ir.actions.act_window,name:loan_financial.act_refund_record_s4
+#: model:ir.ui.menu,name:loan_financial.menu_pay_order_s4
+#: model:ir.ui.menu,name:loan_financial.menu_refund_s4
+msgid "已失败订单"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "已开启"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting_trade_record__trade_status__2
+msgid "已成功"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_pay_order_s3
+#: model:ir.ui.menu,name:loan_financial.menu_pay_order_s3
+msgid "已成功订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_pay_order_s5
+#: model:ir.actions.act_window,name:loan_financial.act_refund_record_s5
+#: model:ir.ui.menu,name:loan_financial.menu_pay_order_s5
+#: model:ir.ui.menu,name:loan_financial.menu_refund_s5
+msgid "已拒绝订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repayd_principal
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repayd_principal
+msgid "已还本金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_repay_order_s2
+#: model:ir.ui.menu,name:loan_financial.menu_repay_order_s2
+msgid "已还款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repayed_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repayed_amount
+msgid "已还款金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repayed_late_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repayd_late_fee
+msgid "已还滞纳金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repayed_overdue_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repayed_overdue_fee
+msgid "已还罚息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_refund_record_s3
+#: model:ir.ui.menu,name:loan_financial.menu_refund_s3
+msgid "已退款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__order_count
+msgid "已选择订单数量"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__platform_service_fee
+msgid "平台服务费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__platform_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__platform_order_no
+msgid "平台订单号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__platform_profit
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__platform_profit
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__platform_profit
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__platform_profit
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__platform_profit
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__12
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__18
+msgid "平台额外收益"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__settle_record__settle_type__1
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_extension_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_settle_order
+msgid "平账"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_contract_amount
+msgid "平账合同金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__settle_time
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_time
+msgid "平账时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__settle_principal
+msgid "平账本金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__settle_late_fee
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_late_fee
+msgid "平账滞纳金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_type
+msgid "平账类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__settle_overdue_fee
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_overdue_amount
+msgid "平账罚息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_settle_record
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__settle_record_ids
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__settle_record_ids
+msgid "平账记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__settle_amount
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__settle_amount
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__settle_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_settle_amount
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__amount
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_amount
+msgid "平账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repay_date
+msgid "应还日期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repay_date
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__repay_date
+msgid "应还时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repay_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repay_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__repay_amount
+msgid "应还本息"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_black_list
+msgid "录入时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__additional_record__status__1
+msgid "待处理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__col_approval_status__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__fin_approval_status__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record_approval_wizard__status__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__financial_status__1
+msgid "待审核"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__extension_record__status__1
+msgid "待支付"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_status__1
+msgid "待放款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.server,name:loan_financial.act_pay_order_list
+#: model:ir.ui.menu,name:loan_financial.menu_pay_order_s1
+msgid "待放款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_order__repay_status__1
+msgid "待还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_repay_order_s1
+#: model:ir.ui.menu,name:loan_financial.menu_repay_order_s1
+msgid "待还款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__status__1
+msgid "待退款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_refund_order
+#: model:ir.ui.menu,name:loan_financial.menu_refund_s1
+msgid "待退款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__refund_type__2
+msgid "手动退款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__order_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__phone_no
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__loan_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__loan_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__loan_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__loan_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__loan_user_phone
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__loan_user_phone
+msgid "手机号码"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__fee
+msgid "手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__fee_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__wizard_id
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repayment_setting
+msgid "手续费配置"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "批量审核"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_pay_order_batch_approval_wizard
+msgid "批量审核向导"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__settle_record__settle_type__2
+msgid "抹罚息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__overdue_amount
+msgid "抹罚息金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__col_approval_status__3
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__fin_approval_status__3
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record_approval_wizard__status__3
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__financial_status__3
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order_approval_wizard__approval_result__3
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order_batch_approval_wizard__approval_result__3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_derate_record_s1
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s4
+msgid "拒绝"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__refuse_reason
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refuse_reason
+msgid "拒绝原因"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__refuse_time
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refuse_time
+msgid "拒绝时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order_update_wizard__update_type__2
+msgid "拒绝订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__order_pending_amount
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__pending_amount
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__pending_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__pending_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__pending_amount
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_pending_amount
+msgid "挂账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record_close_reason__sequence
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__sequence
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__sequence
+msgid "排序"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+msgid "描述"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_derate_record_apply
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_extension_settle_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_settle_record
+msgid "提交"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__withdraw_time
+msgid "提现时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__settle_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__cancel_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__settle_user_id
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_black_list
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s2
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s5
+msgid "操作人"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__merchant_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__merchant_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__merchant_order_no
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_record
+msgid "支付ID"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__extension_record__status__3
+msgid "支付失败"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__update_time
+msgid "支付完成时间"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_repay_record
+msgid "支付序列号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__extension_record__status__2
+msgid "支付成功"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__repay_time
+msgid "支付成功时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__fee
+msgid "支付手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__data
+msgid "支付接口数据"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_way
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__payment_way_ids
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__payment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__payment_way_id
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_repay_record
+msgid "支付方式"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_repay_record
+msgid "支付时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_channel
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__payment_channel_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__payment_channel_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__payment_channel_ids
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_repay_record
+msgid "支付渠道"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_channel_fee
+msgid "支付渠道手续费配置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_payment_channel_fee_line
+msgid "支付渠道手续费阶梯配置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_repayment_channel
+#: model:ir.ui.menu,name:loan_financial.menu_payment_channel
+#: model:ir.ui.menu,name:loan_financial.menu_payment_channel_manage
+msgid "支付渠道配置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__tax
+msgid "支付税收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__platform_order_no
+msgid "支付订单号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__amount
+msgid "支付金额"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+msgid "收款方式"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__repay_type
+msgid "收款类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_repay_record
+#: model:ir.ui.menu,name:loan_financial.menu_repay_record
+msgid "收款记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_bank_account_no
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_bank_account_no
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__bank_account_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_bank_account_no
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+msgid "收款账号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_bank_name
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_bank_name
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__bank_name
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_bank_name
+msgid "收款银行"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__fee_mode
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__fee_mode
+msgid "收费模式"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+msgid "放款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee__use_type__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee_wizard__use_type__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting__use_type__1
+msgid "放款/退款"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_channel
+msgid "放款/退款手续费配置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__payment_way_id
+msgid "放款/退款方式"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_payment_setting
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_product__payment_setting_id
+#: model:ir.ui.menu,name:loan_financial.menu_payment_setting
+msgid "放款/退款渠道"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_status__2
+msgid "放款中"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+msgid "放款人姓名"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s3
+msgid "放款凭证"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_voucher
+msgid "放款凭证描述"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_status__4
+msgid "放款失败"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__fail_reason
+msgid "放款失败原因"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__pay_platform_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__platform_order_no
+msgid "放款序列号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_status__3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+msgid "放款成功"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__pay_complete_time
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_complete_time
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__pay_complete_time
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__pay_time
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_order_s2
+msgid "放款成功时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_fee
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__3
+msgid "放款手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__2
+msgid "放款扣服务费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_status__5
+msgid "放款拒绝"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_way_display
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s2
+msgid "放款操作"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__merchant_order_no
+msgid "放款支付ID"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_product__payment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__payment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__payment_way_id
+msgid "放款方式"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s2
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s5
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_pay_order_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_pay_order_s4
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_pay_order_s5
+msgid "放款时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_record_count
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__trade_count
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+msgid "放款次数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__payment_setting_id
+msgid "放款渠道"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_status
+msgid "放款状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_tax
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__4
+msgid "放款税收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.ui.menu,name:loan_financial.menu_payment_manage
+msgid "放款管理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_type
+msgid "放款类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_pay_order
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__pay_order_ids
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__pay_order_id
+msgid "放款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_pay_record
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_record_ids
+msgid "放款记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_loan_amount
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_loan_amount
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__pay_amount
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__amount_desc
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_loan_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__loan_amount
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__1
+msgid "放款金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__extension_repay_date
+msgid "新到期日"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_black_list
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_channel
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repayment_setting
+msgid "新增"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_order
+msgid "新建退款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__way_name
+msgid "方式名称"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__day_count_end
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__day_count_end
+msgid "日交易次数结束"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__day_count_start
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__day_count_start
+msgid "日交易次数起始"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__is_cancel
+msgid "是否取消"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__is_extension
+msgid "是否展期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__is_process
+msgid "是否已处理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__is_success
+msgid "是否成功"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__is_effective
+msgid "是否生效"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "是否确定【关闭】自动放款？"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "是否确定【开启】自动放款？"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_repay_record_cancel
+msgid "是否确定取消该笔还款？"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+msgid "是否确定要求用户修改银行卡账户？"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s4
+msgid "是否确定重新放款？"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s4
+msgid "是否确定重新退款？"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__is_auto
+msgid "是否自动放款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__is_overdue
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__is_overdue
+msgid "是否逾期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__wait_duration_tip
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__wait_duration_tip
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__wait_duration_tip
+msgid "是否高亮提示"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__max_derate_amount
+msgid "最大可减免金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__month_count_end
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__month_count_end
+msgid "月交易次数结束"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__month_count_start
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__month_count_start
+msgid "月交易次数起始"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_derate_record_s1
+msgid "有效期"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__derate_type__1
+msgid "有效期减免"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__valid_time
+msgid "有效期截止时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__loan_cycle
+msgid "期数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__wait_duration
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__wait_duration
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__wait_duration
+msgid "未处理时长"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_status__0
+msgid "未放款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__col_approval_status__0
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__fin_approval_status__0
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record_approval_wizard__status__0
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__modify_account_status__0
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__status__0
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_order__repay_status__0
+msgid "未触发"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__unpaid_contract_amount
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_unpaid_contract_amount
+msgid "未还合同金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__unpaid_late_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_unpaid_late_fee
+msgid "未还滞纳金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__unpaid_overdue_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_unpaid_overdue_fee
+msgid "未还罚息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__loan_user_unrepay_order_count
+msgid "未还订单数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__principal
+msgid "本金还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__enum_code
+#: model:ir.model.fields,field_description:loan_financial.field_payment_way__enum_code
+msgid "枚举编码"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_order_s1
+msgid "模拟全部还款"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_order_s1
+msgid "模拟部分还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__pay_type__1
+msgid "正常放款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_order__repay_type__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_record__repay_type__1
+msgid "正常还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__refund_type__1
+msgid "正常退款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__derate_type__2
+msgid "永久性减免"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__use_type
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__use_type
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__use_type
+msgid "渠道使用类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__channel_name
+msgid "渠道名称"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__late_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__late_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__order_late_fee
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_late_fee
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_settle_order
+msgid "滞纳金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__late_fee
+msgid "滞纳金还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__status
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__status
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__status
+msgid "状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__apply_user_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__apply_user_id
+msgid "申请人"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_derate_approval
+msgid "申请减免金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__order_apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__loan_apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_apply_time
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_apply_time
+msgid "申请时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__apply_reason
+msgid "申请理由"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__apply_user_id
+msgid "申请用户"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record_close
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_additional_record_pass
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_repay_record_cancel
+msgid "确定"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_black_list
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_extension_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_order_refund_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_refund_update_bank
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_refuse_refund
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_user_refund_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_derate_approval
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_approval
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_batch_approval
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_update
+msgid "确认"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__repayed_tax
+msgid "税收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__tax
+msgid "税费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_management_fee
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_management_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_management_fee
+msgid "管理费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__management_fee
+msgid "管理费(砍头息)"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__5
+msgid "线下退回"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.ui.menu,name:loan_financial.menu_settlement_manage
+msgid "结算中心"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record_approval_wizard__status
+msgid "结论"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_black_list
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_channel
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repayment_setting
+msgid "编辑"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__overdue_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__overdue_fee
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__order_overdue_fee
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_overdue_fee
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_settle_order
+msgid "罚息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__overdue_fee
+msgid "罚息还款"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "自动放款已关闭"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "自动放款已开启"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_order_s1
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_repay_order_s2
+msgid "补单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_additional_record_close_reason
+msgid "补单关闭原因"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_additional_record
+#: model:ir.ui.menu,name:loan_financial.menu_additional_record
+msgid "补单审核"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_order_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_additional_record
+msgid "补单时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_additional_record
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__additional_record_ids
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__additional_record_ids
+msgid "补单记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__amount
+msgid "补单金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_approval_wizard__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_update_wizard__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting_trade_record__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_id
+msgid "订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_pay_order_update_wizard
+msgid "订单修改向导"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order_batch_approval_wizard__order_ids
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__order_no
+msgid "订单号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_loan_order_sub_basic
+msgid "订单子表基础字段"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_loan_order
+msgid "订单查询"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__order_status
+msgid "订单状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_loan_order
+#: model:ir.ui.menu,name:loan_financial.menu_order_manage
+msgid "订单管理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_type
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_type
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__order_type
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__order_type
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_type
+msgid "订单类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_extension_settle_record__loan_order_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_platform_flow__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__order_no
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_id
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__order_no
+msgid "订单编号"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.wizard_order_update
+msgid "请输入"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_setting
+msgid "请选择"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.ui.menu,name:loan_financial.menu_root_loan_financial
+msgid "财务"
+msgstr "FINANCIAL"
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__financial_user_id
+msgid "财务员审核人员"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__fin_approval_remark
+msgid "财务备注"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record_approval_wizard__stage__2
+msgid "财务审核"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__fin_approval_user_id
+msgid "财务审核人员"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__financial_remark
+msgid "财务审核备注"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__fin_approval_time
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__financial_time
+msgid "财务审核时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__fin_approval_status
+msgid "财务审核状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__financial_status
+msgid "财务审核结论"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_settle_order
+#: model:ir.ui.menu,name:loan_financial.menu_settle_order
+msgid "财务平账"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_settle_record
+#: model:ir.ui.menu,name:loan_financial.menu_settle_record
+msgid "财务平账明细"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__order_id
+msgid "财务订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_loan_order_settings
+msgid "财务订单配置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__account_management_fee
+msgid "账户管理费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_record__loan_order_id
+msgid "贷款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__fee_rate
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_line__fee_rate
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__fee_rate
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard_line__fee_rate
+msgid "费率"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_payment_channel_fee_setting_wizard
+msgid "费率(0-100)"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_platform_flow
+#: model:ir.ui.menu,name:loan_financial.menu_platform_flow
+msgid "资金流水明细"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel__redirect_url
+msgid "跳转地址"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__id_card_no
+msgid "身份证号码"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee__use_type__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee_wizard__use_type__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_setting__use_type__2
+msgid "还款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__extension_record__status__5
+msgid "还款完成"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repay_complete_time
+msgid "还款完成时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__23
+msgid "还款平账"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repay_platform_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__platform_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__platform_order_no
+msgid "还款序列号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__repay_order__repay_status__2
+msgid "还款成功"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repay_time
+msgid "还款成功时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repayed_fee
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__10
+msgid "还款手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_payment_channel
+msgid "还款手续费配置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__merchant_order_no
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__merchant_order_no
+msgid "还款支付ID"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__payment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repayment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_product__repayment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__payment_way_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__payment_way_id
+msgid "还款方式"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_repay_order_s2
+msgid "还款时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__7
+msgid "还款本金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_repayment_setting
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repayment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_product__repayment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__payment_setting_id
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__payment_setting_id
+#: model:ir.ui.menu,name:loan_financial.menu_repayment_setting
+msgid "还款渠道"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__9
+msgid "还款滞纳金"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repay_status
+msgid "还款状态"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repayed_tax
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__11
+msgid "还款税收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.ui.menu,name:loan_financial.menu_repayment_manage
+msgid "还款管理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repay_type
+msgid "还款类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__8
+msgid "还款罚息"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__additional_record__addition_type__1
+msgid "还款补单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_repay_order
+#: model:ir.model.fields,field_description:loan_financial.field_additional_record__repay_order_id
+#: model:ir.model.fields,field_description:loan_financial.field_derate_record__repay_order_id
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repay_order_ids
+#: model:ir.model.fields,field_description:loan_financial.field_settle_record__repay_order_id
+msgid "还款订单"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_repay_record
+#: model:ir.model.fields,field_description:loan_financial.field_extension_record__repay_record_ids
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__repay_record_ids
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__repay_record_ids
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record_cancel_wizard__repay_record_id
+msgid "还款记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__6
+msgid "退回手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_order
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s4
+msgid "退款"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__status__2
+msgid "退款中"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_refund_record_s2
+#: model:ir.ui.menu,name:loan_financial.menu_refund_s2
+msgid "退款中订单"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s3
+msgid "退款凭证"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__status__4
+msgid "退款失败"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_fail_reason
+msgid "退款失败原因"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s4
+msgid "退款失败时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_complete_time
+msgid "退款完成时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__platform_order_no
+msgid "退款序列号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__status__3
+msgid "退款成功"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_refund_record_s3
+#: model_terms:ir.ui.view,arch_db:loan_financial.search_refund_record_s3
+msgid "退款成功时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_fee
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__15
+msgid "退款手续费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__status__5
+msgid "退款拒绝"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refuse_user_id
+msgid "退款拒绝人"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__payment_way_id
+msgid "退款方式"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_apply_time
+msgid "退款时间"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_count
+msgid "退款次数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__payment_setting_id
+msgid "退款渠道"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_user_id
+msgid "退款申请人"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_tax
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__16
+msgid "退款税收"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.ui.menu,name:loan_financial.menu_refund_manage
+msgid "退款管理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_type
+msgid "退款类型"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model,name:loan_financial.model_refund_record
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__refund_record_ids
+msgid "退款记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__refund_amount
+#: model:ir.model.fields,field_description:loan_financial.field_refund_record__refund_amount
+#: model:ir.model.fields.selection,name:loan_financial.selection__platform_flow__trade_type__14
+msgid "退款金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__payment_product_ids
+#: model:ir.model.fields,field_description:loan_financial.field_payment_setting__repayment_product_ids
+msgid "适用产品"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__col_approval_status__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record__fin_approval_status__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__derate_record_approval_wizard__status__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order__financial_status__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order_approval_wizard__approval_result__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__pay_order_batch_approval_wizard__approval_result__2
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_additional_record
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_derate_record_s1
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_pay_order_s1
+msgid "通过"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__overdue_days
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__overdue_days
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__overdue_days
+msgid "逾期天数"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order__overdue_rate
+msgid "逾期罚息费率"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__extension_record__status__4
+msgid "部分支付"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.form_pay_order_voucher
+msgid "金额"
+msgstr ""
+
+#. module: loan_financial
+#: model_terms:ir.ui.view,arch_db:loan_financial.list_loan_order
+msgid "金额减免"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_derate_record_s1
+#: model:ir.ui.menu,name:loan_financial.menu_derate_record_s1
+msgid "金额减免审核"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_derate_record_f
+#: model:ir.ui.menu,name:loan_financial.menu_derate_record_f
+msgid "金额减免记录"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_black_list__bank_account_no
+msgid "银行卡号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_loan_order_sub_basic__order_bank_ifsc_code
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__order_bank_ifsc_code
+#: model:ir.model.fields,field_description:loan_financial.field_repay_order__order_bank_ifsc_code
+msgid "银行联行号"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_repay_record__write_off_amount
+msgid "销账金额"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee__fee_mode__2
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee_wizard__fee_mode__2
+msgid "阶梯收费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee__fee_line_ids
+#: model:ir.model.fields,field_description:loan_financial.field_payment_channel_fee_wizard__fee_line_ids
+msgid "阶梯费用设置"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields,field_description:loan_financial.field_pay_order__risk_fee
+msgid "风险费"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__refund_record__order_type__1
+msgid "首贷"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.actions.act_window,name:loan_financial.act_black_list
+#: model:ir.ui.menu,name:loan_financial.menu_black_user_manage
+msgid "黑名单管理"
+msgstr ""
+
+#. module: loan_financial
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee__fee_mode__1
+#: model:ir.model.fields.selection,name:loan_financial.selection__payment_channel_fee_wizard__fee_mode__1
+msgid "默认模式"
+msgstr ""

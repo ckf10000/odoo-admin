@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="collection_stage_setting_wizard_delete_form" model="ir.ui.view">
+            <field name="name">Collection Phase Configuration Delete Wizard</field>
+            <field name="model">collection.stage.setting.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <p>Are you sure you want to delete this collection stage configuration?</p>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm" string="Submit" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="collection_stage_setting_wizard_delete_action" model="ir.actions.act_window">
+            <field name="name">Delete</field>
+            <field name="res_model">collection.stage.setting.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

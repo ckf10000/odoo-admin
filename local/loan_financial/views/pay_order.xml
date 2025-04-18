@@ -1,0 +1,423 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_pay_order_s1">
+        <field name="name">待放款订单列表</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="apply_time">
+                <header>
+                    <button name="action_update_order_settings" type="object" string="已关闭" icon="fa-toggle-off" help="自动放款已关闭" class="oe_highlight1" display="always" invisible="context.get('is_auto_pay')" confirm="是否确定【开启】自动放款？"/>
+                    <button name="action_update_order_settings" type="object" string="已开启" icon="fa-toggle-on" help="自动放款已开启" class="oe_highlight" display="always" invisible="not context.get('is_auto_pay')" confirm="是否确定【关闭】自动放款？"/>
+                    <button name="action_show_pay_order_wizard" context="{'batch_approve_flag': True}" type="object" string="批量审核" class="oe_highlight"/>
+                </header>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="order_type" />
+                <field name="loan_user_name"/>
+                <field name="bank_name" />
+                <field name="bank_account_no"/>
+                <field name="loan_user_phone"/>
+                <field name="product_id"/>
+                <field name="contract_amount"/>
+                <field name="loan_period"/>
+                <field name="loan_amount" />
+                <field name="apply_time"/>
+                <field name="payment_way_id" string="放款方式"/>
+                <field name="wait_duration_tip" column_invisible="1"/>
+                <field name="wait_duration" decoration-danger="wait_duration_tip"/>
+                
+                <button name="action_show_pay_order_wizard" type="object" string="通过" context="{'approve_flag': True}"/>
+                <button name="action_show_pay_order_wizard" type="object" string="拒绝" context="{'approve_flag': False}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_pay_order_s1">
+        <field name="name">待放款订单搜索</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="order_type"/>
+                <field name="product_id"/>
+                <field name="payment_way_id"/>
+                <field name="apply_time"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_pay_order_s2">
+        <field name="name">放款中订单列表</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="financial_time">
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_type" />
+                <field name="order_user_name"/>
+                <field name="order_bank_name" />
+                <field name="order_bank_account_no"/>
+                <field name="order_user_phone"/>
+
+                <field name="product_id"/>
+                <field name="order_contract_amount"/>
+                <field name="order_loan_period"/>
+                <field name="pay_amount" />
+                <field name="payment_setting_id"/>
+                <field name="payment_way_id"/>
+                <field name="order_apply_time"/>
+                <field name="financial_time" string="放款时间"/>
+                <field name="wait_duration_tip" column_invisible="1"/>
+                <field name="wait_duration" decoration-danger="wait_duration_tip"/>
+                
+                <field name="pay_way_display" string="放款操作"/>
+                           
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_pay_order_s2">
+        <field name="name">放款中订单搜索</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_user_phone"/>
+                <field name="order_bank_account_no"/>
+                <field name="product_id"/>
+                <field name="order_apply_time"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_pay_order_s3">
+        <field name="name">已成功订单列表</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="pay_complete_time desc">
+                <field name="order_no" optional="show" />
+                <field name="order_user_id" optional="show" />
+                <field name="order_user_name" optional="show" />
+                <field name="order_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                <field name="merchant_order_no" string="支付ID" optional="show" />
+                <field name="order_contract_amount" optional="show" />
+                <field name="order_loan_period" optional="show" />
+                <field name="order_loan_amount" optional="show" />
+                <field name="pay_fee" optional="show" />
+                <field name="pay_tax" optional="hide" />
+                <field name="actual_pay_amount" optional="show" />
+                <field name="management_fee" optional="show" />
+                <field name="pay_interest" optional="hide" />
+                <field name="account_management_fee" optional="hide" />
+                <field name="platform_service_fee" optional="hide" />
+                <field name="risk_fee" optional="hide" />
+                <field name="credit_fee" optional="hide" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="order_apply_time" optional="show" />
+                <field name="financial_time" string="放款时间" optional="show" />
+                <field name="pay_complete_time" string="放款成功时间" optional="show" />
+                <field name="withdraw_time" optional="show" />
+                <field name="order_bank_name" optional="show" />
+                <field name="order_bank_account_no" optional="show" />
+                <field name="order_type" optional="show" />
+                <field name="pay_way_display" optional="show" />
+                <field name="pay_type" optional="show" />
+                <field name="financial_user_id" string="操作人" optional="show" />
+                
+                <button name="action_show_voucher" type="object" string="放款凭证"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_pay_order_s3">
+        <field name="name">已成功订单搜索</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_user_phone"/>
+                <field name="order_bank_account_no"/>
+                
+                <field name="platform_order_no"/>
+                <field name="product_id"/>
+                <field name="payment_setting_id"/>
+                <field name="payment_way_id"/>
+                <field name="pay_type" />
+                <field name="financial_time" string="放款时间"/>
+                <field name="pay_complete_time"/>
+                <field name="withdraw_time" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_pay_order_s4">
+        <field name="name">已失败订单列表</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="pay_complete_time">
+                <button name="action_update_user_name" type="object" string="修改姓名"/>
+                <button name="action_payment_again" type="object" string="放款" confirm="是否确定重新放款？"/>
+                <button name="action_refuse_payment" type="object" string="拒绝"/>
+                <button name="action_update_bank_account" type="object" string="修改账户" confirm="是否确定要求用户修改银行卡账户？" invisible="modify_account_status=='1'"/>
+                <field name="modify_account_status" column_invisible="1"/>
+
+                <field name="order_no" optional="show" />
+                <field name="order_user_id" optional="show" />
+                <field name="financial_time" string="放款时间" optional="show"/>
+                <field name="wait_duration_tip" column_invisible="1"/>
+                <field name="wait_duration" decoration-danger="wait_duration_tip"  />
+                <field name="pay_record_count" string="放款次数" optional="show" />
+                <field name="fail_reason"  optional="show"  class="multiLine-item-pre-wrap " />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="order_user_name" optional="show" />
+                <field name="order_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="platform_order_no" optional="show" />
+                
+                <field name="order_contract_amount" optional="show" />
+                <field name="order_loan_period" optional="show" />
+                <field name="order_loan_amount" optional="show" />
+                <field name="pay_fee" optional="show" />
+                <field name="actual_pay_amount" optional="show" />
+                <field name="order_apply_time" optional="show" />
+                <field name="order_bank_name" optional="show" />
+                <field name="order_bank_account_no" optional="show" />
+                <field name="pay_way_display" optional="show" />
+
+                <button name="test_pay" type="object" string="放款成功"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_pay_order_s4">
+        <field name="name">已失败订单搜索</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_user_phone"/>
+                <field name="platform_order_no"/>
+                <field name="product_id"/>
+                <field name="financial_time" string="放款时间"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_pay_order_s5">
+        <field name="name">已拒绝订单列表</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="refuse_time desc">
+                <field name="order_no" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="merchant_order_no"  optional="show" />
+                <field name="order_user_id" optional="show" />
+                <field name="pay_record_count" optional="show" />
+                <field name="payment_setting_id" optional="show" />
+                <field name="payment_way_id" optional="show" />
+                <field name="order_user_name" optional="show" />
+                <field name="order_user_phone" optional="show" />
+                <field name="order_bank_name" optional="hide" />
+                <field name="order_bank_account_no" optional="show" />
+                <field name="order_contract_amount" optional="show" />
+                <field name="order_loan_period" optional="show" />
+                <field name="order_loan_amount" optional="show" />
+                <field name="order_apply_time" optional="show" />
+                <field name="financial_time" string="放款时间" optional="show" />
+
+                <field name="refuse_time"  optional="show" />
+                <field name="refuse_reason" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_pay_order_s5">
+        <field name="name">已拒绝订单搜索</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="order_user_id"/>
+                <field name="order_user_name"/>
+                <field name="platform_order_no"/>
+                <field name="payment_setting_id"/>
+                <field name="product_id" />
+                <field name="financial_time" string="放款时间"/>
+                <field name="refuse_time"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- 放款凭证 -->
+    <record model="ir.ui.view" id="form_pay_order_voucher">
+        <field name="name">放款凭证</field>
+        <field name="model">pay.order</field>
+        <field name="arch" type="xml">
+            <form edit="0">
+                <sheet>
+                    <group>
+                        <field name="order_loan_amount" string="Amount"/>
+                        <field name="pay_voucher" string="Description"/>
+                        <field name="pay_complete_time" string="Time" readonly="1"/>
+                        <field name="financial_user_id" string="Name" options="{'no_open': 1}"/>
+                        <field name="order_bank_account_no" string="Account Number"/>
+                        <field name="payment_way_id" string="Method" options="{'no_open': 1}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="下载凭证" type="object" name="action_download_voucher" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- wizard -->
+    <record model="ir.ui.view" id="wizard_order_batch_approval">
+        <field name="name">待放款订单批量审核</field>
+        <field name="model">pay.order.batch.approval.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_ids" invisible="1" force_save="1"/>
+                        <field name="order_count" />
+                        <field name="approval_result" widget="radio" options="{'horizontal': true}"/>
+                        <field name="remark"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wizard_order_approval">
+        <field name="name">待放款订单审核</field>
+        <field name="model">pay.order.approval.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_id" invisible="1" force_save="1"/>
+                        <field name="approval_result" invisible="1" force_save="1"/>
+                        <field name="amount_desc" readonly="1"/>
+                        <field name="remark"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wizard_order_update">
+        <field name="name">修改订单向导</field>
+        <field name="model">pay.order.update.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_id" invisible="1" force_save="1"/>
+                        <field name="update_type" invisible="1" force_save="1"/>
+                    </group>
+                    <group invisible="update_type != '1'">
+                        <field name="old_name" />
+                        <field name="new_name" placeholder="请输入" required="update_type=='1'"/>
+                    </group>
+                    <group invisible="update_type != '2'">
+                        <field name="refuse_remark" required="update_type=='2'"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.server" id="act_pay_order_list">
+        <field name="name">待放款订单</field>
+        <field name="model_id" ref="model_loan_order"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_show_pay_status_1_list()
+        </field>
+    </record>
+    <!-- <record model="ir.actions.act_window" id="act_pay_order_s1">
+        <field name="name">待放款订单</field>
+        <field name="res_model">loan.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('order_status', '=', '3')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_pay_order_s1'
+        }
+        </field>
+        <field name="search_view_id" ref="search_pay_order_s1" />
+    </record> -->
+
+    <record model="ir.actions.act_window" id="act_pay_order_s2">
+        <field name="name">处理中订单</field>
+        <field name="res_model">pay.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('pay_status', '=', '2')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_pay_order_s2'
+        }
+        </field>
+        <field name="search_view_id" ref="search_pay_order_s2" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_pay_order_s3">
+        <field name="name">已成功订单</field>
+        <field name="res_model">pay.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('pay_status', '=', '3')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_pay_order_s3'
+        }
+        </field>
+        <field name="search_view_id" ref="search_pay_order_s3" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_pay_order_s4">
+        <field name="name">已失败订单</field>
+        <field name="res_model">pay.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('pay_status', '=', '4')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_pay_order_s4'
+        }
+        </field>
+        <field name="search_view_id" ref="search_pay_order_s4" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_pay_order_s5">
+        <field name="name">已拒绝订单</field>
+        <field name="res_model">pay.order</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('pay_status', '=', '5')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_pay_order_s5'
+        }
+        </field>
+        <field name="search_view_id" ref="search_pay_order_s5" />
+    </record>
+
+  </data>
+</odoo>

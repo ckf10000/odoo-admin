@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+    <record model="ir.rule" id="rule_fin_loan_order">
+        <field name="name">查看本商户的财务订单</field>
+        <field name="model_id" ref="model_loan_order"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_pay_order">
+        <field name="name">查看本商户的财务放款订单</field>
+        <field name="model_id" ref="model_pay_order"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_repay_order">
+        <field name="name">查看本商户的财务还款订单</field>
+        <field name="model_id" ref="model_repay_order"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_extension_record">
+        <field name="name">查看本商户的展期记录</field>
+        <field name="model_id" ref="model_extension_record"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_repay_record">
+        <field name="name">查看本商户的还款记录</field>
+        <field name="model_id" ref="model_repay_record"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_derate_record">
+        <field name="name">查看本商户的减免记录</field>
+        <field name="model_id" ref="model_derate_record"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_settle_record">
+        <field name="name">查看本商户的平账记录</field>
+        <field name="model_id" ref="model_settle_record"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_additional_record">
+        <field name="name">查看本商户的补单记录</field>
+        <field name="model_id" ref="model_additional_record"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_refund_record">
+        <field name="name">查看本商户的退款记录</field>
+        <field name="model_id" ref="model_refund_record"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="rule_fin_platform_flow">
+        <field name="name">查看本商户的资金流水</field>
+        <field name="model_id" ref="model_platform_flow"/>
+        <field name="domain_force">
+          ['|',('company_id','=',False),('company_id', 'in', company_ids)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+</data>
+</odoo>

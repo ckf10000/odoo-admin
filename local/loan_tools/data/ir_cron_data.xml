@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+    <data noupdate="1">  
+        <record id="api_caller_cron" model="ir.cron">  
+            <field name="name">Call API every minute</field>  
+            <field name="model_id" ref="model_api_caller"/>  
+            <field name="state">code</field>  
+            <field name="code">model.call_risktask_api()</field>  
+            <field name="interval_number">1</field>  
+            <field name="interval_type">minutes</field>  
+            <field name="numbercall">-1</field>  
+            <field name="active" eval="True"/>  
+        </record>  
+        <record id="call_hzrisktask_api" model="ir.cron">  
+            <field name="name">Call HZ Risk Task API every minute</field>  
+            <field name="model_id" ref="model_api_caller"/>  
+            <field name="state">code</field>  
+            <field name="code">model.call_hzrisktask_api()</field>  
+            <field name="interval_number">1</field>  
+            <field name="interval_type">minutes</field>  
+            <field name="numbercall">-1</field>  
+            <field name="active" eval="True"/>  
+        </record>         
+        <record id="call_riskscoretask_api" model="ir.cron">  
+            <field name="name">Call Risk Score Task API every minute</field>  
+            <field name="model_id" ref="model_api_caller"/>  
+            <field name="state">code</field>  
+            <field name="code">model.call_riskscoretask_api()</field>  
+            <field name="interval_number">1</field>  
+            <field name="interval_type">minutes</field>  
+            <field name="numbercall">-1</field>  
+            <field name="active" eval="True"/>  
+        </record>            
+    </data>  
+</odoo>

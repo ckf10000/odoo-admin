@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="loan_css.list">
+      <field name="name">loan_css list</field>
+      <field name="model">loan_css.loan_css</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="loan_css.action_window">
+      <field name="name">loan_css window</field>
+      <field name="res_model">loan_css.loan_css</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="loan_css.action_server">
+      <field name="name">loan_css server</field>
+      <field name="model_id" ref="model_loan_css_loan_css"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="loan_css" id="loan_css.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="loan_css.menu_1" parent="loan_css.menu_root"/>
+    <menuitem name="Menu 2" id="loan_css.menu_2" parent="loan_css.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="loan_css.menu_1_list" parent="loan_css.menu_1"
+              action="loan_css.action_window"/>
+    <menuitem name="Server to list" id="loan_css" parent="loan_css.menu_2"
+              action="loan_css.action_server"/>
+-->
+  </data>
+</odoo>

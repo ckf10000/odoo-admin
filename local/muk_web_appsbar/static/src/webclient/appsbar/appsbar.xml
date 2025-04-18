@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+
+	<t t-name="muk_web_appsbar.AppsBar">
+        <div class="mk_apps_sidebar_panel">
+			<div class="mk_apps_sidebar">
+                <div class="sidebar">
+                    <nav class="sidebar_nav">
+                        <ul class="sidebar_menu">
+                            <t t-if="currentAppSections.length">
+                                <t t-foreach="currentAppSections" t-as="menu" t-key="menu.id">
+                                    <t t-call="layui_theme_menu_side">
+                                        <t t-set="depth" t-value="0"/>
+                                        <t t-set="menu" t-value="menu"/>
+                                    </t>
+                                </t>
+                            </t>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <a id="toggleSidebar" class="btn btn-light toggle_sidebar">
+                        <i class="fa fa-navicon fa-lg"/>
+                    </a>
+                </div>
+			</div>
+		</div>
+	</t>
+
+    <t t-name="layui_theme_menu_side">
+        <t t-set="depth" t-value="(depth || 0) + 1"/>
+        <t t-if="menu.childrenTree.length === 0">
+            <a t-att-data-depth="depth"
+               t-on-click="() => this.onNavBarDropdownItemSelection(menu)"
+               style="display: flex"
+               class="nav-link"
+            >
+
+<!--                    <t t-log="menu.web_icon"></t>-->
+                <div t-if="depth === 1" class="sidebar_img" style="flex:1;">
+                    <t t-if="menu.web_icon">
+                        <t t-if="menu.web_icon.indexOf('fa') >= 0">
+                            <i t-attf-class="#{menu.web_icon}"></i>
+                        </t>
+                        <t t-else="">
+                            <img class="sidebar_img"
+                                 t-attf-src="data:image/png;base64,#{menu.web_icon_data}" style="flex:1;"/>
+                        </t>
+                    </t>
+                    <t t-else="">
+<!--                            <t t-log="menu.web_icon_data"></t>-->
+                        <t t-if="menu.web_icon_data">
+                            <img class="sidebar_img"
+                                 t-attf-src="data:image/png;base64,#{menu.web_icon_data}" style="flex:1;"/>
+                        </t>
+                        <t t-else="">
+                            <i class="fa fa-sun-o"></i>
+                        </t>
+                    </t>
+                </div>
+
+                <div t-if="depth !== 1" class="sidebar_img"
+                     t-attf-style="flex:1;#{'margin-right:'+((depth-1) * 8) +'px;' }"></div>
+                <span t-attf-style="flex: 8;#{depth===1 ?'font-size: 14px;':''}">
+                    <t t-esc="menu.name"/>
+                </span>
+            </a>
+
+        </t>
+        <t t-else="">
+            <t t-call="muk_web_appsbar.childrenTree.end">
+                <t t-set="menu" t-value="menu"/>
+            </t>
+        </t>
+    </t>
+
+    <t t-name="muk_web_appsbar.childrenTree.end">
+        <div>
+            <div t-attf-class="muk_web_appsbar.menu_entry_lvl_#{depth} nav-link"
+               t-att-data-depth="depth"
+                 class="appsbar_menu_size"
+                 t-on-click="_onAppsMenuItemClicked"
+               style=" display: flex; align-items: center;">
+            <div t-if="depth === 1" class="sidebar_img" style="flex:1;">
+                <t t-if="menu.web_icon">
+                    <t t-if="menu.web_icon.indexOf('fa ') >= 0">
+                        <i t-attf-class="#{menu.web_icon}"></i>
+                    </t>
+                    <t t-else="">
+                        <!-- <i class="fa fa-sun-o"></i>-->
+                        <img class="sidebar_img"
+                             t-attf-src="data:image/png;base64,#{menu.web_icon_data}" style="flex:1;"/>
+                    </t>
+                </t>
+                <t t-else="">
+                    <i class="fa fa-sun-o"></i>
+                </t>
+            </div>
+
+            <span t-attf-style="flex: 8;#{depth===1 ?'font-size: 14px;':'' }">
+                <t t-esc="menu.name"/>
+             </span>
+            <i t-if="menu.childrenTree" class="sub-menu-arrow fa fa-angle-down" style="float: right;flex: .5;"/>
+        </div>
+            <div class="invisible_menu menu_set">
+                <t t-foreach="menu.childrenTree" t-as="menu" t-key="menu.id">
+                    <li>
+                        <t t-call="layui_theme_menu_side"/>
+                     </li>
+                </t>
+            </div>
+        </div>
+    </t>
+	
+</templates>

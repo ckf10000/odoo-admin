@@ -1,0 +1,63 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="collection_reduction_examine_record_list">
+        <field name="name">金额减免记录</field>
+        <field name="model">collection.reduction.examine.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <field name="code" optional="show" string="减免申请编号"/>
+                <field name="order_no" optional="show" string="订单编号"/>
+                <field name="loan_uid" optional="show" string="UserID"/>
+                <field name="loan_user_name" optional="show" string="姓名"/>
+                <field name="loan_user_phone" optional="show" string="手机号码"/>
+                <field name="product_name" optional="show" string="产品名称"/>
+                <field name="application_time" optional="show" string="申请时间"/>
+                <field name="derate_amount" optional="show" string="减免金额"/>
+                <field name="collection_phase_id" optional="show" string="催收阶段"/>
+                <field name="reduction_type" optional="show" string="减免类型"/>
+                <field name="create_uid" optional="show" string="申请人"/>
+                <field name="application_argument" optional="show" string="申请理由"/>
+                <field name="validity_date" optional="show" string="有效期"/>
+                <field name="audit_time" optional="show" string="催收审核时间"/>
+                <field name="finance_audit_date" optional="show" string="财务审核时间"/>
+                <field name="finance_user_id" optional="show" string="财务审核人"/>
+                <field name="auto_result" optional="show" string="审核结果"/>
+                <field name="reduction_remark" optional="show" string="催收备注"/>
+                <field name="finance_remark" optional="show" string="财务备注"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- search view -->
+    <record model="ir.ui.view" id="collection_reduction_examine_record_search">
+        <field name="name">金额减免记录</field>
+        <field name="model">collection.reduction.examine.record</field>
+        <field name="arch" type="xml">
+            <search>
+<!--                <field name="code" optional="show"/>-->
+                <field name="order_id" optional="show"/>
+                <field name="loan_uid" optional="show"/>
+<!--                <field name="phone_no" optional="show"/>-->
+<!--                <field name="product_name" optional="show"/>-->
+                <field name="reduction_type" optional="show"/>
+                <field name="application_time" optional="show" string="申请时间"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="collection_reduction_examine_record_action">
+        <field name="name">金额减免记录(催收)</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="loan_collection.model_collection_reduction_examine_record"/>
+        <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+        <field name="code">
+            action = model.action_server_collection_reduction_record()
+        </field>
+    </record>
+
+
+  </data>
+</odoo>

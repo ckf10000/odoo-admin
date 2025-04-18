@@ -1,0 +1,283 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* loan.settings
+# 
+# Translators:
+# ckf10000@sina.com, 2024
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-29 10:44+0000\n"
+"PO-Revision-Date: 2023-10-26 23:09+0000\n"
+"Last-Translator: Chloe Wang, 2024\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/odoo/teams/41243/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_setting_menu_root
+msgid "Settings"
+msgstr "设置"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_setting_user_management_menu
+msgid "User Management"
+msgstr "用户管理"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_settings_role_permission_menu
+msgid "Role&Permission Management"
+msgstr "角色&权限管理"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_setting_user_menu
+msgid "User"
+msgstr "用户"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_setting_team_menu
+msgid "Team"
+msgstr "团队"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_setting_merchant_menu
+msgid "Merchant"
+msgstr "商户"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_settings_menu
+msgid "Menu"
+msgstr "菜单"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__sequence
+msgid "UserID"
+msgstr "用户ID"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__login
+msgid "Login"
+msgstr "用户名"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__password
+msgid "Password"
+msgstr "密码"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__name
+msgid "Username"
+msgstr "姓名"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__phone
+msgid "Phone"
+msgstr "手机号码"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__lang
+msgid "Language"
+msgstr "习惯语言"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__tz
+msgid "Timezone"
+msgstr "所属时区"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__merchant_id
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__merchant_id
+msgid "Belong Merchant"
+msgstr "所属商户"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__team_id
+msgid "Belong Team"
+msgstr "所属团队"
+
+#. module: loan_settings
+#: model:ir.ui.menu,name:loan_settings.loan_settings_role_menu
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__role_ids
+msgid "Role"
+msgstr "角色"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__is_collection
+msgid "Is Collection"
+msgstr "是否为催收员"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__subordinates_ids
+msgid "Subordinates"
+msgstr "关联下属"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__active
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__active
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__active
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__active
+msgid "Enable"
+msgstr "状态"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__create_uid
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__create_uid
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__create_uid
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__formatted_create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__formatted_create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__formatted_create_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__formatted_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__write_uid
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__write_uid
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__write_uid
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__write_uid
+msgid "Last Updated by"
+msgstr "修改人"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_user__formatted_write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__formatted_write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__formatted_write_date
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__formatted_write_date
+msgid "Last Updated on"
+msgstr "修改时间"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__sequence
+msgid "MerchantID"
+msgstr "商户ID"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__name
+msgid "Merchant Name"
+msgstr "商户名称"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__contact_user
+msgid "Contact Person"
+msgstr "对接人"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_merchant__phone
+msgid "Contact Information"
+msgstr "联系方式"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__sequence
+msgid "TeamID"
+msgstr "团队ID"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__sort
+msgid "Sorted"
+msgstr "排序"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__name
+msgid "Teamname"
+msgstr "团队名称"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_team__parent_id
+msgid "Parent TeamID"
+msgstr "上级团队"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__sequence
+msgid "RoleID"
+msgstr "角色ID"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__name
+msgid "Role Name"
+msgstr "角色"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__access_limit
+msgid "Allow Access Date"
+msgstr "允许登录时间"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__access_limit__unlimited
+msgid "unlimited"
+msgstr "不限"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__access_limit__custom
+msgid "custom"
+msgstr "自定义"
+
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__start_date
+msgid "Start Date"
+msgstr "开始日期"
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__end_date
+msgid "End Date"
+msgstr "截止日期"
+
+
+#. module: loan_settings
+#: model:ir.model.fields,field_description:loan_settings.field_loan_settings_role__menu_ids
+msgid "Menu"
+msgstr "菜单"
+
+
+#. module: loan_settings
+#: model:ir.ui.view.fields,field_description:loan_settings.view_loan_settings_user_tree__action_create
+#: model:ir.ui.view.fields,field_description:loan_settings.view_loan_settings_team_tree__action_create
+#: model:ir.ui.view.fields,field_description:loan_settings.view_loan_settings_role_tree__action_create
+#: model:ir.ui.view.fields,field_description:loan_settings.view_loan_settings_team_merchant__action_create
+msgid "Create"
+msgstr "新增"
+
+
+#. module: loan_settings
+#: model:ir.ui.view.fields,field_description:loan_settings.view_loan_settings_user_tree__Edit
+msgid "Edit"
+msgstr "编辑"
+
+
+
+
+

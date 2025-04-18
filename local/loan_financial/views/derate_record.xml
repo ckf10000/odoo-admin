@@ -1,0 +1,212 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_derate_record_s1">
+        <field name="name">减免审核列表</field>
+        <field name="model">derate.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <header>
+                    <button name="action_fin_derate_batch_approval" type="object" string="批量审核" class="oe_highlight" display="always"/>
+                    <button name="action_fin_derate_setting" type="object" string="自动审核配置"  display="always"/>
+                </header>
+                <field name="derate_no" optional="show" />
+                <field name="order_id" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="order_apply_time" optional="show" />
+
+                <field name="derate_amount" optional="show" />
+                <field name="derate_type" optional="show" />
+                <field name="apply_user_id" optional="show" />
+                <field name="apply_reason" optional="hide" />
+                <field name="valid_time" string='有效期' optional="show" />
+                <field name="col_approval_time" optional="show" />
+                <button name="action_show_fin_approval" type="object" string="通过" context="{'flag': 1}"/>
+                <button name="action_show_fin_approval" type="object" string="拒绝" context="{'flag': 0}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_derate_record_s1">
+        <field name="name">减免审核搜索</field>
+        <field name="model">derate.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="derate_no"/>
+                <field name="order_no"/>
+                <field name="loan_uid" />
+                <field name="loan_user_phone"/>
+                <field name="product_id" string="产品名称"/>
+                <field name="derate_type" />
+                <field name="order_apply_time" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_derate_record">
+        <field name="name">减免记录列表</field>
+        <field name="model">derate.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="col_approval_time desc">
+                <field name="derate_no" optional="show" />
+                <field name="order_id" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="order_apply_time" optional="show" />
+                <field name="derate_amount" optional="show" />
+                <field name="derate_type" optional="show" />
+                <field name="apply_user_id" optional="show" />
+                <field name="apply_reason" optional="show" />
+                <field name="valid_time" optional="show" />
+
+                <field name="col_approval_time" optional="show" />
+                <field name="col_approval_user_id" optional="hide" />
+                <field name="fin_approval_time" optional="show" />
+                <field name="fin_approval_user_id" optional="show" />
+                <field name="fin_approval_status" string="审核结果" optional="show" />
+                <field name="col_approval_remark" optional="show" />
+                <field name="fin_approval_remark" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_derate_record">
+        <field name="name">减免记录搜索</field>
+        <field name="model">derate.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="derate_no"/>
+                <field name="order_no"/>
+                <field name="loan_uid" />
+                <field name="loan_user_phone" />
+                <field name="product_id" />
+                <field name="derate_type" />
+                <field name="order_apply_time" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_derate_record_apply">
+        <field name="name">减免申请表单</field>
+        <field name="model">derate.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="order_id" invisible="1"/>
+                    <field name="fin_approval_status" invisible="1"/>
+                    <group>
+                        <field name="order_no" />
+                        <field name="loan_user_name" />
+                        <field name="loan_cycle" readonly="1" force_save="1"/>
+                        <field name="max_derate_amount" readonly="1" force_save="1" />
+                        <field name="derate_amount" required="1" />
+                        <field name="derate_type"  options="{'horizontal': True}"/>
+                        <field name="valid_time" invisible="derate_type=='2'" />
+                        <field name="apply_reason" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="提交" type="object" name="action_fin_create" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- wizard -->
+    <record model="ir.ui.view" id="wizard_derate_setting">
+        <field name="name">Remission Record Configuration Wizard</field>
+        <field name="model">derate.record.setting.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="auto_pass" string="Is Enable Automatic Review" widget="boolean_toggle"/>
+                        <field name="max_amount" string="Max Remission Amount" invisible="not auto_pass" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    <button string="Submit" type="object" name="action_setting" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wizard_fin_derate_approval">
+        <field name="name">Review of Amount Remission Wizard</field>
+        <field name="model">derate.record.approval.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="approval_type" invisible="1" />
+                        <field name="derate_id" invisible="1"/>
+                        <field name="approval_result" invisible="1" force_save="1"/>
+                        <field name="desc" string="Aplication of Amount Remission" readonly="1"/>
+                        <field name="remark" string="Remark"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    <button string="Submit" type="object" name="action_approval" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wizard_fin_derate_batch_approval">
+        <field name="name">Amount Remission Batch Review</field>
+        <field name="model">derate.record.batch.approval.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="approval_type" invisible="1"/>
+                        <field name="derate_record_ids" invisible="1" />
+                        <field name="desc" string="The Selected Order Quantity" readonly="1" force_save="1"/>
+                        <field name="approval_result" string="Batch Review" widget="radio" options="{'horizontal': true}"/>
+                        <field name="remark" string="Remark"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    <button string="Submit" type="object" name="action_approval" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- action views -->
+    <record model="ir.actions.act_window" id="act_derate_record_s1">
+        <field name="name">金额减免审核</field>
+        <field name="res_model">derate.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('fin_approval_status', '=', '1')]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_derate_record_s1'
+        }
+        </field>
+        <field name="search_view_id" ref="search_derate_record_s1" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_derate_record_f">
+        <field name="name">金额减免记录</field>
+        <field name="res_model">derate.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('fin_approval_status', 'in', ['2', '3'])]</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_derate_record'
+        }
+        </field>
+        <field name="search_view_id" ref="search_derate_record" />
+    </record>
+
+
+  </data>
+</odoo>

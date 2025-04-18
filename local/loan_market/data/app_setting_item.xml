@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="loan.app.setting.item" id="item_1">
+            <field name="item_name">活体阙值</field>
+            <field name="enum_code">1</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_1_sub_1">
+            <field name="sub_item_name">对比通过率</field>
+            <field name="sub_item_key">compare_pass_rate</field>
+            <field name="sub_item_value_type">pct</field>
+            <field name="item_id" ref="item_1" />
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_1_sub_2">
+            <field name="sub_item_name">每日调用次数</field>
+            <field name="sub_item_key">daily_call_count</field>
+            <field name="sub_item_value_type">int</field>
+            <field name="item_id" ref="item_1" />
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_1_sub_3">
+            <field name="sub_item_name">填资验证允许调用次数</field>
+            <field name="sub_item_key">register_call_count</field>
+            <field name="sub_item_value_type">int</field>
+            <field name="item_id" ref="item_1" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_2">
+            <field name="item_name">1:1阙值</field>
+            <field name="enum_code">2</field>
+            <field name="sequence">2</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_2_sub_1">
+            <field name="sub_item_name">对比通过率</field>
+            <field name="sub_item_key">compare_pass_rate</field>
+            <field name="sub_item_value_type">pct</field>
+            <field name="sub_item_default_value"></field>
+            <field name="item_id" ref="item_2" />
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_2_sub_2">
+            <field name="sub_item_name">每日调用次数</field>
+            <field name="sub_item_key">daily_call_count</field>
+            <field name="sub_item_value_type">int</field>
+            <field name="item_id" ref="item_2" />
+        </record>
+
+        <record model="loan.app.setting.sub.item" id="item_2_sub_3">
+            <field name="sub_item_name">填资验证允许调用次数</field>
+            <field name="sub_item_key">register_call_count</field>
+            <field name="sub_item_value_type">int</field>
+            <field name="item_id" ref="item_2" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_3">
+            <field name="item_name">OCR阙值</field>
+            <field name="enum_code">3</field>
+            <field name="sequence">3</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_3_sub_1">
+            <field name="sub_item_name">填资环节允许调用次数</field>
+            <field name="sub_item_key">register_call_count</field>
+            <field name="sub_item_value_type">int</field>
+            <field name="item_id" ref="item_3" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_4">
+            <field name="item_name">AppsFlyer dev key</field>
+            <field name="enum_code">4</field>
+            <field name="sequence">4</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_4_sub_1">
+            <field name="sub_item_name">AppsFlyer dev key</field>
+            <field name="sub_item_key">af_key</field>
+            <field name="sub_item_value_type">char</field>
+            <field name="item_id" ref="item_4" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_5">
+            <field name="item_name">借款协议</field>
+            <field name="enum_code">5</field>
+            <field name="sequence">5</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_5_sub_1">
+            <field name="sub_item_name">借款协议</field>
+            <field name="sub_item_key">loan_protocol</field>
+            <field name="sub_item_value_type">text</field>
+            <field name="item_id" ref="item_5" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_6">
+            <field name="item_name">隐私协议</field>
+            <field name="enum_code">6</field>
+            <field name="sequence">6</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_6_sub_1">
+            <field name="sub_item_name">隐私协议</field>
+            <field name="sub_item_key">privacy_protocol</field>
+            <field name="sub_item_value_type">text</field>
+            <field name="item_id" ref="item_6" />
+        </record> 
+
+        <record model="loan.app.setting.item" id="item_7">
+            <field name="item_name">授权文案</field>
+            <field name="enum_code">7</field>
+            <field name="sequence">7</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_7_sub_1">
+            <field name="sub_item_name">授权文案</field>
+            <field name="sub_item_key">auth_content</field>
+            <field name="sub_item_value_type">text</field>
+            <field name="item_id" ref="item_7" />
+        </record> 
+
+        <record model="loan.app.setting.item" id="item_8">
+            <field name="item_name">联系我们</field>
+            <field name="enum_code">8</field>
+            <field name="sequence">8</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_8_sub_1">
+            <field name="sub_item_name">客服电话</field>
+            <field name="sub_item_key">cs_tel</field>
+            <field name="sub_item_value_type">char</field>
+            <field name="item_id" ref="item_8" />
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_8_sub_2">
+            <field name="sub_item_name">客服邮箱</field>
+            <field name="sub_item_key">cs_email</field>
+            <field name="sub_item_value_type">char</field>
+            <field name="item_id" ref="item_8" />
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_8_sub_3">
+            <field name="sub_item_name">客服时间</field>
+            <field name="sub_item_key">cs_work_time</field>
+            <field name="sub_item_value_type">char</field>
+            <field name="item_id" ref="item_8" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_9">
+            <field name="item_name">关于我们</field>
+            <field name="enum_code">9</field>
+            <field name="sequence">9</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_9_sub_1">
+            <field name="sub_item_name">关于我们</field>
+            <field name="sub_item_key">about_us</field>
+            <field name="sub_item_value_type">text</field>
+            <field name="item_id" ref="item_9" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_10">
+            <field name="item_name">纯新产品数配置</field>
+            <field name="enum_code">10</field>
+            <field name="sequence">10</field>
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_10_sub_1">
+            <field name="sub_item_name">新客产品展示数量</field>
+            <field name="sub_item_key">new_product_count</field>
+            <field name="sub_item_value_type">int</field>
+            <field name="item_id" ref="item_10" />
+        </record>
+        <record model="loan.app.setting.sub.item" id="item_10_sub_2">
+            <field name="sub_item_name">新客产品池</field>
+            <field name="sub_item_key">product_pool_ids</field>
+            <field name="sub_item_value_type">one2many</field>
+            <field name="item_id" ref="item_10" />
+        </record>
+
+        <record model="loan.app.setting.item" id="item_11">
+            <field name="item_name">数据授权获取方式配置</field>
+            <field name="enum_code">11</field>
+            <field name="sequence">11</field>
+        </record>
+
+        <record model="loan.app.setting.sub.item" id="item_11_sub_1">
+            <field name="sub_item_name">数据授权获取方式</field>
+            <field name="sub_item_key">data_auth_type</field>
+            <field name="sub_item_value_type">many2one</field>
+            <field name="sub_item_default_value"></field>
+            <field name="item_id" ref="item_11" />
+            
+        </record>
+
+        <record model="loan.app.setting.auth.mode" id="mode_1">
+            <field name="enum_code">1</field>
+            <field name="mode_name">一次性获取</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="loan.app.setting.auth.mode" id="mode_2">
+            <field name="enum_code">2</field>
+            <field name="mode_name">按需获取</field>
+            <field name="sequence">2</field>
+        </record>
+    </data>
+</odoo>

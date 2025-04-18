@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <menuitem name="财务" id="menu_root_loan_financial" sequence="2">
+            <menuitem name="放款管理" id="menu_payment_manage" sequence="1">
+                <menuitem name="待放款订单" id="menu_pay_order_s1" sequence="1" action="act_pay_order_list" />
+                <menuitem name="处理中订单" id="menu_pay_order_s2" sequence="2" action="act_pay_order_s2" />
+                <menuitem name="已成功订单" id="menu_pay_order_s3" sequence="3" action="act_pay_order_s3" />
+                <menuitem name="已失败订单" id="menu_pay_order_s4" sequence="4" action="act_pay_order_s4" />
+                <menuitem name="已拒绝订单" id="menu_pay_order_s5" sequence="5" action="act_pay_order_s5" />
+            </menuitem>
+
+            <menuitem name="还款管理" id="menu_repayment_manage" sequence="2">
+                <menuitem name="待还款订单" id="menu_repay_order_s1" sequence="1" action="act_repay_order_s1" />
+                <menuitem name="已还款订单" id="menu_repay_order_s2" sequence="2" action="act_repay_order_s2" />
+                <menuitem name="展期记录" id="menu_extension_record" sequence="3" action="act_extension_record" />
+                <menuitem name="收款记录" id="menu_repay_record" sequence="4" action="act_repay_record" />
+            </menuitem>
+
+            <menuitem name="减免管理" id="menu_reduction_manage" sequence="3">
+                <menuitem name="金额减免审核" id="menu_derate_record_s1" sequence="1" action="act_derate_record_s1" />
+                <menuitem name="金额减免记录" id="menu_derate_record_f" sequence="2" action="act_derate_record_f" />
+                <menuitem name="财务平账" id="menu_settle_order" sequence="3" action="act_settle_order" />
+                <menuitem name="财务平账明细" id="menu_settle_record" sequence="4" action="act_settle_record" />
+                <menuitem name="补单审核" id="menu_additional_record" sequence="5" action="act_additional_record" />
+            </menuitem>
+
+            <menuitem name="退款管理" id="menu_refund_manage" sequence="4">
+                <menuitem name="待退款订单" id="menu_refund_s1" sequence="1" action="act_refund_order" />
+                <menuitem name="退款中订单" id="menu_refund_s2" sequence="2" action="act_refund_record_s2" />
+                <menuitem name="已退款订单" id="menu_refund_s3" sequence="3" action="act_refund_record_s3" />
+                <menuitem name="已失败订单" id="menu_refund_s4" sequence="4" action="act_refund_record_s4" />
+                <menuitem name="已拒绝订单" id="menu_refund_s5" sequence="5" action="act_refund_record_s5" />
+            </menuitem>
+
+            <menuitem name="订单管理" id="menu_order_manage" sequence="5" action="act_loan_order">
+            </menuitem>
+
+            <menuitem name="资金流水明细" id="menu_platform_flow" sequence="6" action="act_platform_flow">
+            </menuitem>
+
+            <menuitem name="支付渠道配置" id="menu_payment_channel_manage" sequence="7">
+                <menuitem name="放款/退款渠道" id="menu_payment_setting" sequence="1" action="act_payment_setting" />
+                <menuitem name="还款渠道" id="menu_repayment_setting" sequence="2" action="act_repayment_setting" />
+
+                <menuitem name="支付渠道配置" id="menu_payment_channel" sequence="99" action="act_repayment_channel" />
+            </menuitem>
+
+            <menuitem name="结算中心" id="menu_settlement_manage" sequence="8">
+            </menuitem>
+
+            <menuitem name="黑名单管理" id="menu_black_user_manage" sequence="9" action="act_black_list">
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

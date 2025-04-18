@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="collection_user_contact_form">
+            <field name="name">用户联系人信息</field>
+            <field name="model">collection.user.contact</field>
+            <field name="arch" type="xml">
+                <form string="补充联系人">
+                    <sheet>
+                        <group>
+                            <field name="name" string="姓名" required="1" optional="show"/>
+                            <field name="phone_no" string="电话号码" required="1" optional="show"/>
+                            <field name="relation_selection" string="关系" required="1" optional="show"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+       
+
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="payment.channel" id="payment_channel_1">
+            <field name="channel_name">SfPay</field>
+            <field name="enum_code">1</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record model="payment.channel" id="payment_channel_2">
+            <field name="channel_name">CoinPay</field>
+            <field name="enum_code">2</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record model="payment.way" id="payment_way_1">
+            <field name="way_name">Bank</field>
+            <field name="enum_code">1</field>
+            <field name="sequence">1</field>
+        </record>
+    </data>
+</odoo>

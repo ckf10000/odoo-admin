@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <menuitem name="Collection" id="menu_root_collection" sequence="3">
+            <menuitem name="Collection Case Management" id="menu_collection_submenu_manage" sequence="1">
+                <menuitem name="Collection Phase Configuration" id="menu_collection_stage_setting" sequence="1" action="collection_stage_setting_action" />
+                <menuitem name="Order Allocation Management" id="menu_collection_points" sequence="2" action="collection_points_action" />
+            </menuitem>
+            <menuitem name="Collection Order Management" id="menu_collection_order_manage" sequence="2">
+                <menuitem name="Pending Assignation List" id="menu_collection_order_allot" sequence="1" action="collection_order_allot_action" />
+                <menuitem name="Pending Transaction List" id="menu_collection_order_pending" sequence="2" action="collection_order_pending_action" />
+                <menuitem name="List of Order In Process" id="menu_collection_order_process" sequence="3" action="collection_order_process_action" />
+            </menuitem>
+            <menuitem name="Amount Remission" id="menu_collection_reduction_management" sequence="3">
+                <menuitem name="Review of Amount Remission" id="menu_collection_reduction_examine" sequence="1" action="act_derate_record_col_s1" />
+                <menuitem name="Amount Remission Record" id="menu_collection_reduction_examine_record" sequence="2" action="act_derate_record_col" />
+            </menuitem>
+            <menuitem name="Reorder Record" id="menu_replenishment_record" sequence="4" action="act_additional_record_col" />
+            <menuitem name="Extension Record" id="menu_collection_extension_record" sequence="5" action="act_extension_record_col" />
+            <menuitem name="Blacklist managemen" id="menu_blacklist_management" sequence="6" action="loan_financial.act_black_list" />
+        </menuitem>
+    </data>
+</odoo>

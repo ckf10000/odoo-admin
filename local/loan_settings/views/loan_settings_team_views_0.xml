@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    tree view  -->
+    <record id="view_loan_settings_team_tree" model="ir.ui.view">
+        <field name="name">Team List</field>
+        <field name="model">loan.settings.team</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="1" edit="0" delete="1">
+                <header>
+                    <button class="btn-primary" name="action_create" type="object" string="Add" display="always"/>
+                </header>
+                <field name="sequence" readonly="1"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="sort"/>
+                <field name="merchant_id" optional="show"/>
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="show"/>
+                <field name="write_uid" optional="show"/>
+                <field name="write_date" optional="show"/>
+                <!-- action_edit，action_delete 都只是一个空方法，不需具体定义，Odoo会自动调用 write，unlink 方法-->
+                <button name="action_edit" type="object" string="Edit" icon="fa-pencil"/>
+                <button name="toggle_active" type="object" string="Delete" icon="fa-trash"
+                        confirm="Deletion is irreversible. Are you sure you want to delete?"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view  -->
+    <record id="view_loan_settings_team_form" model="ir.ui.view">
+        <field name="name">Team Detail</field>
+        <field name="model">loan.settings.team</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="sequence" invisible="1"/>
+                    <group>
+                        <field name="name" required="1" readonly="0" placeholder="请输入"/>
+                        <field name="merchant_id" required="1" placeholder="请选择" options="{'no_open': 'True','no_create':True}" readonly="parent_id!=False"/>
+                        <field name="parent_id" widget="many2one_tags" placeholder="请选择" options="{'no_open': 'True','no_create':True}" readonly="merchant_id==False"/>
+                        
+                        <field name="sort" placeholder="请输入数值" options="{'type': 'number', 'step': 1}"/>
+                    </group>
+                    <footer>
+                        <button string="取消" class="btn btn-default" special="cancel"/>
+                        <button string="确认" special="save" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_loan_setting_team_search">
+        <field name="name">Team Search</field>
+        <field name="model">loan.settings.team</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="merchant_id" options="{'no_open': 'True','no_create':True}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="window_loan_setting_team_act" model="ir.actions.act_window">
+        <field name="name"> </field>
+        <field name="res_model">loan.settings.team</field>
+        <field name="view_mode">tree</field>
+        <field name="limit">15</field>
+<!--        <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>-->
+        <field name="search_view_id" ref="view_loan_setting_team_search"/>
+    </record>
+</odoo>

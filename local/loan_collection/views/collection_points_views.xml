@@ -1,0 +1,95 @@
+<odoo>
+    <data>
+        <!-- views -->
+        <record model="ir.ui.view" id="collection_points_list">
+            <field name="name">Order Allocation Management</field>
+            <field name="model">collection.points</field>
+            <field name="arch" type="xml">
+                <tree create='0' import="0" export_xlsx="0" limit="20" default_order="department_id,today_processed_qty desc,unprocessed_qty desc">
+                    <field name="sequence" optional="show"/>
+                    <field name="user_id" options="{'no_open': 'True','no_create':True}" optional="show"/>
+                    <field name="group_id" options="{'no_open': 'True','no_create':True}" optional="show"/>
+                    <field name="collection_stage_id" options="{'no_open': 'True','no_create':True}" optional="show"/>
+                    <field name="department_id" options="{'no_open': 'True','no_create':True}" optional="show"/>
+                    <field name="today_processed_qty" optional="show"/>
+                    <field name="unprocessed_qty" optional="show"/>
+                    <field name="max_daily_intake" optional="show"/>
+                    <field name="loan_product_ids_str" optional="show" class="multiLine-item-pre-wrap" />
+                    <field name="is_input" optional="show" widget="boolean_toggle"/>
+                    <button name="action_manager" type="object" string="Management"/>
+                    <button name="action_team_adjustment" type="object" string="Team Adjustment"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="collection_points_form">
+            <field name="name">Order Allocation Management</field>
+            <field name="model">collection.points</field>
+            <field name="arch" type="xml">
+                <form string="Order Allocation Management">
+                    <sheet>
+                        <group>
+                            <field name="user_id" readonly="1" options="{'no_open': 'True','no_create':True}"/>
+                            <field name="collection_stage_id" placeholder="Please Enter" required="1"
+                                   options="{'no_open': 'True','no_create':True}"/>
+                            <field name="max_daily_intake" placeholder="Please enter a non-negative integer" required="1"/>
+                            <field name="loan_product_ids" widget="many2many_checkboxes" required="1"/>
+                            <field name="is_input" optional="show" widget="boolean_toggle"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="collection_points_form2">
+            <field name="name">Order Allocation Management - Team Adjustment</field>
+            <field name="model">collection.points</field>
+            <field name="arch" type="xml">
+                <form string="Order Allocation Management">
+                    <sheet>
+                        <group>
+                            <field name="user_id" readonly="1" options="{'no_open': 'True','no_create':True}"/>
+                            <label for="department_id" string="Membership Group"/>
+                            <div>
+                                <field name="department_id" placeholder="Please Enter" class="oe_inline"/>
+                                <field name="sec_department_id" placeholder="Please Enter" class="oe_inline"
+                                       domain="[('parent_id', '=', department_id)]"
+                                       invisible="not department_id"
+                                />
+                            </div>
+<!--                            <field name="department_id" string="所属团队" required="1" options="{'no_open': 'True','no_create':True}"/>-->
+                            <field name="child_user_ids" domain="['|', ('department_id', 'in', [department_id,sec_department_id]), ('department_id.parent_id', '=', department_id)]" widget="many2many_checkboxes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="collection_points_search">
+            <field name="name">Order Allocation Management</field>
+            <field name="model">collection.points</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="user_id" optional="show"/>
+                    <field name="group_id" optional="show"/>
+                    <field name="department_id" optional="show"/>
+                    <field name="is_input_select" optional="show"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="collection_points_action">
+            <field name="name">Order Allocation Management</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="loan_collection.model_collection_points"/>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="code">
+                action = model.action_server_collection_points()
+            </field>
+        </record>
+
+    </data>
+</odoo>

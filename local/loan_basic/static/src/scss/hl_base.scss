@@ -1,0 +1,234 @@
+.o_action_manager {
+  // zxy
+  .o_list_view {
+    padding: 20px 20px;
+    background-color: #eee;
+    &.o_field_x2many_list {
+      background-color: transparent;
+    }
+
+    .o_control_panel_breadcrumbs {
+      min-width: initial;
+    }
+    .btn {
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .o_content {
+      margin-top: 10px;
+      .o_list_renderer {
+        .o_list_table {
+          thead {
+            .o_list_number_th {
+              text-align: left;
+            }
+          }
+          tbody > tr > td:not(.o_list_record_selector).o_list_number {
+            text-align: left;
+            direction: ltr;
+          }
+
+          td {
+            white-space: nowrap !important;
+          }
+          a {
+            // color: #1890ff;
+            text-decoration: none;
+          }
+          th {
+            max-width: 300px !important;
+          }
+        }
+      }
+    }
+
+    .form-check-input:disabled {
+      opacity: 1;
+    }
+  }
+}
+.btn {
+  line-height: 1;
+}
+.o_dialog {
+  .modal-header {
+    .modal-title {
+      font-weight: bold;
+    }
+  }
+  .modal-footer {
+    justify-content: flex-end !important;
+  }
+
+  .modal-footer {
+    footer {
+      justify-content: flex-end !important;
+    }
+    .o_form_buttons_edit {
+      justify-content: flex-end !important;
+    }
+  }
+
+  .o_form_view {
+    .o_list_table > thead > tr > :first-child,
+    .o_list_table > tbody > tr > :first-child,
+    .o_list_table > tfoot > tr > :first-child {
+      padding-left: 0px;
+    }
+    .o_horizontal_separator {
+      margin-bottom: 0px !important;
+    }
+    .register_call_count {
+      width: 192px;
+    }
+  }
+  .modal-sm {
+    max-width: 370px;
+    .o_inner_group {
+      grid-template-columns: fit-content(150px) minmax(0, 1fr);
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.modal-sm {
+  max-width: 370px;
+  .o_inner_group {
+    grid-template-columns: fit-content(150px) minmax(0, 1fr);
+    margin-bottom: 0px;
+  }
+}
+
+.o_form_view {
+  .o_form_sheet_bg {
+    max-width: 1920px;
+    .o_field_widget {
+      .o_input_dropdown {
+        .dropdown-menu.show {
+          min-width: 15%;
+        }
+      }
+    }
+  }
+  .o_wrap_label {
+    text-align: right;
+  }
+  .o_group .o_wrap_label .o_form_label {
+    font-weight: bold;
+    color: black;
+  }
+  .o_horizontal_separator:empty {
+    height: auto;
+  }
+}
+
+.o_form_view_container > .o_content {
+  .o_form_renderer {
+    flex-direction: row !important;
+  }
+}
+
+.audit_order_user_info {
+  flex: 3 1 !important;
+}
+.audit_order_op {
+  flex: 1 0 !important;
+}
+.audit_order_op_separator {
+  box-shadow: 0 1px 0 #e6e6e6;
+}
+
+.o_cp_searchview {
+  .o_field_widget {
+    // width: 19%;
+    min-width: 150px;
+  }
+}
+
+.form-switch .form-check-input:checked {
+  background-color: #4184ff;
+  border-color: #4184ff;
+}
+
+// zxy
+.o_form_view .o_input {
+  // border-bottom: 1px solid #999999;
+}
+// zxy
+.o_field_invalid .o_input {
+  border: 1px solid #dc3545;
+}
+
+.o_navbar {
+  .o_main_navbar {
+    .o-dropdown {
+      .dropdown-menu {
+        background: $mk_color_brand;
+        min-width: 7rem;
+        .dropdown-item {
+          color: #fff;
+          &:hover {
+            background: #4184ff;
+          }
+        }
+      }
+    }
+    // .o_menu_sections {
+    //     .o_nav_entry, .dropdown-toggle {
+    //         min-width: 120px;
+    //     }
+    // }
+  }
+}
+
+.fixed-top {
+  z-index: 9997;
+}
+
+// zxy start
+.o_input {
+  border-width: 1px;
+  border-radius: 2px;
+}
+
+.o_field_widget .o_input_dropdown .o_dropdown_button,
+.o_field_widget .o_input_dropdown .o_datepicker_button,
+.o_field_widget .o_datepicker .o_dropdown_button,
+.o_field_widget .o_datepicker .o_datepicker_button {
+  right: 8px;
+}
+
+select {
+  background-position: right 8px top 12px;
+}
+
+.o_list_table {
+  table-layout: auto !important;
+}
+.multiLine-item-pre-wrap {
+  white-space: pre-wrap !important;
+}
+.o_action_manager
+  .o_list_view
+  .o_content
+  .o_list_renderer
+  .o_list_table
+  td.multiLine-item-pre-wrap {
+  white-space: pre-wrap !important;
+}
+
+.o_group.align-items-start {
+  .o_horizontal_separator {
+    margin-top: 0 !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+.o_last_breadcrumb_item {
+  .min-w-0.text-truncate {
+    font-weight: 500;
+  }
+}
+
+// zxy end

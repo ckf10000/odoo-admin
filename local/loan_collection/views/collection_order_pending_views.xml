@@ -1,0 +1,283 @@
+<odoo>
+    <data>
+        <!-- Views-->  
+        <record model="ir.ui.view" id="collection_order_pending_list">  
+            <field name="name">Pending Transaction List</field>
+            <field name="model">collection.order</field>  
+            <field name="arch" type="xml">  
+                <tree create="false" import="false" export_xlsx="false" limit="20">  
+                    <field name="order_no" />
+                    <field name="loan_uid" />
+                    <field name="order_type" />
+                    <field name="name" />
+                    <field name="phone_no" />
+                    <field name="card_num" />
+                    <field name="application_time" />
+                    <field name="contract_amount" />
+                    <field name="borrow_money_date" />
+                    <field name="repay_date" widget="date"/>
+                    <field name="pending_amount" />
+                    <field name="overdue_days" />
+                    <field name="collection_stage" />
+                    <field name="product_id" />
+                    <field name="app_name" />
+                    <field name="version" />
+                    <button name="action_follow_up" type="object" string="Follow-up"/>
+                    <button name="action_loan_voucher" type="object" string="Loan voucher"/>
+                </tree>  
+            </field>  
+        </record>   
+
+        <record model="ir.ui.view" id="collection_order_pending_form">  
+            <field name="name">Pending Transaction List</field>
+            <field name="model">collection.order</field>  
+            <field name="arch" type="xml">  
+                <form string="Pending Transaction List" edit="1" create="0" delete="0">
+                    <header>
+                        <field name="id" invisible="1"/>
+                        <button string="Add Collection Record" icon="fa-plus" type="action"
+                                name="%(loan_collection.act_history_collection_record)d"
+                                context="{'default_collection_order_id': active_id}"/>
+                    </header>                
+                    <sheet>  
+                            <group string="Order Information" name="order_info" col="3">
+                                <group>  
+                                    <field name="order_no" optional="show" readonly="1"/>
+                                    <field name="contract_amount" optional="show" readonly="1"/>
+                                    <field name="application_time" optional="show" readonly="1"/>
+                                    <field name="repay_amount" optional="show" readonly="1"/>
+                                    <field name="contract_amount" optional="show" readonly="1"/>
+                                    <field name="pending_amount" optional="show" readonly="1"/>
+                                    <field name="repayed_amount" optional="show" readonly="1"/>
+                                    <field name="renewal_repayment_amount" optional="show" readonly="1"/>
+                                    <field name="add_renewal_no" optional="show" readonly="1"/>
+                                    <field name="app_name" optional="show" readonly="1"/>
+                                </group>  
+                                <group colspan="1">  
+                                    <field name="order_type" optional="show" readonly="1" />
+                                    <field name="loan_amount" optional="show" readonly="1" />
+                                    <field name="pay_complete_time" optional="show" readonly="1" />
+                                    <field name="overdue_fee" optional="show" readonly="1"/>
+                                    <field name="derate_amount" optional="show" readonly="1"/>
+                                    <field name="apply_time" optional="show" readonly="1"/>
+                                    <field name="product_id" optional="show" readonly="1" />
+                                </group>  
+                                <group colspan="1">  
+                                    <field name="borrow_money_date"  optional="show" readonly="1"/>
+                                    <field name="repay_date" swidget="date" optional="show" readonly="1"/>
+                                    <field name="late_fee" optional="show" readonly="1"/>
+                                    <field name="overdue_days" optional="show" readonly="1"/>
+                                    <field name="extend_success_time" optional="show" readonly="1"/>
+                                    <field name="repay_platform_order_no" optional="show" readonly="1"/>
+                                </group>  
+                            </group>  
+                            <group string="Identity Information" name="id_info" col="3">
+                                <group>  
+                                    <field name="loan_uid" optional="show" readonly="1"/>
+                                    <field name="gender_code" optional="show" readonly="1"/>
+                                    <field name="marital_status_code" optional="show" readonly="1"/>
+                                    <field name="loan_purpose_code" optional="show" readonly="1"/>
+                                    <field name="pay_day_code" optional="show" readonly="1"/>
+                                </group>  
+                                <group>  
+                                    <field name="name" optional="show" readonly="1"/>
+                                    <field name="birth_date" optional="show" readonly="1"/>
+                                    <field name="housing_status_code" optional="show" readonly="1"/>
+                                    <field name="occupation_code" optional="show" readonly="1"/>
+                                    <field name="card_num" optional="show" readonly="1"/>
+                                </group>  
+                                <group>
+                                    <field name="phone_no" optional="show" readonly="1"/>
+                                    <field name="education_code" optional="show" readonly="1"/>
+                                    <field name="children_num_code" optional="show" readonly="1"/>
+                                    <field name="salary_code" optional="show" readonly="1"/>
+                                </group> 
+                            </group>  
+                            <group col="5" string="Face Recognition&amp;Identity Document Information" name="body_info" >
+                                <group colspan="1">
+                                    <field name="pan_front_img" widget="image" options='{"zoom":true}' readonly="1"/>
+                                </group>
+                                <group colspan="1">
+                                    <field name="pan_back_img" widget="image" options='{"zoom":true}' readonly="1"/>
+                                </group>
+                                <group colspan="1">
+                                    <field name="id_front_img" widget="image" options='{"zoom":true}' readonly="1"/>
+                                </group>
+                                <group colspan="1">
+                                    <field name="id_hand_img" widget="image" options='{"zoom":true}' readonly="1"/>
+                                </group>
+                                <group colspan="1">
+                                        <field name="body_discern_img" widget="image" options='{"zoom":true}' readonly="1"/>
+                                </group>
+                            </group>                             
+                            <notebook>  
+                                <page string="Contact Information">
+                                    <group name="user_info">
+                                        <!--<button class="btn-primary" name="action_add_contact" type="object" string="补充联系人" display="always"/>-->
+                                        <field name="collection_user_contact_ids" edit="1" create="1" delete="0" nolabel="1" colspan="2">
+                                            <tree editable="bottom" delete="0">
+                                                <field name="can_edit" invisible="1"/>
+                                                <field name="sequence" widget="handle" readonly="not can_edit" width="50px"/>
+                                                <field name="name" required="1" readonly="not can_edit"/>
+                                                <field name="relation_selection" required="1" readonly="not can_edit"/>
+                                                <field name="phone_no" required="1" readonly="not can_edit"/>
+                                                <field name="add_date" readonly="1"/>
+                                                <field name="add_user_id" readonly="1"/>
+                                                <!-- <button name="action_edit" type="object" string="编辑"/> -->
+                                                <button name="unlink" type="object" icon="fa-trash-o" title="Delete" invisible="not can_edit"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </page>  
+                            </notebook>
+                            <notebook >  
+                                <page string="Address Book">
+                                    <field name="user_address_book_ids" readonly="1">  
+                                        <tree>  
+                                            <field name="sequence" />
+                                            <field name="name" />
+                                            <field name="phone_no" />
+                                        </tree>  
+                                    </field>  
+                                </page> 
+                                <page string="Call records">
+                                    <field name="user_call_record_ids" readonly="1">  
+                                        <tree>  
+                                            <field name="sequence"/>
+                                            <field name="name"/>
+                                            <field name="phone_no"/>
+                                            <field name="call_type" />
+                                            <field name="call_time" />
+                                            <field name="total_call_times" />
+                                            <field name="total_call_duration" />
+                                        </tree>  
+                                    </field>  
+                                </page>  
+                            </notebook>    
+                            
+                            <notebook>     
+                                <page string="Collection Record">
+                                    <field name="history_collection_record_ids" edit="1" create="0" delete="1" nolabel="1" colspan="2">  
+                                        <tree>  
+                                            <field name="sequence"/>
+                                            <field name="collection_stage"/>
+                                            <field name="overdue_days"/>
+                                            <field name="user_id"/>
+                                            <field name="relation_selection"/>
+                                            <field name="phone_no"/>
+                                            <field name="collection_type"/>
+                                            <field name="contact_result"/>
+                                            <field name="remark"/>
+                                            <field name="file_ids" widget="many2many_binary"/>
+                                            <field name="create_date" />
+                                            <field name="collector_id" />
+                                        </tree>  
+                                    </field>  
+                                </page>  
+                            </notebook>                                     
+                            <notebook>     
+                                <page string="oan Record">
+                                    <field name="loan_order_ids" readonly="1">  
+                                        <tree>  
+                                            <field name="order_no"/>
+                                            <field name="product_id" />  
+                                            <field name="contract_amount"/>  
+                                            <field name="loan_period" />  
+                                            <field name="pending_amount" />  
+                                            <field name="apply_time" />
+                                            <field name="repay_date" /> 
+                                            <field name="order_status" />
+                                            <field name="collection_stage_setting_id"/>  
+                                            <field name="overdue_days"/>     
+                                            <field name="collector_id" />  
+                                        </tree>  
+                                    </field>  
+                                </page>  
+                            </notebook>                                     
+                    </sheet>  
+                </form>  
+            </field>  
+        </record>  
+
+        <record model="ir.ui.view" id="collection_order_pending_form2">
+            <field name="name">Pending Transaction List - Loan voucher</field>
+            <field name="model">collection.order</field>
+            <field name="arch" type="xml">
+                <form string="Loan voucher">
+                    <sheet>
+                        <group>
+                            <field name="contract_amount" readonly="1"/>
+                            <field name="loan_amount" readonly="1"/>
+                            <field name="borrow_money_date" readonly="1"/>
+                            <field name="application_time" readonly="1"/>
+                            <field name="pay_complete_time" readonly="1"/>
+                            <field name="withdraw_time" readonly="1"/>
+                            <field name="pay_platform_order_no" readonly="1"/>
+                            <field name="receivables_number" readonly="1"/>
+                            <field name="payment_way_id" readonly="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_download_voucher" string="Download credentials" type="object"
+                                class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="collection_order_pending_form3">
+            <field name="name">Pending Transaction List - Loan voucher</field>
+            <field name="model">collection.order</field>
+            <field name="arch" type="xml">
+                <form string="Loan voucher">
+                    <sheet>
+                        <group>
+                            <field name="contract_amount"/>
+                            <field name="loan_amount"/>
+                            <field name="borrow_money_date"/>
+                            <field name="application_time"/>
+                            <field name="pay_complete_time"/>
+                            <field name="withdraw_time"/>
+                            <field name="pay_platform_order_no"/>
+                            <field name="receivables_number"/>
+                            <field name="payment_way_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="collection_order_pending_search">
+            <field name="name">Pending Transaction List</field>
+            <field name="model">collection.order</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="order_no" optional="show"/>
+                    <field name="loan_uid" optional="show"/>
+                    <field name="phone_no" optional="show"/>
+                    <field name="order_type" optional="show"/>
+                    <field name="product_id" optional="show"/>
+                    <field name="app_name" optional="show"/>
+                    <field name="collection_stage" optional="show"/>
+                    <field name="collector_name" optional="show"/>
+                    <field name="application_time" optional="show"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="collection_order_pending_action">
+            <field name="name">Pending Transaction List</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="loan_collection.model_collection_order"/>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="code">
+                action = model.action_server_collection_order_pending()
+            </field>
+        </record>
+
+        
+    </data>
+</odoo>

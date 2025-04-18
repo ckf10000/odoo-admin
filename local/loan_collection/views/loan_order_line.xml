@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="loan_order_line_list">
+        <field name="name">财务平账明细</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <field name="order_no" string="订单编号" optional="show"/>
+                <field name="loan_user_phone" optional="show" string="手机号码"/>
+                <field name="product_id" optional="show" string="产品名称"/>
+                <field name="loan_uid" string="UserId" optional="show"/>
+                <field name="loan_user_name" string="姓名" optional="show"/>
+                <field name="apply_time" string="申请时间" optional="show"/>
+                <field name="balance_time" string="平账时间" optional="show"/>
+                <field name="balance_type" string="平账类型" optional="show"/>
+                <field name="contract_amount" string="合同金额" optional="show"/>
+                <!--
+                <field name="pending_amount" string="挂账金额" optional="show"/>
+                <field name="balance_accounts" string="平账金额" optional="show"/>
+                <field name="penalty_interest_amount" string="抹罚息金额" optional="show"/>
+                <field name="contract_balance_amount" string="平账合同金额" optional="show"/>
+                <field name="balance_penalty_interest" string="平账罚息" optional="show"/>
+                <field name="balance_overdue_fine" string="平账滞纳金" optional="show"/>
+                <field name="create_uid" string="操作人" optional="show"/>
+                <field name="balance_remove" string="平账备注" optional="show"/> 
+                TODO
+                --> 
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- search view -->
+    <record model="ir.ui.view" id="loan_order_line_search">
+        <field name="name">财务平账明细</field>
+        <field name="model">loan.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no" optional="show"/>
+                <field name="product_id" optional="show"/>
+                <field name="balance_time" optional="show" string="平账时间"/>
+                <field name="apply_time" optional="show" string="申请时间"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="loan_order_line_action">
+        <field name="name">财务平账明细</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="loan_collection.model_loan_order"/>
+        <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+        <field name="code">
+            action = model.action_server_order_line()
+        </field>
+    </record>
+
+  </data>
+</odoo>

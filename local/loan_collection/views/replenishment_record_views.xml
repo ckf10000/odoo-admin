@@ -1,0 +1,118 @@
+<odoo>
+    <data>
+        <!-- views -->
+        <record model="ir.ui.view" id="replenishment_record_list">
+            <field name="name">补单记录</field>
+            <field name="model">replenishment.record</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0" import="0" export_xlsx="1" limit="20" default_order="replenishment_time desc">
+                    <field name="order_no" string="订单编号" optional="show"/>
+                    <field name="user_id" string="UserID" optional="show"/>
+                    <field name="business_type" string="业务类型" optional="show"/>
+                    <field name="name" string="姓名" optional="show"/>
+                    <field name="phone_no" string="手机号码" optional="show"/>
+                    <field name="replenishment_time" string="补单时间" optional="show"/>
+                    <field name="utr" string="UTR" optional="show"/>
+                    <field name="replenishment_amount" string="补单金额" optional="show"/>
+                    <field name="voucher_file_ids" string="凭证" widget="many2many_binary" optional="show"/>
+                    <field name="status" string="状态" optional="show"/>
+                    <field name="audit_user_id" string="审核人" optional="show"/>
+                    <field name="application_user_id" string="申请人" optional="show"/>
+                    <field name="close_reason" string="关单原因" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="replenishment_record_list2">
+            <field name="name">补单记录-处理中订单动作弹窗</field>
+            <field name="model">replenishment.record</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0" import="0" export_xlsx="1" limit="20" default_order="replenishment_time desc">
+                    <header>
+                        <button class="btn-primary" name="action_upload_voucher" type="object" string="上传凭证" display="always"/>
+                    </header>
+                    <field name="replenishment_time" string="补单时间" optional="show"/>
+                    <field name="business_type" string="业务类型" optional="show"/>
+                    <field name="user_id" string="UserID" optional="show"/>
+                    <field name="order_no" string="订单编号" optional="show"/>
+                    <field name="utr" string="UTR" optional="show"/>
+                    <field name="replenishment_amount" string="补单金额" optional="show"/>
+                    <field name="voucher_file_ids" string="凭证" widget="many2many_binary" optional="show"/>
+                    <field name="application_user_id" string="申请人" optional="show"/>
+                    <field name="close_reason" string="关单原因" optional="show"/>
+                    <field name="phone_no" string="手机号码" optional="show"/>
+                    <field name="audit_user_id" string="审核人" optional="show"/>
+                    <field name="status" string="状态" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="replenishment_record_form">
+            <field name="name">补单记录</field>
+            <field name="model">replenishment.record</field>
+            <field name="arch" type="xml">
+                <form string="补单记录" edit="0" create="0" delete="0">
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="replenishment_record_form2">
+            <field name="name">补单记录-上传凭证</field>
+            <field name="model">replenishment.record</field>
+            <field name="arch" type="xml">
+                <form string="补单记录">
+                    <sheet>
+                        <group>
+                            <field name="loan_order_id" invisible="1"/>
+                            <field name="order_no" string="订单编号" optional="show"/>
+                            <field name="user_id" string="UserID" optional="show"/>
+                             <field name="utr" string="UTR" required="1" optional="show"/>
+                            <field name="replenishment_amount" string="补单金额" required="1" optional="show"/>
+                            <field name="business_type" string="业务类型" optional="show"/>
+                            <field name="voucher_file_ids" string="上传图片" required="1" widget="many2many_binary" optional="show"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="replenishment_record_search">
+            <field name="name">补单记录</field>
+            <field name="model">replenishment.record</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="order_no" string="订单编号" optional="show"/>
+                    <field name="user_id" string="UserID" optional="show"/>
+                    <field name="phone_no" string="手机号码" optional="show"/>
+                    <field name="status" string="状态" optional="show"/>
+                    <field name="business_type" string="业务类型" optional="show"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="replenishment_record_search2">
+            <field name="name">补单记录</field>
+            <field name="model">replenishment.record</field>
+            <field name="arch" type="xml">
+                <search>
+
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="replenishment_record_action">
+            <field name="name">补单记录</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="loan_collection.model_replenishment_record"/>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="code">
+                action = model.action_server_replenishment_record()
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="mobile_view">
+        <div class="mobile_view">
+                <div class="phone" style="background-image: url('/loan_basic/static/src/client_action/mobile_view/mobile_view.png');background-size:cover;">
+                    <div id='phone_content' class="phone_content">
+                        
+                    </div>
+                </div>
+            </div>
+    </t>
+</templates>

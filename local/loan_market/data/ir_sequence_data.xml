@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="app_code_seq" model="ir.sequence">
+            <field name="name">APPID</field>
+            <field name="code">app_code_seq</field>
+            <!-- <field name="prefix">%(y)s%(month)s%(day)s</field> -->
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="product_code_seq" model="ir.sequence">
+            <field name="name">产品ID</field>
+            <field name="code">product_code_seq</field>
+            <field name="prefix">%(y)s%(month)s%(day)s</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="loan_matrix_code_seq" model="ir.sequence">
+            <field name="name">共贷矩阵ID</field>
+            <field name="code">loan_matrix_code_seq</field>
+            <field name="prefix">%(y)s%(month)s%(day)s</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

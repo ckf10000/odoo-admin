@@ -1,0 +1,108 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_repay_record">
+        <field name="name">收款记录列表</field>
+        <field name="model">repay.record</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0" default_order="repay_time desc">
+                 <field name="order_no" optional="show" />
+                <field name="loan_uid" optional="show" />
+                <field name="loan_user_name" optional="show" />
+                <field name="loan_user_phone" optional="show" />
+                <field name="product_id" optional="show" />
+                <field name="merchant_order_no" string="支付ID" optional="show" />
+                <field name="payment_setting_id" string="支付渠道" optional="show" />
+                <field name="payment_way_id" string="支付方式" optional="show" />
+                <field name="platform_order_no" string="支付序列号" optional="show" />
+
+                <field name="contract_amount" optional="show" />
+                <field name="loan_period" optional="show" />
+                <field name="loan_amount" optional="show" />
+                <field name="repay_amount" optional="show" />
+                <field name="order_pending_amount" optional="show" />
+                <field name="pending_amount" optional="show" />
+                <field name="write_off_amount" optional="show" />
+                
+                <field name="amount" optional="show" />
+                <field name="fee" optional="show" />
+                <field name="tax" optional="show" />
+                <field name="actual_repay_amount" optional="show" />
+                <field name="order_overdue_fee" optional="show" />
+                <field name="order_late_fee" optional="show" />
+
+                <field name="repay_date" optional="show" />
+                <field name="repay_time" optional="show" />
+                <field name="overdue_days" optional="show" />
+
+                <field name="correction_amount" optional="show" />
+                <field name="pay_time" optional="show" />
+
+                <field name="repay_type" optional="show" />
+                <field name="cancel_time" optional="show" />
+                <field name="cancel_user_id" optional="show" />
+                <field name="is_cancel" column_invisible="1"/>
+                <button name="action_show_cancel_record" type="object" string="取消还款" invisible="repay_type=='2' or is_cancel"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_repay_record">
+        <field name="name">收款记录搜索</field>
+        <field name="model">repay.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_no"/>
+                <field name="loan_uid"/>
+                <field name="loan_user_phone"/>
+                <field name="platform_order_no" string="支付序列号"/>
+                <field name="product_id" string="产品名称"/>
+                <field name="payment_setting_id" string="支付渠道"/>
+                <field name="payment_way_id" string="支付方式"/>
+                <field name="repay_time" string="支付时间"/>
+                <field name="repay_type" />
+                <field name="is_cancel" widget="boolean_selection" options="{'selection':[['', '记录状态'], ['0', '未取消'], ['1', '已取消']]}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wizard_repay_record_cancel">
+        <field name="name">取消还款</field>
+        <field name="model">repay.record.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_no"/>
+                        <field name="loan_user_name"/>
+                        <field name="loan_user_phone"/>
+                        <field name="product_id" options="{'no_open': 1}"/>
+                        <field name="contract_amount"/>
+                        <field name="pending_amount" />
+                        <field name="amount" />
+                        <field name="new_pending_amount"/>
+                        <field name="remark" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确定" confirm="是否确定取消该笔还款？" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="act_repay_record">
+        <field name="name">收款记录</field>
+        <field name="res_model">repay.record</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{
+            'tree_view_ref': 'loan_financial.list_repay_record'
+        }
+        </field>
+        <field name="search_view_id" ref="search_repay_record" />
+    </record>
+
+  </data>
+</odoo>

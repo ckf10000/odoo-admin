@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="jhy.SearchBar">
+        <t t-if="list_search_mode ==='odoo'">
+            <div class="o_cp_searchview d-flex input-group" role="search" t-ref="root">
+                <div class="o_searchview form-control d-print-contents d-flex align-items-center py-1" role="search" aria-autocomplete="list">
+                    <i class="o_searchview_icon d-print-none oi oi-search me-2"
+                        role="img"
+                        aria-label="Search..."
+                        title="Search..."
+                    />
+                    <div class="o_searchview_input_container d-flex flex-grow-1 flex-wrap gap-1">
+                        <t t-call="web.SearchBar.Facets"/>
+                        <t t-call="web.SearchBar.Input"/>
+                        <t t-if="items.length">
+                            <t t-call="web.SearchBar.Items"/>
+                        </t>
+                    </div>
+                </div>
+                <SearchBarMenu>
+                    <t t-slot="search-bar-additional-menu"/>
+                </SearchBarMenu>
+            </div>
+        </t>
+        <t t-else="">
+            <div t-if="searchItemsFields.length > 0" class="o_cp_searchview d-flex input-group" role="search" t-ref="root">
+                <div class="o_searchview form-control d-print-contents d-flex align-items-center py-1" role="search" aria-autocomplete="list" style="border:0px;">
+                    <div class="o_searchview_input_container d-flex flex-grow-1 flex-wrap gap-1">
+                        <div class="search_tools">
+                            <div class='d-flex flex-grow-1 flex-wrap gap-1'>
+                                <t t-if="record">
+                                    <t t-foreach="searchItemsFields" t-as="field" t-key="field.id">
+                                        <label class="o_form_label" style="display:flex;align-items:center;">
+                                            <t t-esc="field.description"/>
+                                        </label>
+
+                                        <t t-if="field.fieldType === 'many2one'">
+                                            <Field name="field.fieldName" type="field.fieldType" record="record" placeholder="field.description" canOpen="false" canCreate="false" canCreateEdit="false" canQuickCreate="false" />
+                                        </t>
+                                        <t t-elif="field.fieldType === 'datetime' || field.fieldType === 'date'">
+                                            <Field name="field.fieldName" type="field.widget" record="record" placeholder="field.description" />
+                                        </t>
+                                        <t t-elif="field.fieldType === 'boolean'">
+                                            <!-- <label for="field.fieldName" t-out="field.fieldName"/> -->
+                                            <Field name="field.fieldName" type="field.widget" record="record" fieldInfo="field.fieldInfo"/>
+                                        </t>
+                                        <t t-else=''>
+                                            <Field name="field.fieldName" type="field.fieldType" record="record" placeholder="field.description"/>
+                                        </t>
+                                        <!-- <i t-if=""
+                                            class="fa fa-times btn btn-link text-muted o_side_panel_filter_icon ms-1"
+                                            title="Clear"
+                                            t-on-click="() => this.clear(field.id)"/> -->
+                                    </t>
+                                </t>
+                                <div class="o_field_widget d-flex" style="width:150px; margin-left:10px;">
+                                    <button class="btn btn-primary search_btn" t-on-click="onSearch">Search</button>
+                                    <!-- <button class="btn btn-white remove_btn col-md-4" t-on-click="onReset">Reset</button>
+                                    <div class="col-md-4">
+                                        <Dropdown  togglerClass="'btn btn-white'">
+                                            <t t-set-slot="toggler">
+                                                More
+                                            </t>
+                                            
+                                            <DropdownItem t-if="!env.inDialog" onSelected="() => this.onBatchOperate()">
+                                                <t t-if="env.searchModel.tools.showSelector">
+                                                    Close Selector
+                                                </t>
+                                                <t t-else="">
+                                                    Batch Operation
+                                                </t>
+                                            </DropdownItem>
+                                            <div class="dropdown-divider" role="separator"/>
+                                            <DropdownItem onSelected="() => this.onToggleMode()">Toggle Mode</DropdownItem>
+                                        </Dropdown>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </t>
+
+</templates>

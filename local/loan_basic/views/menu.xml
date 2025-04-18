@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+
+    <!-- Top menu item -->
+    <!-- <menuitem name="系统设置" id="jhy_settings_menu_root" sequence="99">
+        <menuitem name="角色" id="jhy_settings_menu_role" action="act_jhy_role"/>
+    </menuitem> -->
+
+  </data>
+</odoo>

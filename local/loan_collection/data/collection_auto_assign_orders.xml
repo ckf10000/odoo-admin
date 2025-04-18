@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="collection.auto.assign.orders" id="auto_assign_orders_false">
+            <field name="auto_assign_orders">False</field>
+        </record>
+    </data>
+</odoo>

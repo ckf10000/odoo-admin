@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="loan.order.settings" id="order_settings_1">
+            <field name="key">is_auto_pay</field>
+            <field name="desc">是否自动放款</field>
+            <field name="value">0</field>
+            <field name="value_type">bool</field>
+        </record>
+
+        <record model="loan.order.settings" id="order_settings_2">
+            <field name="key">fin_derate_auto_approval</field>
+            <field name="desc">[财务]减免自动审核</field>
+            <field name="value">0</field>
+            <field name="value_type">bool</field>
+        </record>
+        <record model="loan.order.settings" id="order_settings_3">
+            <field name="key">fin_derate_auto_approval_max_amount</field>
+            <field name="desc">[财务]减免自动审核最大金额</field>
+            <field name="value">0</field>
+            <field name="value_type">int</field>
+        </record>
+
+        <record model="loan.order.settings" id="order_settings_4">
+            <field name="key">col_derate_auto_approval</field>
+            <field name="desc">[催收]减免自动审核</field>
+            <field name="value">0</field>
+            <field name="value_type">bool</field>
+        </record>
+        <record model="loan.order.settings" id="order_settings_5">
+            <field name="key">col_derate_auto_approval_max_amount</field>
+            <field name="desc">[催收]减免自动审核最大金额</field>
+            <field name="value">0</field>
+            <field name="value_type">int</field>
+        </record>
+    </data>
+</odoo>

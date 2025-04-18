@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="manual_allocation_wizard_form" model="ir.ui.view">
+            <field name="name">手动分单向导</field>
+            <field name="model">manual.allocation.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="selected_ids" readonly="1"/>
+                            <field name="collection_stage" readonly="1"/>
+                            <field name="collector_id" required="0" options="{'no_open': True, 'no_create': True}"
+                                   context="{'bill_search': 'manual.allocation.wizard', 'collection_stage': collection_stage}"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm" string="确认" type="object"
+                                class="btn-primary"/>
+                        <button string="取消" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="manual_allocation_wizard_action" model="ir.actions.act_window">
+            <field name="name">手动分单</field>
+            <field name="res_model">manual.allocation.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

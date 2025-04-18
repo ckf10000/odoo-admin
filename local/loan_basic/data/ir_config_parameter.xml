@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="default_loan_api_host" model="ir.config_parameter">
+            <field name="key">loan_api.base.url</field>
+            <field name="value">http://172.16.2.147:8001/internal</field>
+        </record>
+    </data>
+</odoo>

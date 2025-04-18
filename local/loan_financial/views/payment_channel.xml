@@ -1,0 +1,279 @@
+<odoo>
+  <data>
+    <!-- views -->
+    <record model="ir.ui.view" id="list_payment_setting">
+        <field name="name">放款/退款渠道列表</field>
+        <field name="model">payment.setting</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <header>
+                    <button class="btn-primary" name="action_create" type="object" string="新增" display="always"/>
+                    <button class="btn-primary" name="action_fee_setting" type="object" string="手续费配置" display="always"/>
+                </header>
+                <field name="payment_way_id"/>
+                <field name="payment_channel_id"/>
+                <field name="status" widget="boolean_toggle" readonly='1'/>
+                <field name="payment_product_ids" widget="many2many_tags"/>
+                
+                <field name="write_uid" optional="hide"/>
+                <field name="write_date" optional="hide"/>
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="hide"/>
+                
+                <button name="action_edit" type="object" string="编辑"/>
+                <!-- <button name="toggle_active" type="object" string="删除" confirm="删除后不可恢复, 确认删除?"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_repayment_setting">
+        <field name="name">还款渠道列表</field>
+        <field name="model">payment.setting</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <header>
+                    <button class="btn-primary" name="action_create" type="object" string="新增" display="always"/>
+                    <button class="btn-primary" name="action_fee_setting" type="object" string="手续费配置" display="always"/>
+                </header>
+                <field name="payment_way_id"/>
+                <field name="payment_channel_id"/>
+                <field name="status" widget="boolean_toggle" readonly='1'/>
+                <field name="repayment_product_ids" widget="many2many_tags"/>
+                
+                <field name="write_uid" optional="hide"/>
+                <field name="write_date" optional="hide"/>
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="hide"/>
+                
+                <button name="action_edit" type="object" string="编辑"/>
+                <!-- <button name="toggle_active" type="object" string="删除" confirm="删除后不可恢复, 确认删除?"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_payment_setting">
+        <field name="name">放款/退款渠道搜索</field>
+        <field name="model">payment.setting</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="payment_channel_id"/>
+                <field name="payment_way_id"/>
+                <field name="status" widget="boolean_selection" options="{'selection':[['', '状态'], ['1', '开启'], ['0', '关闭']]}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_repayment_setting">
+        <field name="name">还款渠道搜索</field>
+        <field name="model">payment.setting</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="payment_channel_id"/>
+                <field name="payment_way_id"/>
+                <field name="status" widget="boolean_selection" options="{'selection':[['', '状态'], ['1', '开启'], ['0', '关闭']]}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_payment_setting">
+        <field name="name">支付渠道详情</field>
+        <field name="model">payment.setting</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <group>
+                        <field name="use_type" invisible="1" force_save="1"/>
+                        <field name="payment_channel_id" placeholder="请选择" options="{'no_create': 1}"/>
+                        <field name="payment_way_id" placeholder="请选择" options="{'no_create': 1}"/>
+                        <field name="payment_product_ids" widget="many2many_tags" options="{'no_create': True}" invisible="use_type=='2'" required="1"/>
+                        <field name="repayment_product_ids" widget="many2many_tags" options="{'no_create': True}" invisible="use_type=='1'" required="1"/>
+                        <field name="status" widget="boolean_toggle" options="{'autosave': 0}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="list_payment_channel">
+        <field name="name">支付渠道列表</field>
+        <field name="model">payment.channel</field>
+        <field name="arch" type="xml">
+            <tree create='0' import="0" export_xlsx="0">
+                <header>
+                    <button class="btn-primary" name="action_create" type="object" string="新增" display="always"/>
+                </header>
+                <field name="sequence" widget="handle"/>
+                <field name="channel_name"/>
+                <field name="enum_code"/>
+                <field name="payment_way_ids" widget="many2many_tags"/>
+                
+                <field name="write_uid" optional="hide"/>
+                <field name="write_date" optional="hide"/>
+                <field name="create_uid" optional="hide"/>
+                <field name="create_date" optional="hide"/>
+                
+                <button name="action_fee_setting" type="object" string="放款/退款手续费配置" context="{'use_type': '1'}"/>
+                <button name="action_fee_setting" type="object" string="还款手续费配置"  context="{'use_type': '2'}"/>
+                <button name="action_edit" type="object" string="编辑"/>
+                <!-- <button name="toggle_active" type="object" string="删除" confirm="删除后不可恢复, 确认删除?"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_payment_channel">
+        <field name="name">支付渠道详情</field>
+        <field name="model">payment.channel</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <group>
+                        <field name="channel_name"/>
+                        <field name="enum_code" />
+                        <field name="merchant_no"/>
+                        <field name="merchant_key" />
+                        <field name="call_back_url"/>
+                        <field name="redirect_url" />
+                        <field name="payment_way_ids" widget="many2many_tags" options="{'no_create': True}" required="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_payment_channel_fee_setting">
+        <field name="name">支付渠道手续费配置</field>
+        <field name="model">payment.channel.fee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="payment_channel_id" invisible="1"/>
+                    <field name="use_type" invisible="1"/>
+                    <group>
+                        <field name="fee_mode" widget="radio" options="{'horizontal': True}"/>
+                    </group>
+                    <group invisible="fee_mode != '1'">
+                        <label for="base_fee" string="公式"/>
+                        <div>
+                            <field name="base_fee" placeholder="固定费用(>=0)" class="oe_inline" required="fee_mode == '1'"/>
+                            <span class="oe_inline"> + </span>
+                            <field name="fee_rate" placeholder="费率(0-100)" class="oe_inline" required="fee_mode == '1'"/>
+                            <span class="oe_inline"> %*交易金额/笔 </span>
+                        </div>
+                    </group>
+                    <group invisible="fee_mode != '2'">
+                        <field name="fee_line_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom">
+                                <field name="day_count_start" />
+                                <field name="day_count_end"/>
+                                <field name="month_count_start" />
+                                <field name="month_count_end"/>
+                                <field name="base_fee" />
+                                <field name="fee_rate"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_payment_channel_fee_setting_wizard">
+        <field name="name">支付渠道手续费配置</field>
+        <field name="model">payment.channel.fee.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="use_type" invisible="1"/>
+                    <group>
+                        <field name="payment_setting_id" options="{'no_create': True}"/>
+                    </group>
+                    <group invisible="not payment_setting_id">
+                        <field name="fee_mode" widget="radio" options="{'horizontal': True}"/>
+                    </group>
+                    <group invisible="fee_mode != '1'">
+                        <label for="base_fee" string="公式"/>
+                        <div>
+                            <field name="base_fee" placeholder="固定费用(>=0)" class="oe_inline" required="fee_mode == '1'"/>
+                            <span class="oe_inline"> + </span>
+                            <field name="fee_rate" placeholder="费率(0-100)" class="oe_inline" required="fee_mode == '1'"/>
+                            <span class="oe_inline"> %*交易金额/笔 </span>
+                        </div>
+                    </group>
+                    <group invisible="fee_mode != '2'">
+                        <field name="fee_line_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom">
+                                <field name="day_count_start" />
+                                <field name="day_count_end"/>
+                                <field name="month_count_start" />
+                                <field name="month_count_end"/>
+                                <field name="base_fee" />
+                                <field name="fee_rate"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="取消" class="btn btn-default" special="cancel"/>
+                    <button string="确认" special="save" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="act_payment_setting">
+        <field name="name">放款/退款渠道</field>
+        <field name="res_model">payment.setting</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('use_type', '=', '1')]</field>
+        <field name="context">{
+                'default_use_type': '1',
+				'tree_view_ref': 'loan_financial.list_payment_setting'
+			}</field>
+        <field name="search_view_id" ref="search_payment_setting" />
+    </record>
+
+
+    <record model="ir.actions.act_window" id="act_repayment_setting">
+        <field name="name">还款渠道</field>
+        <field name="res_model">payment.setting</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('use_type', '=', '2')]</field>
+        <field name="context">{
+                'default_use_type': '2',
+				'tree_view_ref': 'loan_financial.list_repayment_setting'
+			}</field>
+        <field name="search_view_id" ref="search_repayment_setting" />
+    </record>
+
+
+    <record model="ir.actions.act_window" id="act_repayment_channel">
+        <field name="name">支付渠道配置</field>
+        <field name="res_model">payment.channel</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{
+            'form_view_ref': 'loan_financial.form_payment_channel'
+        }
+        </field>
+    </record>
+
+  </data>
+</odoo>

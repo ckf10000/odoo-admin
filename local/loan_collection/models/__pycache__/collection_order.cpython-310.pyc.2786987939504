@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62844fc9-bf5b-4e4a-a3db-60cfb4d06b71" name="更改" comment="添加催收订单催收员账号异常，催收订单将被重置为待分配状态">
+      <change beforePath="$PROJECT_DIR$/config/local.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/local.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/loan_basic/models/ir_attachment.py" beforeDir="false" afterPath="$PROJECT_DIR$/local/loan_basic/models/ir_attachment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/loan_settings/models/loan_settings_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/local/loan_settings/models/loan_settings_user.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2oQKC7aVMg9Xbob4cjCUG5SyjNy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.odoo-bin.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workspace/python/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Grunt" flag="true" />
+      <visibility group="Gulp" flag="true" />
+      <visibility group="HTTP 请求" flag="true" />
+      <visibility group="Node.js" flag="true" />
+      <visibility group="Run Python file" flag="true" />
+      <visibility group="Run conda command" flag="true" />
+      <visibility group="Run pip command" flag="true" />
+      <visibility group="npm" flag="true" />
+      <visibility group="yarn" flag="true" />
+      <visibility group="最近的项目" flag="true" />
+      <visibility group="运行配置" flag="true" />
+    </myKeys>
+  </component>
+  <component name="RunManager">
+    <configuration name="odoo-bin" type="PythonConfigurationType" factoryName="Python">
+      <module name="admin" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.10 (odoo-17)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../odoo/odoo-bin" />
+      <option name="PARAMETERS" value="-c D:\workspace\python\admin\config\local.conf" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
+        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="62844fc9-bf5b-4e4a-a3db-60cfb4d06b71" name="更改" comment="" />
+      <created>1730795593740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730795593740</updated>
+      <workItem from="1730796229292" duration="171516000" />
+      <workItem from="1731131248507" duration="2289000" />
+      <workItem from="1731309408298" duration="17961000" />
+      <workItem from="1731338643555" duration="38822000" />
+      <workItem from="1731401465891" duration="24906000" />
+      <workItem from="1731596738126" duration="9015000" />
+      <workItem from="1732323663841" duration="10209000" />
+      <workItem from="1732586943882" duration="1216000" />
+      <workItem from="1732588541962" duration="43444000" />
+      <workItem from="1732696113765" duration="27155000" />
+      <workItem from="1732754601949" duration="12280000" />
+      <workItem from="1732791910865" duration="117812000" />
+    </task>
+    <task id="LOCAL-00017" summary="优化用户模型逻辑">
+      <option name="closed" value="true" />
+      <created>1730939846621</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730939846621</updated>
+    </task>
+    <task id="LOCAL-00018" summary="优化用户模型逻辑">
+      <option name="closed" value="true" />
+      <created>1730943310373</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730943310373</updated>
+    </task>
+    <task id="LOCAL-00019" summary="修改商户编辑界面bug">
+      <option name="closed" value="true" />
+      <created>1730962563026</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730962563026</updated>
+    </task>
+    <task id="LOCAL-00020" summary="修复 在操作商户编辑界面开启，关闭操作时报错的bug">
+      <option name="closed" value="true" />
+      <created>1730965000759</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730965000759</updated>
+    </task>
+    <task id="LOCAL-00021" summary="修复 团队tree视图显示时间的格式问题，排序问题">
+      <option name="closed" value="true" />
+      <created>1730966792602</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730966792602</updated>
+    </task>
+    <task id="LOCAL-00022" summary="修复 修复用户视图，团队视图展示时间的bug">
+      <option name="closed" value="true" />
+      <created>1730972383052</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730972383052</updated>
+    </task>
+    <task id="LOCAL-00023" summary="修复 修复角色视图展示时间的bug">
+      <option name="closed" value="true" />
+      <created>1730972653203</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730972653203</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修复 修复角色视图展示时间的bug">
+      <option name="closed" value="true" />
+      <created>1730980513932</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730980513932</updated>
+    </task>
+    <task id="LOCAL-00025" summary="修复 修复用户编辑页面切换状态报错的bug">
+      <option name="closed" value="true" />
+      <created>1731027280375</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1731027280375</updated>
+    </task>
+    <task id="LOCAL-00026" summary="修复 修复用户编辑页面切换状态报错的bug">
+      <option name="closed" value="true" />
+      <created>1731027693375</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1731027693375</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修复 修复团队编辑页面报错的bug">
+      <option name="closed" value="true" />
+      <created>1731031713890</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1731031713890</updated>
+    </task>
+    <task id="LOCAL-00028" summary="修复 兼容催收模块报错的问题">
+      <option name="closed" value="true" />
+      <created>1731043576193</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1731043576193</updated>
+    </task>
+    <task id="LOCAL-00029" summary="修复 催收模块重写了res.user后，无法创建公司的问题">
+      <option name="closed" value="true" />
+      <created>1731078757548</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1731078757548</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修复 催收模块重写了res.user后，无法创建公司的问题">
+      <option name="closed" value="true" />
+      <created>1731383403057</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1731383403057</updated>
+    </task>
+    <task id="LOCAL-00031" summary="修复 催收模块重写了res.user后，无法创建公司的问题">
+      <option name="closed" value="true" />
+      <created>1731394461232</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1731394461232</updated>
+    </task>
+    <task id="LOCAL-00032" summary="修复 催收模块重写了res.user后，无法创建公司的问题">
+      <option name="closed" value="true" />
+      <created>1731399201802</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1731399201802</updated>
+    </task>
+    <task id="LOCAL-00033" summary="修复 催收模块重写了res.user后，无法创建公司的问题">
+      <option name="closed" value="true" />
+      <created>1731400629213</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1731400629213</updated>
+    </task>
+    <task id="LOCAL-00034" summary="修复 催收模块重写了res.user后，无法创建公司的问题">
+      <option name="closed" value="true" />
+      <created>1731402825065</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1731402825065</updated>
+    </task>
+    <task id="LOCAL-00035" summary="修复 催收无法手动分单问题">
+      <option name="closed" value="true" />
+      <created>1731477825703</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1731477825703</updated>
+    </task>
+    <task id="LOCAL-00036" summary="修复 金额减免记录list不展示催收阶段的问题">
+      <option name="closed" value="true" />
+      <created>1731652252426</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1731652252426</updated>
+    </task>
+    <task id="LOCAL-00037" summary="修复 t_user表新增id_card_no字段">
+      <option name="closed" value="true" />
+      <created>1732520249763</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1732520249763</updated>
+    </task>
+    <task id="LOCAL-00038" summary="修复 催收模块更新报错的问题">
+      <option name="closed" value="true" />
+      <created>1732522109211</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1732522109211</updated>
+    </task>
+    <task id="LOCAL-00039" summary="贷款记录禁止查询详情">
+      <option name="closed" value="true" />
+      <created>1732614200212</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1732614200212</updated>
+    </task>
+    <task id="LOCAL-00040" summary="修改 订单详情页的补充联系人报错问题">
+      <option name="closed" value="true" />
+      <created>1732621079448</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1732621079448</updated>
+    </task>
+    <task id="LOCAL-00041" summary="修复 非催收人员可以看到处理中的订单问题">
+      <option name="closed" value="true" />
+      <created>1732625918304</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1732625918304</updated>
+    </task>
+    <task id="LOCAL-00042" summary="修复 部分中文翻译问题">
+      <option name="closed" value="true" />
+      <created>1732669143124</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1732669143124</updated>
+    </task>
+    <task id="LOCAL-00043" summary="修复 部分中文翻译问题">
+      <option name="closed" value="true" />
+      <created>1732690807030</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1732690807030</updated>
+    </task>
+    <task id="LOCAL-00044" summary="修复 催收阶段配置去掉days配置">
+      <option name="closed" value="true" />
+      <created>1732692318303</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1732692318303</updated>
+    </task>
+    <task id="LOCAL-00045" summary="修复 催收阶段配置去掉days配置">
+      <option name="closed" value="true" />
+      <created>1732692640628</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1732692640628</updated>
+    </task>
+    <task id="LOCAL-00046" summary="去掉设置模块的菜单权限控制">
+      <option name="closed" value="true" />
+      <created>1732693501452</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1732693501452</updated>
+    </task>
+    <task id="LOCAL-00047" summary="去掉设置模块的菜单权限控制">
+      <option name="closed" value="true" />
+      <created>1732706357957</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1732706357957</updated>
+    </task>
+    <task id="LOCAL-00048" summary="搜索新增过滤条件">
+      <option name="closed" value="true" />
+      <created>1732710570023</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1732710570023</updated>
+    </task>
+    <task id="LOCAL-00049" summary="修复名字校验问题">
+      <option name="closed" value="true" />
+      <created>1732714162101</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1732714162101</updated>
+    </task>
+    <task id="LOCAL-00050" summary="过滤联系人">
+      <option name="closed" value="true" />
+      <created>1732714818436</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1732714818436</updated>
+    </task>
+    <task id="LOCAL-00051" summary="1. 催收記錄去掉跟進時間&#10;2. 催收記錄的催收員默認為當前用戶">
+      <option name="closed" value="true" />
+      <created>1732715170154</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1732715170154</updated>
+    </task>
+    <task id="LOCAL-00052" summary="催收订单查询条件优化">
+      <option name="closed" value="true" />
+      <created>1732755007311</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1732755007312</updated>
+    </task>
+    <task id="LOCAL-00053" summary="修复已存在的用户添加催收员角色不生效的bug">
+      <option name="closed" value="true" />
+      <created>1732762549889</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1732762549889</updated>
+    </task>
+    <task id="LOCAL-00054" summary="修复已存在的用户添加催收员角色不生效的bug">
+      <option name="closed" value="true" />
+      <created>1732764316069</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1732764316069</updated>
+    </task>
+    <task id="LOCAL-00055" summary="分单管理页面实现数据统计功能">
+      <option name="closed" value="true" />
+      <created>1732815101666</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1732815101666</updated>
+    </task>
+    <task id="LOCAL-00056" summary="分单管理页面实现数据统计功能">
+      <option name="closed" value="true" />
+      <created>1732816887231</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1732816887231</updated>
+    </task>
+    <task id="LOCAL-00057" summary="分单管理页面实现数据统计功能">
+      <option name="closed" value="true" />
+      <created>1732849857692</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1732849857692</updated>
+    </task>
+    <task id="LOCAL-00058" summary="去掉订单详情页多余的合同金额字段，将财务订单状态文案改成订单状态">
+      <option name="closed" value="true" />
+      <created>1732861592599</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1732861592599</updated>
+    </task>
+    <task id="LOCAL-00059" summary="去掉订单详情页多余的合同金额字段，将财务订单状态文案改成订单状态">
+      <option name="closed" value="true" />
+      <created>1732862132266</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1732862132266</updated>
+    </task>
+    <task id="LOCAL-00060" summary="优化分单管理中的催收员数据统计逻辑">
+      <option name="closed" value="true" />
+      <created>1733123089463</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1733123089463</updated>
+    </task>
+    <task id="LOCAL-00061" summary="优化分单管理中的催收员数据统计逻辑">
+      <option name="closed" value="true" />
+      <created>1733123296292</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1733123296292</updated>
+    </task>
+    <task id="LOCAL-00062" summary="催收阶段以及自动分单集成教授的二方包">
+      <option name="closed" value="true" />
+      <created>1733195353277</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1733195353277</updated>
+    </task>
+    <task id="LOCAL-00063" summary="添加催收订单催收员账号异常，催收订单将被重置为待分配状态">
+      <option name="closed" value="true" />
+      <created>1733212680426</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1733212680426</updated>
+    </task>
+    <task id="LOCAL-00064" summary="添加催收订单催收员账号异常，催收订单将被重置为待分配状态">
+      <option name="closed" value="true" />
+      <created>1733213541282</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1733213541282</updated>
+    </task>
+    <task id="LOCAL-00065" summary="添加催收订单催收员账号异常，催收订单将被重置为待分配状态">
+      <option name="closed" value="true" />
+      <created>1733215693638</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1733215693638</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修复 修复用户编辑页面切换状态报错的bug" />
+    <MESSAGE value="修复 修复团队编辑页面报错的bug" />
+    <MESSAGE value="修复 兼容催收模块报错的问题" />
+    <MESSAGE value="修复 催收模块重写了res.user后，无法创建公司的问题" />
+    <MESSAGE value="修复 催收无法手动分单问题" />
+    <MESSAGE value="修复 金额减免记录list不展示催收阶段的问题" />
+    <MESSAGE value="修复 t_user表新增id_card_no字段" />
+    <MESSAGE value="修复 催收模块更新报错的问题" />
+    <MESSAGE value="贷款记录禁止查询详情" />
+    <MESSAGE value="修改 订单详情页的补充联系人报错问题" />
+    <MESSAGE value="修复 非催收人员可以看到处理中的订单问题" />
+    <MESSAGE value="修复 部分中文翻译问题" />
+    <MESSAGE value="修复 催收阶段配置去掉days配置" />
+    <MESSAGE value="去掉设置模块的菜单权限控制" />
+    <MESSAGE value="搜索新增过滤条件" />
+    <MESSAGE value="修复名字校验问题" />
+    <MESSAGE value="过滤联系人" />
+    <MESSAGE value="1. 催收記錄去掉跟進時間&#10;2. 催收記錄的催收員默認為當前用戶" />
+    <MESSAGE value="催收订单查询条件优化" />
+    <MESSAGE value="修复已存在的用户添加催收员角色不生效的bug" />
+    <MESSAGE value="分单管理页面实现数据统计功能" />
+    <MESSAGE value="去掉订单详情页多余的合同金额字段，将财务订单状态文案改成订单状态" />
+    <MESSAGE value="优化分单管理中的催收员数据统计逻辑" />
+    <MESSAGE value="催收阶段以及自动分单集成教授的二方包" />
+    <MESSAGE value="添加催收订单催收员账号异常，催收订单将被重置为待分配状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加催收订单催收员账号异常，催收订单将被重置为待分配状态" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/admin$odoo_bin.coverage" NAME="odoo-bin 覆盖结果" MODIFIED="1733220120871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

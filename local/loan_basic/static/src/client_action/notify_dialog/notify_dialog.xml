@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="notify_dialog_view">
+        <Dialog size="props.size" title="props.title" contentClass="props.contentClass" footer="props.footer">
+        <p t-foreach="props.body" t-as="item" t-key="item_index" style="    word-wrap: break-word;overflow-wrap: break-word;">
+            <t t-out="item"/>
+        </p>
+        <!-- <t t-set-slot="footer">
+            <button class="btn" t-att-class="props.confirmClass" t-on-click="_confirm" t-esc="props.confirmLabel"/>
+            <button t-if="props.cancel" class="btn btn-secondary" t-on-click="_cancel" t-esc="props.cancelLabel"/>
+        </t> -->
+        </Dialog>
+    </t>
+</templates>

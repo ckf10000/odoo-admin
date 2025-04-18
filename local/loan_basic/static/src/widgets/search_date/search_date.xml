@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="SearchDateTimeField">
+        <div class="d-flex gap-2 align-items-center" t-ref="root">
+            <!-- Start date -->
+            <input
+                t-ref="start-date"
+                type="text"
+                class="o_input cursor-pointer search_date"
+                autocomplete="off"
+                t-att-placeholder="props.placeholder"
+                t-att-data-field="startDateField"
+                t-on-input="onInput"
+            />
+            <span
+                t-if="props.warnFuture and isDateInTheFuture(0)"
+                class="fa fa-exclamation-triangle text-danger"
+                title="This date is on the future. Make sure it is what you expected."
+            />
+
+            <!-- Separator -->
+            <i class="fa fa-long-arrow-right" aria-label="Arrow icon" title="Arrow" />
+
+            <!-- End date -->
+            <input
+                t-ref="end-date"
+                type="text"
+                class="o_input cursor-pointer search_date"
+                autocomplete="off"
+                t-att-placeholder="props.placeholder"
+                t-att-data-field="endDateField"
+                t-on-input="onInput"
+            />
+            <span
+                t-if="props.warnFuture and isDateInTheFuture(1)"
+                class="fa fa-exclamation-triangle text-danger"
+                title="This date is on the future. Make sure it is what you expected."
+            />
+        </div>
+    </t>
+</templates>

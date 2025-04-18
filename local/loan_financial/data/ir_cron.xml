@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_compute_order_overdue" model="ir.cron">
+        <field name="name">Compute Order Overdue</field>
+        <field name="model_id" ref="model_loan_order"/>
+        <field name="state">code</field>
+        <field name="code">model.task_compute_overdue()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <record id="ir_cron_derate_lose_efficacy" model="ir.cron">
+        <field name="name">Lose Efficacy Derate Record</field>
+        <field name="model_id" ref="model_derate_record"/>
+        <field name="state">code</field>
+        <field name="code">model.task_lose_efficacy()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <record id="ir_cron_close_extension_record" model="ir.cron">
+        <field name="name">Close Extension Record</field>
+        <field name="model_id" ref="model_extension_record"/>
+        <field name="state">code</field>
+        <field name="code">model.task_close_extension()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <record id="ir_cron_pay_channel_search_order" model="ir.cron">
+        <field name="name">支付订单查询任务</field>
+        <field name="model_id" ref="model_payment_setting_trade_record"/>
+        <field name="state">code</field>
+        <field name="code">model.task_search_order()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">12</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>
