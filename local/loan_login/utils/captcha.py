@@ -3,7 +3,7 @@ import random
 from io import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 
-p = os.getcwd()
+p = os.path.dirname(os.path.abspath(__file__))  # 获取当前py文件所在目录
 
 
 def rndColor():
