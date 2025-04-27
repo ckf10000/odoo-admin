@@ -1,9 +1,8 @@
+import os
 import random
 from io import BytesIO
 from PIL import Image, ImageDraw, ImageFont
-import base64
 
-import os
 p = os.getcwd()
 
 
@@ -12,7 +11,7 @@ def rndColor():
     生成随机颜色
     :return:
     """
-    return (random.randint(0, 100), random.randint(10, 255), random.randint(64, 255))
+    return random.randint(0, 100), random.randint(10, 255), random.randint(64, 255)
 
 
 def generate_captcha(width=120, height=30, char_length=4):
@@ -20,9 +19,9 @@ def generate_captcha(width=120, height=30, char_length=4):
     img = Image.new(mode='RGB', size=(width, height), color=(bg_color, bg_color, bg_color))
     draw = ImageDraw.Draw(img, mode='RGB')
     code = random.choices('abcdefghkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', k=char_length)
-    font = ImageFont.truetype('arial.ttf', 30) #Win
-    #font = ImageFont.truetype('LiberationSans-Regular.ttf', 30)  #Linux
-    
+    font = ImageFont.truetype(os.path.join(p, "arial.ttf"), 30)  # Win
+    # font = ImageFont.truetype('LiberationSans-Regular.ttf', 30)  #Linux
+
     draw.text((15, 0), " ".join(code), fill=(0, 0, 254), font=font)
     # for i in range(char_length):
     #     fill = (random.randint(200, 255), random.randint(0, 50), random.randint(0, 50))
@@ -47,8 +46,8 @@ def generate_captcha(width=120, height=30, char_length=4):
         y2 = random.randint(0, height)
         draw.line((x1, y1, x2, y2), fill=rndColor())
 
-    # f = f'{p}\\local\\loan_login\\utils\\a.png'
-    # img.save(f, "png")
+    f = f'{p}\\a.png'
+    img.save(f, "png")
 
     out = BytesIO()
     img.save(out, "png")
