@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ==================== 插件管理 ==================== -->
+
+    <!-- 插件 Tree -->
+    <record id="view_app_plugin_tree" model="ir.ui.view">
+        <field name="name">app.plugin.tree</field>
+        <field name="model">app.plugin</field>
+        <field name="arch" type="xml">
+            <tree string="插件管理">
+                <field name="name"/>
+                <field name="plugin_code"/>
+                <field name="plugin_type"/>
+                <field name="platform"/>
+                <field name="current_version"/>
+                <field name="current_version_code"/>
+                <field name="distribution_mode"/>
+                <field name="release_count"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 插件 Form -->
+    <record id="view_app_plugin_form" model="ir.ui.view">
+        <field name="name">app.plugin.form</field>
+        <field name="model">app.plugin</field>
+        <field name="arch" type="xml">
+            <form string="插件管理">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_releases" type="object"
+                                class="oe_stat_button" icon="fa-history"
+                                string="发布记录" invisible="release_count == 0">
+                            <field name="release_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group string="基本信息">
+                            <field name="name"/>
+                            <field name="plugin_code"/>
+                            <field name="plugin_type"/>
+                            <field name="platform"/>
+                            <field name="active"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="当前版本">
+                            <field name="current_version" readonly="1"/>
+                            <field name="current_version_code" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="分发策略">
+                        <group>
+                            <field name="distribution_mode"/>
+                            <field name="auto_update"/>
+                            <field name="require_restart"/>
+                        </group>
+                        <group>
+                            <field name="min_app_version_code"/>
+                        </group>
+                    </group>
+                    <group string="依赖关系">
+                        <field name="dependency_plugin_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="插件图标">
+                        <field name="icon" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" nolabel="1" placeholder="插件描述..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 插件 Search -->
+    <record id="view_app_plugin_search" model="ir.ui.view">
+        <field name="name">app.plugin.search</field>
+        <field name="model">app.plugin</field>
+        <field name="arch" type="xml">
+            <search string="搜索插件">
+                <field name="name"/>
+                <field name="plugin_code"/>
+                <filter name="active" string="已启用" domain="[('active', '=', True)]"/>
+                <group expand="1" string="按类型">
+                    <filter name="type_core" string="核心插件" domain="[('plugin_type', '=', 'core')]"/>
+                    <filter name="type_feature" string="功能插件" domain="[('plugin_type', '=', 'feature')]"/>
+                    <filter name="type_theme" string="主题插件" domain="[('plugin_type', '=', 'theme')]"/>
+                </group>
+                <group expand="1" string="按分发模式">
+                    <filter name="mode_mandatory" string="强制分发" domain="[('distribution_mode', '=', 'mandatory')]"/>
+                    <filter name="mode_optional" string="非强制分发" domain="[('distribution_mode', '=', 'optional')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 插件 Action -->
+    <record id="action_app_plugin" model="ir.actions.act_window">
+        <field name="name">插件管理</field>
+        <field name="res_model">app.plugin</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- ==================== 插件发布记录 ==================== -->
+
+    <!-- 插件发布 Tree -->
+    <record id="view_app_plugin_release_tree" model="ir.ui.view">
+        <field name="name">app.plugin.release.tree</field>
+        <field name="model">app.plugin.release</field>
+        <field name="arch" type="xml">
+            <tree string="插件发布记录" decoration-success="state == 'published'"
+                  decoration-warning="state == 'draft'" decoration-danger="state == 'revoked'">
+                <field name="plugin_id"/>
+                <field name="version"/>
+                <field name="version_code"/>
+                <field name="distribution_mode"/>
+                <field name="state" widget="badge"/>
+                <field name="publish_date"/>
+                <field name="package_size"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 插件发布 Form -->
+    <record id="view_app_plugin_release_form" model="ir.ui.view">
+        <field name="name">app.plugin.release.form</field>
+        <field name="model">app.plugin.release</field>
+        <field name="arch" type="xml">
+            <form string="插件发布记录">
+                <header>
+                    <button name="action_publish" type="object"
+                            string="发布" class="btn-primary"
+                            invisible="state not in ('draft', 'testing')"/>
+                    <button name="action_revoke" type="object"
+                            string="撤回" class="btn-danger"
+                            invisible="state != 'published'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="基本信息">
+                            <field name="plugin_id"/>
+                            <field name="version"/>
+                            <field name="version_code"/>
+                        </group>
+                        <group string="分发策略">
+                            <field name="distribution_mode"/>
+                            <field name="require_restart"/>
+                        </group>
+                    </group>
+                    <group string="兼容性">
+                        <group>
+                            <field name="min_app_version_code"/>
+                            <field name="max_app_version_code"/>
+                        </group>
+                    </group>
+                    <group string="发布内容">
+                        <field name="release_note" widget="html" placeholder="Release Note..."/>
+                        <field name="change_log" placeholder="变更日志..."/>
+                    </group>
+                    <group string="插件包">
+                        <group>
+                            <field name="package_file" filename="package_filename"/>
+                            <field name="package_filename" invisible="1"/>
+                            <field name="package_size" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="download_url" widget="url"/>
+                        </group>
+                    </group>
+                    <group string="备注">
+                        <field name="description" nolabel="1" placeholder="备注说明..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 插件发布 Search -->
+    <record id="view_app_plugin_release_search" model="ir.ui.view">
+        <field name="name">app.plugin.release.search</field>
+        <field name="model">app.plugin.release</field>
+        <field name="arch" type="xml">
+            <search string="搜索发布记录">
+                <field name="plugin_id"/>
+                <field name="version"/>
+                <filter name="published" string="已发布" domain="[('state', '=', 'published')]"/>
+                <filter name="draft" string="草稿" domain="[('state', '=', 'draft')]"/>
+                <filter name="mandatory" string="强制分发" domain="[('distribution_mode', '=', 'mandatory')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- 插件发布 Action -->
+    <record id="action_app_plugin_release" model="ir.actions.act_window">
+        <field name="name">插件发布记录</field>
+        <field name="res_model">app.plugin.release</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

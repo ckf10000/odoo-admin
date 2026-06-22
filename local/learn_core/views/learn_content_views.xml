@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 内容列表视图 -->
+    <record id="view_learn_content_tree" model="ir.ui.view">
+        <field name="name">learn.content.tree</field>
+        <field name="model">learn.content</field>
+        <field name="arch" type="xml">
+            <tree string="学习内容" decoration-muted="state == 'archived'"
+                  decoration-info="state == 'draft'">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="content_type" widget="badge"
+                       decoration-success="content_type == 'textbook'"
+                       decoration-info="content_type == 'exam'"
+                       decoration-warning="content_type == 'workbook'"
+                       decoration-danger="content_type == 'video'"/>
+                <field name="category_id"/>
+                <field name="subject"/>
+                <field name="grade"/>
+                <field name="view_count"/>
+                <field name="favorite_count"/>
+                <field name="avg_rating" widget="float_factor"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'published'"
+                       decoration-info="state == 'draft'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 内容表单视图 -->
+    <record id="view_learn_content_form" model="ir.ui.view">
+        <field name="name">learn.content.form</field>
+        <field name="model">learn.content</field>
+        <field name="arch" type="xml">
+            <form string="学习内容">
+                <header>
+                    <button name="action_publish" type="object"
+                            string="发布" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_draft" type="object"
+                            string="退回草稿"
+                            invisible="state != 'published'"/>
+                    <button name="action_archive" type="object"
+                            string="归档"
+                            invisible="state == 'archived'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,published"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_questions" type="object"
+                                class="oe_stat_button" icon="fa-question-circle"
+                                invisible="content_type not in ('exam', 'workbook')">
+                            <field name="question_count" widget="statinfo" string="题目"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="content_type"/>
+                            <field name="category_id" options="{'no_create': True}"/>
+                            <field name="subject"/>
+                            <field name="grade"/>
+                            <field name="semester"/>
+                        </group>
+                        <group>
+                            <field name="publisher"/>
+                            <field name="author"/>
+                            <field name="isbn"/>
+                            <field name="edition"/>
+                            <field name="is_public"/>
+                            <field name="tags" widget="many2many_tags"/>
+                        </group>
+                    </group>
+
+                    <!-- 教材/文档字段 -->
+                    <group string="文档信息" invisible="content_type != 'textbook'">
+                        <group>
+                            <field name="cover_image" widget="image" class="oe_avatar"/>
+                        </group>
+                        <group>
+                            <field name="document_file" filename="document_filename"/>
+                            <field name="document_filename" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <!-- 视频字段 -->
+                    <group string="视频信息" invisible="content_type != 'video'">
+                        <field name="video_url" widget="url"/>
+                        <field name="video_platform"/>
+                        <field name="video_duration"/>
+                    </group>
+
+                    <!-- 试卷/练习册字段 -->
+                    <group string="试卷信息" invisible="content_type not in ('exam', 'workbook')">
+                        <group>
+                            <field name="total_score"/>
+                            <field name="pass_score"/>
+                            <field name="time_limit"/>
+                        </group>
+                        <group>
+                            <field name="question_count" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group string="简介">
+                        <field name="description" nolabel="1"/>
+                    </group>
+
+                    <group string="统计">
+                        <group>
+                            <field name="view_count"/>
+                            <field name="favorite_count"/>
+                            <field name="avg_rating" widget="float_factor"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- 题目列表视图 -->
+    <record id="view_learn_question_tree" model="ir.ui.view">
+        <field name="name">learn.question.tree</field>
+        <field name="model">learn.question</field>
+        <field name="arch" type="xml">
+            <tree string="题目列表" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="question_type" widget="badge"/>
+                <field name="difficulty" widget="badge"/>
+                <field name="score"/>
+                <field name="content_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 题目表单视图 -->
+    <record id="view_learn_question_form" model="ir.ui.view">
+        <field name="name">learn.question.form</field>
+        <field name="model">learn.question</field>
+        <field name="arch" type="xml">
+            <form string="题目">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="content_id" invisible="1"/>
+                            <field name="question_type"/>
+                            <field name="difficulty"/>
+                            <field name="score"/>
+                            <field name="sequence"/>
+                        </group>
+                    </group>
+                    <group string="题干">
+                        <field name="stem" nolabel="1"/>
+                        <field name="stem_image" widget="image"/>
+                    </group>
+                    <group string="选项" invisible="question_type not in ('single_choice', 'multi_choice')">
+                        <group>
+                            <field name="option_a"/>
+                            <field name="option_b"/>
+                            <field name="option_c"/>
+                        </group>
+                        <group>
+                            <field name="option_d"/>
+                            <field name="option_e"/>
+                            <field name="option_f"/>
+                        </group>
+                    </group>
+                    <group string="答案与解析">
+                        <group>
+                            <field name="correct_answer"
+                                   placeholder="选择题填选项字母如 A 或 AB，填空题用 | 分隔多个空"/>
+                            <field name="reference_answer"
+                                   placeholder="参考答案（填空/计算/问答）"/>
+                        </group>
+                        <group>
+                            <field name="answer_explanation" nolabel="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 内容搜索视图 -->
+    <record id="view_learn_content_search" model="ir.ui.view">
+        <field name="name">learn.content.search</field>
+        <field name="model">learn.content</field>
+        <field name="arch" type="xml">
+            <search string="搜索内容">
+                <field name="name"/>
+                <field name="subject"/>
+                <field name="grade"/>
+                <field name="author"/>
+                <field name="tags"/>
+                <filter name="type_textbook" string="教材"
+                        domain="[('content_type', '=', 'textbook')]"/>
+                <filter name="type_exam" string="试卷"
+                        domain="[('content_type', '=', 'exam')]"/>
+                <filter name="type_workbook" string="练习册"
+                        domain="[('content_type', '=', 'workbook')]"/>
+                <filter name="type_video" string="视频"
+                        domain="[('content_type', '=', 'video')]"/>
+                <separator/>
+                <filter name="published" string="已发布"
+                        domain="[('state', '=', 'published')]"/>
+                <filter name="draft" string="草稿"
+                        domain="[('state', '=', 'draft')]"/>
+                <group expand="0" string="按学期分组">
+                    <filter name="semester_spring" string="上学期"
+                            domain="[('semester', '=', 'spring')]"/>
+                    <filter name="semester_autumn" string="下学期"
+                            domain="[('semester', '=', 'autumn')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 标签视图 -->
+    <record id="view_learn_tag_tree" model="ir.ui.view">
+        <field name="name">learn.tag.tree</field>
+        <field name="model">learn.tag</field>
+        <field name="arch" type="xml">
+            <tree string="内容标签">
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_learn_content" model="ir.actions.act_window">
+        <field name="name">学习内容</field>
+        <field name="res_model">learn.content</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_learn_question" model="ir.actions.act_window">
+        <field name="name">题目管理</field>
+        <field name="res_model">learn.question</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_learn_tag" model="ir.actions.act_window">
+        <field name="name">内容标签</field>
+        <field name="res_model">learn.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>

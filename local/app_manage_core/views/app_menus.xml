@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 主菜单 -->
+    <menuitem id="menu_app_manage_root"
+              name="App 生命周期管理"
+              sequence="120"
+              web_icon="app_manage_core,static/description/icon.png"/>
+
+    <!-- 版本管理组 -->
+    <menuitem id="menu_app_version_group"
+              name="版本管理"
+              parent="menu_app_manage_root"
+              sequence="10"/>
+
+    <menuitem id="menu_app_version_baseline"
+              name="版本基线库"
+              parent="menu_app_version_group"
+              action="action_app_version_baseline"
+              sequence="10"/>
+
+    <menuitem id="menu_app_release"
+              name="发布管理"
+              parent="menu_app_version_group"
+              action="action_app_release"
+              sequence="20"/>
+
+    <menuitem id="menu_app_resource"
+              name="素材管理"
+              parent="menu_app_version_group"
+              action="action_app_resource"
+              sequence="30"/>
+
+    <!-- 分发管理组 -->
+    <menuitem id="menu_app_distribution_group"
+              name="分发管理"
+              parent="menu_app_manage_root"
+              sequence="20"/>
+
+    <menuitem id="menu_app_channel"
+              name="渠道管理"
+              parent="menu_app_distribution_group"
+              action="action_app_channel"
+              sequence="10"/>
+
+    <menuitem id="menu_app_terminal"
+              name="终端管理"
+              parent="menu_app_distribution_group"
+              action="action_app_terminal"
+              sequence="20"/>
+
+    <!-- 插件管理组 -->
+    <menuitem id="menu_app_plugin_group"
+              name="插件管理"
+              parent="menu_app_manage_root"
+              sequence="30"/>
+
+    <menuitem id="menu_app_plugin"
+              name="插件列表"
+              parent="menu_app_plugin_group"
+              action="action_app_plugin"
+              sequence="10"/>
+
+    <menuitem id="menu_app_plugin_release"
+              name="插件发布记录"
+              parent="menu_app_plugin_group"
+              action="action_app_plugin_release"
+              sequence="20"/>
+</odoo>

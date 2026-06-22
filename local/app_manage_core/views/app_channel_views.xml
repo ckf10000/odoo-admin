@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 渠道管理 Tree -->
+    <record id="view_app_channel_tree" model="ir.ui.view">
+        <field name="name">app.channel.tree</field>
+        <field name="model">app.channel</field>
+        <field name="arch" type="xml">
+            <tree string="渠道管理" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="channel_code"/>
+                <field name="channel_type"/>
+                <field name="platform"/>
+                <field name="use_whitelist" widget="boolean_toggle"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 渠道管理 Form -->
+    <record id="view_app_channel_form" model="ir.ui.view">
+        <field name="name">app.channel.form</field>
+        <field name="model">app.channel</field>
+        <field name="arch" type="xml">
+            <form string="渠道管理">
+                <sheet>
+                    <group>
+                        <group string="基本信息">
+                            <field name="name"/>
+                            <field name="channel_code"/>
+                            <field name="channel_type"/>
+                            <field name="platform"/>
+                            <field name="active"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="渠道配置">
+                            <field name="download_url_template" widget="url"/>
+                            <field name="app_store_id"/>
+                        </group>
+                    </group>
+                    <group string="白名单配置">
+                        <group>
+                            <field name="use_whitelist"/>
+                            <field name="whitelist_mode" invisible="use_whitelist == False"/>
+                        </group>
+                        <group invisible="use_whitelist == False">
+                            <field name="whitelist_user_ids" widget="many2many_tags"
+                                   invisible="whitelist_mode != 'user'"/>
+                            <field name="whitelist_partner_ids" widget="many2many_tags"
+                                   invisible="whitelist_mode != 'organization'"/>
+                        </group>
+                    </group>
+                    <group string="备注">
+                        <field name="description" nolabel="1" placeholder="备注说明..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 渠道管理 Search -->
+    <record id="view_app_channel_search" model="ir.ui.view">
+        <field name="name">app.channel.search</field>
+        <field name="model">app.channel</field>
+        <field name="arch" type="xml">
+            <search string="搜索渠道">
+                <field name="name"/>
+                <field name="channel_code"/>
+                <filter name="active" string="已启用" domain="[('active', '=', True)]"/>
+                <filter name="whitelist" string="启用白名单" domain="[('use_whitelist', '=', True)]"/>
+                <group expand="1" string="按类型">
+                    <filter name="type_official" string="官方渠道" domain="[('channel_type', '=', 'official')]"/>
+                    <filter name="type_third" string="第三方市场" domain="[('channel_type', '=', 'third_party')]"/>
+                    <filter name="type_enterprise" string="企业分发" domain="[('channel_type', '=', 'enterprise')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 渠道管理 Action -->
+    <record id="action_app_channel" model="ir.actions.act_window">
+        <field name="name">渠道管理</field>
+        <field name="res_model">app.channel</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

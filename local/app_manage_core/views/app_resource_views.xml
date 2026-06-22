@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 素材管理 Tree -->
+    <record id="view_app_resource_tree" model="ir.ui.view">
+        <field name="name">app.resource.tree</field>
+        <field name="model">app.resource</field>
+        <field name="arch" type="xml">
+            <tree string="素材管理" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="resource_type"/>
+                <field name="platform"/>
+                <field name="resolution"/>
+                <field name="is_force_update" widget="boolean_toggle"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 素材管理 Form -->
+    <record id="view_app_resource_form" model="ir.ui.view">
+        <field name="name">app.resource.form</field>
+        <field name="model">app.resource</field>
+        <field name="arch" type="xml">
+            <form string="素材管理">
+                <sheet>
+                    <group>
+                        <group string="基本信息">
+                            <field name="name"/>
+                            <field name="resource_type"/>
+                            <field name="platform"/>
+                            <field name="active"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="版本关联">
+                            <field name="baseline_id"/>
+                            <field name="min_app_version_code"/>
+                        </group>
+                    </group>
+                    <group string="素材资源">
+                        <group>
+                            <field name="offline_file" filename="offline_filename"/>
+                            <field name="offline_filename" invisible="1"/>
+                            <field name="file_size" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="online_url" widget="url"/>
+                            <field name="resolution"/>
+                            <field name="density"/>
+                        </group>
+                    </group>
+                    <group string="更新策略">
+                        <group>
+                            <field name="is_force_update"/>
+                            <field name="update_interval_hours"/>
+                        </group>
+                    </group>
+                    <group string="备注">
+                        <field name="description" nolabel="1" placeholder="描述说明..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 素材管理 Search -->
+    <record id="view_app_resource_search" model="ir.ui.view">
+        <field name="name">app.resource.search</field>
+        <field name="model">app.resource</field>
+        <field name="arch" type="xml">
+            <search string="搜索素材">
+                <field name="name"/>
+                <filter name="active" string="已启用" domain="[('active', '=', True)]"/>
+                <filter name="force_update" string="强制更新" domain="[('is_force_update', '=', True)]"/>
+                <group expand="1" string="按类型">
+                    <filter name="type_icon" string="图标" domain="[('resource_type', '=', 'app_icon')]"/>
+                    <filter name="type_launch" string="启动图" domain="[('resource_type', '=', 'launch_screen')]"/>
+                    <filter name="type_splash" string="开屏广告" domain="[('resource_type', '=', 'splash_ad')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 素材管理 Action -->
+    <record id="action_app_resource" model="ir.actions.act_window">
+        <field name="name">素材管理</field>
+        <field name="res_model">app.resource</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

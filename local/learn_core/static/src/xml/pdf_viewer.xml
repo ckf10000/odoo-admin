@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="learn_core.PDFViewerField" owl="1">
+        <div class="pdf-viewer-container">
+            <div class="pdf-toolbar">
+                <button class="btn btn-secondary btn-sm" t-on-click="prevPage"
+                        t-att-disabled="state.currentPage &lt;= 1">
+                    <i class="fa fa-chevron-left"/>
+                    上一页
+                </button>
+                <span class="page-info">第 <t t-esc="state.currentPage"/>
+                    /
+                    <t t-esc="state.totalPages"/>
+                    页</span>
+                <button class="btn btn-secondary btn-sm" t-on-click="nextPage">
+                    下一页 <i class="fa fa-chevron-right"/>
+                </button>
+                <button class="btn btn-secondary btn-sm" t-on-click="zoomOut">
+                    <i class="fa fa-search-minus"/>
+                </button>
+                <button class="btn btn-secondary btn-sm" t-on-click="zoomIn">
+                    <i class="fa fa-search-plus"/>
+                </button>
+                <button class="btn btn-secondary btn-sm" t-on-click="toggleAnnotations">
+                    <i class="fa fa-comment"/>
+                </button>
+            </div>
+            <iframe class="pdf-iframe" t-att-src="iframeUrl" style="transform: scale(1)"/>
+        </div>
+    </t>
+
+    <t t-name="learn_core.QuestionAnswerWidget" owl="1">
+        <div class="question-answer-widget">
+            <div class="question-stem" t-esc="props.question.stem"/>
+            <div class="options-list"
+                 t-if="props.question.question_type === 'single_choice' or props.question.question_type === 'multi_choice' or props.question.question_type === 'true_false'">
+                <t t-foreach="['a', 'b', 'c', 'd', 'e', 'f']" t-as="opt" t-key="opt">
+                    <div t-if="props.question['option_' + opt]"
+                         t-att-class="optionClass(opt)"
+                         t-on-click="() => selectOption(opt.toUpperCase())">
+                        <span class="option-label"><t t-esc="opt.toUpperCase()"/></span>
+                        <span class="option-text" t-esc="props.question['option_' + opt]"/>
+                    </div>
+                </t>
+            </div>
+            <div class="text-answer"
+                 t-if="props.question.question_type === 'fill_blank' or props.question.question_type === 'calculation' or props.question.question_type === 'essay'">
+                <textarea class="form-control" t-model="state.textAnswer" placeholder="请输入答案..."/>
+            </div>
+        </div>
+    </t>
+
+</templates>

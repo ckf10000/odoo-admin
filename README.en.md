@@ -1,14 +1,14 @@
 # odoo-admin
 
-#### 介绍
+#### Description
 
 管理系统后台
 
-#### 软件架构
+#### Software Architecture
 
-软件架构说明
+Software architecture description
 
-#### 安装教程
+#### Installation
 
 1. 构建
     - 3.1 上传Dockerfile文件
@@ -45,15 +45,15 @@
     - 3.4 sudo chown -R odoo:odoo /opt/odoo-admin
     - 3.5 su - odoo && cd /opt/odoo-admin && compose up -d
 
-#### 使用说明
+#### Instructions
 
 1. xxxx
 2. xxxx
 3. xxxx
 
-#### 参与贡献
+#### Contribution
 
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+1. Fork the repository
+2. Create Feat_xxx branch
+3. Commit your code
+4. Create Pull Request

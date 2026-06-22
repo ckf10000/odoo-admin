@@ -1,0 +1,133 @@
+/* 学习平台自定义样式 */
+
+.o_learn_content_detail {
+  padding: 16px;
+
+  .learn-cover {
+    text-align: center;
+    margin-bottom: 16px;
+
+    img {
+      max-width: 200px;
+      max-height: 280px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .learn-info {
+    .learn-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .learn-meta {
+      color: #666;
+      font-size: 13px;
+      margin-bottom: 16px;
+
+      span {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .learn-actions {
+    margin: 16px 0;
+    display: flex;
+    gap: 8px;
+  }
+}
+
+/* 试卷答题区域 */
+.o_learn_exam_area {
+  .question-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #fff;
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+
+      .question-type-badge {
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 12px;
+        background: #e9ecef;
+      }
+
+      .question-score {
+        color: #0d6efd;
+        font-weight: 600;
+      }
+    }
+
+    .question-stem {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .question-options {
+      .option-item {
+        padding: 8px 12px;
+        margin-bottom: 4px;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 1px solid #dee2e6;
+        transition: all 0.2s;
+
+        &:hover {
+          background: #f8f9fa;
+        }
+
+        &.selected {
+          border-color: #0d6efd;
+          background: #e7f1ff;
+        }
+
+        &.correct {
+          border-color: #198754;
+          background: #d1e7dd;
+        }
+
+        &.wrong {
+          border-color: #dc3545;
+          background: #f8d7da;
+        }
+      }
+    }
+  }
+}
+
+/* 错题本 */
+.o_learn_wrong_book {
+  .wrong-item {
+    border-left: 3px solid #dc3545;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 4px;
+  }
+}
+
+/* PDF 阅读器工具栏 */
+.learn-pdf-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+
+  .page-navigator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

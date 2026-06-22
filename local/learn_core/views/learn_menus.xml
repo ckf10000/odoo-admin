@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 学习平台主菜单 -->
+    <menuitem id="menu_learn_root"
+              name="学习平台"
+              sequence="80"
+              web_icon="learn_core,static/description/icon.png"/>
+
+    <!-- 分类管理 -->
+    <menuitem id="menu_learn_category"
+              name="分类管理"
+              parent="menu_learn_root"
+              sequence="10"
+              action="action_learn_category"/>
+
+    <!-- 内容管理 -->
+    <menuitem id="menu_learn_content"
+              name="内容管理"
+              parent="menu_learn_root"
+              sequence="20"
+              action="action_learn_content"/>
+
+    <!-- 题目管理 -->
+    <menuitem id="menu_learn_question"
+              name="题目管理"
+              parent="menu_learn_root"
+              sequence="30"
+              action="action_learn_question"/>
+
+    <!-- 标签管理 -->
+    <menuitem id="menu_learn_tag"
+              name="标签管理"
+              parent="menu_learn_root"
+              sequence="90"
+              action="action_learn_tag"/>
+
+</odoo>

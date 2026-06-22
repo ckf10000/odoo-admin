@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 发布管理 Tree -->
+    <record id="view_app_release_tree" model="ir.ui.view">
+        <field name="name">app.release.tree</field>
+        <field name="model">app.release</field>
+        <field name="arch" type="xml">
+            <tree string="发布管理" decoration-danger="state == 'revoked'"
+                  decoration-warning="state == 'draft'" decoration-success="state == 'published'">
+                <field name="name"/>
+                <field name="platform"/>
+                <field name="platform_version"/>
+                <field name="app_version"/>
+                <field name="version_code"/>
+                <field name="is_force_update" widget="boolean_toggle"/>
+                <field name="state" widget="badge"/>
+                <field name="publish_date"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 发布管理 Form -->
+    <record id="view_app_release_form" model="ir.ui.view">
+        <field name="name">app.release.form</field>
+        <field name="model">app.release</field>
+        <field name="arch" type="xml">
+            <form string="发布管理">
+                <header>
+                    <button name="action_to_testing" type="object"
+                            string="转入测试" class="btn-secondary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_publish" type="object"
+                            string="发布" class="btn-primary"
+                            invisible="state not in ('draft', 'testing')"/>
+                    <button name="action_revoke" type="object"
+                            string="撤回" class="btn-danger"
+                            invisible="state != 'published'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <group>
+                        <group string="基本信息">
+                            <field name="baseline_id"/>
+                            <field name="platform" invisible="1"/>
+                            <field name="platform_version" invisible="1"/>
+                            <field name="app_version"/>
+                            <field name="version_code"/>
+                            <field name="build_number"/>
+                        </group>
+                        <group string="发布策略">
+                            <field name="is_force_update"/>
+                            <field name="min_support_version"/>
+                            <field name="min_support_version_code" invisible="1"/>
+                            <field name="min_plugin_version"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group string="发布依赖">
+                        <field name="dependency_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="Release Note">
+                        <field name="release_summary" placeholder="更新要点摘要..."/>
+                        <field name="release_note" widget="html" placeholder="详细更新说明..."/>
+                    </group>
+                    <group string="安装包">
+                        <group>
+                            <field name="download_url" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="package_file" filename="package_filename"/>
+                            <field name="package_filename" invisible="1"/>
+                            <field name="package_size" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="关联素材">
+                        <field name="resource_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="备注">
+                        <field name="description" nolabel="1" placeholder="备注说明..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 发布管理 Search -->
+    <record id="view_app_release_search" model="ir.ui.view">
+        <field name="name">app.release.search</field>
+        <field name="model">app.release</field>
+        <field name="arch" type="xml">
+            <search string="搜索发布">
+                <field name="name"/>
+                <field name="app_version"/>
+                <filter name="published" string="已发布" domain="[('state', '=', 'published')]"/>
+                <filter name="draft" string="草稿" domain="[('state', '=', 'draft')]"/>
+                <filter name="testing" string="测试中" domain="[('state', '=', 'testing')]"/>
+                <filter name="force_update" string="强制更新" domain="[('is_force_update', '=', True)]"/>
+                <group expand="1" string="按平台">
+                    <filter name="platform_ios" string="iOS" domain="[('platform', '=', 'ios')]"/>
+                    <filter name="platform_android" string="Android" domain="[('platform', '=', 'android')]"/>
+                    <filter name="platform_harmonyos" string="HarmonyOS" domain="[('platform', '=', 'harmonyos')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 发布管理 Action -->
+    <record id="action_app_release" model="ir.actions.act_window">
+        <field name="name">发布管理</field>
+        <field name="res_model">app.release</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- 撤回向导 Form -->
+    <record id="view_app_release_revoke_wizard_form" model="ir.ui.view">
+        <field name="name">app.release.revoke.wizard.form</field>
+        <field name="model">app.release.revoke.wizard</field>
+        <field name="arch" type="xml">
+            <form string="撤回发布">
+                <group>
+                    <field name="release_id" invisible="1"/>
+                    <field name="reason" placeholder="请输入撤回原因..."/>
+                </group>
+                <footer>
+                    <button name="action_confirm" type="object" string="确认撤回" class="btn-danger"/>
+                    <button string="取消" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

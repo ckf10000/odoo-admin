@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 版本基线库 Tree -->
+    <record id="view_app_version_baseline_tree" model="ir.ui.view">
+        <field name="name">app.version.baseline.tree</field>
+        <field name="model">app.version.baseline</field>
+        <field name="arch" type="xml">
+            <tree string="版本基线库" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="platform"/>
+                <field name="platform_version"/>
+                <field name="platform_version_code"/>
+                <field name="active"/>
+                <field name="is_deprecated"/>
+                <field name="release_count"/>
+                <field name="terminal_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 版本基线库 Form -->
+    <record id="view_app_version_baseline_form" model="ir.ui.view">
+        <field name="name">app.version.baseline.form</field>
+        <field name="model">app.version.baseline</field>
+        <field name="arch" type="xml">
+            <form string="版本基线">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_releases" type="object"
+                                class="oe_stat_button" icon="fa-rocket"
+                                string="发布记录" invisible="release_count == 0">
+                            <field name="release_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="已弃用" bg_color="bg-danger"
+                            invisible="is_deprecated == False"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="platform"/>
+                            <field name="platform_version"/>
+                            <field name="platform_version_code"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                            <field name="is_deprecated"/>
+                            <field name="deprecation_date" invisible="is_deprecated == False"/>
+                        </group>
+                    </group>
+                    <group string="备注">
+                        <field name="description" nolabel="1" placeholder="备注说明..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 版本基线库 Search -->
+    <record id="view_app_version_baseline_search" model="ir.ui.view">
+        <field name="name">app.version.baseline.search</field>
+        <field name="model">app.version.baseline</field>
+        <field name="arch" type="xml">
+            <search string="搜索版本基线">
+                <field name="name"/>
+                <field name="platform_version"/>
+                <filter name="active" string="已启用" domain="[('active', '=', True)]"/>
+                <filter name="inactive" string="已禁用" domain="[('active', '=', False)]"/>
+                <filter name="deprecated" string="已弃用" domain="[('is_deprecated', '=', True)]"/>
+                <group expand="1" string="按平台">
+                    <filter name="platform_ios" string="iOS" domain="[('platform', '=', 'ios')]"/>
+                    <filter name="platform_android" string="Android" domain="[('platform', '=', 'android')]"/>
+                    <filter name="platform_harmonyos" string="HarmonyOS" domain="[('platform', '=', 'harmonyos')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 版本基线库 Action -->
+    <record id="action_app_version_baseline" model="ir.actions.act_window">
+        <field name="name">版本基线库</field>
+        <field name="res_model">app.version.baseline</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

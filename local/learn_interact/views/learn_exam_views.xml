@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 答题会话列表 -->
+    <record id="view_learn_exam_session_tree" model="ir.ui.view">
+        <field name="name">learn.exam.session.tree</field>
+        <field name="model">learn.exam.session</field>
+        <field name="arch" type="xml">
+            <tree string="答题记录" decoration-success="is_passed"
+                  decoration-danger="not is_passed and state == 'reviewed'">
+                <field name="name"/>
+                <field name="content_id"/>
+                <field name="user_id"/>
+                <field name="session_type" widget="badge"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'in_progress'"
+                       decoration-warning="state == 'submitted'"
+                       decoration-success="state == 'reviewed'"/>
+                <field name="earned_score"/>
+                <field name="total_score"/>
+                <field name="score_percent" widget="float_factor"/>
+                <field name="is_passed"/>
+                <field name="correct_count"/>
+                <field name="wrong_count"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 答题会话表单 -->
+    <record id="view_learn_exam_session_form" model="ir.ui.view">
+        <field name="name">learn.exam.session.form</field>
+        <field name="model">learn.exam.session</field>
+        <field name="arch" type="xml">
+            <form string="答题详情">
+                <header>
+                    <button name="action_retry_wrong" type="object"
+                            string="错题重练" class="btn-warning"
+                            invisible="state != 'reviewed' or wrong_count == 0"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="content_id"/>
+                            <field name="user_id"/>
+                            <field name="session_type"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="total_score"/>
+                            <field name="earned_score"/>
+                            <field name="score_percent" widget="float_factor"/>
+                            <field name="is_passed" widget="boolean_toggle"/>
+                            <field name="duration"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="total_questions"/>
+                        <field name="correct_count"/>
+                        <field name="wrong_count"/>
+                    </group>
+                    <group string="答题明细">
+                        <field name="answer_ids" nolabel="1">
+                            <tree string="答题明细" editable="bottom">
+                                <field name="question_sequence"/>
+                                <field name="question_id"/>
+                                <field name="user_answer"/>
+                                <field name="is_correct" widget="boolean_toggle"/>
+                                <field name="earned_score"/>
+                                <field name="score"/>
+                                <field name="review_comment"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 答题会话搜索 -->
+    <record id="view_learn_exam_session_search" model="ir.ui.view">
+        <field name="name">learn.exam.session.search</field>
+        <field name="model">learn.exam.session</field>
+        <field name="arch" type="xml">
+            <search string="搜索答题记录">
+                <field name="content_id"/>
+                <field name="user_id"/>
+                <filter name="passed" string="及格"
+                        domain="[('is_passed', '=', True)]"/>
+                <filter name="failed" string="不及格"
+                        domain="[('is_passed', '=', False), ('state', '=', 'reviewed')]"/>
+                <filter name="in_progress" string="进行中"
+                        domain="[('state', '=', 'in_progress')]"/>
+                <separator/>
+                <filter name="type_practice" string="练习模式"
+                        domain="[('session_type', '=', 'practice')]"/>
+                <filter name="type_exam" string="考试模式"
+                        domain="[('session_type', '=', 'exam')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- 错题本列表 -->
+    <record id="view_learn_wrong_book_tree" model="ir.ui.view">
+        <field name="name">learn.wrong.book.tree</field>
+        <field name="model">learn.wrong.book</field>
+        <field name="arch" type="xml">
+            <tree string="错题本" decoration-muted="is_mastered">
+                <field name="question_id"/>
+                <field name="content_id"/>
+                <field name="wrong_count"/>
+                <field name="last_wrong_time"/>
+                <field name="is_mastered" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 错题本表单 -->
+    <record id="view_learn_wrong_book_form" model="ir.ui.view">
+        <field name="name">learn.wrong.book.form</field>
+        <field name="model">learn.wrong.book</field>
+        <field name="arch" type="xml">
+            <form string="错题详情">
+                <header>
+                    <button name="action_mastered" type="object"
+                            string="标记已掌握" class="btn-success"
+                            invisible="is_mastered"/>
+                    <button name="action_retry" type="object"
+                            string="重新练习" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="question_id"/>
+                            <field name="content_id"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="wrong_count"/>
+                            <field name="last_wrong_time"/>
+                            <field name="is_mastered"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 答题明细列表 -->
+    <record id="view_learn_exam_answer_tree" model="ir.ui.view">
+        <field name="name">learn.exam.answer.tree</field>
+        <field name="model">learn.exam.answer</field>
+        <field name="arch" type="xml">
+            <tree string="答题明细">
+                <field name="session_id"/>
+                <field name="question_id"/>
+                <field name="user_answer"/>
+                <field name="is_correct" widget="boolean_toggle"/>
+                <field name="earned_score"/>
+                <field name="score"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_learn_exam_session" model="ir.actions.act_window">
+        <field name="name">答题记录</field>
+        <field name="res_model">learn.exam.session</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_learn_wrong_book" model="ir.actions.act_window">
+        <field name="name">错题本</field>
+        <field name="res_model">learn.wrong.book</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
