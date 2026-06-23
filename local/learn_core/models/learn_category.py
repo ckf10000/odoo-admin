@@ -47,6 +47,12 @@ class LearnCategory(models.Model):
     content_count = fields.Integer(
         string="内容数量", compute="_compute_content_count", store=True,
     )
+    word_count = fields.Integer(
+        string="单词数量", compute="_compute_word_count", store=True,
+    )
+    item_count = fields.Integer(
+        string="知识点数量", compute="_compute_item_count", store=True,
+    )
 
     _sql_constraints = [
         ("unique_code", "UNIQUE(code)", "分类编码必须唯一！"),
@@ -74,6 +80,30 @@ class LearnCategory(models.Model):
                 ("category_id", "in", all_categories),
             ])
 
+    @api.depends("child_ids")
+    def _compute_word_count(self):
+        """统计当前分类及所有子分类下的单词总数（旧 learn.word 模型）"""
+        for record in self:
+            all_categories = record._get_all_child_ids()  # noqa
+            contents = self.env["learn.content"].search([
+                ("category_id", "in", all_categories),
+            ])
+            record.word_count = self.env["learn.word"].search_count([
+                ("content_id", "in", contents.ids),
+            ])
+
+    @api.depends("child_ids")
+    def _compute_item_count(self):
+        """统计当前分类及所有子分类下的知识点条目总数（新 learn.item 模型）"""
+        for record in self:
+            all_categories = record._get_all_child_ids()  # noqa
+            contents = self.env["learn.content"].search([
+                ("category_id", "in", all_categories),
+            ])
+            record.item_count = self.env["learn.item"].search_count([
+                ("content_id", "in", contents.ids),
+            ])
+
     def _get_all_child_ids(self):
         """递归获取所有子分类 ID（含自身）"""
         self.ensure_one()
@@ -93,4 +123,34 @@ class LearnCategory(models.Model):
             "view_mode": "tree,form",
             "domain": [("category_id", "in", all_cats)],
             "context": {"default_category_id": self.id},  # noqa
+        }
+
+    def action_view_words(self):
+        """跳转到关联单词列表（旧 learn.word）"""
+        self.ensure_one()
+        all_cats = self._get_all_child_ids()
+        contents = self.env["learn.content"].search([
+            ("category_id", "in", all_cats),
+        ])
+        return {
+            "type": "ir.actions.act_window",
+            "name": f"{self.name} - 单词列表",
+            "res_model": "learn.word",
+            "view_mode": "tree,form",
+            "domain": [("content_id", "in", contents.ids)],
+        }
+
+    def action_view_items(self):
+        """跳转到关联知识点列表（新 learn.item，支持按类型筛选）"""
+        self.ensure_one()
+        all_cats = self._get_all_child_ids()
+        contents = self.env["learn.content"].search([
+            ("category_id", "in", all_cats),
+        ])
+        return {
+            "type": "ir.actions.act_window",
+            "name": f"{self.name} - 知识点",
+            "res_model": "learn.item",
+            "view_mode": "tree,form",
+            "domain": [("content_id", "in", contents.ids)],
         }

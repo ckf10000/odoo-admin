@@ -5,7 +5,7 @@
         <field name="name">app.version.baseline.tree</field>
         <field name="model">app.version.baseline</field>
         <field name="arch" type="xml">
-            <tree string="版本基线库" editable="bottom">
+            <tree string="版本基线库">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="platform"/>

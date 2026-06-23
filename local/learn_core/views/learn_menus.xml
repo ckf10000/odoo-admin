@@ -28,6 +28,13 @@
               sequence="30"
               action="action_learn_question"/>
 
+    <!-- 知识点管理 -->
+    <menuitem id="menu_learn_item"
+              name="知识点管理"
+              parent="menu_learn_root"
+              sequence="40"
+              action="action_learn_item"/>
+
     <!-- 标签管理 -->
     <menuitem id="menu_learn_tag"
               name="标签管理"

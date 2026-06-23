@@ -5,7 +5,7 @@
         <field name="name">app.channel.tree</field>
         <field name="model">app.channel</field>
         <field name="arch" type="xml">
-            <tree string="渠道管理" editable="bottom">
+            <tree string="渠道管理">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="channel_code"/>

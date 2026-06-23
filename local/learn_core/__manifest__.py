@@ -27,6 +27,8 @@
         'security/ir.model.access.csv',
         'views/learn_category_views.xml',
         'views/learn_content_views.xml',
+        'views/learn_word_views.xml',
+        'views/learn_item_views.xml',
         'views/learn_menus.xml',
         'data/learn_category_data.xml',
     ],

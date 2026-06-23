@@ -256,8 +256,9 @@
             <field name="sequence">20</field>
         </record>
 
-        <!-- ==================== 第四层：学期 → 科目 ==================== -->
+        <!-- ==================== 第四层：学期 → 科目（通用，不区分版本） ==================== -->
 
+        <!-- 辅助宏：给某学期生成基础科目 -->
         <!-- ====== 一年级上 ====== -->
         <record id="category_g1s1_chinese" model="learn.category">
             <field name="name">语文</field>
@@ -377,36 +378,6 @@
             <field name="parent_id" ref="category_grade_2_semester_1"/>
             <field name="sequence">30</field>
         </record>
-        <record id="category_g2s1_moral" model="learn.category">
-            <field name="name">道德与法治</field>
-            <field name="code">G2S1_MORAL</field>
-            <field name="parent_id" ref="category_grade_2_semester_1"/>
-            <field name="sequence">40</field>
-        </record>
-        <record id="category_g2s1_science" model="learn.category">
-            <field name="name">科学</field>
-            <field name="code">G2S1_SCIENCE</field>
-            <field name="parent_id" ref="category_grade_2_semester_1"/>
-            <field name="sequence">50</field>
-        </record>
-        <record id="category_g2s1_music" model="learn.category">
-            <field name="name">音乐</field>
-            <field name="code">G2S1_MUSIC</field>
-            <field name="parent_id" ref="category_grade_2_semester_1"/>
-            <field name="sequence">60</field>
-        </record>
-        <record id="category_g2s1_art" model="learn.category">
-            <field name="name">美术</field>
-            <field name="code">G2S1_ART</field>
-            <field name="parent_id" ref="category_grade_2_semester_1"/>
-            <field name="sequence">70</field>
-        </record>
-        <record id="category_g2s1_pe" model="learn.category">
-            <field name="name">体育</field>
-            <field name="code">G2S1_PE</field>
-            <field name="parent_id" ref="category_grade_2_semester_1"/>
-            <field name="sequence">80</field>
-        </record>
 
         <!-- ====== 二年级下 ====== -->
         <record id="category_g2s2_chinese" model="learn.category">
@@ -426,36 +397,6 @@
             <field name="code">G2S2_ENGLISH</field>
             <field name="parent_id" ref="category_grade_2_semester_2"/>
             <field name="sequence">30</field>
-        </record>
-        <record id="category_g2s2_moral" model="learn.category">
-            <field name="name">道德与法治</field>
-            <field name="code">G2S2_MORAL</field>
-            <field name="parent_id" ref="category_grade_2_semester_2"/>
-            <field name="sequence">40</field>
-        </record>
-        <record id="category_g2s2_science" model="learn.category">
-            <field name="name">科学</field>
-            <field name="code">G2S2_SCIENCE</field>
-            <field name="parent_id" ref="category_grade_2_semester_2"/>
-            <field name="sequence">50</field>
-        </record>
-        <record id="category_g2s2_music" model="learn.category">
-            <field name="name">音乐</field>
-            <field name="code">G2S2_MUSIC</field>
-            <field name="parent_id" ref="category_grade_2_semester_2"/>
-            <field name="sequence">60</field>
-        </record>
-        <record id="category_g2s2_art" model="learn.category">
-            <field name="name">美术</field>
-            <field name="code">G2S2_ART</field>
-            <field name="parent_id" ref="category_grade_2_semester_2"/>
-            <field name="sequence">70</field>
-        </record>
-        <record id="category_g2s2_pe" model="learn.category">
-            <field name="name">体育</field>
-            <field name="code">G2S2_PE</field>
-            <field name="parent_id" ref="category_grade_2_semester_2"/>
-            <field name="sequence">80</field>
         </record>
 
         <!-- ====== 三年级上 ====== -->
@@ -477,42 +418,6 @@
             <field name="parent_id" ref="category_grade_3_semester_1"/>
             <field name="sequence">30</field>
         </record>
-        <record id="category_g3s1_moral" model="learn.category">
-            <field name="name">道德与法治</field>
-            <field name="code">G3S1_MORAL</field>
-            <field name="parent_id" ref="category_grade_3_semester_1"/>
-            <field name="sequence">40</field>
-        </record>
-        <record id="category_g3s1_science" model="learn.category">
-            <field name="name">科学</field>
-            <field name="code">G3S1_SCIENCE</field>
-            <field name="parent_id" ref="category_grade_3_semester_1"/>
-            <field name="sequence">50</field>
-        </record>
-        <record id="category_g3s1_english_ext" model="learn.category">
-            <field name="name">英语（外研版）</field>
-            <field name="code">G3S1_ENGLISH_EXT</field>
-            <field name="parent_id" ref="category_grade_3_semester_1"/>
-            <field name="sequence">55</field>
-        </record>
-        <record id="category_g3s1_it" model="learn.category">
-            <field name="name">信息技术</field>
-            <field name="code">G3S1_IT</field>
-            <field name="parent_id" ref="category_grade_3_semester_1"/>
-            <field name="sequence">60</field>
-        </record>
-        <record id="category_g3s1_music" model="learn.category">
-            <field name="name">音乐</field>
-            <field name="code">G3S1_MUSIC</field>
-            <field name="parent_id" ref="category_grade_3_semester_1"/>
-            <field name="sequence">70</field>
-        </record>
-        <record id="category_g3s1_art" model="learn.category">
-            <field name="name">美术</field>
-            <field name="code">G3S1_ART</field>
-            <field name="parent_id" ref="category_grade_3_semester_1"/>
-            <field name="sequence">80</field>
-        </record>
 
         <!-- ====== 三年级下 ====== -->
         <record id="category_g3s2_chinese" model="learn.category">
@@ -533,129 +438,73 @@
             <field name="parent_id" ref="category_grade_3_semester_2"/>
             <field name="sequence">30</field>
         </record>
-        <record id="category_g3s2_moral" model="learn.category">
-            <field name="name">道德与法治</field>
-            <field name="code">G3S2_MORAL</field>
-            <field name="parent_id" ref="category_grade_3_semester_2"/>
-            <field name="sequence">40</field>
-        </record>
-        <record id="category_g3s2_science" model="learn.category">
-            <field name="name">科学</field>
-            <field name="code">G3S2_SCIENCE</field>
-            <field name="parent_id" ref="category_grade_3_semester_2"/>
-            <field name="sequence">50</field>
-        </record>
-        <record id="category_g3s2_english_ext" model="learn.category">
-            <field name="name">英语（外研版）</field>
-            <field name="code">G3S2_ENGLISH_EXT</field>
-            <field name="parent_id" ref="category_grade_3_semester_2"/>
-            <field name="sequence">55</field>
-        </record>
-        <record id="category_g3s2_it" model="learn.category">
-            <field name="name">信息技术</field>
-            <field name="code">G3S2_IT</field>
-            <field name="parent_id" ref="category_grade_3_semester_2"/>
-            <field name="sequence">60</field>
-        </record>
-        <record id="category_g3s2_music" model="learn.category">
-            <field name="name">音乐</field>
-            <field name="code">G3S2_MUSIC</field>
-            <field name="parent_id" ref="category_grade_3_semester_2"/>
-            <field name="sequence">70</field>
-        </record>
-        <record id="category_g3s2_art" model="learn.category">
-            <field name="name">美术</field>
-            <field name="code">G3S2_ART</field>
-            <field name="parent_id" ref="category_grade_3_semester_2"/>
-            <field name="sequence">80</field>
-        </record>
 
-        <!-- ====== 七年级上（初中） ====== -->
-        <record id="category_g7s1_chinese" model="learn.category">
-            <field name="name">语文</field>
-            <field name="code">G7S1_CHINESE</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
+        <!-- ==================== 第五层：科目 → 教材版本 ==================== -->
+
+        <!-- 三年级下 英语 → 各版本 -->
+        <record id="category_g3s2_english_pep" model="learn.category">
+            <field name="name">人教版(PEP)</field>
+            <field name="code">G3S2_ENGLISH_PEP</field>
+            <field name="parent_id" ref="category_g3s2_english"/>
             <field name="sequence">10</field>
         </record>
-        <record id="category_g7s1_math" model="learn.category">
-            <field name="name">数学</field>
-            <field name="code">G7S1_MATH</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
+        <record id="category_g3s2_english_oxford" model="learn.category">
+            <field name="name">苏教版(牛津)</field>
+            <field name="code">G3S2_ENGLISH_OXFORD</field>
+            <field name="parent_id" ref="category_g3s2_english"/>
             <field name="sequence">20</field>
         </record>
-        <record id="category_g7s1_english" model="learn.category">
-            <field name="name">英语</field>
-            <field name="code">G7S1_ENGLISH</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
+        <record id="category_g3s2_english_hnse" model="learn.category">
+            <field name="name">湘少版</field>
+            <field name="code">G3S2_ENGLISH_HNSE</field>
+            <field name="parent_id" ref="category_g3s2_english"/>
             <field name="sequence">30</field>
         </record>
-        <record id="category_g7s1_moral" model="learn.category">
-            <field name="name">道德与法治</field>
-            <field name="code">G7S1_MORAL</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
+        <record id="category_g3s2_english_wy" model="learn.category">
+            <field name="name">外研版</field>
+            <field name="code">G3S2_ENGLISH_WY</field>
+            <field name="parent_id" ref="category_g3s2_english"/>
             <field name="sequence">40</field>
-        </record>
-        <record id="category_g7s1_history" model="learn.category">
-            <field name="name">历史</field>
-            <field name="code">G7S1_HISTORY</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
-            <field name="sequence">50</field>
-        </record>
-        <record id="category_g7s1_geography" model="learn.category">
-            <field name="name">地理</field>
-            <field name="code">G7S1_GEOGRAPHY</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
-            <field name="sequence">60</field>
-        </record>
-        <record id="category_g7s1_biology" model="learn.category">
-            <field name="name">生物</field>
-            <field name="code">G7S1_BIOLOGY</field>
-            <field name="parent_id" ref="category_grade_7_semester_1"/>
-            <field name="sequence">70</field>
         </record>
 
-        <!-- ====== 七年级下（初中） ====== -->
-        <record id="category_g7s2_chinese" model="learn.category">
-            <field name="name">语文</field>
-            <field name="code">G7S2_CHINESE</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
+        <!-- ==================== 第六层：版本 → 单元 ==================== -->
+
+        <!-- 三年级下 英语 人教版 Unit 1~6 -->
+        <record id="category_g3s2_pep_unit1" model="learn.category">
+            <field name="name">Unit 1 Welcome back to school!</field>
+            <field name="code">G3S2_PEP_U1</field>
+            <field name="parent_id" ref="category_g3s2_english_pep"/>
             <field name="sequence">10</field>
         </record>
-        <record id="category_g7s2_math" model="learn.category">
-            <field name="name">数学</field>
-            <field name="code">G7S2_MATH</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
+        <record id="category_g3s2_pep_unit2" model="learn.category">
+            <field name="name">Unit 2 My family</field>
+            <field name="code">G3S2_PEP_U2</field>
+            <field name="parent_id" ref="category_g3s2_english_pep"/>
             <field name="sequence">20</field>
         </record>
-        <record id="category_g7s2_english" model="learn.category">
-            <field name="name">英语</field>
-            <field name="code">G7S2_ENGLISH</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
+        <record id="category_g3s2_pep_unit3" model="learn.category">
+            <field name="name">Unit 3 At the zoo</field>
+            <field name="code">G3S2_PEP_U3</field>
+            <field name="parent_id" ref="category_g3s2_english_pep"/>
             <field name="sequence">30</field>
         </record>
-        <record id="category_g7s2_moral" model="learn.category">
-            <field name="name">道德与法治</field>
-            <field name="code">G7S2_MORAL</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
+        <record id="category_g3s2_pep_unit4" model="learn.category">
+            <field name="name">Unit 4 Where is my car?</field>
+            <field name="code">G3S2_PEP_U4</field>
+            <field name="parent_id" ref="category_g3s2_english_pep"/>
             <field name="sequence">40</field>
         </record>
-        <record id="category_g7s2_history" model="learn.category">
-            <field name="name">历史</field>
-            <field name="code">G7S2_HISTORY</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
+        <record id="category_g3s2_pep_unit5" model="learn.category">
+            <field name="name">Unit 5 Do you like pears?</field>
+            <field name="code">G3S2_PEP_U5</field>
+            <field name="parent_id" ref="category_g3s2_english_pep"/>
             <field name="sequence">50</field>
         </record>
-        <record id="category_g7s2_geography" model="learn.category">
-            <field name="name">地理</field>
-            <field name="code">G7S2_GEOGRAPHY</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
+        <record id="category_g3s2_pep_unit6" model="learn.category">
+            <field name="name">Unit 6 How many?</field>
+            <field name="code">G3S2_PEP_U6</field>
+            <field name="parent_id" ref="category_g3s2_english_pep"/>
             <field name="sequence">60</field>
-        </record>
-        <record id="category_g7s2_biology" model="learn.category">
-            <field name="name">生物</field>
-            <field name="code">G7S2_BIOLOGY</field>
-            <field name="parent_id" ref="category_grade_7_semester_2"/>
-            <field name="sequence">70</field>
         </record>
 
     </data>

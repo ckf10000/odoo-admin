@@ -15,6 +15,7 @@
                 <field name="level"/>
                 <field name="is_leaf"/>
                 <field name="content_count"/>
+                <field name="item_count"/>
                 <field name="parent_id" invisible="1"/>
             </tree>
         </field>
@@ -29,9 +30,16 @@
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_view_contents" type="object"
-                                class="oe_stat_button" icon="fa-book"
-                                invisible="not is_leaf">
+                                class="oe_stat_button" icon="fa-book">
                             <field name="content_count" widget="statinfo" string="内容"/>
+                        </button>
+                        <button name="action_view_items" type="object"
+                                class="oe_stat_button" icon="fa-cubes">
+                            <field name="item_count" widget="statinfo" string="知识点"/>
+                        </button>
+                        <button name="action_view_words" type="object"
+                                class="oe_stat_button" icon="fa-language">
+                            <field name="word_count" widget="statinfo" string="单词"/>
                         </button>
                     </div>
                     <widget name="web_ribbon" title="末级分类" bg_color="bg-success"

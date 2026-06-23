@@ -5,7 +5,7 @@
         <field name="name">app.terminal.tree</field>
         <field name="model">app.terminal</field>
         <field name="arch" type="xml">
-            <tree string="终端管理" editable="bottom">
+            <tree string="终端管理">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="platform"/>
