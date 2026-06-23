@@ -22,7 +22,7 @@
     'category': 'Customizations/AppManage',
     'version': '17.0.0.1',
 
-    'depends': ['app_manage_core'],
+    'depends': ['app_manage_core', 'learn_common', 'auth_api'],
 
     'data': [],
 

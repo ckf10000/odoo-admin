@@ -14,7 +14,7 @@ import logging
 from odoo import http, _  # noqa
 from odoo.http import request, Response
 from odoo.exceptions import AccessDenied
-from odoo.addons.web.controllers.utils import ensure_db
+from odoo.addons.web.controllers.utils import ensure_db  # noqa
 
 _logger = logging.getLogger(__name__)
 

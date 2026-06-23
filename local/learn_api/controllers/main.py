@@ -21,12 +21,7 @@ import base64
 from odoo import http, fields
 from odoo.http import request, Response
 
-from odoo.addons.learn_common.common import (
-    json_response,
-    error_response,
-    get_user,
-    encode_image,
-)
+from odoo.addons.learn_common.common import json_response, error_response, get_user, encode_image  # noqa
 
 
 # ==================== 分类 API ====================

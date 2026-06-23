@@ -1,48 +1,29 @@
 # -*- coding: utf-8 -*-
-import json
-import logging
-from odoo import http
-from odoo.http import request, Response
-
 """
 App 生命周期管理 REST API
 
 接口前缀: /api/app/v1/
 
-认证方式:
-  - 通过 Odoo Session 认证（Cookie）
-  - 或通过 API Key（Header: X-API-Key）
+认证方式（get_user 自动识别）:
+  1. Bearer Token   - Header: Authorization: Bearer <access_token>
+  2. Session Cookie  - 浏览器 Web 登录
 
 响应格式:
   {
     "success": true/false,
     "data": {...},
     "message": "...",
-    "error": "..."
+    "error": "..."  // 仅在失败时
   }
 """
+import logging
+from odoo import http
+from odoo.http import request
+from odoo.exceptions import AccessDenied
+
+from odoo.addons.learn_common.common import json_response, error_response, get_user  # noqa
 
 _logger = logging.getLogger(__name__)
-
-
-def _json_response(data=None, message="ok", success=True, error=None, status=200):
-    """统一 JSON 响应"""
-    body = {
-        "success": success,
-        "message": message,
-        "data": data,
-    }
-    if error:
-        body["error"] = str(error)
-    return Response(
-        json.dumps(body, ensure_ascii=False, default=str),
-        status=status,
-        content_type="application/json; charset=utf-8",
-    )
-
-
-def _error_response(error, status=400):
-    return _json_response(success=False, message=str(error), error=str(error), status=status)
 
 
 # ==================== 登录校验 API ====================
@@ -112,6 +93,7 @@ class AppCheckController(http.Controller):
         }
         """
         try:
+            get_user()
             data = request.jsonrequest
             _log_check_request(data)
 
@@ -138,7 +120,7 @@ class AppCheckController(http.Controller):
             # 5. 素材校验
             resource_info = self._check_resources(platform, app_version_code)
 
-            return _json_response(data={
+            return json_response(data={
                 "force_update": version_info.get("force_update", False),
                 "need_update": version_info.get("need_update", False),
                 "latest_version": version_info.get("latest_version"),
@@ -153,9 +135,11 @@ class AppCheckController(http.Controller):
                 "resources": resource_info,
             })
 
+        except AccessDenied as e:
+            return error_response(e, 403)
         except Exception as e:
             _logger.exception("App check/login error")
-            return _error_response(e, 500)
+            return error_response(e, 500)
 
     @http.route("/api/app/v1/check/version", type="json", auth="public", methods=["POST"], csrf=False)
     def check_version(self, **kwargs):  # noqa
@@ -169,17 +153,20 @@ class AppCheckController(http.Controller):
         }
         """
         try:
+            get_user()
             data = request.jsonrequest
             app_version_code = data.get("app_version_code", 0)
             platform = data.get("platform", "")
             platform_version = data.get("platform_version", "")
 
             version_info = self._check_version(platform, platform_version, app_version_code)
-            return _json_response(data=version_info)
+            return json_response(data=version_info)
 
+        except AccessDenied as e:
+            return error_response(e, 403)
         except Exception as e:
             _logger.exception("App check/version error")
-            return _error_response(e, 500)
+            return error_response(e, 500)
 
     @http.route("/api/app/v1/check/plugins", type="json", auth="public", methods=["POST"], csrf=False)
     def check_plugins(self, **kwargs):  # noqa
@@ -194,16 +181,19 @@ class AppCheckController(http.Controller):
         }
         """
         try:
+            get_user()
             data = request.jsonrequest
             platform = data.get("platform", "")
             installed_plugins = data.get("installed_plugins", [])
 
             plugin_info = self._check_plugins(platform, installed_plugins)
-            return _json_response(data=plugin_info)
+            return json_response(data=plugin_info)
 
+        except AccessDenied as e:
+            return error_response(e, 403)
         except Exception as e:
             _logger.exception("App check/plugins error")
-            return _error_response(e, 500)
+            return error_response(e, 500)
 
     @http.route("/api/app/v1/check/resources", type="json", auth="public", methods=["POST"], csrf=False)
     def check_resources(self, **kwargs):  # noqa
@@ -216,16 +206,19 @@ class AppCheckController(http.Controller):
         }
         """
         try:
+            get_user()
             data = request.jsonrequest
             platform = data.get("platform", "")
             app_version_code = data.get("app_version_code", 0)
 
             resource_info = self._check_resources(platform, app_version_code)
-            return _json_response(data=resource_info)
+            return json_response(data=resource_info)
 
+        except AccessDenied as e:
+            return error_response(e, 403)
         except Exception as e:
             _logger.exception("App check/resources error")
-            return _error_response(e, 500)
+            return error_response(e, 500)
 
     @http.route("/api/app/v1/check/terminal", type="json", auth="public", methods=["POST"], csrf=False)
     def check_terminal(self, **kwargs):  # noqa
@@ -238,19 +231,22 @@ class AppCheckController(http.Controller):
         }
         """
         try:
+            get_user()
             data = request.jsonrequest
             platform = data.get("platform", "")
             terminal_model = data.get("terminal_model", "")
 
             allowed, message = self._check_terminal(platform, terminal_model)
-            return _json_response(data={
+            return json_response(data={
                 "allowed": allowed,
                 "message": message,
             })
 
+        except AccessDenied as e:
+            return error_response(e, 403)
         except Exception as e:
             _logger.exception("App check/terminal error")
-            return _error_response(e, 500)
+            return error_response(e, 500)
 
     @http.route("/api/app/v1/check/channel", type="json", auth="public", methods=["POST"], csrf=False)
     def check_channel(self, **kwargs):  # noqa
@@ -263,19 +259,22 @@ class AppCheckController(http.Controller):
         }
         """
         try:
+            get_user()
             data = request.jsonrequest
             channel_code = data.get("channel_code", "")
             user_id = data.get("user_id")
 
             allowed, message = self._check_channel(channel_code, user_id)
-            return _json_response(data={
+            return json_response(data={
                 "allowed": allowed,
                 "message": message,
             })
 
+        except AccessDenied as e:
+            return error_response(e, 403)
         except Exception as e:
             _logger.exception("App check/channel error")
-            return _error_response(e, 500)
+            return error_response(e, 500)
 
     # ==================== 内部校验方法 ====================
 

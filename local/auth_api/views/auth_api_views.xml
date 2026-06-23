@@ -14,7 +14,7 @@
                                 string="撤销所有 Token" confirm="确定要撤销该客户端的所有活跃 Token 吗？"/>
                     </div>
                     <widget name="web_ribbon" title="已禁用" bg_color="bg-danger"
-                            attrs="{'invisible': [('active', '=', True)]}"/>
+                            invisible="active"/>
                     <group>
                         <group string="基本信息">
                             <field name="name"/>
