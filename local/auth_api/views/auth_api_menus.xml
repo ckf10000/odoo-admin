@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 顶层菜单 -->
+    <menuitem id="menu_auth_api_root"
+              name="OAuth 认证"
+              sequence="100"
+              web_icon="auth_api,static/description/icon.png"/>
+
+    <!-- 客户端管理 -->
+    <menuitem id="menu_auth_client"
+              name="客户端管理"
+              parent="menu_auth_api_root"
+              sequence="10"
+              action="action_auth_client"/>
+
+    <!-- Token 管理 -->
+    <menuitem id="menu_auth_token"
+              name="Token 管理"
+              parent="menu_auth_api_root"
+              sequence="20"
+              action="action_auth_token"/>
+
+    <!-- 认证日志 -->
+    <menuitem id="menu_auth_log"
+              name="认证日志"
+              parent="menu_auth_api_root"
+              sequence="30"
+              action="action_auth_log"/>
+
+</odoo>

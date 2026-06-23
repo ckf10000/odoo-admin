@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- 预置默认客户端 -->
+        <record id="client_default" model="auth.client">
+            <field name="name">Default Client</field>
+            <field name="description">系统默认客户端，用于第三方 App 接入</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

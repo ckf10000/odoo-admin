@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- 定时任务：每小时清理过期 Token -->
+        <record id="ir_cron_cleanup_expired_tokens" model="ir.cron">
+            <field name="name">清理过期 OAuth Token</field>
+            <field name="model_id" ref="model_auth_token"/>
+            <field name="state">code</field>
+            <field name="code">model._cleanup_expired_tokens()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

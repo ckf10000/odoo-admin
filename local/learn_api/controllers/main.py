@@ -1,12 +1,12 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 学习平台 REST API
 
 接口前缀: /api/learn/v1/
 
-认证方式:
-  - 通过 Odoo Session 认证（Cookie）
-  - 或通过 API Key（Header: X-API-Key）
+认证方式（get_user 自动识别）:
+  1. Bearer Token   - Header: Authorization: Bearer <access_token>
+  2. Session Cookie  - 浏览器 Web 登录
 
 响应格式:
   {
@@ -17,45 +17,25 @@
   }
 """
 
-import json
 import base64
 from odoo import http, fields
 from odoo.http import request, Response
 
-
-def _json_response(data=None, message="ok", success=True, error=None, status=200):
-    """统一 JSON 响应格式"""
-    body = {
-        "success": success,
-        "message": message,
-        "data": data,
-    }
-    if error:
-        body["error"] = str(error)
-
-    return Response(
-        json.dumps(body, ensure_ascii=False, default=str),
-        status=status,
-        content_type="application/json; charset=utf-8",
-    )
-
-
-def _get_user():
-    """获取当前用户"""
-    return request.env.user
-
-
-def _error_response(error, status=400):
-    return _json_response(success=False, message=str(error), error=str(error), status=status)
+from odoo.addons.learn_common.common import (
+    json_response,
+    error_response,
+    get_user,
+    encode_image,
+)
 
 
 # ==================== 分类 API ====================
 
 class LearnCategoryController(http.Controller):
 
-    @http.route("/api/learn/v1/categories", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/categories", type="http", auth="public", methods=["GET"], csrf=False)
     def get_categories(self, **kwargs):
-        """获取分类树
+        """获取分类列表
 
         Query Params:
             parent_id: int - 父分类ID，不传则返回根分类
@@ -98,12 +78,12 @@ class LearnCategoryController(http.Controller):
                     item["children"] = _get_children(cat, include_count)
                 result.append(item)
 
-            return _json_response(data=result)
+            return json_response(data=result)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/categories/tree", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/categories/tree", type="http", auth="public", methods=["GET"], csrf=False)
     def get_category_tree(self, **kwargs):
         """获取完整分类树（所有层级）
 
@@ -121,17 +101,17 @@ class LearnCategoryController(http.Controller):
             for root in roots:
                 tree.append(_build_tree(root))
 
-            return _json_response(data=tree)
+            return json_response(data=tree)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
 
 # ==================== 内容 API ====================
 
 class LearnContentController(http.Controller):
 
-    @http.route("/api/learn/v1/contents", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/contents", type="http", auth="public", methods=["GET"], csrf=False)
     def get_contents(self, **kwargs):
         """获取内容列表
 
@@ -140,7 +120,7 @@ class LearnContentController(http.Controller):
             content_type: str - 内容类型 (textbook/exam/workbook/video)
             grade: str - 年级
             subject: str - 科目
-            keyword: str - 搜索关键词
+            keyword: str - 搜索关键字
             page: int - 页码（默认 1）
             page_size: int - 每页数量（默认 20）
         """
@@ -187,7 +167,7 @@ class LearnContentController(http.Controller):
             for c in contents:
                 result.append(_serialize_content(c))
 
-            return _json_response(data={
+            return json_response(data={
                 "list": result,
                 "total": total,
                 "page": page,
@@ -195,15 +175,15 @@ class LearnContentController(http.Controller):
             })
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/contents/<int:content_id>", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/contents/<int:content_id>", type="http", auth="public", methods=["GET"], csrf=False)
     def get_content_detail(self, content_id, **kwargs):  # noqa
         """获取内容详情"""
         try:
             content = request.env["learn.content"].sudo().browse(content_id)
             if not content.exists():
-                return _error_response("内容不存在", 404)
+                return error_response("内容不存在", 404)
 
             content.increment_view_count()
 
@@ -218,7 +198,7 @@ class LearnContentController(http.Controller):
                         "sequence": q.sequence,
                         "question_type": q.question_type,
                         "stem": q.stem,
-                        "stem_image": _encode_image(q.stem_image) if q.stem_image else None,
+                        "stem_image": encode_image(q.stem_image) if q.stem_image else None,
                         "options": {
                             "A": q.option_a,
                             "B": q.option_b,
@@ -232,19 +212,19 @@ class LearnContentController(http.Controller):
                     })
                 data["questions"] = questions
 
-            return _json_response(data=data)
+            return json_response(data=data)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/contents/<int:content_id>/document", type="http", auth="user", methods=["GET"],
+    @http.route("/api/learn/v1/contents/<int:content_id>/document", type="http", auth="public", methods=["GET"],
                 csrf=False)
     def get_document(self, content_id, **kwargs):  # noqa
         """获取教材文档文件（PDF 流）"""
         try:
             content = request.env["learn.content"].sudo().browse(content_id)
             if not content.exists() or not content.document_file:
-                return _error_response("文档不存在", 404)
+                return error_response("文档不存在", 404)
 
             pdf_data = base64.b64decode(content.document_file)
             return Response(
@@ -256,14 +236,14 @@ class LearnContentController(http.Controller):
             )
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
 
 # ==================== 试卷答题 API ====================
 
 class LearnExamController(http.Controller):
 
-    @http.route("/api/learn/v1/exam/start", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/exam/start", type="json", auth="public", methods=["POST"], csrf=False)
     def start_exam(self, **kwargs):  # noqa
         """开始答题
 
@@ -281,7 +261,7 @@ class LearnExamController(http.Controller):
             vals = {
                 "content_id": content_id,
                 "session_type": session_type,
-                "user_id": _get_user().id,
+                "user_id": get_user().id,
             }
             if source_session_id:
                 vals["source_session_id"] = source_session_id
@@ -311,7 +291,7 @@ class LearnExamController(http.Controller):
                     "is_correct": None,
                 })
 
-            return _json_response(data={
+            return json_response(data={
                 "session_id": session.id,
                 "content_name": session.content_id.name,
                 "total_score": session.content_id.total_score,
@@ -321,9 +301,9 @@ class LearnExamController(http.Controller):
             })
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/exam/save_answer", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/exam/save_answer", type="json", auth="public", methods=["POST"], csrf=False)
     def save_answer(self, **kwargs):  # noqa
         """保存单题答案
 
@@ -338,18 +318,18 @@ class LearnExamController(http.Controller):
 
             answer = request.env["learn.exam.answer"].sudo().browse(answer_id)
             if not answer.exists():
-                return _error_response("答题明细不存在", 404)
+                return error_response("答题明细不存在", 404)
 
-            if answer.session_id.user_id.id != _get_user().id:
-                return _error_response("无权操作", 403)
+            if answer.session_id.user_id.id != get_user().id:
+                return error_response("无权操作", 403)
 
             answer.write({"user_answer": user_answer})
-            return _json_response(data={"id": answer.id, "saved": True})
+            return json_response(data={"id": answer.id, "saved": True})
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/exam/submit", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/exam/submit", type="json", auth="public", methods=["POST"], csrf=False)
     def submit_exam(self, **kwargs):  # noqa
         """提交试卷并自动批阅
 
@@ -362,13 +342,13 @@ class LearnExamController(http.Controller):
 
             session = request.env["learn.exam.session"].sudo().browse(session_id)
             if not session.exists():
-                return _error_response("会话不存在", 404)
+                return error_response("会话不存在", 404)
 
-            if session.user_id.id != _get_user().id:
-                return _error_response("无权操作", 403)
+            if session.user_id.id != get_user().id:
+                return error_response("无权操作", 403)
 
             if session.state != "in_progress":
-                return _error_response("该会话已提交", 400)
+                return error_response("该会话已提交", 400)
 
             session.action_submit()
             session.action_review()
@@ -377,7 +357,7 @@ class LearnExamController(http.Controller):
             _sync_wrong_book(session)
 
             # 返回成绩
-            return _json_response(data={
+            return json_response(data={
                 "session_id": session.id,
                 "total_score": session.total_score,
                 "earned_score": session.earned_score,
@@ -402,9 +382,9 @@ class LearnExamController(http.Controller):
             })
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/exam/history", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/exam/history", type="http", auth="public", methods=["GET"], csrf=False)
     def exam_history(self, **kwargs):
         """成绩历史
 
@@ -414,7 +394,7 @@ class LearnExamController(http.Controller):
             page_size: int
         """
         try:
-            user = _get_user()
+            user = get_user()
             domain = [("user_id", "=", user.id), ("state", "=", "reviewed")]
 
             content_id = kwargs.get("content_id")
@@ -449,7 +429,7 @@ class LearnExamController(http.Controller):
                     "create_date": str(s.create_date),
                 })
 
-            return _json_response(data={
+            return json_response(data={
                 "list": records,
                 "total": total,
                 "page": page,
@@ -457,14 +437,14 @@ class LearnExamController(http.Controller):
             })
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
 
 # ==================== 错题本 API ====================
 
 class LearnWrongBookController(http.Controller):
 
-    @http.route("/api/learn/v1/wrong_book", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/wrong_book", type="http", auth="public", methods=["GET"], csrf=False)
     def get_wrong_book(self, **kwargs):
         """获取错题本
 
@@ -475,7 +455,7 @@ class LearnWrongBookController(http.Controller):
             page_size: int
         """
         try:
-            user = _get_user()
+            user = get_user()
             domain = [("user_id", "=", user.id), ("is_mastered", "=", False)]
 
             content_id = kwargs.get("content_id")
@@ -513,7 +493,7 @@ class LearnWrongBookController(http.Controller):
                     "last_wrong_time": str(wb.last_wrong_time),
                 })
 
-            return _json_response(data={
+            return json_response(data={
                 "list": items,
                 "total": total,
                 "page": page,
@@ -521,24 +501,24 @@ class LearnWrongBookController(http.Controller):
             })
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/wrong_book/<int:record_id>/mastered", type="json", auth="user", methods=["POST"],
+    @http.route("/api/learn/v1/wrong_book/<int:record_id>/mastered", type="json", auth="public", methods=["POST"],
                 csrf=False)
     def mark_mastered(self, record_id, **kwargs):  # noqa
         """标记错题已掌握"""
         try:
             record = request.env["learn.wrong.book"].sudo().browse(record_id)
             if not record.exists():
-                return _error_response("记录不存在", 404)
-            if record.user_id.id != _get_user().id:
-                return _error_response("无权操作", 403)
+                return error_response("记录不存在", 404)
+            if record.user_id.id != get_user().id:
+                return error_response("无权操作", 403)
 
             record.action_mastered()
-            return _json_response(data={"id": record.id, "is_mastered": True})
+            return json_response(data={"id": record.id, "is_mastered": True})
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
 
 # ==================== 收藏/批注/笔记/评论 API ====================
@@ -546,11 +526,11 @@ class LearnWrongBookController(http.Controller):
 class LearnInteractController(http.Controller):
 
     # ---- 收藏 ----
-    @http.route("/api/learn/v1/favorites", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/favorites", type="http", auth="public", methods=["GET"], csrf=False)
     def get_favorites(self, **kwargs):  # noqa
         """获取收藏列表"""
         try:
-            user = _get_user()
+            user = get_user()
             favorites = request.env["learn.favorite"].sudo().search([
                 ("user_id", "=", user.id),
             ], order="create_date desc")
@@ -565,18 +545,18 @@ class LearnInteractController(http.Controller):
                     "create_date": str(fav.create_date),
                 })
 
-            return _json_response(data=items)
+            return json_response(data=items)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/favorites/toggle", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/favorites/toggle", type="json", auth="public", methods=["POST"], csrf=False)
     def toggle_favorite(self, **kwargs):  # noqa
         """切换收藏状态"""
         try:
             data = request.jsonrequest
             content_id = data.get("content_id")
-            user = _get_user()
+            user = get_user()
 
             existing = request.env["learn.favorite"].sudo().search([
                 ("user_id", "=", user.id),
@@ -585,23 +565,23 @@ class LearnInteractController(http.Controller):
 
             if existing:
                 existing.unlink()
-                return _json_response(data={"favorited": False}, message="已取消收藏")
+                return json_response(data={"favorited": False}, message="已取消收藏")
             else:
                 request.env["learn.favorite"].sudo().create({
                     "user_id": user.id,
                     "content_id": content_id,
                 })
-                return _json_response(data={"favorited": True}, message="已收藏")
+                return json_response(data={"favorited": True}, message="已收藏")
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
     # ---- 批注 ----
-    @http.route("/api/learn/v1/annotations", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/annotations", type="http", auth="public", methods=["GET"], csrf=False)
     def get_annotations(self, content_id, **kwargs):  # noqa
         """获取某内容的批注列表"""
         try:
-            user = _get_user()
+            user = get_user()
             annotations = request.env["learn.annotation"].sudo().search([
                 ("user_id", "=", user.id),
                 ("content_id", "=", int(content_id)),
@@ -620,29 +600,29 @@ class LearnInteractController(http.Controller):
                     "color": ann.color,
                 })
 
-            return _json_response(data=items)
+            return json_response(data=items)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/annotations", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/annotations", type="json", auth="public", methods=["POST"], csrf=False)
     def create_annotation(self, **kwargs):  # noqa
         """创建批注"""
         try:
             data = request.jsonrequest
-            data["user_id"] = _get_user().id
+            data["user_id"] = get_user().id
             annotation = request.env["learn.annotation"].sudo().create(data)
-            return _json_response(data={"id": annotation.id})
+            return json_response(data={"id": annotation.id})
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
     # ---- 笔记 ----
-    @http.route("/api/learn/v1/notes", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/notes", type="http", auth="public", methods=["GET"], csrf=False)
     def get_notes(self, **kwargs):
         """获取笔记列表"""
         try:
-            user = _get_user()
+            user = get_user()
             content_id = kwargs.get("content_id")
 
             domain = [("user_id", "=", user.id)]
@@ -664,34 +644,34 @@ class LearnInteractController(http.Controller):
                     "create_date": str(note.create_date),
                 })
 
-            return _json_response(data=items)
+            return json_response(data=items)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/notes", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/notes", type="json", auth="public", methods=["POST"], csrf=False)
     def create_note(self, **kwargs):  # noqa
         """创建/更新笔记"""
         try:
             data = request.jsonrequest
-            data["user_id"] = _get_user().id
+            data["user_id"] = get_user().id
 
             note_id = data.get("id")
             if note_id:
                 note = request.env["learn.note"].sudo().browse(note_id)
-                if note.user_id.id != _get_user().id:
-                    return _error_response("无权操作", 403)
+                if note.user_id.id != get_user().id:
+                    return error_response("无权操作", 403)
                 note.write(data)
             else:
                 note = request.env["learn.note"].sudo().create(data)
 
-            return _json_response(data={"id": note.id})
+            return json_response(data={"id": note.id})
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
     # ---- 评分评论 ----
-    @http.route("/api/learn/v1/ratings", type="http", auth="user", methods=["GET"], csrf=False)
+    @http.route("/api/learn/v1/ratings", type="http", auth="public", methods=["GET"], csrf=False)
     def get_ratings(self, content_id, **kwargs):  # noqa
         """获取内容评论列表"""
         try:
@@ -710,17 +690,17 @@ class LearnInteractController(http.Controller):
                     "create_date": str(r.create_date),
                 })
 
-            return _json_response(data=items)
+            return json_response(data=items)
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
-    @http.route("/api/learn/v1/ratings", type="json", auth="user", methods=["POST"], csrf=False)
+    @http.route("/api/learn/v1/ratings", type="json", auth="public", methods=["POST"], csrf=False)
     def create_rating(self, **kwargs):  # noqa
         """评分/评论"""
         try:
             data = request.jsonrequest
-            user = _get_user()
+            user = get_user()
 
             existing = request.env["learn.rating"].sudo().search([
                 ("user_id", "=", user.id),
@@ -732,7 +712,7 @@ class LearnInteractController(http.Controller):
                     "score": data.get("score"),
                     "comment": data.get("comment", ""),
                 })
-                return _json_response(data={"id": existing.id}, message="评价已更新")
+                return json_response(data={"id": existing.id}, message="评价已更新")
             else:
                 rating = request.env["learn.rating"].sudo().create({
                     "user_id": user.id,
@@ -740,10 +720,10 @@ class LearnInteractController(http.Controller):
                     "score": data.get("score"),
                     "comment": data.get("comment", ""),
                 })
-                return _json_response(data={"id": rating.id}, message="评价成功")
+                return json_response(data={"id": rating.id}, message="评价成功")
 
         except Exception as e:
-            return _error_response(e)
+            return error_response(e)
 
 
 # ==================== 辅助函数 ====================
@@ -773,7 +753,7 @@ def _serialize_content(content, detail=False):
         data.update({
             "isbn": content.isbn,
             "edition": content.edition,
-            "cover_image": _encode_image(content.cover_image),
+            "cover_image": encode_image(content.cover_image),
             "has_document": bool(content.document_file),
             "video_url": content.video_url,
             "video_platform": content.video_platform,
@@ -789,16 +769,6 @@ def _serialize_content(content, detail=False):
             })
 
     return data
-
-
-def _encode_image(binary_data):
-    """将二进制图片转为 Base64 字符串"""
-    if not binary_data:
-        return None
-    try:
-        return base64.b64encode(binary_data).decode("utf-8")
-    except (Exception,):
-        return None
 
 
 def _get_children(category, include_count=False):

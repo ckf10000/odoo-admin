@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========== 客户端 Form 视图 ========== -->
+    <record id="view_auth_client_form" model="ir.ui.view">
+        <field name="name">auth.client.form</field>
+        <field name="model">auth.client</field>
+        <field name="arch" type="xml">
+            <form string="OAuth2.0 客户端">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_revoke_all_tokens" type="object"
+                                class="oe_stat_button" icon="fa-ban"
+                                string="撤销所有 Token" confirm="确定要撤销该客户端的所有活跃 Token 吗？"/>
+                    </div>
+                    <widget name="web_ribbon" title="已禁用" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <group>
+                        <group string="基本信息">
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="认证信息">
+                            <field name="client_id" colspan="2"/>
+                            <field name="client_secret" colspan="2"/>
+                        </group>
+                    </group>
+                    <group string="Token 有效期配置">
+                        <group>
+                            <field name="access_token_expiry"/>
+                        </group>
+                        <group>
+                            <field name="refresh_token_expiry"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ========== 客户端 Tree 视图 ========== -->
+    <record id="view_auth_client_tree" model="ir.ui.view">
+        <field name="name">auth.client.tree</field>
+        <field name="model">auth.client</field>
+        <field name="arch" type="xml">
+            <tree string="OAuth2.0 客户端">
+                <field name="name"/>
+                <field name="client_id"/>
+                <field name="token_count" string="活跃 Token"/>
+                <field name="access_token_expiry"/>
+                <field name="refresh_token_expiry"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ========== 客户端 Search 视图 ========== -->
+    <record id="view_auth_client_search" model="ir.ui.view">
+        <field name="name">auth.client.search</field>
+        <field name="model">auth.client</field>
+        <field name="arch" type="xml">
+            <search string="搜索客户端">
+                <field name="name"/>
+                <field name="client_id"/>
+                <filter name="active" string="已启用" domain="[('active', '=', True)]"/>
+                <filter name="inactive" string="已禁用" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ========== Token Tree 视图 ========== -->
+    <record id="view_auth_token_tree" model="ir.ui.view">
+        <field name="name">auth.token.tree</field>
+        <field name="model">auth.token</field>
+        <field name="arch" type="xml">
+            <tree string="OAuth2.0 Token" decoration-danger="is_revoked == True">
+                <field name="user_id"/>
+                <field name="client_id"/>
+                <field name="create_date" string="创建时间"/>
+                <field name="expires_at" string="过期时间"/>
+                <field name="is_revoked" string="已撤销"/>
+                <field name="ip_address" string="IP"/>
+                <field name="device_info"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ========== Token Search 视图 ========== -->
+    <record id="view_auth_token_search" model="ir.ui.view">
+        <field name="name">auth.token.search</field>
+        <field name="model">auth.token</field>
+        <field name="arch" type="xml">
+            <search string="搜索 Token">
+                <field name="user_id"/>
+                <field name="client_id"/>
+                <filter name="active" string="活跃 Token"
+                        domain="[('is_revoked', '=', False), ('expires_at', '&gt;', context_today())]"/>
+                <filter name="revoked" string="已撤销" domain="[('is_revoked', '=', True)]"/>
+                <filter name="expired" string="已过期"
+                        domain="[('is_revoked', '=', False), ('expires_at', '&lt;=', context_today())]"/>
+                <separator/>
+                <filter name="group_user" string="按用户分组" context="{'group_by': 'user_id'}"/>
+                <filter name="group_client" string="按客户端分组" context="{'group_by': 'client_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ========== 登录日志 Tree 视图 ========== -->
+    <record id="view_auth_log_tree" model="ir.ui.view">
+        <field name="name">auth.log.tree</field>
+        <field name="model">auth.log</field>
+        <field name="arch" type="xml">
+            <tree string="认证日志" decoration-warning="action == 'failed'">
+                <field name="create_date" string="时间"/>
+                <field name="action" string="操作"/>
+                <field name="user_id"/>
+                <field name="login" string="登录名"/>
+                <field name="client_id"/>
+                <field name="ip_address"/>
+                <field name="device_info"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ========== 登录日志 Search 视图 ========== -->
+    <record id="view_auth_log_search" model="ir.ui.view">
+        <field name="name">auth.log.search</field>
+        <field name="model">auth.log</field>
+        <field name="arch" type="xml">
+            <search string="搜索日志">
+                <field name="user_id"/>
+                <field name="login"/>
+                <field name="client_id"/>
+                <filter name="action_login" string="登录" domain="[('action', '=', 'login')]"/>
+                <filter name="action_failed" string="登录失败" domain="[('action', '=', 'failed')]"/>
+                <filter name="action_refresh" string="刷新 Token" domain="[('action', '=', 'refresh')]"/>
+                <filter name="action_revoke" string="撤销 Token" domain="[('action', '=', 'revoke')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ========== Actions ========== -->
+    <record id="action_auth_client" model="ir.actions.act_window">
+        <field name="name">OAuth2.0 客户端</field>
+        <field name="res_model">auth.client</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_auth_token" model="ir.actions.act_window">
+        <field name="name">OAuth2.0 Token</field>
+        <field name="res_model">auth.token</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="action_auth_log" model="ir.actions.act_window">
+        <field name="name">认证日志</field>
+        <field name="res_model">auth.log</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+</odoo>

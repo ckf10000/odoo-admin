@@ -57,7 +57,7 @@ class AppCheckController(http.Controller):
     """
 
     @http.route("/api/app/v1/check/login", type="json", auth="public", methods=["POST"], csrf=False)
-    def check_login(self, **kwargs):
+    def check_login(self, **kwargs):  # noqa
         """App 登录综合校验
 
         移动端在启动/登录时调用，一次性返回所有需要校验的结果。
@@ -158,7 +158,7 @@ class AppCheckController(http.Controller):
             return _error_response(e, 500)
 
     @http.route("/api/app/v1/check/version", type="json", auth="public", methods=["POST"], csrf=False)
-    def check_version(self, **kwargs):
+    def check_version(self, **kwargs):  # noqa
         """单独检查版本更新
 
         Request Body (JSON):
@@ -182,7 +182,7 @@ class AppCheckController(http.Controller):
             return _error_response(e, 500)
 
     @http.route("/api/app/v1/check/plugins", type="json", auth="public", methods=["POST"], csrf=False)
-    def check_plugins(self, **kwargs):
+    def check_plugins(self, **kwargs):  # noqa
         """单独检查插件更新
 
         Request Body (JSON):
@@ -206,7 +206,7 @@ class AppCheckController(http.Controller):
             return _error_response(e, 500)
 
     @http.route("/api/app/v1/check/resources", type="json", auth="public", methods=["POST"], csrf=False)
-    def check_resources(self, **kwargs):
+    def check_resources(self, **kwargs):  # noqa
         """单独检查素材更新
 
         Request Body (JSON):
@@ -228,7 +228,7 @@ class AppCheckController(http.Controller):
             return _error_response(e, 500)
 
     @http.route("/api/app/v1/check/terminal", type="json", auth="public", methods=["POST"], csrf=False)
-    def check_terminal(self, **kwargs):
+    def check_terminal(self, **kwargs):  # noqa
         """单独校验终端
 
         Request Body (JSON):
@@ -253,7 +253,7 @@ class AppCheckController(http.Controller):
             return _error_response(e, 500)
 
     @http.route("/api/app/v1/check/channel", type="json", auth="public", methods=["POST"], csrf=False)
-    def check_channel(self, **kwargs):
+    def check_channel(self, **kwargs):  # noqa
         """单独校验渠道
 
         Request Body (JSON):

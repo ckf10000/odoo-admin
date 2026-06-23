@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """试卷答题、批阅、成绩、错题本"""
-
-import json
-from datetime import datetime
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
@@ -169,12 +166,12 @@ class LearnExamSession(models.Model):
     def action_review(self):
         """自动批阅"""
         self.ensure_one()
-        self.answer_ids._auto_review()
+        self.answer_ids._auto_review()  # noqa
         self.earned_score = sum(a.earned_score for a in self.answer_ids)
         self.state = "reviewed"
 
     def action_retry_wrong(self):
-        """错题重练：创建新的答题会话，只包含错题"""
+        """错题重练：创建新地答题会话，只包含错题"""
         self.ensure_one()
         wrong_answers = self.answer_ids.filtered(lambda a: not a.is_correct)
         if not wrong_answers:
@@ -191,7 +188,7 @@ class LearnExamSession(models.Model):
         new_session = self.env["learn.exam.session"].create({
             "content_id": self.content_id.id,
             "session_type": "retry",
-            "source_session_id": self.id,
+            "source_session_id": self.id,  # noqa
         })
         new_session.action_start()
         return {
