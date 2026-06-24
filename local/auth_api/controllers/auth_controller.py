@@ -213,10 +213,12 @@ class AuthController(http.Controller):
         """
         OAuth2.0 Refresh Token - 用 Refresh Token 获取新的 Token 对
         
-        请求体:
+        请求体 (JSON):
         {
             "grant_type": "refresh_token",
-            "refresh_token": "xxx"
+            "refresh_token": "xxx",
+            "client_id": "xxx",            // 客户端 ID
+            "client_secret": "xxx"         // 客户端密钥，用于验证客户端身份
         }
         """
         data = get_json()
@@ -229,10 +231,29 @@ class AuthController(http.Controller):
         if not refresh_token:
             return error_response('Refresh Token 不能为空', status=400)
 
+        client_id = data.get('client_id', '').strip()
+        client_secret = data.get('client_secret', '').strip()
+
         ip = get_client_ip()
         device_info = get_device_info()
 
         try:
+            # 1. 验证客户端身份（client_id + client_secret 必须都传）
+            if not client_id:
+                return error_response('Client ID 不能为空', status=400)
+            if not client_secret:
+                return error_response('Client Secret 不能为空', status=400)
+
+            client = request.env['auth.client'].sudo().search([
+                ('client_id', '=', client_id),
+                ('active', '=', True),
+            ], limit=1)
+            if not client:
+                return error_response('Client ID 无效', status=401)
+            if client.client_secret != client_secret:
+                return error_response('Client Secret 不匹配', status=401)
+
+            # 2. 刷新 Token
             token = request.env['auth.token'].sudo()._refresh_token(  # noqa
                 refresh_token,
                 device_info=device_info,

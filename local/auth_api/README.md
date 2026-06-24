@@ -55,12 +55,58 @@ Authorization: Bearer d4e5f6a7...
 
 # 第三步：Token 快过期时刷新
 POST /api/auth/refresh
-{ "refresh_token": "b8c9d0e1...", "client_id": "a3f8e9d1..." }
+{
+    "grant_type": "refresh_token",
+    "refresh_token": "b8c9d0e1...",
+    "client_id": "a3f8e9d1...",
+    "client_secret": "b9c2..."
+}
 
 # 第四步：登出
 POST /api/auth/logout
 Authorization: Bearer d4e5f6a7...
 ```
+
+### 3. App 端完整场景
+
+用户从打开 App 到正常使用的完整流程，Token 刷新对用户完全透明：
+
+```
+用户打开 App                                 refresh_token 泄露？
+  │                                               │
+  ├─ 1. 输入账号密码                                  ├─ 攻击者抓包拿到 refresh_token
+  │   POST /api/auth/token                          │
+  │   返回: {                                        ├─ 但他没有 client_secret
+  │     access_token  (2h 有效)                      │   → POST /api/auth/refresh
+  │     refresh_token (30d 有效)                     │   校验 client_secret 失败
+  │   }                                             │   → 拒绝刷新 ✓
+  │                                                 │
+  ├─ 2. 缓存 Token 到本地，正常使用                        │
+  │   每次业务请求带 Authorization: Bearer <access_token>   │
+  │                                                 │
+  │   假如 access_token 被中间人截获：                     │
+  │     → 2 小时后自动过期，影响有限 ✓                       │
+  │                                                 │
+  ├─ 3. access_token 过期                             │
+  │   业务接口返回 401                                 │
+  │   App 自动调 POST /api/auth/refresh               │
+  │   带上 refresh_token + client_id + client_secret   │
+  │   返回新的 Token 对                                │
+  │   旧 Token 自动撤销                                │
+  │   → 用户完全无感知，不需要重新输入密码                    │
+  │                                                 │
+  └─ 4. 用户登出 / 卸载 App                             │
+      POST /api/auth/logout                         │
+      → Token 撤销，立即失效                            │
+```
+
+**为什么这样设计？**
+
+| Token 类型 | 有效期 | 用途 | 安全策略 |
+|-----------|--------|------|---------|
+| access_token | 2 小时 | 每次请求都带 | 短期有效，泄露影响有限 |
+| refresh_token | 30 天 | 仅在刷新时用 | 必须配合 client_secret（编译在 App 里） |
+| client_secret | 永久 | 证明客户端身份 | 编译在 App 二进制中，不通过网络传输（仅刷新时） |
 
 ## API 接口
 
