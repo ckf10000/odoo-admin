@@ -16,12 +16,11 @@
     "error": "..."  // 仅在失败时
   }
 """
-
 import base64
 from odoo import http, fields
 from odoo.http import request, Response
 
-from odoo.addons.learn_common.common import json_response, error_response, get_user, encode_image  # noqa
+from odoo.addons.learn_common.common import json_response, error_response, get_user, encode_image, get_json  # noqa
 
 
 # ==================== 分类 API ====================
@@ -248,7 +247,7 @@ class LearnExamController(http.Controller):
             source_session_id: int - 错题重练时传原始会话 ID
         """
         try:
-            data = request.jsonrequest
+            data = get_json()
             content_id = data.get("content_id")
             session_type = data.get("session_type", "practice")
             source_session_id = data.get("source_session_id")
@@ -307,7 +306,7 @@ class LearnExamController(http.Controller):
             user_answer: str - 用户答案
         """
         try:
-            data = request.jsonrequest
+            data = get_json()
             answer_id = data.get("answer_id")
             user_answer = data.get("user_answer", "")
 
@@ -332,7 +331,7 @@ class LearnExamController(http.Controller):
             session_id: int - 答题会话 ID
         """
         try:
-            data = request.jsonrequest
+            data = get_json()
             session_id = data.get("session_id")
 
             session = request.env["learn.exam.session"].sudo().browse(session_id)
@@ -549,7 +548,7 @@ class LearnInteractController(http.Controller):
     def toggle_favorite(self, **kwargs):  # noqa
         """切换收藏状态"""
         try:
-            data = request.jsonrequest
+            data = get_json()
             content_id = data.get("content_id")
             user = get_user()
 
@@ -604,7 +603,7 @@ class LearnInteractController(http.Controller):
     def create_annotation(self, **kwargs):  # noqa
         """创建批注"""
         try:
-            data = request.jsonrequest
+            data = get_json()
             data["user_id"] = get_user().id
             annotation = request.env["learn.annotation"].sudo().create(data)
             return json_response(data={"id": annotation.id})
@@ -648,7 +647,7 @@ class LearnInteractController(http.Controller):
     def create_note(self, **kwargs):  # noqa
         """创建/更新笔记"""
         try:
-            data = request.jsonrequest
+            data = get_json()
             data["user_id"] = get_user().id
 
             note_id = data.get("id")
@@ -694,7 +693,7 @@ class LearnInteractController(http.Controller):
     def create_rating(self, **kwargs):  # noqa
         """评分/评论"""
         try:
-            data = request.jsonrequest
+            data = get_json()
             user = get_user()
 
             existing = request.env["learn.rating"].sudo().search([

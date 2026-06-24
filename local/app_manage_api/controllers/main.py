@@ -20,8 +20,7 @@ import logging
 from odoo import http
 from odoo.http import request
 from odoo.exceptions import AccessDenied
-
-from odoo.addons.learn_common.common import json_response, error_response, get_user  # noqa
+from odoo.addons.learn_common.common import json_response, error_response, get_user, get_json  # noqa
 
 _logger = logging.getLogger(__name__)
 
@@ -94,7 +93,7 @@ class AppCheckController(http.Controller):
         """
         try:
             get_user()
-            data = request.jsonrequest
+            data = get_json()
             _log_check_request(data)
 
             app_version_code = data.get("app_version_code", 0)
@@ -154,7 +153,7 @@ class AppCheckController(http.Controller):
         """
         try:
             get_user()
-            data = request.jsonrequest
+            data = get_json()
             app_version_code = data.get("app_version_code", 0)
             platform = data.get("platform", "")
             platform_version = data.get("platform_version", "")
@@ -182,7 +181,7 @@ class AppCheckController(http.Controller):
         """
         try:
             get_user()
-            data = request.jsonrequest
+            data = get_json()
             platform = data.get("platform", "")
             installed_plugins = data.get("installed_plugins", [])
 
@@ -207,7 +206,7 @@ class AppCheckController(http.Controller):
         """
         try:
             get_user()
-            data = request.jsonrequest
+            data = get_json()
             platform = data.get("platform", "")
             app_version_code = data.get("app_version_code", 0)
 
@@ -232,7 +231,7 @@ class AppCheckController(http.Controller):
         """
         try:
             get_user()
-            data = request.jsonrequest
+            data = get_json()
             platform = data.get("platform", "")
             terminal_model = data.get("terminal_model", "")
 
@@ -260,7 +259,7 @@ class AppCheckController(http.Controller):
         """
         try:
             get_user()
-            data = request.jsonrequest
+            data = get_json()
             channel_code = data.get("channel_code", "")
             user_id = data.get("user_id")
 

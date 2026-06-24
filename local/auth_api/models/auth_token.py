@@ -144,6 +144,11 @@ class AuthToken(models.Model):
             'device_info': device_info,
             'ip_address': ip_address,
         })
+        # 显式计算 hash，避免 computed store=True 延迟落库导致查不到
+        if token.access_token:
+            token.access_token_hash = hashlib.sha256(token.access_token.encode()).hexdigest()
+        if token.refresh_token:
+            token.refresh_token_hash = hashlib.sha256(token.refresh_token.encode()).hexdigest()
         return token
 
     @api.model

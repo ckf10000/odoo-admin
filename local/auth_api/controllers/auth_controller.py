@@ -9,55 +9,34 @@ OAuth2.0 认证控制器
 - GET  /api/auth/userinfo     获取当前用户信息
 - POST /api/auth/logout       登出
 """
-import json
 import logging
 from odoo import http, _  # noqa
-from odoo.http import request, Response
+from odoo.http import request
 from odoo.exceptions import AccessDenied
 from odoo.addons.web.controllers.utils import ensure_db  # noqa
+from odoo.addons.learn_common.common import (  # noqa
+    json_response, error_response, get_client_ip, get_device_info, get_json  # noqa
+)
 
 _logger = logging.getLogger(__name__)
 
 
-# ========== 工具函数 ==========
+def _get_bearer_token():
+    """多种方式尝试提取 Bearer Token（按优先级）"""
+    # 方式1: werkzeug 的 authorization 属性
+    auth = request.httprequest.authorization
+    if auth and auth.type.lower() == 'bearer' and auth.token:
+        return auth.token
+    # 方式2: 遍历 headers（兼容大小写）
+    for key, val in request.httprequest.headers:
+        if key.lower() == 'authorization' and val.lower().startswith('bearer '):
+            return val[7:].strip()
+    # 方式3: 读原始 WSGI environ
+    raw = request.httprequest.environ.get('HTTP_AUTHORIZATION', '')
+    if raw.lower().startswith('bearer '):
+        return raw[7:].strip()
+    return None
 
-def _json_response(data=None, message="ok", success=True, error=None, status=200):
-    """统一 JSON 响应格式"""
-    body = {"success": success, "message": message}
-    if data is not None:
-        body["data"] = data
-    if error:
-        body["error"] = str(error)
-    return Response(
-        json.dumps(body, ensure_ascii=False),
-        status=status,
-        content_type="application/json; charset=utf-8",
-        headers={
-            'Cache-Control': 'no-store',
-            'Pragma': 'no-cache',
-        }
-    )
-
-
-def _error_response(error, status=400):
-    """错误响应"""
-    return _json_response(success=False, message=str(error), error=str(error), status=status)
-
-
-def _get_client_ip():
-    """获取客户端 IP"""
-    forwarded = request.httprequest.headers.get('X-Forwarded-For')
-    if forwarded:
-        return forwarded.split(',')[0].strip()
-    return request.httprequest.remote_addr or ''
-
-
-def _get_device_info():
-    """从请求头获取设备信息"""
-    return request.httprequest.headers.get('X-Device-Info', '')
-
-
-# ========== Bearer Token 认证 ==========
 
 def authenticate_bearer():
     """
@@ -70,13 +49,9 @@ def authenticate_bearer():
     返回: res.users 记录
     失败: 抛出 AccessDenied
     """
-    auth_header = request.httprequest.headers.get('Authorization', '')
-    if not auth_header.startswith('Bearer '):
-        raise AccessDenied(_('缺少认证信息，请在 Authorization 头中提供 Bearer Token'))
-
-    access_token = auth_header[7:].strip()
+    access_token = _get_bearer_token()
     if not access_token:
-        raise AccessDenied(_('Access Token 不能为空'))
+        raise AccessDenied(_('缺少认证信息，请在 Authorization 头中提供 Bearer Token'))
 
     token = request.env['auth.token'].sudo()._find_by_access_token(access_token)  # noqa
     if not token:
@@ -122,11 +97,11 @@ class AuthController(http.Controller):
             }
         }
         """
-        data = request.jsonrequest
+        data = get_json()
         grant_type = data.get('grant_type', 'password')
 
         if grant_type != 'password':
-            return _error_response('不支持的 grant_type，当前只支持 password', status=400)
+            return error_response('不支持的 grant_type，当前只支持 password', status=400)
 
         username = data.get('username', '').strip()
         password = data.get('password', '')
@@ -134,10 +109,10 @@ class AuthController(http.Controller):
         db = data.get('db')
 
         if not username or not password:
-            return _error_response('用户名和密码不能为空', status=400)
+            return error_response('用户名和密码不能为空', status=400)
 
-        ip = _get_client_ip()
-        device_info = _get_device_info()
+        ip = get_client_ip()
+        device_info = get_device_info()
 
         try:
             # 1. 验证 Client
@@ -147,7 +122,7 @@ class AuthController(http.Controller):
                     ('active', '=', True),
                 ], limit=1)
                 if not client:
-                    return _error_response('Client ID 无效', status=401)
+                    return error_response('Client ID 无效', status=401)
             else:
                 # 使用默认客户端
                 client = request.env['auth.client'].sudo()._get_or_create_default_client()  # noqa
@@ -171,9 +146,17 @@ class AuthController(http.Controller):
                     device_info=device_info,
                     detail='用户名或密码错误',
                 )
-                return _error_response('用户名或密码错误', status=401)
+                return error_response('用户名或密码错误', status=401)
 
-            # 4. 创建 Token
+            # 4. 撤销该用户在此客户端的旧 Token（同一用户同一客户端只保留最新）
+            old_tokens = request.env['auth.token'].sudo().search([
+                ('user_id', '=', uid),
+                ('client_id', '=', client.id),
+                ('is_revoked', '=', False),
+            ])
+            old_tokens.action_revoke()
+
+            # 5. 创建新 Token
             user = request.env['res.users'].browse(uid)  # noqa
             token = request.env['auth.token'].sudo()._create_token(  # noqa
                 user_id=uid,
@@ -182,9 +165,10 @@ class AuthController(http.Controller):
                 ip_address=ip,
             )
 
-            # 5. 记录登录日志
+            # 6. 记录登录日志
             request.env['auth.log'].sudo().log_action(
                 action='login',
+                login=username,
                 user_id=uid,
                 client_id=client.id,
                 ip_address=ip,
@@ -217,10 +201,10 @@ class AuthController(http.Controller):
                 device_info=device_info,
                 detail=str(e),
             )
-            return _error_response(str(e), status=401)
+            return error_response(str(e), status=401)
         except Exception as e:
             _logger.exception("登录异常: %s", e)
-            return _error_response(f'服务器内部错误: {e}', status=500)
+            return error_response(f'服务器内部错误: {e}', status=500)
 
     # ========== 2. 刷新 Token ==========
 
@@ -235,18 +219,18 @@ class AuthController(http.Controller):
             "refresh_token": "xxx"
         }
         """
-        data = request.jsonrequest
+        data = get_json()
         grant_type = data.get('grant_type', 'refresh_token')
 
         if grant_type != 'refresh_token':
-            return _error_response('不支持的 grant_type', status=400)
+            return error_response('不支持的 grant_type', status=400)
 
         refresh_token = data.get('refresh_token', '').strip()
         if not refresh_token:
-            return _error_response('Refresh Token 不能为空', status=400)
+            return error_response('Refresh Token 不能为空', status=400)
 
-        ip = _get_client_ip()
-        device_info = _get_device_info()
+        ip = get_client_ip()
+        device_info = get_device_info()
 
         try:
             token = request.env['auth.token'].sudo()._refresh_token(  # noqa
@@ -258,6 +242,7 @@ class AuthController(http.Controller):
             # 记录刷新日志
             request.env['auth.log'].sudo().log_action(
                 action='refresh',
+                login=token.user_id.login,
                 user_id=token.user_id.id,
                 client_id=token.client_id.id,
                 ip_address=ip,
@@ -280,10 +265,10 @@ class AuthController(http.Controller):
             }
 
         except AccessDenied as e:
-            return _error_response(str(e), status=401)
+            return error_response(str(e), status=401)
         except Exception as e:
             _logger.exception("Token 刷新异常: %s", e)
-            return _error_response(f'服务器内部错误: {e}', status=500)
+            return error_response(f'服务器内部错误: {e}', status=500)
 
     # ========== 3. 撤销 Token ==========
 
@@ -298,11 +283,11 @@ class AuthController(http.Controller):
             "token_type_hint": "access_token"  // 可选
         }
         """
-        data = request.jsonrequest
+        data = get_json()
         token_str = data.get('token', '').strip()
 
         if not token_str:
-            return _error_response('Token 不能为空', status=400)
+            return error_response('Token 不能为空', status=400)
 
         try:
             # 尝试作为 access_token 查找
@@ -315,9 +300,11 @@ class AuthController(http.Controller):
                 token.action_revoke()
                 request.env['auth.log'].sudo().log_action(
                     action='revoke',
+                    login=token.user_id.login,
                     user_id=token.user_id.id,
                     client_id=token.client_id.id,
-                    ip_address=_get_client_ip(),
+                    ip_address=get_client_ip(),
+                    device_info=get_device_info(),
                 )
 
             # 即使 token 不存在也返回成功（OAuth2 规范）
@@ -325,7 +312,7 @@ class AuthController(http.Controller):
 
         except Exception as e:
             _logger.exception("Token 撤销异常: %s", e)
-            return _error_response(str(e), status=500)
+            return error_response(str(e), status=500)
 
     # ========== 4. 获取用户信息 ==========
 
@@ -354,7 +341,7 @@ class AuthController(http.Controller):
                 }
             }
         except AccessDenied as e:
-            return _error_response(str(e), status=401)
+            return error_response(str(e), status=401)
 
     # ========== 5. 登出 ==========
 
@@ -366,20 +353,20 @@ class AuthController(http.Controller):
         Header:
         Authorization: Bearer <access_token>
         """
-        auth_header = request.httprequest.headers.get('Authorization', '')
-        if not auth_header.startswith('Bearer '):
-            return _error_response('请提供 Bearer Token', status=400)
-
-        access_token = auth_header[7:].strip()
+        access_token = _get_bearer_token()
+        if not access_token:
+            return {'success': False, 'message': '请提供 Bearer Token', 'error': '请提供 Bearer Token', 'data': None}
         token = request.env['auth.token'].sudo()._find_by_access_token(access_token)  # noqa
 
         if token and not token.is_revoked:
             token.action_revoke()
             request.env['auth.log'].sudo().log_action(
                 action='revoke',
+                login=token.user_id.login,
                 user_id=token.user_id.id,
                 client_id=token.client_id.id,
-                ip_address=_get_client_ip(),
+                ip_address=get_client_ip(),
+                device_info=get_device_info(),
             )
 
         return {'success': True, 'message': '已登出'}

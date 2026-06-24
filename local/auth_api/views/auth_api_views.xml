@@ -95,10 +95,10 @@
                 <field name="user_id"/>
                 <field name="client_id"/>
                 <filter name="active" string="活跃 Token"
-                        domain="[('is_revoked', '=', False), ('expires_at', '&gt;', context_today())]"/>
+                        domain="[('is_revoked', '=', False)]"/>
                 <filter name="revoked" string="已撤销" domain="[('is_revoked', '=', True)]"/>
                 <filter name="expired" string="已过期"
-                        domain="[('is_revoked', '=', False), ('expires_at', '&lt;=', context_today())]"/>
+                        domain="[('is_revoked', '=', False), ('expires_at', '&lt;', context_today())]"/>
                 <separator/>
                 <filter name="group_user" string="按用户分组" context="{'group_by': 'user_id'}"/>
                 <filter name="group_client" string="按客户端分组" context="{'group_by': 'client_id'}"/>
@@ -159,5 +159,4 @@
         <field name="res_model">auth.log</field>
         <field name="view_mode">tree</field>
     </record>
-
 </odoo>
