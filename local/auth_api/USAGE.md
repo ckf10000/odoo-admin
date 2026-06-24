@@ -42,15 +42,21 @@ Content-Type: application/json
 
 ### 2. 刷新 Token
 
+Access Token 过期后，用 Refresh Token 换取新 Token 对，需同时验证客户端身份。
+
 ```http
 POST /api/auth/refresh
 Content-Type: application/json
 
 {
     "grant_type": "refresh_token",
-    "refresh_token": "xxx"
+    "refresh_token": "xxx",
+    "client_id": "xxx",          // 必填，客户端 ID
+    "client_secret": "xxx"       // 必填，客户端密钥
 }
 ```
+
+> `client_secret` 编译在 App 二进制中，不通过网络明文传输（仅刷新时携带）。即使 refresh_token 在网络中被截获，攻击者缺少 client_secret 也无法刷新。
 
 ### 3. 撤销 Token / 登出
 
@@ -131,13 +137,19 @@ fun createApi(): ApiService {
         // ...
 }
 
-// 3. Token 过期自动刷新
-class TokenRefreshInterceptor : Interceptor {
+// 3. Token 过期自动刷新（需 client_id + client_secret）
+class TokenRefreshInterceptor(private val clientId: String,
+                              private val clientSecret: String) : Interceptor {
     override fun intercept(chain: Chain): Response {
         var response = chain.proceed(chain.request())
         if (response.code == 401) {
-            // 用 refresh_token 刷新
-            val newTokens = refreshToken()
+            // 用 refresh_token + client_id + client_secret 刷新
+            val newTokens = api.refreshToken(
+                grant_type = "refresh_token",
+                refresh_token = getRefreshToken(),
+                client_id = clientId,
+                client_secret = clientSecret
+            )
             saveToken(newTokens.access_token, newTokens.refresh_token)
             // 重试原请求
             response = chain.proceed(chain.request().newBuilder()
@@ -155,5 +167,5 @@ class TokenRefreshInterceptor : Interceptor {
 - Access Token 默认 2 小时过期
 - Refresh Token 默认 30 天过期
 - 刷新 Token 时自动撤销旧 Token（Token Rotation）
-- 定时任务自动清理过期 Token
+- 定时任务自动标记过期 Token 为已撤销（保留审计记录）
 - 完整的登录日志审计
