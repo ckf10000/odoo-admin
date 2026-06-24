@@ -7,12 +7,13 @@
         <field name="model">auth.client</field>
         <field name="arch" type="xml">
             <form string="OAuth2.0 客户端">
+                <header>
+                    <button name="action_revoke_all_tokens" type="object"
+                            class="btn-primary"
+                            string="撤销所有 Token"
+                            confirm="确定要撤销该客户端的所有活跃 Token 吗？"/>
+                </header>
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button name="action_revoke_all_tokens" type="object"
-                                class="oe_stat_button" icon="fa-ban"
-                                string="撤销所有 Token" confirm="确定要撤销该客户端的所有活跃 Token 吗？"/>
-                    </div>
                     <widget name="web_ribbon" title="已禁用" bg_color="bg-danger"
                             invisible="active"/>
                     <group>
@@ -50,7 +51,7 @@
                 <field name="token_count" string="活跃 Token"/>
                 <field name="access_token_expiry"/>
                 <field name="refresh_token_expiry"/>
-                <field name="active" widget="boolean_toggle"/>
+                <field name="active"/>
             </tree>
         </field>
     </record>
@@ -74,7 +75,7 @@
         <field name="name">auth.token.tree</field>
         <field name="model">auth.token</field>
         <field name="arch" type="xml">
-            <tree string="OAuth2.0 Token" decoration-danger="is_revoked == True">
+            <tree string="OAuth2.0 Token" create="false" decoration-danger="is_revoked == True">
                 <field name="user_id"/>
                 <field name="client_id"/>
                 <field name="create_date" string="创建时间"/>

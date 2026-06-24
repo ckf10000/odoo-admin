@@ -171,12 +171,13 @@ class AuthToken(models.Model):
 
     @api.model
     def _cleanup_expired_tokens(self):
-        """清理过期的 Token（可由定时任务调用）"""
+        """标记过期的 Token 为已撤销（保留审计记录，不删除）"""
         expired = self.search([
+            ('is_revoked', '=', False),
             '|',
             ('expires_at', '<', fields.Datetime.now()),
             ('refresh_expires_at', '<', fields.Datetime.now()),
         ])
         count = len(expired)
-        expired.unlink()
+        expired.action_revoke()
         return count
