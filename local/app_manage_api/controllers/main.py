@@ -36,7 +36,7 @@ class AppCheckController(http.Controller):
     3. 检查素材更新 → 调用 /check/resources
     """
 
-    @http.route("/api/app/v1/check/login", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/app/check/login", type="http", auth="public", methods=["POST"], csrf=False)
     def check_login(self, **kwargs):  # noqa
         """App 登录综合校验
 
@@ -140,7 +140,7 @@ class AppCheckController(http.Controller):
             _logger.exception("App check/login error")
             return error_response(e, 500)
 
-    @http.route("/api/app/v1/check/version", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/app/check/version", type="http", auth="public", methods=["POST"], csrf=False)
     def check_version(self, **kwargs):  # noqa
         """单独检查版本更新
 
@@ -167,7 +167,7 @@ class AppCheckController(http.Controller):
             _logger.exception("App check/version error")
             return error_response(e, 500)
 
-    @http.route("/api/app/v1/check/plugins", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/app/check/plugins", type="http", auth="public", methods=["POST"], csrf=False)
     def check_plugins(self, **kwargs):  # noqa
         """单独检查插件更新
 
@@ -194,7 +194,7 @@ class AppCheckController(http.Controller):
             _logger.exception("App check/plugins error")
             return error_response(e, 500)
 
-    @http.route("/api/app/v1/check/resources", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/app/check/resources", type="http", auth="public", methods=["POST"], csrf=False)
     def check_resources(self, **kwargs):  # noqa
         """单独检查素材更新
 
@@ -219,7 +219,7 @@ class AppCheckController(http.Controller):
             _logger.exception("App check/resources error")
             return error_response(e, 500)
 
-    @http.route("/api/app/v1/check/terminal", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/app/check/terminal", type="http", auth="public", methods=["POST"], csrf=False)
     def check_terminal(self, **kwargs):  # noqa
         """单独校验终端
 
@@ -247,7 +247,7 @@ class AppCheckController(http.Controller):
             _logger.exception("App check/terminal error")
             return error_response(e, 500)
 
-    @http.route("/api/app/v1/check/channel", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/app/check/channel", type="http", auth="public", methods=["POST"], csrf=False)
     def check_channel(self, **kwargs):  # noqa
         """单独校验渠道
 

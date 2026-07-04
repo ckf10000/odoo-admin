@@ -27,7 +27,7 @@ from odoo.addons.learn_common.common import json_response, error_response, get_u
 
 class LearnCategoryController(http.Controller):
 
-    @http.route("/api/learn/v1/categories", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/categories", type="http", auth="public", methods=["GET"], csrf=False)
     def get_categories(self, **kwargs):
         """获取分类列表
 
@@ -77,7 +77,7 @@ class LearnCategoryController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/categories/tree", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/categories/tree", type="http", auth="public", methods=["GET"], csrf=False)
     def get_category_tree(self, **kwargs):
         """获取完整分类树（所有层级）
 
@@ -105,7 +105,7 @@ class LearnCategoryController(http.Controller):
 
 class LearnContentController(http.Controller):
 
-    @http.route("/api/learn/v1/contents", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/contents", type="http", auth="public", methods=["GET"], csrf=False)
     def get_contents(self, **kwargs):
         """获取内容列表
 
@@ -171,7 +171,7 @@ class LearnContentController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/contents/<int:content_id>", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/contents/<int:content_id>", type="http", auth="public", methods=["GET"], csrf=False)
     def get_content_detail(self, content_id, **kwargs):  # noqa
         """获取内容详情"""
         try:
@@ -211,7 +211,7 @@ class LearnContentController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/contents/<int:content_id>/document", type="http", auth="public", methods=["GET"],
+    @http.route("/api/v1/learn/contents/<int:content_id>/document", type="http", auth="public", methods=["GET"],
                 csrf=False)
     def get_document(self, content_id, **kwargs):  # noqa
         """获取教材文档文件（PDF 流）"""
@@ -237,7 +237,7 @@ class LearnContentController(http.Controller):
 
 class LearnExamController(http.Controller):
 
-    @http.route("/api/learn/v1/exam/start", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/exam/start", type="http", auth="public", methods=["POST"], csrf=False)
     def start_exam(self, **kwargs):  # noqa
         """开始答题
 
@@ -297,7 +297,7 @@ class LearnExamController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/exam/save_answer", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/exam/save_answer", type="http", auth="public", methods=["POST"], csrf=False)
     def save_answer(self, **kwargs):  # noqa
         """保存单题答案
 
@@ -323,7 +323,7 @@ class LearnExamController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/exam/submit", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/exam/submit", type="http", auth="public", methods=["POST"], csrf=False)
     def submit_exam(self, **kwargs):  # noqa
         """提交试卷并自动批阅
 
@@ -378,7 +378,7 @@ class LearnExamController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/exam/history", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/exam/history", type="http", auth="public", methods=["GET"], csrf=False)
     def exam_history(self, **kwargs):
         """成绩历史
 
@@ -438,7 +438,7 @@ class LearnExamController(http.Controller):
 
 class LearnWrongBookController(http.Controller):
 
-    @http.route("/api/learn/v1/wrong_book", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/wrong_book", type="http", auth="public", methods=["GET"], csrf=False)
     def get_wrong_book(self, **kwargs):
         """获取错题本
 
@@ -497,7 +497,7 @@ class LearnWrongBookController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/wrong_book/<int:record_id>/mastered", type="json", auth="public", methods=["POST"],
+    @http.route("/api/v1/learn/wrong_book/<int:record_id>/mastered", type="http", auth="public", methods=["POST"],
                 csrf=False)
     def mark_mastered(self, record_id, **kwargs):  # noqa
         """标记错题已掌握"""
@@ -520,7 +520,7 @@ class LearnWrongBookController(http.Controller):
 class LearnInteractController(http.Controller):
 
     # ---- 收藏 ----
-    @http.route("/api/learn/v1/favorites", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/favorites", type="http", auth="public", methods=["GET"], csrf=False)
     def get_favorites(self, **kwargs):  # noqa
         """获取收藏列表"""
         try:
@@ -544,7 +544,7 @@ class LearnInteractController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/favorites/toggle", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/favorites/toggle", type="http", auth="public", methods=["POST"], csrf=False)
     def toggle_favorite(self, **kwargs):  # noqa
         """切换收藏状态"""
         try:
@@ -571,7 +571,7 @@ class LearnInteractController(http.Controller):
             return error_response(e)
 
     # ---- 批注 ----
-    @http.route("/api/learn/v1/annotations", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/annotations", type="http", auth="public", methods=["GET"], csrf=False)
     def get_annotations(self, content_id, **kwargs):  # noqa
         """获取某内容的批注列表"""
         try:
@@ -599,7 +599,7 @@ class LearnInteractController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/annotations", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/annotations", type="http", auth="public", methods=["POST"], csrf=False)
     def create_annotation(self, **kwargs):  # noqa
         """创建批注"""
         try:
@@ -612,7 +612,7 @@ class LearnInteractController(http.Controller):
             return error_response(e)
 
     # ---- 笔记 ----
-    @http.route("/api/learn/v1/notes", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/notes", type="http", auth="public", methods=["GET"], csrf=False)
     def get_notes(self, **kwargs):
         """获取笔记列表"""
         try:
@@ -643,7 +643,7 @@ class LearnInteractController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/notes", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/notes", type="http", auth="public", methods=["POST"], csrf=False)
     def create_note(self, **kwargs):  # noqa
         """创建/更新笔记"""
         try:
@@ -665,7 +665,7 @@ class LearnInteractController(http.Controller):
             return error_response(e)
 
     # ---- 评分评论 ----
-    @http.route("/api/learn/v1/ratings", type="http", auth="public", methods=["GET"], csrf=False)
+    @http.route("/api/v1/learn/ratings", type="http", auth="public", methods=["GET"], csrf=False)
     def get_ratings(self, content_id, **kwargs):  # noqa
         """获取内容评论列表"""
         try:
@@ -689,7 +689,7 @@ class LearnInteractController(http.Controller):
         except Exception as e:
             return error_response(e)
 
-    @http.route("/api/learn/v1/ratings", type="json", auth="public", methods=["POST"], csrf=False)
+    @http.route("/api/v1/learn/ratings", type="http", auth="public", methods=["POST"], csrf=False)
     def create_rating(self, **kwargs):  # noqa
         """评分/评论"""
         try:

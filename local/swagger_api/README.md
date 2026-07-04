@@ -18,7 +18,7 @@ http://localhost:8069/api/swagger.json   # OpenAPI 3.0 JSON
 
 1. 在 Odoo 应用列表搜索 `Swagger`，点击安装
 2. 打开 `http://localhost:8069/api/swagger`
-3. 先调用 `/api/auth/token` 登录获取 `access_token`
+3. 先调用 `/api/v1/auth/token` 登录获取 `access_token`
 4. 点击页面右上角 **Authorize** 按钮，填入 `Bearer <access_token>`
 5. 现在可以 **Try it out** 测试所有接口了
 
@@ -32,18 +32,18 @@ base（Odoo 核心）
 
 ## 支持的接口分组
 
-| Tag | 描述 | 来源模块 |
-|-----|------|---------|
-| 认证 Auth | OAuth2.0 登录/登出/Token | `auth_api` |
-| 学习 - 分类 | 内容分类树 | `learn_api` |
-| 学习 - 内容 | 内容列表/详情/PDF | `learn_api` |
-| 学习 - 答题 | 试卷答题/批阅/成绩 | `learn_api` |
-| 学习 - 错题本 | 错题管理 | `learn_api` |
-| 学习 - 收藏 | 内容收藏 | `learn_api` |
-| 学习 - 批注 | PDF 批注 | `learn_api` |
-| 学习 - 笔记 | 学习笔记 | `learn_api` |
-| 学习 - 评论 | 评分与评论 | `learn_api` |
-| App 校验 | 版本/插件/素材/终端/渠道 | `app_manage_api` |
+| Tag      | 描述                   | 来源模块             |
+|----------|----------------------|------------------|
+| 认证 Auth  | OAuth2.0 登录/登出/Token | `auth_api`       |
+| 学习 - 分类  | 内容分类树                | `learn_api`      |
+| 学习 - 内容  | 内容列表/详情/PDF          | `learn_api`      |
+| 学习 - 答题  | 试卷答题/批阅/成绩           | `learn_api`      |
+| 学习 - 错题本 | 错题管理                 | `learn_api`      |
+| 学习 - 收藏  | 内容收藏                 | `learn_api`      |
+| 学习 - 批注  | PDF 批注               | `learn_api`      |
+| 学习 - 笔记  | 学习笔记                 | `learn_api`      |
+| 学习 - 评论  | 评分与评论                | `learn_api`      |
+| App 校验   | 版本/插件/素材/终端/渠道       | `app_manage_api` |
 
 ## 如何让新接口出现在文档中
 
@@ -80,8 +80,8 @@ def hello(self, **kwargs):
     ...
 ```
 
-- 以 `"key": value  // description` 格式写的请求参数会被自动提取为 Schema
--  `Response:` 后面的 JSON 会被提取为响应示例
+- 以 `"key": value // description` 格式写的请求参数会被自动提取为 Schema
+- `Response:` 后面的 JSON 会被提取为响应示例
 
 ## 工作原理
 
@@ -92,7 +92,7 @@ def hello(self, **kwargs):
    │
    └── 请求 /api/swagger.json
          │
-         ├── 从 nodb_routing_map 收集无数据库路由（如 /api/auth/*）
+         ├── 从 nodb_routing_map 收集无数据库路由（如 /api/v1/auth/*）
          ├── 从 ir.http.routing_map() 收集数据库路由
          ├── 遍历所有 /api/ 前缀的 Rule
          │     ├── 提取路径、HTTP 方法

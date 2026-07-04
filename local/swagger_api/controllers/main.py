@@ -137,7 +137,7 @@ def _build_openapi_spec():
                     "type": "http",
                     "scheme": "bearer",
                     "bearerFormat": "OAuth2.0 Access Token",
-                    "description": "通过 /api/auth/token 获取 Access Token",
+                    "description": "通过 /api/v1/auth/token 获取 Access Token",
                 },
             },
             "schemas": _define_schemas(),
@@ -153,7 +153,7 @@ def _collect_api_paths():
     """从 Odoo 路由表中收集所有 /api/ 前缀的路由"""
     paths = {}
 
-    # 收集 nodb 路由（如 /api/auth/*）
+    # 收集 nodb 路由（如 /api/v1/auth/*）
     _collect_from_map(http.root.nodb_routing_map, paths)
 
     # 收集 db 路由（需要数据库的路由）
@@ -277,7 +277,7 @@ def _get_routing(endpoint):
 
 def _convert_path_params(rule_str):
     """将 Odoo 路由参数转换为 OpenAPI 风格
-    /api/learn/v1/contents/<int:content_id> → /api/learn/v1/contents/{content_id}
+    /api/v1/learn/contents/<int:content_id> → /api/v1/learn/contents/{content_id}
     """
     return re.sub(r'<[^:]+:([^>]+)>', r'{\1}', rule_str)  # noqa
 

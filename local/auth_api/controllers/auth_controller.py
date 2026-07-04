@@ -3,11 +3,12 @@
 OAuth2.0 认证控制器
 
 提供以下接口：
-- POST /api/auth/token        登录获取 Token（Password Grant）
-- POST /api/auth/refresh      刷新 Token
-- POST /api/auth/revoke       撤销 Token
-- GET  /api/auth/userinfo     获取当前用户信息
-- POST /api/auth/logout       登出
+- POST /api/v1/auth/token             登录获取 Token（Password Grant）
+- POST /api/v1/auth/refresh           刷新 Token
+- POST /api/v1/auth/revoke            撤销 Token
+- GET  /api/v1/auth/userinfo          获取当前用户信息
+- POST /api/v1/auth/logout            登出
+- POST /api/v1/auth/change-password   修改密码
 """
 import logging
 from odoo import http, _  # noqa
@@ -71,7 +72,7 @@ class AuthController(http.Controller):
 
     # ========== 1. 获取 Token（Password Grant） ==========
 
-    @http.route('/api/auth/token', type='json', auth='public', methods=['POST'], csrf=False)
+    @http.route('/api/v1/auth/token', type="http", auth='public', methods=['POST'], csrf=False)
     def token(self, **kw):  # noqa
         """
         OAuth2.0 Password Grant - 用户名密码登录获取 Token
@@ -179,18 +180,14 @@ class AuthController(http.Controller):
 
             # 6. 返回 Token
             expires_in = client.access_token_expiry * 3600
-            return {
-                'success': True,
-                'message': '登录成功',
-                'data': {
-                    'access_token': token.access_token,
-                    'token_type': 'Bearer',
-                    'expires_in': expires_in,
-                    'refresh_token': token.refresh_token,
-                    'scope': token.scope,
-                    'user': token._get_user_info(),  # noqa
-                }
-            }
+            return json_response(data={
+                'access_token': token.access_token,
+                'token_type': 'Bearer',
+                'expires_in': expires_in,
+                'refresh_token': token.refresh_token,
+                'scope': token.scope,
+                'user': token._get_user_info(),  # noqa
+            }, message='登录成功')
 
         except AccessDenied as e:
             request.env['auth.log'].sudo().log_action(
@@ -208,7 +205,7 @@ class AuthController(http.Controller):
 
     # ========== 2. 刷新 Token ==========
 
-    @http.route('/api/auth/refresh', type='json', auth='public', methods=['POST'], csrf=False)
+    @http.route('/api/v1/auth/refresh', type="http", auth='public', methods=['POST'], csrf=False)
     def refresh(self, **kw):  # noqa
         """
         OAuth2.0 Refresh Token - 用 Refresh Token 获取新的 Token 对
@@ -273,17 +270,13 @@ class AuthController(http.Controller):
             client = token.client_id
             expires_in = client.access_token_expiry * 3600
 
-            return {
-                'success': True,
-                'message': 'Token 刷新成功',
-                'data': {
-                    'access_token': token.access_token,
-                    'token_type': 'Bearer',
-                    'expires_in': expires_in,
-                    'refresh_token': token.refresh_token,
-                    'scope': token.scope,
-                }
-            }
+            return json_response(data={
+                'access_token': token.access_token,
+                'token_type': 'Bearer',
+                'expires_in': expires_in,
+                'refresh_token': token.refresh_token,
+                'scope': token.scope,
+            }, message='Token 刷新成功')
 
         except AccessDenied as e:
             return error_response(str(e), status=401)
@@ -293,7 +286,7 @@ class AuthController(http.Controller):
 
     # ========== 3. 撤销 Token ==========
 
-    @http.route('/api/auth/revoke', type='json', auth='public', methods=['POST'], csrf=False)
+    @http.route('/api/v1/auth/revoke', type="http", auth='public', methods=['POST'], csrf=False)
     def revoke(self, **kw):  # noqa
         """
         撤销 Token（登出）
@@ -329,7 +322,7 @@ class AuthController(http.Controller):
                 )
 
             # 即使 token 不存在也返回成功（OAuth2 规范）
-            return {'success': True, 'message': 'Token 已撤销'}
+            return json_response(message='Token 已撤销')
 
         except Exception as e:
             _logger.exception("Token 撤销异常: %s", e)
@@ -337,7 +330,7 @@ class AuthController(http.Controller):
 
     # ========== 4. 获取用户信息 ==========
 
-    @http.route('/api/auth/userinfo', type='json', auth='public', methods=['GET', 'POST'], csrf=False)
+    @http.route('/api/v1/auth/userinfo', type="http", auth='public', methods=['GET', 'POST'], csrf=False)
     def userinfo(self, **kw):  # noqa
         """
         获取当前 Token 对应的用户信息
@@ -347,26 +340,23 @@ class AuthController(http.Controller):
         """
         try:
             user = authenticate_bearer()
-            return {
-                'success': True,
-                'data': {
-                    'uid': user.id,
-                    'login': user.login,
-                    'name': user.name,
-                    'email': user.email,
-                    'lang': user.lang,
-                    'tz': user.tz,
-                    'company_id': user.company_id.id,
-                    'company_name': user.company_id.name,
-                    'groups': user.groups_id.mapped('name'),
-                }
-            }
+            return json_response(data={
+                'uid': user.id,
+                'login': user.login,
+                'name': user.name,
+                'email': user.email,
+                'lang': user.lang,
+                'tz': user.tz,
+                'company_id': user.company_id.id,
+                'company_name': user.company_id.name,
+                'groups': user.groups_id.mapped('name'),
+            })
         except AccessDenied as e:
             return error_response(str(e), status=401)
 
     # ========== 5. 登出 ==========
 
-    @http.route('/api/auth/logout', type='json', auth='public', methods=['POST'], csrf=False)
+    @http.route('/api/v1/auth/logout', type="http", auth='public', methods=['POST'], csrf=False)
     def logout(self, **kw):  # noqa
         """
         登出 - 撤销当前 Bearer Token
@@ -376,7 +366,7 @@ class AuthController(http.Controller):
         """
         access_token = _get_bearer_token()
         if not access_token:
-            return {'success': False, 'message': '请提供 Bearer Token', 'error': '请提供 Bearer Token', 'data': None}
+            return error_response('请提供 Bearer Token', status=401)
         token = request.env['auth.token'].sudo()._find_by_access_token(access_token)  # noqa
 
         if token and not token.is_revoked:
@@ -390,4 +380,70 @@ class AuthController(http.Controller):
                 device_info=get_device_info(),
             )
 
-        return {'success': True, 'message': '已登出'}
+        return json_response(message='已登出')
+
+    # ========== 6. 修改密码 ==========
+
+    @http.route('/api/v1/auth/change-password', type="http", auth='public', methods=['POST'], csrf=False)
+    def change_password(self, **kw):  # noqa
+        """
+        修改当前用户密码（需要 Bearer Token 认证）
+
+        Header:
+            Authorization: Bearer <access_token>
+
+        请求体 (JSON):
+        {
+            "old_password": "当前密码",
+            "new_password": "新密码"
+        }
+
+        响应:
+        {
+            "success": true,
+            "message": "密码修改成功",
+            "data": null
+        }
+        """
+        try:
+            # 1. 验证 Bearer Token，获取当前用户
+            user = authenticate_bearer()
+
+            # 2. 解析请求参数
+            data = get_json()
+            old_password = data.get('old_password', '')
+            new_password = data.get('new_password', '')
+
+            # 3. 参数校验
+            if not old_password:
+                return error_response('旧密码不能为空', status=400)
+            if not new_password:
+                return error_response('新密码不能为空', status=400)
+            if len(new_password) < 6:
+                return error_response('新密码长度不能少于6位', status=400)
+            if old_password == new_password:
+                return error_response('新密码不能与旧密码相同', status=400)
+
+            # 4. 修改密码
+            user.sudo().change_password(old_password, new_password)
+
+            # 5. 记录日志
+            ip = get_client_ip()
+            request.env['auth.log'].sudo().log_action(
+                action='change_password',
+                login=user.login,
+                user_id=user.id,
+                ip_address=ip,
+                device_info=get_device_info(),
+                detail='用户通过 Android API 修改密码',
+            )
+
+            _logger.info("用户 %s 密码修改成功", user.login)
+
+            return json_response(message='密码修改成功')
+
+        except AccessDenied as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            _logger.exception("修改密码异常: %s", e)
+            return error_response(str(e), status=500)

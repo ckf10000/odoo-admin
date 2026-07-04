@@ -20,7 +20,7 @@
 
 ```
 # 第一步：登录获取 Token
-POST /api/auth/token
+POST /api/v1/auth/token
 Content-Type: application/json
 
 {
@@ -54,7 +54,7 @@ GET /api/learn/v1/contents
 Authorization: Bearer d4e5f6a7...
 
 # 第三步：Token 快过期时刷新
-POST /api/auth/refresh
+POST /api/v1/auth/refresh
 {
     "grant_type": "refresh_token",
     "refresh_token": "b8c9d0e1...",
@@ -62,8 +62,16 @@ POST /api/auth/refresh
     "client_secret": "b9c2..."
 }
 
-# 第四步：登出
-POST /api/auth/logout
+# 第四步：修改密码（需 Bearer Token 认证）
+POST /api/v1/auth/change-password
+Authorization: Bearer d4e5f6a7...
+{
+    "old_password": "xxxxxx",
+    "new_password": "nested123"
+}
+
+# 第五步：登出
+POST /api/v1/auth/logout
 Authorization: Bearer d4e5f6a7...
 ```
 
@@ -75,9 +83,9 @@ Authorization: Bearer d4e5f6a7...
 用户打开 App                                 refresh_token 泄露？
   │                                               │
   ├─ 1. 输入账号密码                                  ├─ 攻击者抓包拿到 refresh_token
-  │   POST /api/auth/token                          │
+  │   POST /api/v1/auth/token                          │
   │   返回: {                                        ├─ 但他没有 client_secret
-  │     access_token  (2h 有效)                      │   → POST /api/auth/refresh
+  │     access_token  (2h 有效)                      │   → POST /api/v1/auth/refresh
   │     refresh_token (30d 有效)                     │   校验 client_secret 失败
   │   }                                             │   → 拒绝刷新 ✓
   │                                                 │
@@ -89,34 +97,35 @@ Authorization: Bearer d4e5f6a7...
   │                                                 │
   ├─ 3. access_token 过期                             │
   │   业务接口返回 401                                 │
-  │   App 自动调 POST /api/auth/refresh               │
+  │   App 自动调 POST /api/v1/auth/refresh               │
   │   带上 refresh_token + client_id + client_secret   │
   │   返回新的 Token 对                                │
   │   旧 Token 自动撤销                                │
   │   → 用户完全无感知，不需要重新输入密码                    │
   │                                                 │
   └─ 4. 用户登出 / 卸载 App                             │
-      POST /api/auth/logout                         │
+      POST /api/v1/auth/logout                         │
       → Token 撤销，立即失效                            │
 ```
 
 **为什么这样设计？**
 
-| Token 类型 | 有效期 | 用途 | 安全策略 |
-|-----------|--------|------|---------|
-| access_token | 2 小时 | 每次请求都带 | 短期有效，泄露影响有限 |
-| refresh_token | 30 天 | 仅在刷新时用 | 必须配合 client_secret（编译在 App 里） |
-| client_secret | 永久 | 证明客户端身份 | 编译在 App 二进制中，不通过网络传输（仅刷新时） |
+| Token 类型      | 有效期  | 用途      | 安全策略                          |
+|---------------|------|---------|-------------------------------|
+| access_token  | 2 小时 | 每次请求都带  | 短期有效，泄露影响有限                   |
+| refresh_token | 30 天 | 仅在刷新时用  | 必须配合 client_secret（编译在 App 里） |
+| client_secret | 永久   | 证明客户端身份 | 编译在 App 二进制中，不通过网络传输（仅刷新时）    |
 
 ## API 接口
 
-| 方法   | 路径                   | 认证     | 说明                         |
-|------|----------------------|--------|----------------------------|
-| POST | `/api/auth/token`    | public | 用户名+密码登录，返回 Token 对        |
-| POST | `/api/auth/refresh`  | public | 用 Refresh Token 换新 Token 对 |
-| POST | `/api/auth/revoke`   | public | 撤销指定 Token                 |
-| GET  | `/api/auth/userinfo` | Bearer | 获取当前用户信息                   |
-| POST | `/api/auth/logout`   | Bearer | 登出，撤销当前 Token              |
+| 方法   | 路径                          | 认证     | 说明                         |
+|------|-----------------------------|--------|----------------------------|
+| POST | `/api/v1/auth/token`           | public | 用户名+密码登录，返回 Token 对        |
+| POST | `/api/v1/auth/refresh`         | public | 用 Refresh Token 换新 Token 对 |
+| POST | `/api/v1/auth/revoke`          | public | 撤销指定 Token                 |
+| GET  | `/api/v1/auth/userinfo`        | Bearer | 获取当前用户信息                   |
+| POST | `/api/v1/auth/logout`          | Bearer | 登出，撤销当前 Token              |
+| POST | `/api/v1/auth/change-password` | Bearer | 修改当前用户密码                   |
 
 > 接口文档详情见 Swagger：`http://localhost:8069/api/swagger`
 
@@ -168,7 +177,7 @@ Authorization: Bearer d4e5f6a7...
 ```
 用户登录
   │
-  ├─ POST /api/auth/token
+  ├─ POST /api/v1/auth/token
   │    验证用户名+密码+客户端 ✓
   │    → 创建 auth.token 记录
   │    → 返回 access_token + refresh_token
@@ -178,12 +187,12 @@ Authorization: Bearer d4e5f6a7...
   │   → _find_by_access_token() 验证
   │
   ├─ Token 即将过期
-  │   POST /api/auth/refresh
+  │   POST /api/v1/auth/refresh
   │   → 旧 Token 自动撤销
   │   → 返回新 Token 对
   │
   └─ 用户登出
-      POST /api/auth/logout
+      POST /api/v1/auth/logout
       → is_revoked = True
       → Token 立即失效
 ```
