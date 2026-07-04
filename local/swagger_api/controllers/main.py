@@ -339,63 +339,80 @@ def _infer_tag(original_endpoint):
 
 
 def _extract_body_params(func):
-    """尝试从 docstring 提取请求体参数"""
+    """从 docstring 提取请求体参数，支持嵌套结构（header/body）"""
     doc = inspect.getdoc(func)
     if not doc:
         return []
 
-    params = []
-    # 查找常见的参数描述模式
-    # 模式1: "param_name": 类型,  // 描述
-    # 模式2: 在 Request Body 中找到的 JSON 示例
     lines = doc.split('\n')
     in_body = False
+    nest_level = 0       # { 计数
+    current_key = None   # 当前嵌套对象的 key（"header" 或 "body"）
+
+    # 嵌套参数: { "header": [...], "body": [...] }
+    nested = {}
+    flat_params = []
+
     for line in lines:
         stripped = line.strip()
         if any(kw in stripped for kw in ('Request Body', 'request body', '请求体')):
             in_body = True
             continue
-        if in_body and stripped.startswith('{'):
+
+        if not in_body:
             continue
-        if in_body and stripped.startswith('}'):
+
+        # 遇到下一个章节（响应/返回值等），退出请求体解析
+        if any(kw in stripped for kw in ('响应', 'Response', '返回', 'Response Body')):
             in_body = False
             continue
-        # 只在请求体 JSON 范围内匹配参数，避免混入响应的 JSON 字段
-        if in_body:
-            match = re.match(r'"(\w+)":\s*(.+?)(?:\s*//\s*(.*))?$', stripped)  # noqa
-            if match:
-                key = match.group(1)
-                value_str = match.group(2).strip().rstrip(',')
-                # 跳过嵌套对象的 key（如 "data": {、"user": {）
-                if value_str in ('{', '[', '}', ']'):
-                    continue
-                desc = match.group(3) or ""
-                ptype = _infer_type(value_str)
-                params.append({
-                    "name": key,
-                    "type": ptype,
-                    "required": "可选" not in desc,
-                    "description": desc,
-                })
 
-    # 如果没有从 JSON 示例提取到参数，尝试从纯文本提取
-    if not params:
-        for line in lines:
-            # 匹配: param_name (类型): 描述
-            match = re.match(r'(\w+)\s*(?:\((\w+)\))?\s*[:：]\s*(.+)', line.strip())  # noqa
-            if match and not match.group(1).startswith(('Response', '响应')):
-                name = match.group(1)
-                ptype = match.group(2) or "string"
-                desc = match.group(3)
-                if name not in ('Request', 'Body', 'JSON', 'response', 'data'):
-                    params.append({
-                        "name": name,
-                        "type": ptype,
-                        "required": True,
-                        "description": desc,
-                    })
+        # 跳过顶层 { 和 }
+        if stripped in ('{', '}'):
+            continue
 
-    return params
+        # 匹配嵌套对象的开始: "key": {
+        obj_match = re.match(r'"(\w+)":\s*\{', stripped)  # noqa
+        if obj_match:
+            key = obj_match.group(1)
+            current_key = key
+            if key not in nested:
+                nested[key] = []
+            nest_level += 1
+            continue
+
+        # 匹配嵌套对象结束: },
+        if stripped == '},' or stripped == '}':
+            nest_level -= 1
+            if nest_level <= 0:
+                current_key = None
+                nest_level = 0
+            continue
+
+        # 匹配参数: "key": value,  // description
+        match = re.match(r'"([\w-]+)":\s*(.+?)(?:\s*//\s*(.*))?$', stripped)  # noqa
+        if match:
+            key = match.group(1)
+            value_str = match.group(2).strip().rstrip(',')
+            if value_str in ('{', '[', '}', ']'):
+                continue
+            desc = match.group(3) or ""
+            ptype = _infer_type(value_str)
+            param = {
+                "name": key,
+                "type": ptype,
+                "required": "可选" not in desc,
+                "description": desc,
+            }
+            if current_key:
+                nested[current_key].append(param)
+            else:
+                flat_params.append(param)
+
+    # 如果有嵌套结构，返回嵌套格式
+    if nested:
+        return [{"nested": nested}]
+    return flat_params
 
 
 def _extract_query_params(func):
@@ -473,7 +490,36 @@ def _infer_type(value_str):
 
 
 def _build_body_schema(params):
-    """从参数列表构建请求体 JSON Schema"""
+    """从参数列表构建请求体 JSON Schema，支持嵌套"""
+    if not params:
+        return {"type": "object"}
+    
+    # 检查是否有嵌套结构
+    if len(params) == 1 and "nested" in params[0]:
+        nested = params[0]["nested"]
+        properties = {}
+        for obj_key, obj_params in nested.items():
+            if obj_key == "header":
+                # header 直接引用公共 ApiHeader Schema
+                properties[obj_key] = {"$ref": "#/components/schemas/ApiHeader"}
+            else:
+                obj_props = {}
+                obj_req = []
+                for p in obj_params:
+                    prop = {"type": p["type"], "description": p.get("description", "")}
+                    obj_props[p["name"]] = prop
+                    if p.get("required"):
+                        obj_req.append(p["name"])
+                obj_schema = {"type": "object", "properties": obj_props}
+                if obj_req:
+                    obj_schema["required"] = obj_req
+                properties[obj_key] = obj_schema
+        schema = {"type": "object", "properties": properties}
+        if "header" in nested and "body" in nested:
+            schema["required"] = ["header", "body"]
+        return schema
+
+    # 扁平参数
     properties = {}
     required = []
     for p in params:
@@ -481,10 +527,7 @@ def _build_body_schema(params):
         properties[p["name"]] = prop
         if p.get("required"):
             required.append(p["name"])
-    schema = {
-        "type": "object",
-        "properties": properties,
-    }
+    schema = {"type": "object", "properties": properties}
     if required:
         schema["required"] = required
     return schema
@@ -541,13 +584,34 @@ def _define_schemas():
                 "error": {"type": "string"},
             },
         },
-        "AuthRequest": {
+        "ApiHeader": {
             "type": "object",
-            "required": ["login", "password"],
+            "required": ["X-Timestamp", "X-Nonce", "X-Sign"],
             "properties": {
-                "login": {"type": "string", "description": "用户名或邮箱"},
-                "password": {"type": "string", "description": "密码"},
-                "client_id": {"type": "string", "description": "OAuth 客户端 ID"},
+                "clientId": {"type": "string", "description": "客户端ID"},
+                "X-Token": {"type": "string", "description": "登录后的 access_token，登录/刷新时传空串"},
+                "X-Timestamp": {"type": "string", "description": "毫秒时间戳"},
+                "X-Nonce": {"type": "string", "description": "随机 UUID，防重放"},
+                "X-Sign": {"type": "string", "description": "MD5(timestamp+nonce+token+bodyJSON+appSecret)"},
+                "platformType": {"type": "string", "description": "android/ios/harmonyos"},
+                "platformVersion": {"type": "string", "description": "系统版本"},
+                "deviceBrand": {"type": "string", "description": "设备品牌"},
+                "deviceModel": {"type": "string", "description": "设备型号"},
+                "deviceId": {"type": "string", "description": "设备唯一标识"},
+                "rooted": {"type": "boolean", "description": "是否 root/越狱"},
+                "sdkVersion": {"type": "string", "description": "SDK 版本"},
+                "networkType": {"type": "string", "description": "wifi/4g/5g"},
+                "screenWidth": {"type": "integer", "description": "屏幕宽度"},
+                "screenHeight": {"type": "integer", "description": "屏幕高度"},
+                "screenDensity": {"type": "number", "description": "屏幕密度"},
+                "language": {"type": "string", "description": "语言"},
+                "timezone": {"type": "string", "description": "时区"},
+                "imei": {"type": "string", "description": "IMEI"},
+                "oaid": {"type": "string", "description": "OAID"},
+                "appVersion": {"type": "string", "description": "App 版本"},
+                "appBuild": {"type": "string", "description": "构建号"},
+                "appChannel": {"type": "string", "description": "渠道"},
+                "appBuildType": {"type": "string", "description": "debug/release"},
             },
         },
         "AuthResponse": {

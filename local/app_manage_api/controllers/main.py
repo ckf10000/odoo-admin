@@ -20,7 +20,7 @@ import logging
 from odoo import http
 from odoo.http import request
 from odoo.exceptions import AccessDenied
-from odoo.addons.learn_common.common import json_response, error_response, get_user, get_json  # noqa
+from odoo.addons.learn_common.common import json_response, error_response, api_verify_auth  # noqa
 
 _logger = logging.getLogger(__name__)
 
@@ -92,17 +92,16 @@ class AppCheckController(http.Controller):
         }
         """
         try:
-            get_user()
-            data = get_json()
-            _log_check_request(data)
+            header, body, user = api_verify_auth(require_token=True)
+            _log_check_request(body)
 
-            app_version_code = data.get("app_version_code", 0)
-            platform = data.get("platform", "")
-            platform_version = data.get("platform_version", "")
-            terminal_model = data.get("terminal_model", "")
-            channel_code = data.get("channel_code", "")
-            user_id = data.get("user_id")
-            installed_plugins = data.get("installed_plugins", [])
+            app_version_code = body.get("app_version_code", 0)
+            platform = body.get("platform", "")
+            platform_version = body.get("platform_version", "")
+            terminal_model = body.get("terminal_model", "")
+            channel_code = body.get("channel_code", "")
+            user_id = body.get("user_id")
+            installed_plugins = body.get("installed_plugins", [])
 
             # 1. 终端校验
             terminal_allowed, terminal_message = self._check_terminal(platform, terminal_model)
@@ -134,6 +133,8 @@ class AppCheckController(http.Controller):
                 "resources": resource_info,
             })
 
+        except ValueError as e:
+            return error_response(str(e), status=401)
         except AccessDenied as e:
             return error_response(e, 403)
         except Exception as e:
@@ -152,15 +153,17 @@ class AppCheckController(http.Controller):
         }
         """
         try:
-            get_user()
-            data = get_json()
-            app_version_code = data.get("app_version_code", 0)
-            platform = data.get("platform", "")
-            platform_version = data.get("platform_version", "")
+            header, body, user = api_verify_auth(require_token=True)
+            # body 由 api_verify_auth 返回，无需再调用 get_json()
+            app_version_code = body.get("app_version_code", 0)
+            platform = body.get("platform", "")
+            platform_version = body.get("platform_version", "")
 
             version_info = self._check_version(platform, platform_version, app_version_code)
             return json_response(data=version_info)
 
+        except ValueError as e:
+            return error_response(str(e), status=401)
         except AccessDenied as e:
             return error_response(e, 403)
         except Exception as e:
@@ -180,14 +183,16 @@ class AppCheckController(http.Controller):
         }
         """
         try:
-            get_user()
-            data = get_json()
-            platform = data.get("platform", "")
-            installed_plugins = data.get("installed_plugins", [])
+            header, body, user = api_verify_auth(require_token=True)
+            # body 由 api_verify_auth 返回，无需再调用 get_json()
+            platform = body.get("platform", "")
+            installed_plugins = body.get("installed_plugins", [])
 
             plugin_info = self._check_plugins(platform, installed_plugins)
             return json_response(data=plugin_info)
 
+        except ValueError as e:
+            return error_response(str(e), status=401)
         except AccessDenied as e:
             return error_response(e, 403)
         except Exception as e:
@@ -205,14 +210,16 @@ class AppCheckController(http.Controller):
         }
         """
         try:
-            get_user()
-            data = get_json()
-            platform = data.get("platform", "")
-            app_version_code = data.get("app_version_code", 0)
+            header, body, user = api_verify_auth(require_token=True)
+            # body 由 api_verify_auth 返回，无需再调用 get_json()
+            platform = body.get("platform", "")
+            app_version_code = body.get("app_version_code", 0)
 
             resource_info = self._check_resources(platform, app_version_code)
             return json_response(data=resource_info)
 
+        except ValueError as e:
+            return error_response(str(e), status=401)
         except AccessDenied as e:
             return error_response(e, 403)
         except Exception as e:
@@ -230,10 +237,10 @@ class AppCheckController(http.Controller):
         }
         """
         try:
-            get_user()
-            data = get_json()
-            platform = data.get("platform", "")
-            terminal_model = data.get("terminal_model", "")
+            header, body, user = api_verify_auth(require_token=True)
+            # body 由 api_verify_auth 返回，无需再调用 get_json()
+            platform = body.get("platform", "")
+            terminal_model = body.get("terminal_model", "")
 
             allowed, message = self._check_terminal(platform, terminal_model)
             return json_response(data={
@@ -241,6 +248,8 @@ class AppCheckController(http.Controller):
                 "message": message,
             })
 
+        except ValueError as e:
+            return error_response(str(e), status=401)
         except AccessDenied as e:
             return error_response(e, 403)
         except Exception as e:
@@ -258,10 +267,10 @@ class AppCheckController(http.Controller):
         }
         """
         try:
-            get_user()
-            data = get_json()
-            channel_code = data.get("channel_code", "")
-            user_id = data.get("user_id")
+            header, body, user = api_verify_auth(require_token=True)
+            # body 由 api_verify_auth 返回，无需再调用 get_json()
+            channel_code = body.get("channel_code", "")
+            user_id = body.get("user_id")
 
             allowed, message = self._check_channel(channel_code, user_id)
             return json_response(data={
@@ -269,6 +278,8 @@ class AppCheckController(http.Controller):
                 "message": message,
             })
 
+        except ValueError as e:
+            return error_response(str(e), status=401)
         except AccessDenied as e:
             return error_response(e, 403)
         except Exception as e:
@@ -435,12 +446,12 @@ class AppCheckController(http.Controller):
         return results
 
 
-def _log_check_request(data):
+def _log_check_request(body):
     """记录校验请求日志（可选）"""
     _logger.info(
         "App check request: platform=%s, version=%s, terminal=%s, channel=%s",
-        data.get("platform"),
-        data.get("app_version"),
-        data.get("terminal_model"),
-        data.get("channel_code"),
+        body.get("platform"),
+        body.get("app_version"),
+        body.get("terminal_model"),
+        body.get("channel_code"),
     )

@@ -50,6 +50,7 @@ class AuthToken(models.Model):
     # 设备信息（用于安全审计）
     device_info = fields.Text('设备信息')
     ip_address = fields.Char('IP 地址')
+    header_data = fields.Text('Header 参数', help='请求 Header 完整 JSON，包含设备信息、签名参数等')
 
     @api.depends('access_token', 'refresh_token')
     def _compute_hashes(self):
@@ -129,21 +130,25 @@ class AuthToken(models.Model):
         return token
 
     @api.model
-    def _create_token(self, user_id, client_id, device_info='', ip_address=''):
+    def _create_token(self, user_id, client_id, device_info='', ip_address='', header_data=None):
         """创建新的 Token 对"""
         client = self.env['auth.client'].browse(client_id)
         now = fields.Datetime.now()
         access_expiry = now + timedelta(hours=client.access_token_expiry)
         refresh_expiry = now + timedelta(days=client.refresh_token_expiry)
 
-        token = self.create({
+        vals = {
             'user_id': user_id,
             'client_id': client_id,
             'expires_at': access_expiry,
             'refresh_expires_at': refresh_expiry,
             'device_info': device_info,
             'ip_address': ip_address,
-        })
+        }
+        if header_data:
+            vals['header_data'] = header_data
+
+        token = self.create(vals)
         # 显式计算 hash，避免 computed store=True 延迟落库导致查不到
         if token.access_token:
             token.access_token_hash = hashlib.sha256(token.access_token.encode()).hexdigest()
@@ -152,7 +157,7 @@ class AuthToken(models.Model):
         return token
 
     @api.model
-    def _refresh_token(self, refresh_token, device_info='', ip_address=''):
+    def _refresh_token(self, refresh_token, device_info='', ip_address='', header_data=None):
         """用 Refresh Token 刷新，返回新的 Token 对"""
         old_token = self._find_by_refresh_token(refresh_token)
         if not old_token:
@@ -167,6 +172,7 @@ class AuthToken(models.Model):
             client_id=old_token.client_id.id,
             device_info=device_info or old_token.device_info,
             ip_address=ip_address or old_token.ip_address,
+            header_data=header_data or old_token.header_data,
         )
 
     @api.model
