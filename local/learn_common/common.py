@@ -84,6 +84,7 @@ def api_verify_auth(require_token=True):
     sign = header.get('X-Sign', '') or ''
 
     if not timestamp or not nonce or not sign:
+        _logger.warning("认证失败: 缺少签名参数 (ts=%s nonce=%s sign=%s)", timestamp, nonce, sign)
         raise ValueError('缺少签名参数 (X-Timestamp/X-Nonce/X-Sign)')
 
     # 2. 查找客户端（空则使用默认客户端）
@@ -93,6 +94,7 @@ def api_verify_auth(require_token=True):
             ('active', '=', True),
         ], limit=1)
         if not client:
+            _logger.warning("认证失败: Client ID 无效 (clientId=%s)", client_id)
             raise ValueError('Client ID 无效')
     else:
         client = request.env['auth.client'].sudo()._get_or_create_default_client()  # noqa
@@ -101,8 +103,10 @@ def api_verify_auth(require_token=True):
     try:
         ts = int(timestamp) / 1000.0
     except (ValueError, TypeError):
+        _logger.warning("认证失败: 无效的时间戳 (ts=%s)", timestamp)
         raise ValueError('无效的时间戳')
     if abs(time.time() - ts) > 300:
+        _logger.warning("认证失败: 请求已过期 (ts=%s diff=%.0fs)", timestamp, ts - time.time())
         raise ValueError('请求已过期，请校准设备时间')
 
     # 4. 计算并验证签名（空 body 时 bodyJSON 为空串）
@@ -110,22 +114,29 @@ def api_verify_auth(require_token=True):
     sign_raw = timestamp + nonce + token + body_str + client.client_secret
     expected_sign = hashlib.md5(sign_raw.encode('utf-8')).hexdigest()
 
-    _logger.debug(
+    _logger.info(
         "签名校验: ts=%s nonce=%s token=%s bodyJSON=%s secret=%s... → expected=%s received=%s",
         timestamp, nonce, token[:10] if token else '', body_str,
         client.client_secret[:6], expected_sign, sign,
     )
 
     if sign != expected_sign:
+        _logger.warning("认证失败: 签名不匹配 (expected=%s received=%s sign_raw前50=%s)",
+                        expected_sign, sign, sign_raw[:50])
         raise ValueError('签名验证失败')
 
     # 5. 验证 Token
     user = None
     if require_token:
         if not token:
+            _logger.warning("认证失败: 缺少认证 Token")
             raise ValueError('缺少认证 Token')
         token_record = request.env['auth.token'].sudo()._find_by_access_token(token)  # noqa
-        if not token_record or token_record.is_revoked:
+        if not token_record:
+            _logger.warning("认证失败: Token 无效 (token=%s...)", token[:10])
+            raise ValueError('Token 无效或已过期')
+        if token_record.is_revoked:
+            _logger.warning("认证失败: Token 已撤销 (user=%s)", token_record.user_id.login)
             raise ValueError('Token 无效或已过期')
         user = token_record.user_id
         request.update_env(user=user.id)
