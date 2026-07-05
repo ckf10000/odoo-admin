@@ -430,6 +430,14 @@ class AuthController(http.Controller):
             # 修改密码
             user.sudo().change_password(old_password, new_password)
 
+            # 密码修改成功后，撤销该用户所有有效 Token（强制重新登录）
+            active_tokens = request.env['auth.token'].sudo().search([
+                ('user_id', '=', user.id),
+                ('is_revoked', '=', False),
+            ])
+            revoked_count = len(active_tokens)
+            active_tokens.action_revoke()
+
             # 记录日志
             ip = get_client_ip()
             request.env['auth.log'].sudo().log_action(
@@ -438,7 +446,7 @@ class AuthController(http.Controller):
                 user_id=user.id,
                 ip_address=ip,
                 device_info=json.dumps(header, ensure_ascii=False),
-                detail='用户通过 Android API 修改密码',
+                detail=f'用户通过 Android API 修改密码，已撤销 {revoked_count} 个有效 Token',
             )
 
             _logger.info("用户 %s 密码修改成功", user.login)
