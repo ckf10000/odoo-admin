@@ -203,6 +203,7 @@ class AuthController(http.Controller):
                 return error_response(f'服务器内部错误: {e}', status=500)
 
         except ValueError as e:
+            _logger.warning("认证失败: %s", e)
             return error_response(str(e), status=401)
 
     # ========== 2. 刷新 Token ==========
@@ -271,6 +272,7 @@ class AuthController(http.Controller):
                 return error_response(f'服务器内部错误: {e}', status=500)
 
         except ValueError as e:
+            _logger.warning("认证失败: %s", e)
             return error_response(str(e), status=401)
 
     # ========== 3. 撤销 Token ==========
@@ -319,6 +321,7 @@ class AuthController(http.Controller):
                 return error_response(str(e), status=500)
 
         except ValueError as e:
+            _logger.warning("认证失败: %s", e)
             return error_response(str(e), status=401)
 
     # ========== 4. 获取用户信息 ==========
@@ -350,6 +353,7 @@ class AuthController(http.Controller):
             })
 
         except ValueError as e:
+            _logger.warning("认证失败: %s", e)
             return error_response(str(e), status=401)
 
     # ========== 5. 登出 ==========
@@ -393,6 +397,7 @@ class AuthController(http.Controller):
             return json_response(message='已登出')
 
         except ValueError as e:
+            _logger.warning("认证失败: %s", e)
             return error_response(str(e), status=401)
 
     # ========== 6. 修改密码 ==========
@@ -427,8 +432,18 @@ class AuthController(http.Controller):
             if old_password == new_password:
                 return error_response('新密码不能与旧密码相同', status=400)
 
-            # 修改密码
-            user.sudo().change_password(old_password, new_password)
+            # 用 Odoo 原生 authenticate 校验旧密码（与登录逻辑一致）
+            try:
+                uid = request.session.authenticate(
+                    request.env.cr.dbname, user.login, old_password
+                )
+            except AccessDenied:
+                uid = None
+            if not uid:
+                _logger.warning("用户 %s 修改密码失败: 旧密码不正确", user.login)
+                return error_response('旧密码不正确', status=400)
+
+            user.sudo().write({'password': new_password})
 
             # 密码修改成功后，撤销该用户所有有效 Token（强制重新登录）
             active_tokens = request.env['auth.token'].sudo().search([
@@ -453,8 +468,10 @@ class AuthController(http.Controller):
             return json_response(message='密码修改成功')
 
         except ValueError as e:
+            _logger.warning("认证失败: %s", e)
             return error_response(str(e), status=401)
         except AccessDenied as e:
+            _logger.warning("拒绝访问: %s", e)
             return error_response(str(e), status=401)
         except Exception as e:
             _logger.exception("修改密码异常: %s", e)

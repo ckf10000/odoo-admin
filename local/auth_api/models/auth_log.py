@@ -21,6 +21,7 @@ class AuthLog(models.Model):
         ('refresh', '刷新 Token'),
         ('revoke', '撤销 Token'),
         ('failed', '登录失败'),
+        ('change_password', '修改密码'),
     ], string='操作类型', required=True, index=True)
 
     login = fields.Char('登录名', help="登录失败时记录尝试的用户名")
