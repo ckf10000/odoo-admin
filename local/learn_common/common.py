@@ -110,8 +110,13 @@ def api_verify_auth(require_token=True):
     sign_raw = timestamp + nonce + token + body_str + client.client_secret
     expected_sign = hashlib.md5(sign_raw.encode('utf-8')).hexdigest()
 
+    _logger.debug(
+        "签名校验: ts=%s nonce=%s token=%s bodyJSON=%s secret=%s... → expected=%s received=%s",
+        timestamp, nonce, token[:10] if token else '', body_str,
+        client.client_secret[:6], expected_sign, sign,
+    )
+
     if sign != expected_sign:
-        _logger.warning("签名验证失败: expected=%s, got=%s", expected_sign, sign)
         raise ValueError('签名验证失败')
 
     # 5. 验证 Token
