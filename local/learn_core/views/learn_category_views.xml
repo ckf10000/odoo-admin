@@ -11,9 +11,10 @@
                 <field name="name"/>
                 <field name="code"/>
                 <field name="audience_type"/>
+                <field name="show_in_nav" widget="boolean_toggle"/>
                 <field name="stage_info"/>
-                <field name="level"/>
-                <field name="is_leaf"/>
+                <field name="level" optional="hide"/>
+                <field name="is_leaf" optional="hide"/>
                 <field name="content_count"/>
                 <field name="item_count"/>
                 <field name="parent_id" invisible="1"/>
@@ -58,6 +59,11 @@
                             <field name="level" readonly="1"/>
                         </group>
                     </group>
+                    <group string="导航设置">
+                        <field name="show_in_nav"/>
+                        <field name="nav_icon" widget="image" class="oe_avatar"/>
+                        <field name="nav_icon_active" widget="image" class="oe_avatar"/>
+                    </group>
                     <group string="描述">
                         <field name="description" nolabel="1"/>
                     </group>
@@ -76,6 +82,8 @@
                 <field name="code"/>
                 <filter name="root_only" string="根分类"
                         domain="[('parent_id', '=', False)]"/>
+                <filter name="nav_tabs" string="导航 Tab"
+                        domain="[('show_in_nav', '=', True)]"/>
                 <filter name="leaf_only" string="末级分类"
                         domain="[('is_leaf', '=', True)]"/>
                 <separator/>

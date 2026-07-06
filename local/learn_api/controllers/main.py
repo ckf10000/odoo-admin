@@ -29,11 +29,16 @@ class LearnCategoryController(http.Controller):
     def get_categories(self, **kwargs):  # noqa
         """获取分类列表
 
-        Query Params:
-            parent_id: int - 父分类ID，不传则返回根分类
-            audience_type: str - 受众人群过滤
-            recursive: bool - 是否递归获取子分类（默认 False）
-            include_content_count: bool - 是否包含内容数量统计
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "parent_id": 0,                 // 可选，父分类ID
+                "audience_type": "string",       // 可选，受众人群过滤
+                "recursive": false,              // 可选，是否递归
+                "include_content_count": false   // 可选，是否含数量统计
+            }
+        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)
@@ -82,8 +87,13 @@ class LearnCategoryController(http.Controller):
     def get_category_tree(self, **kwargs):  # noqa
         """获取完整分类树（所有层级）
 
-        Query Params:
-            audience_type: str - 受众人群过滤，不传则返回全部
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "audience_type": "string"        // 可选，受众人群过滤
+            }
+        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)
@@ -113,14 +123,19 @@ class LearnContentController(http.Controller):
     def get_contents(self, **kwargs):  # noqa
         """获取内容列表
 
-        Query Params:
-            category_id: int - 分类ID
-            content_type: str - 内容类型 (textbook/exam/workbook/video)
-            grade: str - 年级
-            subject: str - 科目
-            keyword: str - 搜索关键字
-            page: int - 页码（默认 1）
-            page_size: int - 每页数量（默认 20）
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "category_id": 0,                // 可选，分类ID
+                "content_type": "textbook",      // 可选，内容类型
+                "grade": "string",               // 可选，年级
+                "subject": "string",             // 可选，科目
+                "keyword": "string",             // 可选，搜索关键字
+                "page": 1,                       // 可选，页码
+                "page_size": 20                  // 可选，每页数量
+            }
+        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)
@@ -401,10 +416,15 @@ class LearnExamController(http.Controller):
     def exam_history(self, **kwargs):  # noqa
         """成绩历史
 
-        Query Params:
-            content_id: int - 按内容过滤
-            page: int
-            page_size: int
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "content_id": 0,                 // 可选，按内容过滤
+                "page": 1,                       // 可选，页码
+                "page_size": 20                  // 可选，每页数量
+            }
+        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)
@@ -463,11 +483,16 @@ class LearnWrongBookController(http.Controller):
     def get_wrong_book(self, **kwargs):  # noqa
         """获取错题本
 
-        Query Params:
-            content_id: int - 按试卷过滤
-            is_mastered: bool - 是否已掌握
-            page: int
-            page_size: int
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "content_id": 0,                 // 可选，按试卷过滤
+                "is_mastered": false,            // 可选，是否已掌握
+                "page": 1,                       // 可选，页码
+                "page_size": 20                  // 可选，每页数量
+            }
+        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)
@@ -756,6 +781,82 @@ class LearnInteractController(http.Controller):
                     "comment": body.get("comment", ""),
                 })
                 return json_response(data={"id": rating.id}, message="评价成功")
+
+        except ValueError as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            return error_response(str(e))
+
+
+# ==================== 导航 Tab API ====================
+
+class LearnNavController(http.Controller):
+
+    @http.route("/api/v1/learn/nav_tabs", type="http", auth="public", methods=["POST"], csrf=False)
+    def get_nav_tabs(self, **kw):  # noqa
+        """获取底部导航 Tab 列表
+
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Token": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {}
+        }
+
+        响应:
+        {
+            "success": true,
+            "data": [
+                {
+                    "id": 0,
+                    "code": "home",
+                    "name": "首页",
+                    "nav_icon": null,
+                    "nav_icon_active": null,
+                    "is_home": true,
+                    "sequence": 0
+                },
+                {
+                    "id": 5,
+                    "code": "deyu",
+                    "name": "德育",
+                    "nav_icon": "base64...",
+                    "nav_icon_active": "base64...",
+                    "is_home": false,
+                    "sequence": 10
+                }
+            ]
+        }
+        """
+        try:
+            header, body, user = api_verify_auth(require_token=True)  # noqa
+
+            tabs = [{
+                "id": 0,
+                "code": "home",
+                "name": "首页",
+                "nav_icon": None,
+                "nav_icon_active": None,
+                "sequence": 0,
+                "is_home": True,
+            }]
+
+            categories = request.env["learn.category"].sudo().search([
+                ("parent_id", "=", False),
+                ("show_in_nav", "=", True),
+            ], order="sequence, id")
+
+            for cat in categories:
+                tabs.append({
+                    "id": cat.id,
+                    "code": cat.code,
+                    "name": cat.name,
+                    "nav_icon": encode_image(cat.nav_icon),
+                    "nav_icon_active": encode_image(cat.nav_icon_active),
+                    "sequence": cat.sequence,
+                    "is_home": False,
+                })
+
+            return json_response(data=tabs)
 
         except ValueError as e:
             return error_response(str(e), status=401)
