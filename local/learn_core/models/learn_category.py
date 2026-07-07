@@ -45,6 +45,8 @@ class LearnCategory(models.Model):
                                  help="勾选后作为 App 底部 Tab 展示")
     nav_icon = fields.Binary(string="导航图标", help="底部 Tab 图标，建议 48x48 PNG")
     nav_icon_active = fields.Binary(string="选中态图标", help="Tab 选中时显示的图标")
+    icon = fields.Binary(string="分类图标", help="子分类卡片图标，建议 200x200 PNG")
+    color = fields.Char(string="卡片底色", help="如 #E8F5E9，对应 App 卡片背景色")
 
     # ---- 描述 ----
     description = fields.Text(string="描述")

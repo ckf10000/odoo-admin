@@ -6,7 +6,7 @@
 
         <!-- 思维启蒙 -->
         <record id="category_enlightenment" model="learn.category">
-            <field name="name">思维启蒙</field>
+            <field name="name">思维</field>
             <field name="code">ENLIGHTENMENT</field>
             <field name="audience_type">enlightenment</field>
             <field name="sequence">10</field>
@@ -14,7 +14,7 @@
 
         <!-- 少儿教育 -->
         <record id="category_children" model="learn.category">
-            <field name="name">少儿教育</field>
+            <field name="name">少儿</field>
             <field name="code">CHILDREN</field>
             <field name="audience_type">children</field>
             <field name="sequence">20</field>
@@ -22,7 +22,7 @@
 
         <!-- 九年义务 -->
         <record id="category_nine_year" model="learn.category">
-            <field name="name">九年义务</field>
+            <field name="name">中小学</field>
             <field name="code">NINE_YEAR</field>
             <field name="audience_type">nine_year</field>
             <field name="sequence">30</field>
@@ -30,18 +30,39 @@
 
         <!-- 成人教育 -->
         <record id="category_adult" model="learn.category">
-            <field name="name">成人教育</field>
+            <field name="name">成人</field>
             <field name="code">ADULT</field>
             <field name="audience_type">adult</field>
             <field name="sequence">40</field>
         </record>
 
-        <!-- ==================== 第二层：九年义务 → 年级 ==================== -->
+        <!-- ==================== 第二层：九年义务 → 小学 / 初中 / 高中 ==================== -->
+
+        <record id="category_primary" model="learn.category">
+            <field name="name">小学</field>
+            <field name="code">PRIMARY</field>
+            <field name="parent_id" ref="category_nine_year"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="category_junior" model="learn.category">
+            <field name="name">初中</field>
+            <field name="code">JUNIOR</field>
+            <field name="parent_id" ref="category_nine_year"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="category_senior" model="learn.category">
+            <field name="name">高中</field>
+            <field name="code">SENIOR</field>
+            <field name="parent_id" ref="category_nine_year"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- ==================== 第三层：小学 → 年级 ==================== -->
 
         <record id="category_grade_1" model="learn.category">
             <field name="name">一年级</field>
             <field name="code">GRADE_1</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_primary"/>
             <field name="stage_info">一年级</field>
             <field name="sequence">10</field>
         </record>
@@ -49,7 +70,7 @@
         <record id="category_grade_2" model="learn.category">
             <field name="name">二年级</field>
             <field name="code">GRADE_2</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_primary"/>
             <field name="stage_info">二年级</field>
             <field name="sequence">20</field>
         </record>
@@ -57,7 +78,7 @@
         <record id="category_grade_3" model="learn.category">
             <field name="name">三年级</field>
             <field name="code">GRADE_3</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_primary"/>
             <field name="stage_info">三年级</field>
             <field name="sequence">30</field>
         </record>
@@ -65,7 +86,7 @@
         <record id="category_grade_4" model="learn.category">
             <field name="name">四年级</field>
             <field name="code">GRADE_4</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_primary"/>
             <field name="stage_info">四年级</field>
             <field name="sequence">40</field>
         </record>
@@ -73,7 +94,7 @@
         <record id="category_grade_5" model="learn.category">
             <field name="name">五年级</field>
             <field name="code">GRADE_5</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_primary"/>
             <field name="stage_info">五年级</field>
             <field name="sequence">50</field>
         </record>
@@ -81,36 +102,38 @@
         <record id="category_grade_6" model="learn.category">
             <field name="name">六年级</field>
             <field name="code">GRADE_6</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_primary"/>
             <field name="stage_info">六年级</field>
             <field name="sequence">60</field>
         </record>
 
+        <!-- ==================== 第三层：初中 → 年级 ==================== -->
+
         <record id="category_grade_7" model="learn.category">
             <field name="name">七年级</field>
             <field name="code">GRADE_7</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_junior"/>
             <field name="stage_info">七年级</field>
-            <field name="sequence">70</field>
+            <field name="sequence">10</field>
         </record>
 
         <record id="category_grade_8" model="learn.category">
             <field name="name">八年级</field>
             <field name="code">GRADE_8</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_junior"/>
             <field name="stage_info">八年级</field>
-            <field name="sequence">80</field>
+            <field name="sequence">20</field>
         </record>
 
         <record id="category_grade_9" model="learn.category">
             <field name="name">九年级</field>
             <field name="code">GRADE_9</field>
-            <field name="parent_id" ref="category_nine_year"/>
+            <field name="parent_id" ref="category_junior"/>
             <field name="stage_info">九年级</field>
-            <field name="sequence">90</field>
+            <field name="sequence">30</field>
         </record>
 
-        <!-- ==================== 第三层：年级 → 上学期 / 下学期 ==================== -->
+        <!-- ==================== 第四层：年级 → 上学期 / 下学期 ==================== -->
 
         <!-- 一年级 -->
         <record id="category_grade_1_semester_1" model="learn.category">
@@ -256,7 +279,7 @@
             <field name="sequence">20</field>
         </record>
 
-        <!-- ==================== 第四层：学期 → 科目（通用，不区分版本） ==================== -->
+        <!-- ==================== 第五层：学期 → 科目（通用，不区分版本） ==================== -->
 
         <!-- 辅助宏：给某学期生成基础科目 -->
         <!-- ====== 一年级上 ====== -->
@@ -439,7 +462,7 @@
             <field name="sequence">30</field>
         </record>
 
-        <!-- ==================== 第五层：科目 → 教材版本 ==================== -->
+        <!-- ==================== 第六层：科目 → 教材版本 ==================== -->
 
         <!-- 三年级下 英语 → 各版本 -->
         <record id="category_g3s2_english_pep" model="learn.category">
@@ -467,7 +490,7 @@
             <field name="sequence">40</field>
         </record>
 
-        <!-- ==================== 第六层：版本 → 单元 ==================== -->
+        <!-- ==================== 第七层：版本 → 单元 ==================== -->
 
         <!-- 三年级下 英语 人教版 Unit 1~6 -->
         <record id="category_g3s2_pep_unit1" model="learn.category">

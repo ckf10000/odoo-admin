@@ -788,6 +788,94 @@ class LearnInteractController(http.Controller):
             return error_response(str(e))
 
 
+# ==================== 首页聚合 API ====================
+
+class LearnHomeController(http.Controller):
+
+    @http.route("/api/v1/learn/home_subcategories", type="http", auth="public", methods=["POST"], csrf=False)
+    def get_home_subcategories(self, **kw):  # noqa
+        """首页聚合：返回所有导航 Tab 一级分类下的子分类列表
+
+        不传 category_id → 返回所有 nav tab 的子分类（App 首页）
+        传 category_id   → 返回指定分类的子分类（点击 Tab 后）
+
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Token": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "category_id": 0     // 可选，不传则返回全部
+            }
+        }
+
+        响应:
+        {
+            "success": true,
+            "data": [
+                {
+                    "category": {"id": 5, "name": "课程教学", "code": "kechengjiaoxue"},
+                    "subcategories": [...]
+                }
+            ]
+        }
+        """
+        try:
+            header, body, user = api_verify_auth(require_token=True)
+
+            category_id = body.get("category_id")
+            ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
+            Category = request.env["learn.category"].sudo().with_context(lang=ctx_lang)
+
+            # 确定要查询的一级分类列表
+            if category_id:
+                parent_cats = Category.browse(int(category_id))
+                if not parent_cats.exists():
+                    return error_response('分类不存在', status=404)
+                parent_cats = parent_cats  # ensure_one
+            else:
+                # 默认首页：取所有导航 Tab 的一级分类
+                parent_cats = Category.search([
+                    ("parent_id", "=", False),
+                    ("show_in_nav", "=", True),
+                ], order="sequence, id")
+
+            groups = []
+            for parent in parent_cats:
+                sub_cats = Category.search([
+                    ("parent_id", "=", parent.id),
+                ], order="sequence, id")
+
+                items = []
+                for cat in sub_cats:
+                    items.append({
+                        "id": cat.id,
+                        "name": cat.name,
+                        "code": cat.code,
+                        "sequence": cat.sequence,
+                        "icon": encode_image(cat.icon),
+                        "color": cat.color or None,
+                        "is_leaf": cat.is_leaf,
+                        "content_count": cat.content_count,
+                        "item_count": cat.item_count,
+                        "child_ids": cat.child_ids.ids,
+                    })
+
+                groups.append({
+                    "category": {
+                        "id": parent.id,
+                        "name": parent.name,
+                        "code": parent.code,
+                    },
+                    "subcategories": items,
+                })
+
+            return json_response(data=groups)
+
+        except ValueError as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            return error_response(str(e))
+
+
 # ==================== 导航 Tab API ====================
 
 class LearnNavController(http.Controller):
@@ -840,7 +928,9 @@ class LearnNavController(http.Controller):
                 "is_home": True,
             }]
 
-            categories = request.env["learn.category"].sudo().search([
+            # 用当前用户语言读取，避免 translate=True 取到旧翻译
+            ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
+            categories = request.env["learn.category"].sudo().with_context(lang=ctx_lang).search([
                 ("parent_id", "=", False),
                 ("show_in_nav", "=", True),
             ], order="sequence, id")
