@@ -49,7 +49,7 @@
         ],
     },
 
-    'application': False,
+    'application': True,
     'auto_install': False,
     'installable': True,
     'license': 'LGPL-3',
