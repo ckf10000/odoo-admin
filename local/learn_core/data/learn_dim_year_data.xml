@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 年份 维度数据 ========== -->
+        <record id="dim_year_2020" model="learn.dim.year">
+            <field name="name">2020</field>
+            <field name="code">2020</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_year_2021" model="learn.dim.year">
+            <field name="name">2021</field>
+            <field name="code">2021</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_year_2022" model="learn.dim.year">
+            <field name="name">2022</field>
+            <field name="code">2022</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_year_2023" model="learn.dim.year">
+            <field name="name">2023</field>
+            <field name="code">2023</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_year_2024" model="learn.dim.year">
+            <field name="name">2024</field>
+            <field name="code">2024</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="dim_year_2025" model="learn.dim.year">
+            <field name="name">2025</field>
+            <field name="code">2025</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="dim_year_2026" model="learn.dim.year">
+            <field name="name">2026</field>
+            <field name="code">2026</field>
+            <field name="sequence">70</field>
+        </record>
+
+    </data>
+</odoo>

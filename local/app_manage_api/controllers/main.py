@@ -20,7 +20,7 @@ import logging
 from odoo import http
 from odoo.http import request
 from odoo.exceptions import AccessDenied
-from odoo.addons.learn_common.common import json_response, error_response, api_verify_auth  # noqa
+from odoo.addons.common_lib.common import json_response, error_response, api_verify_auth  # noqa
 
 _logger = logging.getLogger(__name__)
 

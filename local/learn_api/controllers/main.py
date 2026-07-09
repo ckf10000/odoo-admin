@@ -18,101 +18,7 @@ import base64
 from odoo import http, fields
 from odoo.http import request, Response
 
-from odoo.addons.learn_common.common import json_response, error_response, api_verify_auth, encode_image  # noqa
-
-
-# ==================== 分类 API ====================
-
-class LearnCategoryController(http.Controller):
-
-    @http.route("/api/v1/learn/categories", type="http", auth="public", methods=["POST"], csrf=False)
-    def get_categories(self, **kwargs):  # noqa
-        """获取分类列表
-
-        请求体 (JSON):
-        {
-            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
-            "body": {
-                "parent_id": 0,                 // 可选，父分类ID
-                "audience_type": "string",       // 可选，受众人群过滤
-                "recursive": false,              // 可选，是否递归
-                "include_content_count": false   // 可选，是否含数量统计
-            }
-        }
-        """
-        try:
-            header, body, user = api_verify_auth(require_token=True)
-            domain = []
-            parent_id = body.get("parent_id")
-            audience_type = body.get("audience_type")
-            recursive = body.get("recursive", "false").lower() == "true"
-            include_count = body.get("include_content_count", "false").lower() == "true"
-
-            if parent_id:
-                domain.append(("parent_id", "=", int(parent_id)))
-            else:
-                domain.append(("parent_id", "=", False))
-
-            if audience_type:
-                domain.append(("audience_type", "=", audience_type))
-
-            categories = request.env["learn.category"].sudo().search(domain, order="sequence")
-
-            result = []
-            for cat in categories:
-                item = {
-                    "id": cat.id,
-                    "name": cat.name,
-                    "code": cat.code,
-                    "level": cat.level,
-                    "is_leaf": cat.is_leaf,
-                    "audience_type": cat.audience_type,
-                    "stage_info": cat.stage_info,
-                    "description": cat.description,
-                }
-                if include_count:
-                    item["content_count"] = cat.content_count
-                if recursive:
-                    item["children"] = _get_children(cat, include_count)
-                result.append(item)
-
-            return json_response(data=result)
-
-        except ValueError as e:
-            return error_response(str(e), status=401)
-        except Exception as e:
-            return error_response(str(e))
-
-    @http.route("/api/v1/learn/categories/tree", type="http", auth="public", methods=["POST"], csrf=False)
-    def get_category_tree(self, **kwargs):  # noqa
-        """获取完整分类树（所有层级）
-
-        请求体 (JSON):
-        {
-            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
-            "body": {
-                "audience_type": "string"        // 可选，受众人群过滤
-            }
-        }
-        """
-        try:
-            header, body, user = api_verify_auth(require_token=True)
-            audience_type = body.get("audience_type")
-            domain = [("parent_id", "=", False)]
-            if audience_type:
-                domain.append(("audience_type", "=", audience_type))
-
-            roots = request.env["learn.category"].sudo().search(domain, order="sequence")
-            tree = []
-            for root in roots:
-                tree.append(_build_tree(root))
-
-            return json_response(data=tree)
-
-        except ValueError as e:
-            return error_response(str(e), status=401)
-        except Exception as e:
-            return error_response(str(e))
+from odoo.addons.common_lib.common import json_response, error_response, api_verify_auth, encode_image  # noqa
 
 
 # ==================== 内容 API ====================
@@ -127,7 +33,6 @@ class LearnContentController(http.Controller):
         {
             "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
             "body": {
-                "category_id": 0,                // 可选，分类ID
                 "content_type": "textbook",      // 可选，内容类型
                 "grade": "string",               // 可选，年级
                 "subject": "string",             // 可选，科目
@@ -140,16 +45,6 @@ class LearnContentController(http.Controller):
         try:
             header, body, user = api_verify_auth(require_token=True)
             domain = [("state", "=", "published")]
-
-            category_id = body.get("category_id")
-            if category_id:
-                # 包含子分类
-                cat = request.env["learn.category"].sudo().browse(int(category_id))
-                if cat.exists():
-                    all_cats = cat._get_all_child_ids()  # noqa
-                    domain.append(("category_id", "in", all_cats))
-                else:
-                    domain.append(("category_id", "=", int(category_id)))
 
             content_type = body.get("content_type")
             if content_type:
@@ -167,7 +62,6 @@ class LearnContentController(http.Controller):
             if keyword:
                 domain.append(("name", "ilike", keyword))
 
-            # 分页
             page = max(1, int(body.get("page", 1)))
             page_size = min(100, max(1, int(body.get("page_size", 20))))
             offset = (page - 1) * page_size
@@ -794,16 +688,192 @@ class LearnHomeController(http.Controller):
 
     @http.route("/api/v1/learn/home_subcategories", type="http", auth="public", methods=["POST"], csrf=False)
     def get_home_subcategories(self, **kw):  # noqa
-        """首页聚合：返回所有导航 Tab 一级分类下的子分类列表
-
-        不传 category_id → 返回所有 nav tab 的子分类（App 首页）
-        传 category_id   → 返回指定分类的子分类（点击 Tab 后）
+        """首页聚合：按分类编码返回该分类下的 selector 分组数据
 
         请求体 (JSON):
         {
             "header": { "clientId": "xxx", "X-Token": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
             "body": {
-                "category_id": 0     // 可选，不传则返回全部
+                "category_code": "NINE_YEAR"  // 可选，不传则返回所有分类
+            }
+        }
+        """
+        try:
+            header, body, user = api_verify_auth(require_token=True)
+            category_code = body.get("category_code")
+            ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
+
+            DimCat = request.env['learn.dim.category'].sudo().with_context(lang=ctx_lang)
+            Selector = request.env['learn.selector'].sudo()
+            domain = [('active', '=', True)]
+
+            if category_code:
+                cat = DimCat.search([('code', '=', category_code)], limit=1)
+                if not cat:
+                    return error_response('分类不存在', status=404)
+                domain.append(('category_id', '=', cat.id))
+                cats = cat
+            else:
+                cats = DimCat.search([('active', '=', True)], order='sequence')
+
+            groups = []
+            for c in (cats if isinstance(cats, list) else [cats]):
+                cat_sel = Selector.search(
+                    [('category_id', '=', c.id), ('active', '=', True)],
+                    order='sequence'
+                )
+                # 按 stage 分组
+                stage_map = {}
+                for s in cat_sel:
+                    stage_key = s.stage_id.code if s.stage_id else '_'
+                    if stage_key not in stage_map:
+                        stage_map[stage_key] = {
+                            "id": s.stage_id.id if s.stage_id else 0,
+                            "name": s.stage_id.name if s.stage_id else c.name,
+                            "code": stage_key,
+                            "icon": encode_image(s.stage_id.icon) if s.stage_id and s.stage_id.icon else None,
+                            "items": [],
+                        }
+                    stage_map[stage_key]["items"].append({
+                        "selector_id": s.id,
+                        "selector_code": s.code,
+                        "name": s.name,
+                        "class_name": s.class_id.name or "",
+                        "class_code": s.class_id.code or "",
+                        "subject_name": s.subject_id.name or "",
+                        "subject_code": s.subject_id.code or "",
+                        "version_name": s.version_id.name or "",
+                        "year_name": s.year_id.name or "",
+                        "semester_name": s.semester_id.name or "",
+                    })
+
+                groups.append({
+                    "category": {"id": c.id, "name": c.name, "code": c.code},
+                    "stages": list(stage_map.values()),
+                })
+
+            return json_response(data=groups)
+
+        except ValueError as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            return error_response(str(e))
+
+
+# ==================== 通用选择器 API ====================
+
+class LearnSelectorController(http.Controller):
+
+    @http.route("/api/v1/learn/tab_selector", type="http", auth="public", methods=["POST"], csrf=False)
+    def get_tab_selector(self, **kw):  # noqa
+        """获取选择器维度数据（stages/classes/regions），由 dim 表动态提供
+
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "category_code": "NINE_YEAR",       // 必填，分类编码
+                "sub_category_code": "PRIMARY"       // 可选，快速定位到某个 stage
+            }
+        }
+        """
+        try:
+            header, body, user = api_verify_auth(require_token=True)
+
+            category_code = body.get("category_code")
+            if not category_code:
+                return error_response('category_code 不能为空', status=400)
+            sub_category_code = body.get("sub_category_code", "")
+
+            ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
+            Selector = request.env['learn.selector'].sudo()
+
+            # 该分类下所有 active selector
+            cat = request.env['learn.dim.category'].sudo().search([('code', '=', category_code)], limit=1)
+            if not cat:
+                return error_response('分类不存在', status=404)
+
+            selectors = Selector.search([
+                ('category_id', '=', cat.id), ('active', '=', True)
+            ], order='sequence')
+
+            # 用 set 去重收集 stages / classes / regions
+            stage_set, class_set, region_set = {}, {}, {}
+            for s in selectors:
+                if s.stage_id:
+                    stage_set[s.stage_id.code] = {"name": s.stage_id.name, "code": s.stage_id.code}
+                if s.class_id:
+                    key = f'{s.stage_id.code if s.stage_id else "_"}_{s.class_id.code}'
+                    class_set[key] = {"name": s.class_id.name, "code": s.class_id.code,
+                                      "stage": s.stage_id.code if s.stage_id else ""}
+                if s.region_id:
+                    region_set[s.region_id.code] = {"name": s.region_id.name, "code": s.region_id.code}
+
+            stages = list(stage_set.values())
+            classes = list(class_set.values())
+            regions = list(region_set.values())
+
+            # 如果没有 selector 中带 region，从 dim 表全量取（仅中小学）
+            if not regions and category_code == "NINE_YEAR":
+                for r in request.env['learn.dim.region'].sudo().with_context(lang=ctx_lang).search(
+                        [], order='sequence'
+                ):
+                    regions.append({"name": r.name, "code": r.code})
+
+            # 默认值
+            default_stage = stages[0] if stages else {"name": "", "code": ""}
+            if sub_category_code:
+                for s in stages:
+                    if s["code"] == sub_category_code:
+                        default_stage = s
+                        break
+
+            default_class = {"name": "", "code": "", "stage": ""}
+            if default_stage["code"]:
+                for c in classes:
+                    if c["stage"] == default_stage["code"]:
+                        default_class = c
+                        break
+            if not default_class["code"]:
+                default_class = classes[0] if classes else {"name": "", "code": "", "stage": ""}
+
+            return json_response(data={
+                "default": {
+                    "stage": default_stage["name"], "stage_code": default_stage["code"],
+                    "class": default_class["name"], "class_code": default_class["code"],
+                    "region": regions[0]["name"] if regions else "",
+                    "region_code": regions[0]["code"] if regions else "",
+                },
+                "stages": stages,
+                "classes": classes,
+                "regions": regions,
+            })
+
+        except ValueError as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            return error_response(str(e))
+
+
+# ==================== 选择器查询 API ====================
+
+class LearnSelectorApiController(http.Controller):
+
+    @http.route("/api/v1/learn/selector_query", type="http", auth="public", methods=["POST"], csrf=False)
+    def selector_query(self, **kw):  # noqa
+        """根据维度 code 查询 learn.selector 列表
+
+        请求体 (JSON):
+        {
+            "header": { "clientId": "xxx", "X-Token": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "category_code": "NINE_YEAR",  // 可选，分类编码
+                "stage_code": "PRIMARY",       // 可选，阶段编码
+                "class_code": "GRADE_1",       // 可选，班级编码
+                "subject_code": "CHINESE",     // 可选，科目编码
+                "year_code": "2026",           // 可选，年份编码
+                "semester_code": "DOWN",       // 可选，学期编码
+                "version_code": "PEP"          // 可选，版本编码
             }
         }
 
@@ -812,8 +882,9 @@ class LearnHomeController(http.Controller):
             "success": true,
             "data": [
                 {
-                    "category": {"id": 5, "name": "课程教学", "code": "kechengjiaoxue"},
-                    "subcategories": [...]
+                    "id": 6,
+                    "code": "NINE_YEAR_PRIMARY_GRADE_1_CHINESE_2026_PEP_DOWN",
+                    "name": "中小学 / 小学 / 一年级 / 语文 / 人教版 / 2026 / 下册"
                 }
             ]
         }
@@ -821,54 +892,40 @@ class LearnHomeController(http.Controller):
         try:
             header, body, user = api_verify_auth(require_token=True)
 
-            category_id = body.get("category_id")
+            Selector = request.env['learn.selector'].sudo()
+            domain = [('active', '=', True)]
+
+            dim_mapping = {
+                'category_code': 'category_id',
+                'stage_code': 'stage_id',
+                'class_code': 'class_id',
+                'region_code': 'region_id',
+                'subject_code': 'subject_id',
+                'year_code': 'year_id',
+                'semester_code': 'semester_id',
+                'version_code': 'version_id',
+            }
+
             ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
-            Category = request.env["learn.category"].sudo().with_context(lang=ctx_lang)
+            for body_key, field_name in dim_mapping.items():
+                code_val = body.get(body_key)
+                if code_val:
+                    dim_model = Selector._fields[field_name].comodel_name
+                    dim_rec = request.env[dim_model].sudo().with_context(lang=ctx_lang).search([
+                        ('code', '=', code_val),
+                    ], limit=1)
+                    if dim_rec:
+                        domain.append((field_name, '=', dim_rec.id))
+                    else:
+                        return json_response(data=[])
 
-            # 确定要查询的一级分类列表
-            if category_id:
-                parent_cats = Category.browse(int(category_id))
-                if not parent_cats.exists():
-                    return error_response('分类不存在', status=404)
-                parent_cats = parent_cats  # ensure_one
-            else:
-                # 默认首页：取所有导航 Tab 的一级分类
-                parent_cats = Category.search([
-                    ("parent_id", "=", False),
-                    ("show_in_nav", "=", True),
-                ], order="sequence, id")
-
-            groups = []
-            for parent in parent_cats:
-                sub_cats = Category.search([
-                    ("parent_id", "=", parent.id),
-                ], order="sequence, id")
-
-                items = []
-                for cat in sub_cats:
-                    items.append({
-                        "id": cat.id,
-                        "name": cat.name,
-                        "code": cat.code,
-                        "sequence": cat.sequence,
-                        "icon": encode_image(cat.icon),
-                        "color": cat.color or None,
-                        "is_leaf": cat.is_leaf,
-                        "content_count": cat.content_count,
-                        "item_count": cat.item_count,
-                        "child_ids": cat.child_ids.ids,
-                    })
-
-                groups.append({
-                    "category": {
-                        "id": parent.id,
-                        "name": parent.name,
-                        "code": parent.code,
-                    },
-                    "subcategories": items,
-                })
-
-            return json_response(data=groups)
+            selectors = Selector.search(domain, order='sequence, id')
+            return json_response(data=[{
+                "id": s.id,
+                "code": s.code,
+                "name": s.name,
+                "description": s.description,
+            } for s in selectors])
 
         except ValueError as e:
             return error_response(str(e), status=401)
@@ -928,11 +985,9 @@ class LearnNavController(http.Controller):
                 "is_home": True,
             }]
 
-            # 用当前用户语言读取，避免 translate=True 取到旧翻译
             ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
-            categories = request.env["learn.category"].sudo().with_context(lang=ctx_lang).search([
-                ("parent_id", "=", False),
-                ("show_in_nav", "=", True),
+            categories = request.env["learn.dim.category"].sudo().with_context(lang=ctx_lang).search([
+                ("active", "=", True),
             ], order="sequence, id")
 
             for cat in categories:
@@ -940,8 +995,8 @@ class LearnNavController(http.Controller):
                     "id": cat.id,
                     "code": cat.code,
                     "name": cat.name,
-                    "nav_icon": encode_image(cat.nav_icon),
-                    "nav_icon_active": encode_image(cat.nav_icon_active),
+                    "nav_icon": encode_image(cat.icon),
+                    "nav_icon_active": None,
                     "sequence": cat.sequence,
                     "is_home": False,
                 })
@@ -962,8 +1017,6 @@ def _serialize_content(content, detail=False):
         "id": content.id,
         "name": content.name,
         "content_type": content.content_type,
-        "category_id": content.category_id.id,
-        "category_name": content.category_id.name,
         "subject": content.subject,
         "grade": content.grade,
         "semester": content.semester,
@@ -997,43 +1050,6 @@ def _serialize_content(content, detail=False):
             })
 
     return data
-
-
-def _get_children(category, include_count=False):
-    """递归获取子分类"""
-    children = []
-    for child in category.child_ids:
-        item = {
-            "id": child.id,
-            "name": child.name,
-            "code": child.code,
-            "level": child.level,
-            "is_leaf": child.is_leaf,
-        }
-        if include_count:
-            item["content_count"] = child.content_count
-        if child.child_ids:
-            item["children"] = _get_children(child, include_count)
-        children.append(item)
-    return children
-
-
-def _build_tree(category):
-    """构建完整分类树"""
-    node = {
-        "id": category.id,
-        "name": category.name,
-        "code": category.code,
-        "level": category.level,
-        "is_leaf": category.is_leaf,
-        "audience_type": category.audience_type,
-        "stage_info": category.stage_info,
-        "description": category.description,
-        "content_count": category.content_count,
-    }
-    if category.child_ids:
-        node["children"] = [_build_tree(c) for c in category.child_ids]
-    return node
 
 
 def _sync_wrong_book(session):

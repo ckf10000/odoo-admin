@@ -17,7 +17,7 @@
     'website': "https://gitee.com/mfkifhss/odoo-admin",
     'category': 'Customizations/auth_api',
     'version': '17.0.0.1',
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'common_lib'],
     'data': [
         'security/ir.model.access.csv',
         'security/auth_api_security.xml',

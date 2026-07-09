@@ -25,12 +25,19 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/learn_category_views.xml',
         'views/learn_content_views.xml',
         'views/learn_word_views.xml',
         'views/learn_item_views.xml',
         'views/learn_menus.xml',
-        'data/learn_category_data.xml',
+        'data/learn_dim_category_data.xml',
+        'data/learn_dim_stage_data.xml',
+        'data/learn_dim_klass_data.xml',
+        'data/learn_dim_region_data.xml',
+        'data/learn_dim_subject_data.xml',
+        'data/learn_dim_year_data.xml',
+        'data/learn_dim_semester_data.xml',
+        'data/learn_dim_version_data.xml',
+        'data/learn_selector_data.xml',
     ],
 
     'assets': {
@@ -41,7 +48,7 @@
         ],
     },
 
-    'application': True,
+    'application': False,
     'auto_install': False,
     'installable': True,
     'license': 'LGPL-3',

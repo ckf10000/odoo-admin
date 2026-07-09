@@ -27,7 +27,7 @@ http://localhost:8069/api/swagger.json   # OpenAPI 3.0 JSON
 base（Odoo 核心）
 ```
 
-无需额外依赖 `learn_common`、`auth_api` 等——该模块只做路由扫描和文档生成，不耦合业务模块。
+无需额外依赖 `common_lib`、`auth_api` 等——该模块只做路由扫描和文档生成，不耦合业务模块。
 
 ## 支持的接口分组
 

@@ -196,4 +196,4 @@ POST /api/v1/auth/logout
 base → auth_api → learn_api / app_manage_api 等业务模块
 ```
 
-业务模块通过 `learn_common.api_verify_auth()` 即可获得签名 + Token 认证能力。
+业务模块通过 `common_lib.api_verify_auth()` 即可获得签名 + Token 认证能力。

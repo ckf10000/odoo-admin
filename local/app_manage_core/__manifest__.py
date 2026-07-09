@@ -35,7 +35,7 @@
         'views/app_menus.xml',
     ],
 
-    'application': True,
+    'application': False,
     'auto_install': False,
     'installable': True,
     'license': 'LGPL-3',

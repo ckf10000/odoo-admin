@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 班级/年级 维度数据 ========== -->
+        <record id="dim_klass_age_3" model="learn.dim.class">
+            <field name="name">3岁</field>
+            <field name="code">AGE_3</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_klass_age_4" model="learn.dim.class">
+            <field name="name">4岁</field>
+            <field name="code">AGE_4</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_klass_age_5" model="learn.dim.class">
+            <field name="name">5岁</field>
+            <field name="code">AGE_5</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_klass_age_6" model="learn.dim.class">
+            <field name="name">6岁</field>
+            <field name="code">AGE_6</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_klass_age_3_6" model="learn.dim.class">
+            <field name="name">3~6岁</field>
+            <field name="code">AGE_3_6</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="dim_klass_age_7" model="learn.dim.class">
+            <field name="name">7岁</field>
+            <field name="code">AGE_7</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="dim_klass_age_8" model="learn.dim.class">
+            <field name="name">8岁</field>
+            <field name="code">AGE_8</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="dim_klass_age_9" model="learn.dim.class">
+            <field name="name">9岁</field>
+            <field name="code">AGE_9</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="dim_klass_age_7_9" model="learn.dim.class">
+            <field name="name">7~9岁</field>
+            <field name="code">AGE_7_9</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="dim_klass_grade_1" model="learn.dim.class">
+            <field name="name">一年级</field>
+            <field name="code">GRADE_1</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="dim_klass_grade_2" model="learn.dim.class">
+            <field name="name">二年级</field>
+            <field name="code">GRADE_2</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="dim_klass_grade_3" model="learn.dim.class">
+            <field name="name">三年级</field>
+            <field name="code">GRADE_3</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="dim_klass_grade_4" model="learn.dim.class">
+            <field name="name">四年级</field>
+            <field name="code">GRADE_4</field>
+            <field name="sequence">130</field>
+        </record>
+        <record id="dim_klass_grade_5" model="learn.dim.class">
+            <field name="name">五年级</field>
+            <field name="code">GRADE_5</field>
+            <field name="sequence">140</field>
+        </record>
+        <record id="dim_klass_grade_6" model="learn.dim.class">
+            <field name="name">六年级</field>
+            <field name="code">GRADE_6</field>
+            <field name="sequence">150</field>
+        </record>
+        <record id="dim_klass_grade_7" model="learn.dim.class">
+            <field name="name">初一</field>
+            <field name="code">GRADE_7</field>
+            <field name="sequence">160</field>
+        </record>
+        <record id="dim_klass_grade_8" model="learn.dim.class">
+            <field name="name">初二</field>
+            <field name="code">GRADE_8</field>
+            <field name="sequence">170</field>
+        </record>
+        <record id="dim_klass_grade_9" model="learn.dim.class">
+            <field name="name">初三</field>
+            <field name="code">GRADE_9</field>
+            <field name="sequence">180</field>
+        </record>
+        <record id="dim_klass_grade_10" model="learn.dim.class">
+            <field name="name">高一</field>
+            <field name="code">GRADE_10</field>
+            <field name="sequence">190</field>
+        </record>
+        <record id="dim_klass_grade_11" model="learn.dim.class">
+            <field name="name">高二</field>
+            <field name="code">GRADE_11</field>
+            <field name="sequence">200</field>
+        </record>
+        <record id="dim_klass_grade_12" model="learn.dim.class">
+            <field name="name">高三</field>
+            <field name="code">GRADE_12</field>
+            <field name="sequence">210</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 版本 维度数据 ========== -->
+        <record id="dim_version_nc_young" model="learn.dim.version">
+            <field name="name">新概念(青少版)</field>
+            <field name="code">NC_YOUNG</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_version_kids" model="learn.dim.version">
+            <field name="name">少儿版</field>
+            <field name="code">KIDS</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_version_unified" model="learn.dim.version">
+            <field name="name">统编版</field>
+            <field name="code">UNIFIED</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_version_jiangsu" model="learn.dim.version">
+            <field name="name">苏版</field>
+            <field name="code">JIANGSU</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_version_hunan" model="learn.dim.version">
+            <field name="name">湘少版</field>
+            <field name="code">HUNAN</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="dim_version_pep" model="learn.dim.version">
+            <field name="name">人教版</field>
+            <field name="code">PEP</field>
+            <field name="sequence">60</field>
+        </record>
+
+    </data>
+</odoo>

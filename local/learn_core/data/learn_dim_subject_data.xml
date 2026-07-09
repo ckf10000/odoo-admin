@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 科目 维度数据 ========== -->
+        <record id="dim_subject_hanzi" model="learn.dim.subject">
+            <field name="name">汉字王国</field>
+            <field name="code">HANZI</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_subject_math_fun" model="learn.dim.subject">
+            <field name="name">数学乐园</field>
+            <field name="code">MATH_FUN</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_subject_abc_rainbow" model="learn.dim.subject">
+            <field name="name">ABC彩虹桥</field>
+            <field name="code">ABC_RAINBOW</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_subject_story_castle" model="learn.dim.subject">
+            <field name="name">故事城堡</field>
+            <field name="code">STORY_CASTLE</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_subject_science_lab" model="learn.dim.subject">
+            <field name="name">好奇科学馆</field>
+            <field name="code">SCIENCE_LAB</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="dim_subject_heart_growth" model="learn.dim.subject">
+            <field name="name">心灵成长馆</field>
+            <field name="code">HEART_GROWTH</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="dim_subject_art_island" model="learn.dim.subject">
+            <field name="name">艺术小岛</field>
+            <field name="code">ART_ISLAND</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="dim_subject_health_village" model="learn.dim.subject">
+            <field name="name">健康守卫村</field>
+            <field name="code">HEALTH_VILLAGE</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="dim_subject_python" model="learn.dim.subject">
+            <field name="name">Python编程</field>
+            <field name="code">PYTHON</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="dim_subject_cpp" model="learn.dim.subject">
+            <field name="name">C++编程</field>
+            <field name="code">CPP</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="dim_subject_scratch" model="learn.dim.subject">
+            <field name="name">Scratch编程</field>
+            <field name="code">SCRATCH</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="dim_subject_weiqi" model="learn.dim.subject">
+            <field name="name">围棋</field>
+            <field name="code">WEIQI</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="dim_subject_lego" model="learn.dim.subject">
+            <field name="name">乐高</field>
+            <field name="code">LEGO</field>
+            <field name="sequence">130</field>
+        </record>
+        <record id="dim_subject_robot" model="learn.dim.subject">
+            <field name="name">机器人</field>
+            <field name="code">ROBOT</field>
+            <field name="sequence">140</field>
+        </record>
+        <record id="dim_subject_chinese" model="learn.dim.subject">
+            <field name="name">语文</field>
+            <field name="code">CHINESE</field>
+            <field name="sequence">150</field>
+        </record>
+        <record id="dim_subject_math" model="learn.dim.subject">
+            <field name="name">数学</field>
+            <field name="code">MATH</field>
+            <field name="sequence">160</field>
+        </record>
+        <record id="dim_subject_english" model="learn.dim.subject">
+            <field name="name">英语</field>
+            <field name="code">ENGLISH</field>
+            <field name="sequence">170</field>
+        </record>
+        <record id="dim_subject_physics" model="learn.dim.subject">
+            <field name="name">物理</field>
+            <field name="code">PHYSICS</field>
+            <field name="sequence">180</field>
+        </record>
+        <record id="dim_subject_chemistry" model="learn.dim.subject">
+            <field name="name">化学</field>
+            <field name="code">CHEMISTRY</field>
+            <field name="sequence">190</field>
+        </record>
+        <record id="dim_subject_biology" model="learn.dim.subject">
+            <field name="name">生物</field>
+            <field name="code">BIOLOGY</field>
+            <field name="sequence">200</field>
+        </record>
+        <record id="dim_subject_history" model="learn.dim.subject">
+            <field name="name">历史</field>
+            <field name="code">HISTORY</field>
+            <field name="sequence">210</field>
+        </record>
+        <record id="dim_subject_politics" model="learn.dim.subject">
+            <field name="name">政治</field>
+            <field name="code">POLITICS</field>
+            <field name="sequence">220</field>
+        </record>
+        <record id="dim_subject_geography" model="learn.dim.subject">
+            <field name="name">地理</field>
+            <field name="code">GEOGRAPHY</field>
+            <field name="sequence">230</field>
+        </record>
+        <record id="dim_subject_pe" model="learn.dim.subject">
+            <field name="name">体育</field>
+            <field name="code">PE</field>
+            <field name="sequence">240</field>
+        </record>
+        <record id="dim_subject_art" model="learn.dim.subject">
+            <field name="name">美术</field>
+            <field name="code">ART</field>
+            <field name="sequence">250</field>
+        </record>
+        <record id="dim_subject_music" model="learn.dim.subject">
+            <field name="name">音乐</field>
+            <field name="code">MUSIC</field>
+            <field name="sequence">260</field>
+        </record>
+        <record id="dim_subject_moral" model="learn.dim.subject">
+            <field name="name">道德与法治</field>
+            <field name="code">MORAL</field>
+            <field name="sequence">270</field>
+        </record>
+
+    </data>
+</odoo>

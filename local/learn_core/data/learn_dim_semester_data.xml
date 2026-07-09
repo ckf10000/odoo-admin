@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 学期 维度数据 ========== -->
+        <record id="dim_semester_s1" model="learn.dim.semester">
+            <field name="name">一期</field>
+            <field name="code">S1</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_semester_s2" model="learn.dim.semester">
+            <field name="name">二期</field>
+            <field name="code">S2</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_semester_s3" model="learn.dim.semester">
+            <field name="name">三期</field>
+            <field name="code">S3</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_semester_up" model="learn.dim.semester">
+            <field name="name">上册</field>
+            <field name="code">UP</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_semester_down" model="learn.dim.semester">
+            <field name="name">下册</field>
+            <field name="code">DOWN</field>
+            <field name="sequence">50</field>
+        </record>
+
+    </data>
+</odoo>

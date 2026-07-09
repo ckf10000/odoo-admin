@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 地区 维度数据 ========== -->
+        <record id="dim_region_11" model="learn.dim.region">
+            <field name="name">北京</field>
+            <field name="code">11</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_region_12" model="learn.dim.region">
+            <field name="name">天津</field>
+            <field name="code">12</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_region_13" model="learn.dim.region">
+            <field name="name">河北</field>
+            <field name="code">13</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_region_14" model="learn.dim.region">
+            <field name="name">山西</field>
+            <field name="code">14</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_region_15" model="learn.dim.region">
+            <field name="name">内蒙古</field>
+            <field name="code">15</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="dim_region_21" model="learn.dim.region">
+            <field name="name">辽宁</field>
+            <field name="code">21</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="dim_region_22" model="learn.dim.region">
+            <field name="name">吉林</field>
+            <field name="code">22</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="dim_region_23" model="learn.dim.region">
+            <field name="name">黑龙江</field>
+            <field name="code">23</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="dim_region_31" model="learn.dim.region">
+            <field name="name">上海</field>
+            <field name="code">31</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="dim_region_32" model="learn.dim.region">
+            <field name="name">江苏</field>
+            <field name="code">32</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="dim_region_33" model="learn.dim.region">
+            <field name="name">浙江</field>
+            <field name="code">33</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="dim_region_34" model="learn.dim.region">
+            <field name="name">安徽</field>
+            <field name="code">34</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="dim_region_35" model="learn.dim.region">
+            <field name="name">福建</field>
+            <field name="code">35</field>
+            <field name="sequence">130</field>
+        </record>
+        <record id="dim_region_36" model="learn.dim.region">
+            <field name="name">江西</field>
+            <field name="code">36</field>
+            <field name="sequence">140</field>
+        </record>
+        <record id="dim_region_37" model="learn.dim.region">
+            <field name="name">山东</field>
+            <field name="code">37</field>
+            <field name="sequence">150</field>
+        </record>
+        <record id="dim_region_41" model="learn.dim.region">
+            <field name="name">河南</field>
+            <field name="code">41</field>
+            <field name="sequence">160</field>
+        </record>
+        <record id="dim_region_42" model="learn.dim.region">
+            <field name="name">湖北</field>
+            <field name="code">42</field>
+            <field name="sequence">170</field>
+        </record>
+        <record id="dim_region_43" model="learn.dim.region">
+            <field name="name">湖南</field>
+            <field name="code">43</field>
+            <field name="sequence">180</field>
+        </record>
+        <record id="dim_region_44" model="learn.dim.region">
+            <field name="name">广东</field>
+            <field name="code">44</field>
+            <field name="sequence">190</field>
+        </record>
+        <record id="dim_region_45" model="learn.dim.region">
+            <field name="name">广西</field>
+            <field name="code">45</field>
+            <field name="sequence">200</field>
+        </record>
+        <record id="dim_region_46" model="learn.dim.region">
+            <field name="name">海南</field>
+            <field name="code">46</field>
+            <field name="sequence">210</field>
+        </record>
+        <record id="dim_region_50" model="learn.dim.region">
+            <field name="name">重庆</field>
+            <field name="code">50</field>
+            <field name="sequence">220</field>
+        </record>
+        <record id="dim_region_51" model="learn.dim.region">
+            <field name="name">四川</field>
+            <field name="code">51</field>
+            <field name="sequence">230</field>
+        </record>
+        <record id="dim_region_52" model="learn.dim.region">
+            <field name="name">贵州</field>
+            <field name="code">52</field>
+            <field name="sequence">240</field>
+        </record>
+        <record id="dim_region_53" model="learn.dim.region">
+            <field name="name">云南</field>
+            <field name="code">53</field>
+            <field name="sequence">250</field>
+        </record>
+        <record id="dim_region_54" model="learn.dim.region">
+            <field name="name">西藏</field>
+            <field name="code">54</field>
+            <field name="sequence">260</field>
+        </record>
+        <record id="dim_region_61" model="learn.dim.region">
+            <field name="name">陕西</field>
+            <field name="code">61</field>
+            <field name="sequence">270</field>
+        </record>
+        <record id="dim_region_62" model="learn.dim.region">
+            <field name="name">甘肃</field>
+            <field name="code">62</field>
+            <field name="sequence">280</field>
+        </record>
+        <record id="dim_region_63" model="learn.dim.region">
+            <field name="name">青海</field>
+            <field name="code">63</field>
+            <field name="sequence">290</field>
+        </record>
+        <record id="dim_region_64" model="learn.dim.region">
+            <field name="name">宁夏</field>
+            <field name="code">64</field>
+            <field name="sequence">300</field>
+        </record>
+        <record id="dim_region_65" model="learn.dim.region">
+            <field name="name">新疆</field>
+            <field name="code">65</field>
+            <field name="sequence">310</field>
+        </record>
+        <record id="dim_region_71" model="learn.dim.region">
+            <field name="name">香港</field>
+            <field name="code">71</field>
+            <field name="sequence">320</field>
+        </record>
+        <record id="dim_region_72" model="learn.dim.region">
+            <field name="name">澳门</field>
+            <field name="code">72</field>
+            <field name="sequence">330</field>
+        </record>
+        <record id="dim_region_73" model="learn.dim.region">
+            <field name="name">台湾</field>
+            <field name="code">73</field>
+            <field name="sequence">340</field>
+        </record>
+
+    </data>
+</odoo>

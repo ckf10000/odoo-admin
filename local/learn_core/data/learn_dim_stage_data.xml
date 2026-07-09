@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 阶段 维度数据 ========== -->
+        <record id="dim_stage_beginner" model="learn.dim.stage">
+            <field name="name">初级</field>
+            <field name="code">BEGINNER</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="dim_stage_intermediate" model="learn.dim.stage">
+            <field name="name">中级</field>
+            <field name="code">INTERMEDIATE</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dim_stage_advanced" model="learn.dim.stage">
+            <field name="name">高级</field>
+            <field name="code">ADVANCED</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="dim_stage_primary" model="learn.dim.stage">
+            <field name="name">小学</field>
+            <field name="code">PRIMARY</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="dim_stage_junior" model="learn.dim.stage">
+            <field name="name">初中</field>
+            <field name="code">JUNIOR</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="dim_stage_senior" model="learn.dim.stage">
+            <field name="name">高中</field>
+            <field name="code">SENIOR</field>
+            <field name="sequence">60</field>
+        </record>
+
+    </data>
+</odoo>

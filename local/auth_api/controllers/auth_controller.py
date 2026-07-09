@@ -16,7 +16,7 @@ from odoo import http, _  # noqa
 from odoo.http import request
 from odoo.exceptions import AccessDenied
 from odoo.addons.web.controllers.utils import ensure_db  # noqa
-from odoo.addons.learn_common.common import (  # noqa
+from odoo.addons.common_lib.common import (  # noqa
     json_response, error_response, api_verify_auth, get_client_ip, get_json  # noqa
 )
 
