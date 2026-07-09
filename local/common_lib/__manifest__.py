@@ -19,7 +19,7 @@
     'category': 'Customizations/Learn',
     'version': '17.0.0.1',
 
-    'depends': ['base', 'auth_api'],
+    'depends': ['base'],
 
     'data': [],
 
