@@ -21,7 +21,7 @@ class Home(http.Controller):
 
     def _login_redirect(self, uid, redirect=None):
         return _get_login_redirect_url(uid, redirect)
-    
+
     # override
     @http.route('/web/login', type='http', auth="none")
     def web_login(self, redirect=None, **kw):
@@ -46,7 +46,7 @@ class Home(http.Controller):
                     raise odoo.exceptions.AccessDenied('Wrong Captcha')
 
                 uid = request.session.authenticate(
-                    request.session.db, 
+                    request.session.db,
                     request.params['login'],
                     request.params['password']
                 )
@@ -66,18 +66,19 @@ class Home(http.Controller):
 
         if not odoo.tools.config['list_db']:
             values['disable_database_manager'] = True
-        
-        response = request.render('loan_login.login_template', values)
+
+        response = request.render('admin_login.login_template', values)
         response.headers['X-Frame-Options'] = 'SAMEORIGIN'
         response.headers['Content-Security-Policy'] = "frame-ancestors 'self'"
         return response
 
-    @http.route('/loan_login/refresh_captcha', type='http', auth="none")
+    @http.route('/admin_login/refresh_captcha', type='http', auth="none")
     def refresh_captcha(self, *args, **kw):
         # 加载验证码
         img_data, code = captcha.generate_captcha()
         request.session['login_captcha'] = code
         return http.Stream(type='data', data=img_data, mimetype='image/png').get_response()
+
 
 class Website(Home):
 
