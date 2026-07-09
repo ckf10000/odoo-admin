@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from . import _learn_dim_mixin
 from . import learn_content
 from . import learn_dim_category
 from . import learn_dim_klass
