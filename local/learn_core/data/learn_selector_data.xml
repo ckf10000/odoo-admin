@@ -35,9 +35,54 @@
             <field name="sequence">50</field>
         </record>
 
-        <!-- ========== 中小学 ========== -->
+        <!-- ========== 少儿 ========== -->
 
-        <!-- 小学 一年级 语文 2026 人教版 下册 -->
+        <!-- 英语新概念(青少版) A段 6岁 -->
+        <record id="selector_ncyoung_6a" model="learn.selector">
+            <field name="category_id" ref="dim_category_children"/>
+            <field name="stage_id" ref="dim_stage_beginner"/>
+            <field name="class_id" ref="dim_klass_age_6"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="version_id" ref="dim_version_nc_young"/>
+            <field name="semester_id" ref="dim_semester_a"/>
+            <field name="sequence">60</field>
+        </record>
+        <!-- 英语新概念(青少版) B段 7~9岁 -->
+        <record id="selector_ncyoung_79b" model="learn.selector">
+            <field name="category_id" ref="dim_category_children"/>
+            <field name="stage_id" ref="dim_stage_beginner"/>
+            <field name="class_id" ref="dim_klass_age_7_9"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="version_id" ref="dim_version_nc_young"/>
+            <field name="semester_id" ref="dim_semester_b"/>
+            <field name="sequence">70</field>
+        </record>
+        <!-- 英语新概念(青少版) C段 7~9岁 -->
+        <record id="selector_ncyoung_79c" model="learn.selector">
+            <field name="category_id" ref="dim_category_children"/>
+            <field name="stage_id" ref="dim_stage_beginner"/>
+            <field name="class_id" ref="dim_klass_age_7_9"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="version_id" ref="dim_version_nc_young"/>
+            <field name="semester_id" ref="dim_semester_c"/>
+            <field name="sequence">80</field>
+        </record>
+
+        <!-- ====================================================================== -->
+        <!--                          小学（Primary）                                -->
+        <!-- ====================================================================== -->
+
+        <!-- === 一年级：语文/数学/道德与法治 === -->
+        <record id="selector_g1_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_1"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">10</field>
+        </record>
         <record id="selector_g1_chinese_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
@@ -46,9 +91,18 @@
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
             <field name="semester_id" ref="dim_semester_down"/>
-            <field name="sequence">10</field>
+            <field name="sequence">20</field>
         </record>
-        <!-- 小学 一年级 数学 2026 人教版 下册 -->
+        <record id="selector_g1_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_1"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">30</field>
+        </record>
         <record id="selector_g1_math_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
@@ -57,20 +111,266 @@
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
             <field name="semester_id" ref="dim_semester_down"/>
-            <field name="sequence">20</field>
+            <field name="sequence">40</field>
         </record>
-        <!-- 小学 五年级 英语 2026 湘少版 下册 -->
-        <record id="selector_g5_english_hunan_down" model="learn.selector">
+        <record id="selector_g1_moral_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_1"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="selector_g1_moral_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_1"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- === 二年级：语文/数学/道德与法治 === -->
+        <record id="selector_g2_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_2"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="selector_g2_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_2"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="selector_g2_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_2"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">90</field>
+        </record>
+        <record id="selector_g2_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_2"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">100</field>
+        </record>
+        <record id="selector_g2_moral_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_2"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">110</field>
+        </record>
+        <record id="selector_g2_moral_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_2"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">120</field>
+        </record>
+
+        <!-- === 三年级：语文/数学/英语/道德与法治 === -->
+        <record id="selector_g3_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">130</field>
+        </record>
+        <record id="selector_g3_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">140</field>
+        </record>
+        <record id="selector_g3_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">150</field>
+        </record>
+        <record id="selector_g3_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">160</field>
+        </record>
+        <record id="selector_g3_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">170</field>
+        </record>
+        <record id="selector_g3_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">180</field>
+        </record>
+        <record id="selector_g3_moral_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">190</field>
+        </record>
+        <record id="selector_g3_moral_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">200</field>
+        </record>
+
+        <!-- === 四年级：语文/数学/英语/道德与法治 === -->
+        <record id="selector_g4_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">210</field>
+        </record>
+        <record id="selector_g4_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">220</field>
+        </record>
+        <record id="selector_g4_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">230</field>
+        </record>
+        <record id="selector_g4_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">240</field>
+        </record>
+        <record id="selector_g4_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">250</field>
+        </record>
+        <record id="selector_g4_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">260</field>
+        </record>
+        <record id="selector_g4_moral_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">270</field>
+        </record>
+        <record id="selector_g4_moral_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">280</field>
+        </record>
+
+        <!-- === 五年级：语文/数学/英语/道德与法治 === -->
+        <record id="selector_g5_chinese_pep_up" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
             <field name="class_id" ref="dim_klass_grade_5"/>
-            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
             <field name="year_id" ref="dim_year_2026"/>
-            <field name="version_id" ref="dim_version_hunan"/>
-            <field name="semester_id" ref="dim_semester_down"/>
-            <field name="sequence">30</field>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">290</field>
         </record>
-        <!-- 小学 五年级 语文 2026 人教版 下册 -->
         <record id="selector_g5_chinese_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
@@ -79,9 +379,18 @@
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
             <field name="semester_id" ref="dim_semester_down"/>
-            <field name="sequence">40</field>
+            <field name="sequence">300</field>
         </record>
-        <!-- 小学 五年级 数学 2026 人教版 下册 -->
+        <record id="selector_g5_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">310</field>
+        </record>
         <record id="selector_g5_math_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
@@ -90,7 +399,1129 @@
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
             <field name="semester_id" ref="dim_semester_down"/>
-            <field name="sequence">50</field>
+            <field name="sequence">320</field>
+        </record>
+        <record id="selector_g5_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">330</field>
+        </record>
+        <record id="selector_g5_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">340</field>
+        </record>
+        <record id="selector_g5_moral_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">350</field>
+        </record>
+        <record id="selector_g5_moral_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">360</field>
+        </record>
+
+        <!-- === 六年级：语文/数学/英语/道德与法治 === -->
+        <record id="selector_g6_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">370</field>
+        </record>
+        <record id="selector_g6_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">380</field>
+        </record>
+        <record id="selector_g6_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">390</field>
+        </record>
+        <record id="selector_g6_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">400</field>
+        </record>
+        <record id="selector_g6_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">410</field>
+        </record>
+        <record id="selector_g6_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">420</field>
+        </record>
+        <record id="selector_g6_moral_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">430</field>
+        </record>
+        <record id="selector_g6_moral_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_moral"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">440</field>
+        </record>
+
+        <!-- ====================================================================== -->
+        <!--                          初中（Junior High）                            -->
+        <!-- ====================================================================== -->
+
+        <!-- === 初一：语文/数学/英语/生物/历史/地理/道德与法治 === -->
+        <record id="selector_g7_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">450</field>
+        </record>
+        <record id="selector_g7_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">460</field>
+        </record>
+        <record id="selector_g7_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">470</field>
+        </record>
+        <record id="selector_g7_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">480</field>
+        </record>
+        <record id="selector_g7_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">490</field>
+        </record>
+        <record id="selector_g7_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">500</field>
+        </record>
+        <record id="selector_g7_biology_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">510</field>
+        </record>
+        <record id="selector_g7_biology_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">520</field>
+        </record>
+        <record id="selector_g7_history_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">530</field>
+        </record>
+        <record id="selector_g7_history_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">540</field>
+        </record>
+        <record id="selector_g7_geography_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">550</field>
+        </record>
+        <record id="selector_g7_geography_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">560</field>
+        </record>
+        <record id="selector_g7_politics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">570</field>
+        </record>
+        <record id="selector_g7_politics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_7"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">580</field>
+        </record>
+
+        <!-- === 初二：语文/数学/英语/物理/生物/历史/地理/政治 === -->
+        <record id="selector_g8_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">590</field>
+        </record>
+        <record id="selector_g8_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">600</field>
+        </record>
+        <record id="selector_g8_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">610</field>
+        </record>
+        <record id="selector_g8_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">620</field>
+        </record>
+        <record id="selector_g8_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">630</field>
+        </record>
+        <record id="selector_g8_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">640</field>
+        </record>
+        <record id="selector_g8_physics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">650</field>
+        </record>
+        <record id="selector_g8_physics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">660</field>
+        </record>
+        <record id="selector_g8_biology_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">670</field>
+        </record>
+        <record id="selector_g8_biology_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">680</field>
+        </record>
+        <record id="selector_g8_history_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">690</field>
+        </record>
+        <record id="selector_g8_history_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">700</field>
+        </record>
+        <record id="selector_g8_geography_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">710</field>
+        </record>
+        <record id="selector_g8_geography_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">720</field>
+        </record>
+        <record id="selector_g8_politics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">730</field>
+        </record>
+        <record id="selector_g8_politics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_8"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">740</field>
+        </record>
+
+        <!-- === 初三：语文/数学/英语/物理/化学/历史/政治 === -->
+        <record id="selector_g9_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">750</field>
+        </record>
+        <record id="selector_g9_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">760</field>
+        </record>
+        <record id="selector_g9_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">770</field>
+        </record>
+        <record id="selector_g9_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">780</field>
+        </record>
+        <record id="selector_g9_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">790</field>
+        </record>
+        <record id="selector_g9_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">800</field>
+        </record>
+        <record id="selector_g9_physics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">810</field>
+        </record>
+        <record id="selector_g9_physics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">820</field>
+        </record>
+        <record id="selector_g9_chemistry_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">830</field>
+        </record>
+        <record id="selector_g9_chemistry_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">840</field>
+        </record>
+        <record id="selector_g9_history_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">850</field>
+        </record>
+        <record id="selector_g9_history_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">860</field>
+        </record>
+        <record id="selector_g9_politics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">870</field>
+        </record>
+        <record id="selector_g9_politics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_junior"/>
+            <field name="class_id" ref="dim_klass_grade_9"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">880</field>
+        </record>
+
+        <!-- ====================================================================== -->
+        <!--                          高中（Senior High）                            -->
+        <!-- ====================================================================== -->
+
+        <!-- === 高一：语文/数学/英语/物理/化学/生物/历史/地理/政治 === -->
+        <record id="selector_g10_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">890</field>
+        </record>
+        <record id="selector_g10_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">900</field>
+        </record>
+        <record id="selector_g10_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">910</field>
+        </record>
+        <record id="selector_g10_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">920</field>
+        </record>
+        <record id="selector_g10_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">930</field>
+        </record>
+        <record id="selector_g10_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">940</field>
+        </record>
+        <record id="selector_g10_physics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">950</field>
+        </record>
+        <record id="selector_g10_physics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">960</field>
+        </record>
+        <record id="selector_g10_chemistry_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">970</field>
+        </record>
+        <record id="selector_g10_chemistry_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">980</field>
+        </record>
+        <record id="selector_g10_biology_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">990</field>
+        </record>
+        <record id="selector_g10_biology_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1000</field>
+        </record>
+        <record id="selector_g10_history_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1010</field>
+        </record>
+        <record id="selector_g10_history_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1020</field>
+        </record>
+        <record id="selector_g10_geography_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1030</field>
+        </record>
+        <record id="selector_g10_geography_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1040</field>
+        </record>
+        <record id="selector_g10_politics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1050</field>
+        </record>
+        <record id="selector_g10_politics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_10"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1060</field>
+        </record>
+
+        <!-- === 高二：语文/数学/英语/物理/化学/生物/历史/地理/政治 === -->
+        <record id="selector_g11_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1070</field>
+        </record>
+        <record id="selector_g11_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1080</field>
+        </record>
+        <record id="selector_g11_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1090</field>
+        </record>
+        <record id="selector_g11_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1100</field>
+        </record>
+        <record id="selector_g11_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1110</field>
+        </record>
+        <record id="selector_g11_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1120</field>
+        </record>
+        <record id="selector_g11_physics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1130</field>
+        </record>
+        <record id="selector_g11_physics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1140</field>
+        </record>
+        <record id="selector_g11_chemistry_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1150</field>
+        </record>
+        <record id="selector_g11_chemistry_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1160</field>
+        </record>
+        <record id="selector_g11_biology_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1170</field>
+        </record>
+        <record id="selector_g11_biology_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1180</field>
+        </record>
+        <record id="selector_g11_history_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1190</field>
+        </record>
+        <record id="selector_g11_history_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1200</field>
+        </record>
+        <record id="selector_g11_geography_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1210</field>
+        </record>
+        <record id="selector_g11_geography_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1220</field>
+        </record>
+        <record id="selector_g11_politics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1230</field>
+        </record>
+        <record id="selector_g11_politics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_11"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1240</field>
+        </record>
+
+        <!-- === 高三：语文/数学/英语/物理/化学/生物/历史/地理/政治 === -->
+        <record id="selector_g12_chinese_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1250</field>
+        </record>
+        <record id="selector_g12_chinese_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_chinese"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1260</field>
+        </record>
+        <record id="selector_g12_math_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1270</field>
+        </record>
+        <record id="selector_g12_math_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_math"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1280</field>
+        </record>
+        <record id="selector_g12_english_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1290</field>
+        </record>
+        <record id="selector_g12_english_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1300</field>
+        </record>
+        <record id="selector_g12_physics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1310</field>
+        </record>
+        <record id="selector_g12_physics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_physics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1320</field>
+        </record>
+        <record id="selector_g12_chemistry_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1330</field>
+        </record>
+        <record id="selector_g12_chemistry_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_chemistry"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1340</field>
+        </record>
+        <record id="selector_g12_biology_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1350</field>
+        </record>
+        <record id="selector_g12_biology_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_biology"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1360</field>
+        </record>
+        <record id="selector_g12_history_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1370</field>
+        </record>
+        <record id="selector_g12_history_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_history"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1380</field>
+        </record>
+        <record id="selector_g12_geography_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1390</field>
+        </record>
+        <record id="selector_g12_geography_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_geography"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1400</field>
+        </record>
+        <record id="selector_g12_politics_pep_up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1410</field>
+        </record>
+        <record id="selector_g12_politics_pep_down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_senior"/>
+            <field name="class_id" ref="dim_klass_grade_12"/>
+            <field name="subject_id" ref="dim_subject_politics"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_pep"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1420</field>
         </record>
 
     </data>

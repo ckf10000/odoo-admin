@@ -28,6 +28,20 @@
             <field name="code">DOWN</field>
             <field name="sequence">50</field>
         </record>
-
+        <record id="dim_semester_a" model="learn.dim.semester">
+            <field name="name">A段</field>
+            <field name="code">A</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="dim_semester_b" model="learn.dim.semester">
+            <field name="name">B段</field>
+            <field name="code">B</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="dim_semester_c" model="learn.dim.semester">
+            <field name="name">C段</field>
+            <field name="code">C</field>
+            <field name="sequence">80</field>
+        </record>
     </data>
 </odoo>

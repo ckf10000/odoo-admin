@@ -20,6 +20,8 @@ from odoo.http import request, Response
 
 from odoo.addons.common_lib.common import json_response, error_response, api_verify_auth, encode_image  # noqa
 
+HOME_TAB = (0, "home", "首页")  # 首页 Tab: (id, code, name)
+
 
 # ==================== 内容 API ====================
 
@@ -701,6 +703,9 @@ class LearnHomeController(http.Controller):
         try:
             header, body, user = api_verify_auth(require_token=True)
             category_code = body.get("category_code")
+            # 首页特殊编码 → 返回全部分类
+            if category_code == HOME_TAB[1]:
+                category_code = None
             ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
 
             DimCat = request.env['learn.dim.category'].sudo().with_context(lang=ctx_lang)
@@ -717,7 +722,7 @@ class LearnHomeController(http.Controller):
                 cats = DimCat.search([('active', '=', True)], order='sequence')
 
             groups = []
-            for c in (cats if isinstance(cats, list) else [cats]):
+            for c in cats:
                 cat_sel = Selector.search(
                     [('category_id', '=', c.id), ('active', '=', True)],
                     order='sequence'
@@ -976,9 +981,9 @@ class LearnNavController(http.Controller):
             header, body, user = api_verify_auth(require_token=True)  # noqa
 
             tabs = [{
-                "id": 0,
-                "code": "home",
-                "name": "首页",
+                "id": HOME_TAB[0],
+                "code": HOME_TAB[1],
+                "name": HOME_TAB[2],
                 "nav_icon": None,
                 "nav_icon_active": None,
                 "sequence": 0,
