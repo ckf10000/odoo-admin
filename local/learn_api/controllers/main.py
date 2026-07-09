@@ -20,7 +20,7 @@ from odoo.http import request, Response
 
 from odoo.addons.common_lib.common import json_response, error_response, api_verify_auth, encode_image  # noqa
 
-HOME_TAB = (0, "home", "首页")  # 首页 Tab: (id, code, name)
+ALL_TAB = (0, "all", "全部")  # 全部 Tab: (id, code, name)
 
 
 # ==================== 内容 API ====================
@@ -699,62 +699,61 @@ class LearnHomeController(http.Controller):
                 "category_code": "NINE_YEAR"  // 可选，不传则返回所有分类
             }
         }
+
+        响应:
+        {
+            "success": true,
+            "data": [
+                {
+                    "category": {"id": 5, "name": "中小学", "code": "NINE_YEAR"},
+                    "subcategories": [...]
+                }
+            ]
+        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)
             category_code = body.get("category_code")
             # 首页特殊编码 → 返回全部分类
-            if category_code == HOME_TAB[1]:
+            if category_code == ALL_TAB[1]:
                 category_code = None
             ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
 
             DimCat = request.env['learn.dim.category'].sudo().with_context(lang=ctx_lang)
             Selector = request.env['learn.selector'].sudo()
-            domain = [('active', '=', True)]
 
+            # 确定要查询的分类列表
             if category_code:
                 cat = DimCat.search([('code', '=', category_code)], limit=1)
                 if not cat:
                     return error_response('分类不存在', status=404)
-                domain.append(('category_id', '=', cat.id))
                 cats = cat
             else:
                 cats = DimCat.search([('active', '=', True)], order='sequence')
 
             groups = []
             for c in cats:
-                cat_sel = Selector.search(
+                selectors = Selector.search(
                     [('category_id', '=', c.id), ('active', '=', True)],
                     order='sequence'
                 )
-                # 按 stage 分组
-                stage_map = {}
-                for s in cat_sel:
-                    stage_key = s.stage_id.code if s.stage_id else '_'
-                    if stage_key not in stage_map:
-                        stage_map[stage_key] = {
-                            "id": s.stage_id.id if s.stage_id else 0,
-                            "name": s.stage_id.name if s.stage_id else c.name,
-                            "code": stage_key,
-                            "icon": encode_image(s.stage_id.icon) if s.stage_id and s.stage_id.icon else None,
-                            "items": [],
-                        }
-                    stage_map[stage_key]["items"].append({
-                        "selector_id": s.id,
-                        "selector_code": s.code,
-                        "name": s.name,
-                        "class_name": s.class_id.name or "",
-                        "class_code": s.class_id.code or "",
-                        "subject_name": s.subject_id.name or "",
-                        "subject_code": s.subject_id.code or "",
-                        "version_name": s.version_id.name or "",
-                        "year_name": s.year_id.name or "",
-                        "semester_name": s.semester_id.name or "",
-                    })
+                # subcategories 按 stage 去重，只取 stage 维度
+                items = []
+                seen_stages = set()
+                for s in selectors:
+                    stage_code = s.stage_id.code if s.stage_id else ""
+                    if stage_code and stage_code not in seen_stages:
+                        seen_stages.add(stage_code)
+                        items.append({
+                            "id": s.stage_id.id,
+                            "name": s.stage_id.name,
+                            "code": stage_code,
+                            "sequence": s.sequence,
+                        })
 
                 groups.append({
                     "category": {"id": c.id, "name": c.name, "code": c.code},
-                    "stages": list(stage_map.values()),
+                    "subcategories": items,
                 })
 
             return json_response(data=groups)
@@ -958,8 +957,8 @@ class LearnNavController(http.Controller):
             "data": [
                 {
                     "id": 0,
-                    "code": "home",
-                    "name": "首页",
+                    "code": "all",
+                    "name": "全部",
                     "nav_icon": null,
                     "nav_icon_active": null,
                     "is_home": true,
@@ -981,9 +980,9 @@ class LearnNavController(http.Controller):
             header, body, user = api_verify_auth(require_token=True)  # noqa
 
             tabs = [{
-                "id": HOME_TAB[0],
-                "code": HOME_TAB[1],
-                "name": HOME_TAB[2],
+                "id": ALL_TAB[0],
+                "code": ALL_TAB[1],
+                "name": ALL_TAB[2],
                 "nav_icon": None,
                 "nav_icon_active": None,
                 "sequence": 0,
