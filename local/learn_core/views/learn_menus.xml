@@ -7,6 +7,97 @@
               sequence="80"
               web_icon="learn_core,static/description/icon.png"/>
 
+    <!-- 维度管理 -->
+    <menuitem id="menu_learn_dims"
+              name="维度管理"
+              parent="menu_learn_root"
+              sequence="5"/>
+
+    <!-- 8 个维度 -->
+    <record id="action_learn_dim_category" model="ir.actions.act_window">
+        <field name="name">分类</field>
+        <field name="res_model">learn.dim.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_category"
+              name="分类" parent="menu_learn_dims" sequence="10"
+              action="action_learn_dim_category"/>
+
+    <record id="action_learn_dim_stage" model="ir.actions.act_window">
+        <field name="name">阶段</field>
+        <field name="res_model">learn.dim.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_stage"
+              name="阶段" parent="menu_learn_dims" sequence="20"
+              action="action_learn_dim_stage"/>
+
+    <record id="action_learn_dim_class" model="ir.actions.act_window">
+        <field name="name">班级/年级</field>
+        <field name="res_model">learn.dim.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_class"
+              name="班级/年级" parent="menu_learn_dims" sequence="30"
+              action="action_learn_dim_class"/>
+
+    <record id="action_learn_dim_region" model="ir.actions.act_window">
+        <field name="name">地区</field>
+        <field name="res_model">learn.dim.region</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_region"
+              name="地区" parent="menu_learn_dims" sequence="40"
+              action="action_learn_dim_region"/>
+
+    <record id="action_learn_dim_subject" model="ir.actions.act_window">
+        <field name="name">科目</field>
+        <field name="res_model">learn.dim.subject</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_subject"
+              name="科目" parent="menu_learn_dims" sequence="50"
+              action="action_learn_dim_subject"/>
+
+    <record id="action_learn_dim_year" model="ir.actions.act_window">
+        <field name="name">年份</field>
+        <field name="res_model">learn.dim.year</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_year"
+              name="年份" parent="menu_learn_dims" sequence="60"
+              action="action_learn_dim_year"/>
+
+    <record id="action_learn_dim_semester" model="ir.actions.act_window">
+        <field name="name">学期</field>
+        <field name="res_model">learn.dim.semester</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_semester"
+              name="学期" parent="menu_learn_dims" sequence="70"
+              action="action_learn_dim_semester"/>
+
+    <record id="action_learn_dim_version" model="ir.actions.act_window">
+        <field name="name">版本</field>
+        <field name="res_model">learn.dim.version</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_dim_version"
+              name="版本" parent="menu_learn_dims" sequence="80"
+              action="action_learn_dim_version"/>
+
+    <!-- 选择器管理 -->
+    <record id="action_learn_selector" model="ir.actions.act_window">
+        <field name="name">选择器</field>
+        <field name="res_model">learn.selector</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_selector"
+              name="选择器管理"
+              parent="menu_learn_root"
+              sequence="8"
+              action="action_learn_selector"/>
+
     <!-- 内容管理 -->
     <menuitem id="menu_learn_content"
               name="内容管理"

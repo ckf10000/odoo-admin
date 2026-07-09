@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========== 8 个维度表通用视图 ========== -->
+
+    <!-- 分类 -->
+    <record id="view_learn_dim_category_tree" model="ir.ui.view">
+        <field name="name">learn.dim.category.tree</field>
+        <field name="model">learn.dim.category</field>
+        <field name="arch" type="xml">
+            <tree string="分类" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+                <field name="description" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_category_form" model="ir.ui.view">
+        <field name="name">learn.dim.category.form</field>
+        <field name="model">learn.dim.category</field>
+        <field name="arch" type="xml">
+            <form string="分类">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                    <group>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                        <field name="icon" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 阶段 -->
+    <record id="view_learn_dim_stage_tree" model="ir.ui.view">
+        <field name="name">learn.dim.stage.tree</field>
+        <field name="model">learn.dim.stage</field>
+        <field name="arch" type="xml">
+            <tree string="阶段" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_stage_form" model="ir.ui.view">
+        <field name="name">learn.dim.stage.form</field>
+        <field name="model">learn.dim.stage</field>
+        <field name="arch" type="xml">
+            <form string="阶段">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                        <field name="icon" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 班级/年级 -->
+    <record id="view_learn_dim_class_tree" model="ir.ui.view">
+        <field name="name">learn.dim.class.tree</field>
+        <field name="model">learn.dim.class</field>
+        <field name="arch" type="xml">
+            <tree string="班级/年级" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_class_form" model="ir.ui.view">
+        <field name="name">learn.dim.class.form</field>
+        <field name="model">learn.dim.class</field>
+        <field name="arch" type="xml">
+            <form string="班级/年级">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                        <field name="icon" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 地区 -->
+    <record id="view_learn_dim_region_tree" model="ir.ui.view">
+        <field name="name">learn.dim.region.tree</field>
+        <field name="model">learn.dim.region</field>
+        <field name="arch" type="xml">
+            <tree string="地区" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_region_form" model="ir.ui.view">
+        <field name="name">learn.dim.region.form</field>
+        <field name="model">learn.dim.region</field>
+        <field name="arch" type="xml">
+            <form string="地区">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 科目 -->
+    <record id="view_learn_dim_subject_tree" model="ir.ui.view">
+        <field name="name">learn.dim.subject.tree</field>
+        <field name="model">learn.dim.subject</field>
+        <field name="arch" type="xml">
+            <tree string="科目" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_subject_form" model="ir.ui.view">
+        <field name="name">learn.dim.subject.form</field>
+        <field name="model">learn.dim.subject</field>
+        <field name="arch" type="xml">
+            <form string="科目">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                        <field name="icon" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 年份 -->
+    <record id="view_learn_dim_year_tree" model="ir.ui.view">
+        <field name="name">learn.dim.year.tree</field>
+        <field name="model">learn.dim.year</field>
+        <field name="arch" type="xml">
+            <tree string="年份" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_year_form" model="ir.ui.view">
+        <field name="name">learn.dim.year.form</field>
+        <field name="model">learn.dim.year</field>
+        <field name="arch" type="xml">
+            <form string="年份">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 学期 -->
+    <record id="view_learn_dim_semester_tree" model="ir.ui.view">
+        <field name="name">learn.dim.semester.tree</field>
+        <field name="model">learn.dim.semester</field>
+        <field name="arch" type="xml">
+            <tree string="学期" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_semester_form" model="ir.ui.view">
+        <field name="name">learn.dim.semester.form</field>
+        <field name="model">learn.dim.semester</field>
+        <field name="arch" type="xml">
+            <form string="学期">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 版本 -->
+    <record id="view_learn_dim_version_tree" model="ir.ui.view">
+        <field name="name">learn.dim.version.tree</field>
+        <field name="model">learn.dim.version</field>
+        <field name="arch" type="xml">
+            <tree string="版本" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_learn_dim_version_form" model="ir.ui.view">
+        <field name="name">learn.dim.version.form</field>
+        <field name="model">learn.dim.version</field>
+        <field name="arch" type="xml">
+            <form string="版本">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

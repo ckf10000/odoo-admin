@@ -25,6 +25,7 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'views/learn_dim_views.xml',
         'views/learn_content_views.xml',
         'views/learn_word_views.xml',
         'views/learn_item_views.xml',
