@@ -1,6 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_learn_category_user,learn.category.user,model_learn_category,base.group_user,1,0,0,0
-access_learn_category_admin,learn.category.admin,model_learn_category,base.group_system,1,1,1,1
 access_learn_content_user,learn.content.user,model_learn_content,base.group_user,1,0,0,0
 access_learn_content_admin,learn.content.admin,model_learn_content,base.group_system,1,1,1,1
 access_learn_tag_user,learn.tag.user,model_learn_tag,base.group_user,1,0,0,0

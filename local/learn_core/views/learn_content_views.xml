@@ -15,7 +15,7 @@
                        decoration-info="content_type == 'exam'"
                        decoration-warning="content_type == 'workbook'"
                        decoration-danger="content_type == 'video'"/>
-                <field name="category_id"/>
+                <field name="selector_id"/>
                 <field name="subject"/>
                 <field name="grade"/>
                 <field name="view_count"/>
@@ -59,7 +59,7 @@
                         <group>
                             <field name="name"/>
                             <field name="content_type"/>
-                            <field name="category_id" options="{'no_create': True}"/>
+                            <field name="selector_id" options="{'no_create': True}"/>
                             <field name="subject"/>
                             <field name="grade"/>
                             <field name="semester"/>

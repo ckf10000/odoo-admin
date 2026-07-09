@@ -41,7 +41,7 @@
         <record id="selector_g1_chinese_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
-            <field name="class_id" ref="dim_class_grade_1"/>
+            <field name="class_id" ref="dim_klass_grade_1"/>
             <field name="subject_id" ref="dim_subject_chinese"/>
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
@@ -52,7 +52,7 @@
         <record id="selector_g1_math_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
-            <field name="class_id" ref="dim_class_grade_1"/>
+            <field name="class_id" ref="dim_klass_grade_1"/>
             <field name="subject_id" ref="dim_subject_math"/>
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
@@ -63,7 +63,7 @@
         <record id="selector_g5_english_hunan_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
-            <field name="class_id" ref="dim_class_grade_5"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
             <field name="subject_id" ref="dim_subject_english"/>
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_hunan"/>
@@ -74,7 +74,7 @@
         <record id="selector_g5_chinese_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
-            <field name="class_id" ref="dim_class_grade_5"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
             <field name="subject_id" ref="dim_subject_chinese"/>
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>
@@ -85,7 +85,7 @@
         <record id="selector_g5_math_pep_down" model="learn.selector">
             <field name="category_id" ref="dim_category_nine_year"/>
             <field name="stage_id" ref="dim_stage_primary"/>
-            <field name="class_id" ref="dim_class_grade_5"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
             <field name="subject_id" ref="dim_subject_math"/>
             <field name="year_id" ref="dim_year_2026"/>
             <field name="version_id" ref="dim_version_pep"/>

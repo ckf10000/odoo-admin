@@ -13,11 +13,10 @@ class LearnContent(models.Model):
     name = fields.Char(string="标题", required=True, translate=True)
     sequence = fields.Integer(string="排序", default=10)
 
-    # ---- 分类关联 ----
-    category_id = fields.Many2one(
-        "learn.category", string="所属分类",
-        required=True, ondelete="restrict", index=True,
-        domain="[('is_leaf', '=', True)]",
+    # ---- 选择器关联 ----
+    selector_id = fields.Many2one(
+        "learn.selector", string="所属选择器",
+        ondelete="restrict", index=True,
     )
 
     # ---- 内容类型 ----
@@ -121,11 +120,7 @@ class LearnContent(models.Model):
     create_uid = fields.Many2one("res.users", string="创建者", default=lambda self: self.env.uid)
     # 多用户隔离通过 record rules 实现，每个用户只能看到自己创建的内容 + 公开内容
 
-    _sql_constraints = [
-        ("unique_name_category",
-         "UNIQUE(name, category_id)",
-         "同一分类下内容标题必须唯一！"),
-    ]
+    _sql_constraints = []
 
     @api.depends("question_ids")
     def _compute_question_count(self):
@@ -289,14 +284,6 @@ class LearnItem(models.Model):
         "learn.content", string="所属内容",
         required=True, ondelete="cascade", index=True,
     )
-    category_id = fields.Many2one(
-        "learn.category", string="所属单元",
-        related="content_id.category_id", store=True, index=True,
-    )
-    category_path = fields.Char(
-        string="分类路径", compute="_compute_category_path", store=True,
-    )
-
     # ======== 通用字段（所有类型共享） ========
     meaning = fields.Text(string="释义", required=True)
     difficulty = fields.Selection(
@@ -361,19 +348,6 @@ class LearnItem(models.Model):
     formula_expression = fields.Text(string="公式表达式")
     formula_variables = fields.Text(string="变量说明")
 
-    @api.depends("category_id", "category_id.parent_path")
-    def _compute_category_path(self):
-        """显示完整的分类路径"""
-        for record in self:
-            if record.category_id:
-                ancestors = self.env["learn.category"].search([
-                    ("id", "parent_of", record.category_id.id),
-                ], order="level")
-                parts = [c.name for c in ancestors] + [record.category_id.name]
-                record.category_path = " / ".join(parts)
-            else:
-                record.category_path = ""
-
     _sql_constraints = [
         ("unique_item_content",
          "UNIQUE(name, content_id, item_type)",
@@ -394,14 +368,6 @@ class LearnWord(models.Model):
         "learn.content", string="所属内容",
         required=True, ondelete="cascade", index=True,
     )
-    category_id = fields.Many2one(
-        "learn.category", string="所属单元",
-        related="content_id.category_id", store=True, index=True,
-    )
-    category_path = fields.Char(
-        string="分类路径", compute="_compute_category_path", store=True,
-    )
-
     pronunciation = fields.Char(string="音标")
     part_of_speech = fields.Selection(
         selection=[
@@ -425,18 +391,6 @@ class LearnWord(models.Model):
         selection=[("easy", "简单"), ("medium", "中等"), ("hard", "困难")],
         string="难度", default="medium",
     )
-
-    @api.depends("category_id", "category_id.parent_path")
-    def _compute_category_path(self):
-        for record in self:
-            if record.category_id:
-                ancestors = self.env["learn.category"].search([
-                    ("id", "parent_of", record.category_id.id),
-                ], order="level")
-                parts = [c.name for c in ancestors] + [record.category_id.name]
-                record.category_path = " / ".join(parts)
-            else:
-                record.category_path = ""
 
     _sql_constraints = [
         ("unique_word_content",

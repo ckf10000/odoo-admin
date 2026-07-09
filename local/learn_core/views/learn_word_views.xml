@@ -13,7 +13,6 @@
                 <field name="part_of_speech" widget="badge"/>
                 <field name="meaning"/>
                 <field name="difficulty" widget="badge"/>
-                <field name="category_path" string="分类路径" optional="show"/>
                 <field name="content_id" invisible="1"/>
             </tree>
         </field>
@@ -27,7 +26,6 @@
             <search string="搜索单词">
                 <field name="name"/>
                 <field name="meaning"/>
-                <field name="category_path"/>
                 <filter name="filter_easy" string="简单"
                         domain="[('difficulty', '=', 'easy')]"/>
                 <filter name="filter_medium" string="中等"

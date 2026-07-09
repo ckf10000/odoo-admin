@@ -17,7 +17,6 @@
                        decoration-muted="item_type == 'term'"/>
                 <field name="meaning"/>
                 <field name="difficulty" widget="badge"/>
-                <field name="category_path" string="分类路径" optional="show"/>
                 <field name="content_id" invisible="1"/>
             </tree>
         </field>
@@ -136,7 +135,6 @@
             <search string="搜索知识点">
                 <field name="name"/>
                 <field name="meaning"/>
-                <field name="category_path"/>
                 <field name="char_pinyin"/>
                 <field name="pronunciation"/>
 
