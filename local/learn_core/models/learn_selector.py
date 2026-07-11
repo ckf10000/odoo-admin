@@ -14,11 +14,12 @@ class LearnSelector(models.Model):
     active = fields.Boolean(string='启用', default=True)
     description = fields.Text(string='备注')
 
-    # ---- 8 个维度外键 ----
+    # ---- 8 个维度外键（region 为一对多）----
     category_id = fields.Many2one('learn.dim.category', string='分类', required=True, index=True, ondelete='restrict')
     stage_id = fields.Many2one('learn.dim.stage', string='阶段', index=True, ondelete='restrict')
     class_id = fields.Many2one('learn.dim.class', string='班级/年级', index=True, ondelete='restrict')
-    region_id = fields.Many2one('learn.dim.region', string='地区', index=True, ondelete='restrict')
+    region_ids = fields.Many2many('learn.dim.region', 'learn_selector_region_rel', 'selector_id', 'region_id',
+                                  string='地区')
     subject_id = fields.Many2one('learn.dim.subject', string='科目', index=True, ondelete='restrict')
     year_id = fields.Many2one('learn.dim.year', string='年份', index=True, ondelete='restrict')
     semester_id = fields.Many2one('learn.dim.semester', string='学期', index=True, ondelete='restrict')
@@ -29,18 +30,16 @@ class LearnSelector(models.Model):
     ]
 
     @api.depends('category_id', 'stage_id', 'class_id', 'subject_id',
-                 'year_id', 'semester_id', 'version_id', 'region_id')
+                 'year_id', 'semester_id', 'version_id')
     def _compute_name(self):
         for r in self:
             parts = []
-            for f in ['category_id', 'stage_id', 'class_id', 'subject_id',
-                      'version_id', 'year_id', 'semester_id', 'region_id']:
+            for f in ['category_id', 'stage_id', 'class_id', 'version_id', 'year_id', 'semester_id', 'subject_id']:
                 if r[f]:
                     parts.append(r[f].name)
             r.name = ' / '.join(filter(None, parts))
 
-    _code_fields = ['category_id', 'stage_id', 'class_id', 'subject_id',
-                    'version_id', 'year_id', 'semester_id', 'region_id']
+    _code_fields = ['category_id', 'stage_id', 'class_id', 'version_id', 'year_id', 'semester_id', 'subject_id']
 
     @api.depends(*_code_fields)
     def _compute_code(self):

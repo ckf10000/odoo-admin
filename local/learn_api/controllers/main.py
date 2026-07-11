@@ -17,7 +17,7 @@
 import base64
 from odoo import http, fields
 from odoo.http import request, Response
-
+from odoo.addons.learn_core.utils import DIM_CHAIN  # noqa
 from odoo.addons.common_lib.common import json_response, error_response, api_verify_auth, encode_image  # noqa
 
 ALL_TAB = (0, "all", "全部")  # 全部 Tab: (id, code, name)
@@ -770,14 +770,61 @@ class LearnSelectorController(http.Controller):
 
     @http.route("/api/v1/learn/tab_selector", type="http", auth="public", methods=["POST"], csrf=False)
     def get_tab_selector(self, **kw):  # noqa
-        """获取选择器维度数据（stages/classes/regions），由 dim 表动态提供
+        """获取选择器维度树（动态层级：category → stage → class → region → version → year → semester → subject）
 
         请求体 (JSON):
         {
             "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
             "body": {
-                "category_code": "NINE_YEAR",       // 必填，分类编码
-                "sub_category_code": "PRIMARY"       // 可选，快速定位到某个 stage
+                "category_code": "NINE_YEAR",       // 可选，分类编码
+                "sub_category_code": "PRIMARY"       // 可选，阶段编码（需传 category_code）
+            }
+        }
+
+        - 无参：root = category，最多全量 7 层，同一个前缀路径下，某个维度要么全配、要么全缺，末层永远是 subject
+        - 有 category_code：root = stage，该分类下最多 6 层，同一个前缀路径下，某个维度要么全配、要么全缺，末层永远是 subject
+        - 有 category_code + sub_category_code：root = class，该阶段下 最多 5 层，同一个前缀路径下，某个维度要么全配、要么全缺，末层永远是 subject
+        任一条件下无数据则返回空列表。
+
+        返回 (JSON):
+        {
+            "success": true,
+            "data": {
+                "default_condition": [
+                    {"id": 20, "name": "一年级", "code": "GRADE_1", "dim_type":"class", "dim_desc":"年级","children": [
+                        {"id": 30, "name": "广东", "code": "GD", "dim_type":"rejoin", "dim_desc":"区域", "children": [
+                            {
+                                "id": 40, "name": "人教版", "code": "PEP", "dim_type":"version",
+                                "dim_desc":"版本", "children": [
+                                {
+                                    "id": 50, "name": "2026", "code": "2026", "dim_type":"year",
+                                    "dim_desc":"年份", "children": [
+                                    {
+                                        "id": 60, "name": "上册", "code": "UP",
+                                        "dim_type":"semester", "dim_desc":"学期", "children": [
+                                        {
+                                            "id": 70, "name": "语文", "code": "CHINESE",
+                                            "dim_type":"subject", "dim_desc":"科目", "children":[]
+                                    ]}
+                                ]}
+                            ]}
+                        ]}
+                    ]}
+                ],
+                "conditions": [
+                    {"
+                        id": 20, "name": "一年级", "code": "GRADE_1", "sequence": 10,
+                        "dim_type":"class", "dim_desc":"年级", "children": [...]
+                    },
+                    {
+                        "id": 30, "name": "二年级", "code": "GRADE_2", "sequence": 20,
+                        "dim_type":"class", "dim_desc":"年级", "children": [...]
+                    },
+                    {
+                        "id": 40, "name": "三年级", "code": "GRADE_3", "sequence": 30,
+                        "dim_type":"class", "dim_desc":"年级", "children": [...]
+                    }
+                ]
             }
         }
         """
@@ -785,72 +832,102 @@ class LearnSelectorController(http.Controller):
             header, body, user = api_verify_auth(require_token=True)
 
             category_code = body.get("category_code")
-            if not category_code:
-                return error_response('category_code 不能为空', status=400)
             sub_category_code = body.get("sub_category_code", "")
-
             ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
-            Selector = request.env['learn.selector'].sudo()
 
-            # 该分类下所有 active selector
-            cat = request.env['learn.dim.category'].sudo().search([('code', '=', category_code)], limit=1)
-            if not cat:
-                return error_response('分类不存在', status=404)
+            Selector = request.env['learn.selector'].sudo().with_context(lang=ctx_lang)
+            domain = [('active', '=', True)]
 
-            selectors = Selector.search([
-                ('category_id', '=', cat.id), ('active', '=', True)
-            ], order='sequence')
+            # 确定起始层级 offset 并过滤
+            if category_code:
+                cat = request.env['learn.dim.category'].sudo().with_context(lang=ctx_lang).search(
+                    [('code', '=', category_code)], limit=1
+                )
+                if not cat:
+                    return error_response('分类不存在', status=404)
+                domain.append(('category_id', '=', cat.id))
+                start_offset = 1  # root = stage
 
-            # 用 set 去重收集 stages / classes / regions
-            stage_set, class_set, region_set = {}, {}, {}
-            for s in selectors:
-                if s.stage_id:
-                    stage_set[s.stage_id.code] = {"name": s.stage_id.name, "code": s.stage_id.code}
-                if s.class_id:
-                    key = f'{s.stage_id.code if s.stage_id else "_"}_{s.class_id.code}'
-                    class_set[key] = {"name": s.class_id.name, "code": s.class_id.code,
-                                      "stage": s.stage_id.code if s.stage_id else ""}
-                if s.region_id:
-                    region_set[s.region_id.code] = {"name": s.region_id.name, "code": s.region_id.code}
+                if sub_category_code:
+                    stage = request.env['learn.dim.stage'].sudo().with_context(lang=ctx_lang).search(
+                        [('code', '=', sub_category_code)], limit=1
+                    )
+                    if not stage:
+                        return error_response('阶段不存在', status=404)
+                    domain.append(('stage_id', '=', stage.id))
+                    start_offset = 2  # root = class
+            else:
+                start_offset = 0  # root = category
 
-            stages = list(stage_set.values())
-            classes = list(class_set.values())
-            regions = list(region_set.values())
+            selectors = Selector.search(domain, order='sequence')
 
-            # 如果没有 selector 中带 region，从 dim 表全量取（仅中小学）
-            if not regions and category_code == "NINE_YEAR":
-                for r in request.env['learn.dim.region'].sudo().with_context(lang=ctx_lang).search(
-                        [], order='sequence'
-                ):
-                    regions.append({"name": r.name, "code": r.code})
+            if not selectors:
+                return json_response(data={
+                    "default_condition": [],
+                    "conditions": [],
+                })
 
-            # 默认值
-            default_stage = stages[0] if stages else {"name": "", "code": ""}
-            if sub_category_code:
-                for s in stages:
-                    if s["code"] == sub_category_code:
-                        default_stage = s
-                        break
+            # ---------- 递归构建树 ----------
+            from collections import OrderedDict
 
-            default_class = {"name": "", "code": "", "stage": ""}
-            if default_stage["code"]:
-                for c in classes:
-                    if c["stage"] == default_stage["code"]:
-                        default_class = c
-                        break
-            if not default_class["code"]:
-                default_class = classes[0] if classes else {"name": "", "code": "", "stage": ""}
+            def build_level(sels, level_idx):
+                """从 sels 中按 DIM_CHAIN[level_idx] 维度分组，递归构建子树"""
+                if level_idx >= len(DIM_CHAIN) or not sels:
+                    return []
+
+                field_name, dim_type, dim_desc = DIM_CHAIN[level_idx]
+                groups = OrderedDict()
+                s_map = {s.id: s for s in sels}
+
+                for s in sels:
+                    if field_name == "region_ids":
+                        recs = s.region_ids
+                    else:
+                        obj = s[field_name]
+                        recs = [obj] if obj else []
+
+                    for rec in recs:
+                        code = rec.code
+                        if code not in groups:
+                            groups[code] = {"obj": rec, "sel_ids": set()}
+                        groups[code]["sel_ids"].add(s.id)
+
+                # 当前维度所有 selector 均未配置 → 跳过，继续下一个维度
+                if not groups:
+                    return build_level(sels, level_idx + 1)
+
+                nodes = []
+                for code, gdata in groups.items():
+                    child_sels = [s_map[sid] for sid in gdata["sel_ids"]]
+                    children = build_level(child_sels, level_idx + 1)
+                    nodes.append({
+                        "id": gdata["obj"].id,
+                        "name": gdata["obj"].name,
+                        "code": code,
+                        "sequence": gdata["obj"].sequence,
+                        "dim_type": dim_type,
+                        "dim_desc": dim_desc,
+                        "children": children,
+                    })
+
+                nodes.sort(key=lambda x: x["sequence"])
+                return nodes
+
+            conditions = build_level(selectors, start_offset)
+
+            # ---------- 递归取第一条路径 ----------
+            _pick_keys = ("id", "name", "code", "sequence", "dim_type", "dim_desc")
+
+            def _pick_first(node):
+                copy = {k: node[k] for k in _pick_keys}
+                copy["children"] = [_pick_first(node["children"][0])] if node["children"] else []
+                return copy
+
+            default_condition = [_pick_first(conditions[0])] if conditions else []
 
             return json_response(data={
-                "default": {
-                    "stage": default_stage["name"], "stage_code": default_stage["code"],
-                    "class": default_class["name"], "class_code": default_class["code"],
-                    "region": regions[0]["name"] if regions else "",
-                    "region_code": regions[0]["code"] if regions else "",
-                },
-                "stages": stages,
-                "classes": classes,
-                "regions": regions,
+                "default_condition": default_condition,
+                "conditions": conditions,
             })
 
         except ValueError as e:
@@ -903,7 +980,7 @@ class LearnSelectorApiController(http.Controller):
                 'category_code': 'category_id',
                 'stage_code': 'stage_id',
                 'class_code': 'class_id',
-                'region_code': 'region_id',
+                'region_code': 'region_ids',
                 'subject_code': 'subject_id',
                 'year_code': 'year_id',
                 'semester_code': 'semester_id',
@@ -919,7 +996,10 @@ class LearnSelectorApiController(http.Controller):
                         ('code', '=', code_val),
                     ], limit=1)
                     if dim_rec:
-                        domain.append((field_name, '=', dim_rec.id))
+                        if Selector._fields[field_name].type == 'many2many':
+                            domain.append((field_name, 'in', [dim_rec.id]))
+                        else:
+                            domain.append((field_name, '=', dim_rec.id))
                     else:
                         return json_response(data=[])
 
