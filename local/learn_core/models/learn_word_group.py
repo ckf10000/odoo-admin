@@ -12,19 +12,19 @@ class LearnWordGroup(models.Model):
     selector_id = fields.Many2one(
         'learn.selector', string='选择器', required=True, index=True, ondelete='restrict',
     )
+    selector_process_id = fields.Many2one(
+        'learn.selector.process', string='学习过程', required=True, index=True, ondelete='restrict',
+        domain="[('selector_id', '=', selector_id)]",
+    )
+    # 兼容旧数据
     process_id = fields.Many2one(
-        'learn.process', string='学习过程', required=True, index=True, ondelete='restrict',
+        'learn.process', string='学习过程', related='selector_process_id.process_id', store=True,
     )
     description = fields.Text(string='描述')
     sequence = fields.Integer(string='排序', default=10)
     active = fields.Boolean(string='启用', default=True)
 
     line_ids = fields.One2many('learn.word.group.line', 'group_id', string='单词列表')
-
-    _sql_constraints = [
-        ('unique_group', 'UNIQUE(selector_id, process_id)',
-         '同一选择器和过程下只能有一个单词组！'),
-    ]
 
 
 class LearnWordGroupLine(models.Model):

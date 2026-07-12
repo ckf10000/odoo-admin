@@ -10,7 +10,7 @@
             <tree string="单词组">
                 <field name="name"/>
                 <field name="selector_id"/>
-                <field name="process_id"/>
+                <field name="selector_process_id"/>
             </tree>
         </field>
     </record>
@@ -25,8 +25,7 @@
                         <group>
                             <field name="name"/>
                             <field name="selector_id"/>
-                            <field name="process_id"
-                                   domain="[('selector_rel_ids.selector_id', '=', selector_id)]"/>
+                            <field name="selector_process_id"/>
                         </group>
                         <group>
                             <field name="sequence"/>

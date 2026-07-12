@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ========== 丽声瑞格叔叔自然拼读法 单词数据 ========== -->
 
@@ -1426,8 +1426,8 @@
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1580</field>
         </record>
-        <record id="word_tital" model="learn.word">
-            <field name="name">tital</field>
+        <record id="word_total" model="learn.word">
+            <field name="name">total</field>
             <field name="phonetic">/ˈtaɪtl/</field>
             <field name="part_of_speech">noun</field>
             <field name="meaning">标题；头衔</field>

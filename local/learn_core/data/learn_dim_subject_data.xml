@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ========== 科目 维度数据 ========== -->
         <record id="dim_subject_hanzi" model="learn.dim.subject">
@@ -138,9 +138,9 @@
             <field name="code">MORAL</field>
             <field name="sequence">270</field>
         </record>
-        <record id="dim_subject_phonics_leeson" model="learn.dim.subject">
+        <record id="dim_subject_phonics_lesson" model="learn.dim.subject">
             <field name="name">丽声瑞格叔叔自然拼读法</field>
-            <field name="code">PHONICS_LEESON</field>
+            <field name="code">PHONICS_LESSON</field>
             <field name="sequence">280</field>
         </record>
 

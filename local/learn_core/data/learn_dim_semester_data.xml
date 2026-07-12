@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ========== 学期 维度数据 ========== -->
         <record id="dim_semester_s1" model="learn.dim.semester">

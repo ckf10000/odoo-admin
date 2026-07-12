@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ========== 年份 维度数据 ========== -->
         <record id="dim_year_2020" model="learn.dim.year">

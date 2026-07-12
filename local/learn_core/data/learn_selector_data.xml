@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ========== 启蒙 ========== -->
 
@@ -1622,7 +1622,7 @@
             <field name="category_id" ref="dim_category_children"/>
             <field name="stage_id" ref="dim_stage_beginner"/>
             <field name="class_id" ref="dim_klass_age_6"/>
-            <field name="subject_id" ref="dim_subject_phonics_leeson"/>
+            <field name="subject_id" ref="dim_subject_phonics_lesson"/>
             <field name="year_id" ref="dim_year_2025"/>
             <field name="version_id" ref="dim_version_teen"/>
             <field name="semester_id" ref="dim_semester_s1"/>

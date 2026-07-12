@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ========== 丽声瑞格 单词组 数据 ========== -->
 
@@ -868,9 +868,9 @@
             <field name="word_id" ref="word_difficult"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_14_tital" model="learn.word.group.line">
+        <record id="line_case_file_14_total" model="learn.word.group.line">
             <field name="group_id" ref="group_case_file_14"/>
-            <field name="word_id" ref="word_tital"/>
+            <field name="word_id" ref="word_total"/>
             <field name="sequence">60</field>
         </record>
         <record id="line_case_file_14_hundred" model="learn.word.group.line">
