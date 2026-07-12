@@ -27,3 +27,15 @@ access_learn_dim_version_user,learn.dim.version.user,model_learn_dim_version,bas
 access_learn_dim_version_admin,learn.dim.version.admin,model_learn_dim_version,base.group_system,1,1,1,1
 access_learn_selector_user,learn.selector.user,model_learn_selector,base.group_user,1,0,0,0
 access_learn_selector_admin,learn.selector.admin,model_learn_selector,base.group_system,1,1,1,1
+access_learn_process_user,learn.process.user,model_learn_process,base.group_user,1,0,0,0
+access_learn_process_admin,learn.process.admin,model_learn_process,base.group_system,1,1,1,1
+access_learn_selector_process_user,learn.selector.process.user,model_learn_selector_process,base.group_user,1,0,0,0
+access_learn_selector_process_admin,learn.selector.process.admin,model_learn_selector_process,base.group_system,1,1,1,1
+access_learn_word_user,learn.word.user,model_learn_word,base.group_user,1,0,0,0
+access_learn_word_admin,learn.word.admin,model_learn_word,base.group_system,1,1,1,1
+access_learn_word_source_user,learn.word.source.user,model_learn_word_source,base.group_user,1,0,0,0
+access_learn_word_source_admin,learn.word.source.admin,model_learn_word_source,base.group_system,1,1,1,1
+access_learn_word_group_user,learn.word.group.user,model_learn_word_group,base.group_user,1,0,0,0
+access_learn_word_group_admin,learn.word.group.admin,model_learn_word_group,base.group_system,1,1,1,1
+access_learn_word_group_line_user,learn.word.group.line.user,model_learn_word_group_line,base.group_user,1,0,0,0
+access_learn_word_group_line_admin,learn.word.group.line.admin,model_learn_word_group_line,base.group_system,1,1,1,1

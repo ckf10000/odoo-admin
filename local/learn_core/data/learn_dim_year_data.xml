@@ -38,6 +38,11 @@
             <field name="code">2026</field>
             <field name="sequence">70</field>
         </record>
+        <record id="dim_year_2027" model="learn.dim.year">
+            <field name="name">2027</field>
+            <field name="code">2027</field>
+            <field name="sequence">80</field>
+        </record>
 
     </data>
 </odoo>

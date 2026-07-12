@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- 单词列表视图 -->
+    <!-- ========== 单词 视图 ========== -->
+
     <record id="view_learn_word_tree" model="ir.ui.view">
         <field name="name">learn.word.tree</field>
         <field name="model">learn.word</field>
         <field name="arch" type="xml">
             <tree string="单词列表">
-                <field name="sequence" widget="handle"/>
                 <field name="name"/>
-                <field name="pronunciation"/>
+                <field name="phonetic"/>
                 <field name="part_of_speech" widget="badge"/>
                 <field name="meaning"/>
+                <field name="source_ids"/>
                 <field name="difficulty" widget="badge"/>
-                <field name="content_id" invisible="1"/>
             </tree>
         </field>
     </record>
 
-    <!-- 单词搜索视图 -->
+    <record id="view_learn_word_form" model="ir.ui.view">
+        <field name="name">learn.word.form</field>
+        <field name="model">learn.word</field>
+        <field name="arch" type="xml">
+            <form string="单词">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phonetic"/>
+                        <field name="part_of_speech"/>
+                        <field name="difficulty"/>
+                    </group>
+                    <group>
+                        <field name="source_ids"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="释义">
+                        <field name="meaning"/>
+                        <field name="meaning_en"/>
+                    </group>
+                    <group string="例句与短语">
+                        <field name="example_sentence"/>
+                        <field name="phrases"/>
+                        <field name="etymology"/>
+                    </group>
+                    <group string="备注">
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="view_learn_word_search" model="ir.ui.view">
         <field name="name">learn.word.search</field>
         <field name="model">learn.word</field>
@@ -26,6 +58,7 @@
             <search string="搜索单词">
                 <field name="name"/>
                 <field name="meaning"/>
+                <field name="source_ids"/>
                 <filter name="filter_easy" string="简单"
                         domain="[('difficulty', '=', 'easy')]"/>
                 <filter name="filter_medium" string="中等"

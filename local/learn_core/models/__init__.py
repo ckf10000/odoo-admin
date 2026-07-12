@@ -10,3 +10,7 @@ from . import learn_dim_subject
 from . import learn_dim_version
 from . import learn_dim_year
 from . import learn_selector
+from . import learn_process
+from . import learn_word_source
+from . import learn_word
+from . import learn_word_group

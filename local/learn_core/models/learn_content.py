@@ -87,9 +87,6 @@ class LearnContent(models.Model):
     question_ids = fields.One2many(
         "learn.question", "content_id", string="题目列表",
     )
-    word_ids = fields.One2many(
-        "learn.word", "content_id", string="单词列表",
-    )
     item_ids = fields.One2many(
         "learn.item", "content_id", string="知识点列表",
     )

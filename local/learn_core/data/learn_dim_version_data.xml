@@ -33,6 +33,11 @@
             <field name="code">PEP</field>
             <field name="sequence">60</field>
         </record>
+        <record id="dim_version_teen" model="learn.dim.version">
+            <field name="name">青少版</field>
+            <field name="code">TEEN</field>
+            <field name="sequence">70</field>
+        </record>
 
     </data>
 </odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========== 学习过程分类 视图 ========== -->
+
+    <record id="view_learn_process_tree" model="ir.ui.view">
+        <field name="name">learn.process.tree</field>
+        <field name="model">learn.process</field>
+        <field name="arch" type="xml">
+            <tree string="过程" editable="bottom">
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+                <field name="description" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_process_form" model="ir.ui.view">
+        <field name="name">learn.process.form</field>
+        <field name="model">learn.process</field>
+        <field name="arch" type="xml">
+            <form string="学习过程分类">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ========== 选择器-过程关联 视图 ========== -->
+
+    <record id="view_learn_selector_process_tree" model="ir.ui.view">
+        <field name="name">learn.selector.process.tree</field>
+        <field name="model">learn.selector.process</field>
+        <field name="arch" type="xml">
+            <tree string="关联过程">
+                <field name="process_id"/>
+                <field name="region_id" optional="show"/>
+                <field name="sequence_str"/>
+                <field name="selector_id" column_invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_selector_process_form" model="ir.ui.view">
+        <field name="name">learn.selector.process.form</field>
+        <field name="model">learn.selector.process</field>
+        <field name="arch" type="xml">
+            <form string="关联过程">
+                <sheet>
+                    <group>
+                        <field name="process_id" required="1"/>
+                        <field name="region_id"
+                               domain="[('id', 'in', parent.region_ids)]"
+                               context="{'default_region_id': False}"/>
+                        <field name="sequence"/>
+                        <field name="selector_id" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

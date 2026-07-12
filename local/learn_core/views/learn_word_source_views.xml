@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========== 单词来源 视图 ========== -->
+
+    <record id="view_learn_word_source_tree" model="ir.ui.view">
+        <field name="name">learn.word.source.tree</field>
+        <field name="model">learn.word.source</field>
+        <field name="arch" type="xml">
+            <tree string="单词来源" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_word_source_form" model="ir.ui.view">
+        <field name="name">learn.word.source.form</field>
+        <field name="model">learn.word.source</field>
+        <field name="arch" type="xml">
+            <form string="单词来源">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

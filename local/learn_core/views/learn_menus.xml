@@ -50,14 +50,14 @@
               name="地区" parent="menu_learn_dims" sequence="40"
               action="action_learn_dim_region"/>
 
-    <record id="action_learn_dim_subject" model="ir.actions.act_window">
-        <field name="name">科目</field>
-        <field name="res_model">learn.dim.subject</field>
+    <record id="action_learn_dim_version" model="ir.actions.act_window">
+        <field name="name">版本</field>
+        <field name="res_model">learn.dim.version</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_learn_dim_subject"
-              name="科目" parent="menu_learn_dims" sequence="50"
-              action="action_learn_dim_subject"/>
+    <menuitem id="menu_learn_dim_version"
+              name="版本" parent="menu_learn_dims" sequence="50"
+              action="action_learn_dim_version"/>
 
     <record id="action_learn_dim_year" model="ir.actions.act_window">
         <field name="name">年份</field>
@@ -77,53 +77,107 @@
               name="学期" parent="menu_learn_dims" sequence="70"
               action="action_learn_dim_semester"/>
 
-    <record id="action_learn_dim_version" model="ir.actions.act_window">
-        <field name="name">版本</field>
-        <field name="res_model">learn.dim.version</field>
+    <record id="action_learn_dim_subject" model="ir.actions.act_window">
+        <field name="name">科目</field>
+        <field name="res_model">learn.dim.subject</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_learn_dim_version"
-              name="版本" parent="menu_learn_dims" sequence="80"
-              action="action_learn_dim_version"/>
+    <menuitem id="menu_learn_dim_subject"
+              name="科目" parent="menu_learn_dims" sequence="80"
+              action="action_learn_dim_subject"/>
 
-    <!-- 选择器管理 -->
+    <!-- 过程（基础数据，归维度管理） -->
+    <record id="action_learn_process" model="ir.actions.act_window">
+        <field name="name">过程</field>
+        <field name="res_model">learn.process</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_process"
+              name="过程" parent="menu_learn_dims" sequence="84"
+              action="action_learn_process"/>
+
+    <!-- 选择器（归入维度管理） -->
     <record id="action_learn_selector" model="ir.actions.act_window">
         <field name="name">选择器</field>
         <field name="res_model">learn.selector</field>
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="menu_learn_selector"
-              name="选择器管理"
-              parent="menu_learn_root"
-              sequence="8"
+              name="选择器"
+              parent="menu_learn_dims" sequence="85"
               action="action_learn_selector"/>
 
     <!-- 内容管理 -->
     <menuitem id="menu_learn_content"
               name="内容管理"
               parent="menu_learn_root"
-              sequence="10"
+              sequence="10"/>
+
+    <menuitem id="menu_learn_content_list"
+              name="内容" parent="menu_learn_content" sequence="10"
               action="action_learn_content"/>
 
-    <!-- 题目管理 -->
     <menuitem id="menu_learn_question"
               name="题目管理"
-              parent="menu_learn_root"
+              parent="menu_learn_content"
               sequence="20"
               action="action_learn_question"/>
 
-    <!-- 知识点管理 -->
     <menuitem id="menu_learn_item"
               name="知识点管理"
-              parent="menu_learn_root"
+              parent="menu_learn_content"
               sequence="30"
               action="action_learn_item"/>
 
-    <!-- 标签管理 -->
     <menuitem id="menu_learn_tag"
               name="标签管理"
-              parent="menu_learn_root"
-              sequence="90"
+              parent="menu_learn_content"
+              sequence="40"
               action="action_learn_tag"/>
+
+    <!-- 单词管理（一级菜单） -->
+    <menuitem id="menu_learn_words"
+              name="单词管理"
+              parent="menu_learn_root"
+              sequence="12"/>
+
+    <record id="action_learn_word" model="ir.actions.act_window">
+        <field name="name">单词库</field>
+        <field name="res_model">learn.word</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_word"
+              name="单词库" parent="menu_learn_words" sequence="10"
+              action="action_learn_word"/>
+
+    <record id="action_learn_word_source" model="ir.actions.act_window">
+        <field name="name">单词来源</field>
+        <field name="res_model">learn.word.source</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_word_source"
+              name="单词来源" parent="menu_learn_words" sequence="20"
+              action="action_learn_word_source"/>
+
+    <!-- 过程管理（一级菜单） -->
+    <menuitem id="menu_learn_workflow"
+              name="过程管理"
+              parent="menu_learn_root"
+              sequence="15"/>
+
+    <record id="action_learn_word_group" model="ir.actions.act_window">
+        <field name="name">单词基础</field>
+        <field name="res_model">learn.word.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_word_group"
+              name="单词基础" parent="menu_learn_workflow" sequence="10"
+              action="action_learn_word_group"/>
+
+    <!-- 学习管理（TODO: learn.favorite / rating / wrong.book / exam.session 模型待建） -->
+    <menuitem id="menu_learn_study"
+              name="学习管理"
+              parent="menu_learn_root"
+              sequence="20"/>
 
 </odoo>

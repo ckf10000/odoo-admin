@@ -1524,5 +1524,110 @@
             <field name="sequence">1420</field>
         </record>
 
+        <!-- ====================================================================== -->
+        <!--               中小学 湘少版 英语（G3-G6）                                -->
+        <!-- ====================================================================== -->
+
+        <!-- 三年级 上册 2023 -->
+        <record id="selector_g3_english_hunan_23up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2023"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1430</field>
+        </record>
+        <!-- 三年级 下册 2024 -->
+        <record id="selector_g3_english_hunan_24down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_3"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2024"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1440</field>
+        </record>
+        <!-- 四年级 上册 2024 -->
+        <record id="selector_g4_english_hunan_24up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2024"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1450</field>
+        </record>
+        <!-- 四年级 下册 2025 -->
+        <record id="selector_g4_english_hunan_25down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_4"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2025"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1460</field>
+        </record>
+        <!-- 五年级 上册 2025 -->
+        <record id="selector_g5_english_hunan_25up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2025"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1470</field>
+        </record>
+        <!-- 五年级 下册 2026 -->
+        <record id="selector_g5_english_hunan_26down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_5"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1480</field>
+        </record>
+        <!-- 六年级 上册 2026 -->
+        <record id="selector_g6_english_hunan_26up" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2026"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_up"/>
+            <field name="sequence">1490</field>
+        </record>
+        <!-- 六年级 下册 2027 -->
+        <record id="selector_g6_english_hunan_27down" model="learn.selector">
+            <field name="category_id" ref="dim_category_nine_year"/>
+            <field name="stage_id" ref="dim_stage_primary"/>
+            <field name="class_id" ref="dim_klass_grade_6"/>
+            <field name="subject_id" ref="dim_subject_english"/>
+            <field name="year_id" ref="dim_year_2027"/>
+            <field name="version_id" ref="dim_version_hunan"/>
+            <field name="semester_id" ref="dim_semester_down"/>
+            <field name="sequence">1500</field>
+        </record>
+
+        <!-- ========== 少儿 青少版 ========== -->
+        <record id="selector_teen_phonics_2025" model="learn.selector">
+            <field name="category_id" ref="dim_category_children"/>
+            <field name="stage_id" ref="dim_stage_beginner"/>
+            <field name="class_id" ref="dim_klass_age_6"/>
+            <field name="subject_id" ref="dim_subject_phonics_leeson"/>
+            <field name="year_id" ref="dim_year_2025"/>
+            <field name="version_id" ref="dim_version_teen"/>
+            <field name="semester_id" ref="dim_semester_s1"/>
+            <field name="sequence">1510</field>
+        </record>
+
     </data>
 </odoo>

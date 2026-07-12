@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 学习过程分类 数据 ========== -->
+        <record id="process_class_exercise" model="learn.process">
+            <field name="name">随堂练习</field>
+            <field name="code">CLASS_EXERCISE</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="process_poem" model="learn.process">
+            <field name="name">诗词背诵</field>
+            <field name="code">POEM</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="process_dictation" model="learn.process">
+            <field name="name">默写专项</field>
+            <field name="code">DICTATION</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="process_word_basic" model="learn.process">
+            <field name="name">单词基础</field>
+            <field name="code">WORD_BASIC</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="process_knowledge_summary" model="learn.process">
+            <field name="name">知识总结</field>
+            <field name="code">KNOWLEDGE_SUMMARY</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="process_special_training" model="learn.process">
+            <field name="name">专项训练</field>
+            <field name="code">SPECIAL_TRAINING</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="process_unit_test" model="learn.process">
+            <field name="name">单元测试</field>
+            <field name="code">UNIT_TEST</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="process_midterm" model="learn.process">
+            <field name="name">期中测试</field>
+            <field name="code">MIDTERM</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="process_final" model="learn.process">
+            <field name="name">期末测试</field>
+            <field name="code">FINAL</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="process_holiday_review" model="learn.process">
+            <field name="name">假期逆袭</field>
+            <field name="code">HOLIDAY_REVIEW</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="process_study_material" model="learn.process">
+            <field name="name">学习资料</field>
+            <field name="code">STUDY_MATERIAL</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="process_online_video" model="learn.process">
+            <field name="name">在线视频</field>
+            <field name="code">ONLINE_VIDEO</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="process_download" model="learn.process">
+            <field name="name">资料下载</field>
+            <field name="code">DOWNLOAD</field>
+            <field name="sequence">130</field>
+        </record>
+
+    </data>
+</odoo>

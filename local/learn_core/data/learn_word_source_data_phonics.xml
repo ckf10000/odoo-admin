@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 单词来源 数据 ========== -->
+        <record id="word_source_primary" model="learn.word.source">
+            <field name="name">小学</field>
+            <field name="code">PRIMARY</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="word_source_junior" model="learn.word.source">
+            <field name="name">初中</field>
+            <field name="code">JUNIOR</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="word_source_senior" model="learn.word.source">
+            <field name="name">高中</field>
+            <field name="code">SENIOR</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="word_source_ielts" model="learn.word.source">
+            <field name="name">雅思</field>
+            <field name="code">IELTS</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="word_source_toefl" model="learn.word.source">
+            <field name="name">托福</field>
+            <field name="code">TOEFL</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="word_source_nce" model="learn.word.source">
+            <field name="name">新概念英语</field>
+            <field name="code">NCE</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="word_source_phonics_lesson" model="learn.word.source">
+            <field name="name">丽声瑞格叔叔自然拼读法</field>
+            <field name="code">PHONICS_LESSON</field>
+            <field name="sequence">70</field>
+        </record>
+
+    </data>
+</odoo>

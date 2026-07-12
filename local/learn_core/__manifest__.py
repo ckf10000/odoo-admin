@@ -30,6 +30,9 @@
         'views/learn_word_views.xml',
         'views/learn_item_views.xml',
         'views/learn_menus.xml',
+        'views/learn_process_views.xml',
+        'views/learn_word_source_views.xml',
+        'views/learn_word_group_views.xml',
         'data/learn_dim_category_data.xml',
         'data/learn_dim_stage_data.xml',
         'data/learn_dim_klass_data.xml',
@@ -39,6 +42,10 @@
         'data/learn_dim_semester_data.xml',
         'data/learn_dim_version_data.xml',
         'data/learn_selector_data.xml',
+        'data/learn_process_data.xml',
+        'data/learn_word_source_data_phonics.xml',
+        'data/learn_word_data.xml',
+        'data/learn_word_group_data_phonics.xml',
     ],
 
     'assets': {

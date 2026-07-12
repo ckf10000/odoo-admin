@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========== 丽声瑞格叔叔自然拼读法 单词数据 ========== -->
+
+        <record id="word_A" model="learn.word">
+            <field name="name">A</field>
+            <field name="phonetic">/eɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母A</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="word_B" model="learn.word">
+            <field name="name">B</field>
+            <field name="phonetic">/biː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母B</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="word_C" model="learn.word">
+            <field name="name">C</field>
+            <field name="phonetic">/siː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母C</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="word_D" model="learn.word">
+            <field name="name">D</field>
+            <field name="phonetic">/diː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母D</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="word_E" model="learn.word">
+            <field name="name">E</field>
+            <field name="phonetic">/iː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母E</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="word_F" model="learn.word">
+            <field name="name">F</field>
+            <field name="phonetic">/ef/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母F</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="word_G" model="learn.word">
+            <field name="name">G</field>
+            <field name="phonetic">/dʒiː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母G</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="word_H" model="learn.word">
+            <field name="name">H</field>
+            <field name="phonetic">/eɪtʃ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母H</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="word_I" model="learn.word">
+            <field name="name">I</field>
+            <field name="phonetic">/aɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母I</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">90</field>
+        </record>
+        <record id="word_J" model="learn.word">
+            <field name="name">J</field>
+            <field name="phonetic">/dʒeɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母J</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">100</field>
+        </record>
+        <record id="word_K" model="learn.word">
+            <field name="name">K</field>
+            <field name="phonetic">/keɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母K</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">110</field>
+        </record>
+        <record id="word_L" model="learn.word">
+            <field name="name">L</field>
+            <field name="phonetic">/el/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母L</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">120</field>
+        </record>
+        <record id="word_M" model="learn.word">
+            <field name="name">M</field>
+            <field name="phonetic">/em/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母M</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">130</field>
+        </record>
+        <record id="word_N" model="learn.word">
+            <field name="name">N</field>
+            <field name="phonetic">/en/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母N</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">140</field>
+        </record>
+        <record id="word_O" model="learn.word">
+            <field name="name">O</field>
+            <field name="phonetic">/əʊ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母O</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">150</field>
+        </record>
+        <record id="word_P" model="learn.word">
+            <field name="name">P</field>
+            <field name="phonetic">/piː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母P</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">160</field>
+        </record>
+        <record id="word_Q" model="learn.word">
+            <field name="name">Q</field>
+            <field name="phonetic">/kjuː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母Q</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">170</field>
+        </record>
+        <record id="word_R" model="learn.word">
+            <field name="name">R</field>
+            <field name="phonetic">/ɑː(r)/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母R</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">180</field>
+        </record>
+        <record id="word_S" model="learn.word">
+            <field name="name">S</field>
+            <field name="phonetic">/es/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母S</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">190</field>
+        </record>
+        <record id="word_T" model="learn.word">
+            <field name="name">T</field>
+            <field name="phonetic">/tiː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母T</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">200</field>
+        </record>
+        <record id="word_U" model="learn.word">
+            <field name="name">U</field>
+            <field name="phonetic">/juː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母U</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">210</field>
+        </record>
+        <record id="word_V" model="learn.word">
+            <field name="name">V</field>
+            <field name="phonetic">/viː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母V</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">220</field>
+        </record>
+        <record id="word_W" model="learn.word">
+            <field name="name">W</field>
+            <field name="phonetic">/ˈdʌb(ə)l juː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母W</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">230</field>
+        </record>
+        <record id="word_X" model="learn.word">
+            <field name="name">X</field>
+            <field name="phonetic">/eks/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母X</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">240</field>
+        </record>
+        <record id="word_Y" model="learn.word">
+            <field name="name">Y</field>
+            <field name="phonetic">/waɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母Y</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">250</field>
+        </record>
+        <record id="word_Z" model="learn.word">
+            <field name="name">Z</field>
+            <field name="phonetic">/zed/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母Z</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">260</field>
+        </record>
+        <record id="word_a" model="learn.word">
+            <field name="name">a</field>
+            <field name="phonetic">/eɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母a（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">270</field>
+        </record>
+        <record id="word_b" model="learn.word">
+            <field name="name">b</field>
+            <field name="phonetic">/biː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母b（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">280</field>
+        </record>
+        <record id="word_c" model="learn.word">
+            <field name="name">c</field>
+            <field name="phonetic">/siː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母c（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">290</field>
+        </record>
+        <record id="word_d" model="learn.word">
+            <field name="name">d</field>
+            <field name="phonetic">/diː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母d（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">300</field>
+        </record>
+        <record id="word_e" model="learn.word">
+            <field name="name">e</field>
+            <field name="phonetic">/iː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母e（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">310</field>
+        </record>
+        <record id="word_f" model="learn.word">
+            <field name="name">f</field>
+            <field name="phonetic">/ef/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母f（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">320</field>
+        </record>
+        <record id="word_g" model="learn.word">
+            <field name="name">g</field>
+            <field name="phonetic">/dʒiː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母g（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">330</field>
+        </record>
+        <record id="word_h" model="learn.word">
+            <field name="name">h</field>
+            <field name="phonetic">/eɪtʃ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母h（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">340</field>
+        </record>
+        <record id="word_i" model="learn.word">
+            <field name="name">i</field>
+            <field name="phonetic">/aɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母i（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">350</field>
+        </record>
+        <record id="word_j" model="learn.word">
+            <field name="name">j</field>
+            <field name="phonetic">/dʒeɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母j（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">360</field>
+        </record>
+        <record id="word_k" model="learn.word">
+            <field name="name">k</field>
+            <field name="phonetic">/keɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母k（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">370</field>
+        </record>
+        <record id="word_l" model="learn.word">
+            <field name="name">l</field>
+            <field name="phonetic">/el/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母l（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">380</field>
+        </record>
+        <record id="word_m" model="learn.word">
+            <field name="name">m</field>
+            <field name="phonetic">/em/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母m（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">390</field>
+        </record>
+        <record id="word_n" model="learn.word">
+            <field name="name">n</field>
+            <field name="phonetic">/en/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母n（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">400</field>
+        </record>
+        <record id="word_o" model="learn.word">
+            <field name="name">o</field>
+            <field name="phonetic">/əʊ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母o（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">410</field>
+        </record>
+        <record id="word_p" model="learn.word">
+            <field name="name">p</field>
+            <field name="phonetic">/piː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母p（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">420</field>
+        </record>
+        <record id="word_q" model="learn.word">
+            <field name="name">q</field>
+            <field name="phonetic">/kjuː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母q（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">430</field>
+        </record>
+        <record id="word_r" model="learn.word">
+            <field name="name">r</field>
+            <field name="phonetic">/ɑː(r)/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母r（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">440</field>
+        </record>
+        <record id="word_s" model="learn.word">
+            <field name="name">s</field>
+            <field name="phonetic">/es/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母s（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">450</field>
+        </record>
+        <record id="word_t" model="learn.word">
+            <field name="name">t</field>
+            <field name="phonetic">/tiː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母t（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">460</field>
+        </record>
+        <record id="word_u" model="learn.word">
+            <field name="name">u</field>
+            <field name="phonetic">/juː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母u（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">470</field>
+        </record>
+        <record id="word_v" model="learn.word">
+            <field name="name">v</field>
+            <field name="phonetic">/viː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母v（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">480</field>
+        </record>
+        <record id="word_w" model="learn.word">
+            <field name="name">w</field>
+            <field name="phonetic">/ˈdʌb(ə)l juː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母w（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">490</field>
+        </record>
+        <record id="word_x" model="learn.word">
+            <field name="name">x</field>
+            <field name="phonetic">/eks/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母x（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">500</field>
+        </record>
+        <record id="word_y" model="learn.word">
+            <field name="name">y</field>
+            <field name="phonetic">/waɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母y（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">510</field>
+        </record>
+        <record id="word_z" model="learn.word">
+            <field name="name">z</field>
+            <field name="phonetic">/zed/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">字母z（小写）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">520</field>
+        </record>
+        <record id="word_gift" model="learn.word">
+            <field name="name">gift</field>
+            <field name="phonetic">/ɡɪft/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">礼物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">530</field>
+        </record>
+        <record id="word_milk" model="learn.word">
+            <field name="name">milk</field>
+            <field name="phonetic">/mɪlk/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">牛奶</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">540</field>
+        </record>
+        <record id="word_help" model="learn.word">
+            <field name="name">help</field>
+            <field name="phonetic">/help/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">帮助</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">550</field>
+        </record>
+        <record id="word_belt" model="learn.word">
+            <field name="name">belt</field>
+            <field name="phonetic">/belt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">腰带；皮带</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">560</field>
+        </record>
+        <record id="word_camp" model="learn.word">
+            <field name="name">camp</field>
+            <field name="phonetic">/kæmp/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">营地</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">570</field>
+        </record>
+        <record id="word_sand" model="learn.word">
+            <field name="name">sand</field>
+            <field name="phonetic">/sænd/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">沙子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">580</field>
+        </record>
+        <record id="word_plant" model="learn.word">
+            <field name="name">plant</field>
+            <field name="phonetic">/plɑːnt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">植物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">590</field>
+        </record>
+        <record id="word_bank" model="learn.word">
+            <field name="name">bank</field>
+            <field name="phonetic">/bæŋk/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">银行；河岸</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">600</field>
+        </record>
+        <record id="word_desk" model="learn.word">
+            <field name="name">desk</field>
+            <field name="phonetic">/desk/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">书桌</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">610</field>
+        </record>
+        <record id="word_fast" model="learn.word">
+            <field name="name">fast</field>
+            <field name="phonetic">/fɑːst/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">快速的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">620</field>
+        </record>
+        <record id="word_cats" model="learn.word">
+            <field name="name">cats</field>
+            <field name="phonetic">/kæts/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">猫（复数）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">630</field>
+        </record>
+        <record id="word_sing" model="learn.word">
+            <field name="name">sing</field>
+            <field name="phonetic">/sɪŋ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">唱歌</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">640</field>
+        </record>
+        <record id="word_rain" model="learn.word">
+            <field name="name">rain</field>
+            <field name="phonetic">/reɪn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">雨</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">650</field>
+        </record>
+        <record id="word_say" model="learn.word">
+            <field name="name">say</field>
+            <field name="phonetic">/seɪ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">说</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">660</field>
+        </record>
+        <record id="word_lake" model="learn.word">
+            <field name="name">lake</field>
+            <field name="phonetic">/leɪk/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">湖</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">670</field>
+        </record>
+        <record id="word_baby" model="learn.word">
+            <field name="name">baby</field>
+            <field name="phonetic">/ˈbeɪbi/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">婴儿</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">680</field>
+        </record>
+        <record id="word_name" model="learn.word">
+            <field name="name">name</field>
+            <field name="phonetic">/neɪm/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">名字</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">690</field>
+        </record>
+        <record id="word_paint" model="learn.word">
+            <field name="name">paint</field>
+            <field name="phonetic">/peɪnt/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">绘画；油漆</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">700</field>
+        </record>
+        <record id="word_razor" model="learn.word">
+            <field name="name">razor</field>
+            <field name="phonetic">/ˈreɪzə(r)/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">剃刀</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">710</field>
+        </record>
+        <record id="word_play" model="learn.word">
+            <field name="name">play</field>
+            <field name="phonetic">/pleɪ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">玩；演奏</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">720</field>
+        </record>
+        <record id="word_tree" model="learn.word">
+            <field name="name">tree</field>
+            <field name="phonetic">/triː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">树</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">730</field>
+        </record>
+        <record id="word_read" model="learn.word">
+            <field name="name">read</field>
+            <field name="phonetic">/riːd/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">阅读</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">740</field>
+        </record>
+        <record id="word_lady" model="learn.word">
+            <field name="name">lady</field>
+            <field name="phonetic">/ˈleɪdi/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">女士</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">750</field>
+        </record>
+        <record id="word_key" model="learn.word">
+            <field name="name">key</field>
+            <field name="phonetic">/kiː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">钥匙</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">760</field>
+        </record>
+        <record id="word_behind" model="learn.word">
+            <field name="name">behind</field>
+            <field name="phonetic">/bɪˈhaɪnd/</field>
+            <field name="part_of_speech">prep</field>
+            <field name="meaning">在…后面</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">770</field>
+        </record>
+        <record id="word_green" model="learn.word">
+            <field name="name">green</field>
+            <field name="phonetic">/ɡriːn/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">绿色的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">780</field>
+        </record>
+        <record id="word_meat" model="learn.word">
+            <field name="name">meat</field>
+            <field name="phonetic">/miːt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">肉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">790</field>
+        </record>
+        <record id="word_happy" model="learn.word">
+            <field name="name">happy</field>
+            <field name="phonetic">/ˈhæpi/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">快乐的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">800</field>
+        </record>
+        <record id="word_valley" model="learn.word">
+            <field name="name">valley</field>
+            <field name="phonetic">/ˈvæli/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">山谷</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">810</field>
+        </record>
+        <record id="word_we" model="learn.word">
+            <field name="name">we</field>
+            <field name="phonetic">/wiː/</field>
+            <field name="part_of_speech">pron</field>
+            <field name="meaning">我们</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">820</field>
+        </record>
+        <record id="word_field" model="learn.word">
+            <field name="name">field</field>
+            <field name="phonetic">/fiːld/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">田野；领域</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">830</field>
+        </record>
+        <record id="word_ceiling" model="learn.word">
+            <field name="name">ceiling</field>
+            <field name="phonetic">/ˈsiːlɪŋ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">天花板</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">840</field>
+        </record>
+        <record id="word_bucket" model="learn.word">
+            <field name="name">bucket</field>
+            <field name="phonetic">/ˈbʌkɪt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">桶</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">850</field>
+        </record>
+        <record id="word_stretch" model="learn.word">
+            <field name="name">stretch</field>
+            <field name="phonetic">/stretʃ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">伸展</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">860</field>
+        </record>
+        <record id="word_fish" model="learn.word">
+            <field name="name">fish</field>
+            <field name="phonetic">/fɪʃ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">鱼</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">870</field>
+        </record>
+        <record id="word_cheese" model="learn.word">
+            <field name="name">cheese</field>
+            <field name="phonetic">/tʃiːz/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">奶酪</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">880</field>
+        </record>
+        <record id="word_shop" model="learn.word">
+            <field name="name">shop</field>
+            <field name="phonetic">/ʃɒp/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">商店</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">890</field>
+        </record>
+        <record id="word_chicken" model="learn.word">
+            <field name="name">chicken</field>
+            <field name="phonetic">/ˈtʃɪkɪn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">鸡；鸡肉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">900</field>
+        </record>
+        <record id="word_black" model="learn.word">
+            <field name="name">black</field>
+            <field name="phonetic">/blæk/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">黑色的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">910</field>
+        </record>
+        <record id="word_watch" model="learn.word">
+            <field name="name">watch</field>
+            <field name="phonetic">/wɒtʃ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">观看</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">920</field>
+        </record>
+        <record id="word_tie" model="learn.word">
+            <field name="name">tie</field>
+            <field name="phonetic">/taɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">领带；领结</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">930</field>
+        </record>
+        <record id="word_kind" model="learn.word">
+            <field name="name">kind</field>
+            <field name="phonetic">/kaɪnd/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">善良的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">940</field>
+        </record>
+        <record id="word_ride" model="learn.word">
+            <field name="name">ride</field>
+            <field name="phonetic">/raɪd/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">骑；乘</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">950</field>
+        </record>
+        <record id="word_night" model="learn.word">
+            <field name="name">night</field>
+            <field name="phonetic">/naɪt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">夜晚</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">960</field>
+        </record>
+        <record id="word_sky" model="learn.word">
+            <field name="name">sky</field>
+            <field name="phonetic">/skaɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">天空</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">970</field>
+        </record>
+        <record id="word_time" model="learn.word">
+            <field name="name">time</field>
+            <field name="phonetic">/taɪm/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">时间</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">980</field>
+        </record>
+        <record id="word_tidy" model="learn.word">
+            <field name="name">tidy</field>
+            <field name="phonetic">/ˈtaɪdi/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">整洁的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">990</field>
+        </record>
+        <record id="word_shy" model="learn.word">
+            <field name="name">shy</field>
+            <field name="phonetic">/ʃaɪ/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">害羞的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1000</field>
+        </record>
+        <record id="word_light" model="learn.word">
+            <field name="name">light</field>
+            <field name="phonetic">/laɪt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">光；灯</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1010</field>
+        </record>
+        <record id="word_pie" model="learn.word">
+            <field name="name">pie</field>
+            <field name="phonetic">/paɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">馅饼</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1020</field>
+        </record>
+        <record id="word_stone_boat" model="learn.word">
+            <field name="name">stone boat</field>
+            <field name="phonetic">/stəʊn bəʊt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">石船</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1030</field>
+        </record>
+        <record id="word_bowl" model="learn.word">
+            <field name="name">bowl</field>
+            <field name="phonetic">/bəʊl/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">碗</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1040</field>
+        </record>
+        <record id="word_robot" model="learn.word">
+            <field name="name">robot</field>
+            <field name="phonetic">/ˈrəʊbɒt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">机器人</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1050</field>
+        </record>
+        <record id="word_hotel" model="learn.word">
+            <field name="name">hotel</field>
+            <field name="phonetic">/həʊˈtel/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">酒店</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1060</field>
+        </record>
+        <record id="word_soap" model="learn.word">
+            <field name="name">soap</field>
+            <field name="phonetic">/səʊp/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">肥皂</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1070</field>
+        </record>
+        <record id="word_home" model="learn.word">
+            <field name="name">home</field>
+            <field name="phonetic">/həʊm/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">家</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1080</field>
+        </record>
+        <record id="word_cone" model="learn.word">
+            <field name="name">cone</field>
+            <field name="phonetic">/kəʊn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">圆锥；蛋筒</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1090</field>
+        </record>
+        <record id="word_show" model="learn.word">
+            <field name="name">show</field>
+            <field name="phonetic">/ʃəʊ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">表演；演出</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1100</field>
+        </record>
+        <record id="word_coat" model="learn.word">
+            <field name="name">coat</field>
+            <field name="phonetic">/kəʊt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">外套</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1110</field>
+        </record>
+        <record id="word_yellow" model="learn.word">
+            <field name="name">yellow</field>
+            <field name="phonetic">/ˈjeləʊ/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">黄色的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1120</field>
+        </record>
+        <record id="word_mango" model="learn.word">
+            <field name="name">mango</field>
+            <field name="phonetic">/ˈmæŋɡəʊ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">芒果</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1130</field>
+        </record>
+        <record id="word_blanket" model="learn.word">
+            <field name="name">blanket</field>
+            <field name="phonetic">/ˈblæŋkɪt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">毯子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1140</field>
+        </record>
+        <record id="word_clock" model="learn.word">
+            <field name="name">clock</field>
+            <field name="phonetic">/klɒk/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">时钟</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1150</field>
+        </record>
+        <record id="word_fly" model="learn.word">
+            <field name="name">fly</field>
+            <field name="phonetic">/flaɪ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">飞</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1160</field>
+        </record>
+        <record id="word_glue" model="learn.word">
+            <field name="name">glue</field>
+            <field name="phonetic">/ɡluː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">胶水</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1170</field>
+        </record>
+        <record id="word_plane" model="learn.word">
+            <field name="name">plane</field>
+            <field name="phonetic">/pleɪn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">飞机</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1180</field>
+        </record>
+        <record id="word_sleep" model="learn.word">
+            <field name="name">sleep</field>
+            <field name="phonetic">/sliːp/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">睡觉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1190</field>
+        </record>
+        <record id="word_brain" model="learn.word">
+            <field name="name">brain</field>
+            <field name="phonetic">/breɪn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">大脑</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1200</field>
+        </record>
+        <record id="word_crab" model="learn.word">
+            <field name="name">crab</field>
+            <field name="phonetic">/kræb/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">螃蟹</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1210</field>
+        </record>
+        <record id="word_drink" model="learn.word">
+            <field name="name">drink</field>
+            <field name="phonetic">/drɪŋk/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">喝</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1220</field>
+        </record>
+        <record id="word_frame" model="learn.word">
+            <field name="name">frame</field>
+            <field name="phonetic">/freɪm/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">框架；相框</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1230</field>
+        </record>
+        <record id="word_grass" model="learn.word">
+            <field name="name">grass</field>
+            <field name="phonetic">/ɡrɑːs/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">草</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1240</field>
+        </record>
+        <record id="word_printer" model="learn.word">
+            <field name="name">printer</field>
+            <field name="phonetic">/ˈprɪntə(r)/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">打印机</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1250</field>
+        </record>
+        <record id="word_train" model="learn.word">
+            <field name="name">train</field>
+            <field name="phonetic">/treɪn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">火车</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1260</field>
+        </record>
+        <record id="word_scan" model="learn.word">
+            <field name="name">scan</field>
+            <field name="phonetic">/skæn/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">扫描</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1270</field>
+        </record>
+        <record id="word_skate" model="learn.word">
+            <field name="name">skate</field>
+            <field name="phonetic">/skeɪt/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">滑冰</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1280</field>
+        </record>
+        <record id="word_smell" model="learn.word">
+            <field name="name">smell</field>
+            <field name="phonetic">/smel/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">闻；嗅</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1290</field>
+        </record>
+        <record id="word_snow" model="learn.word">
+            <field name="name">snow</field>
+            <field name="phonetic">/snəʊ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">雪</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1300</field>
+        </record>
+        <record id="word_spell" model="learn.word">
+            <field name="name">spell</field>
+            <field name="phonetic">/spel/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">拼写</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1310</field>
+        </record>
+        <record id="word_stand" model="learn.word">
+            <field name="name">stand</field>
+            <field name="phonetic">/stænd/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">站立</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1320</field>
+        </record>
+        <record id="word_swing" model="learn.word">
+            <field name="name">swing</field>
+            <field name="phonetic">/swɪŋ/</field>
+            <field name="part_of_speech">verb</field>
+            <field name="meaning">摇摆</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1330</field>
+        </record>
+        <record id="word_whale" model="learn.word">
+            <field name="name">whale</field>
+            <field name="phonetic">/weɪl/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">鲸鱼</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1340</field>
+        </record>
+        <record id="word_math" model="learn.word">
+            <field name="name">math</field>
+            <field name="phonetic">/mæθ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">数学</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1350</field>
+        </record>
+        <record id="word_phone" model="learn.word">
+            <field name="name">phone</field>
+            <field name="phonetic">/fəʊn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">电话</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1360</field>
+        </record>
+        <record id="word_these" model="learn.word">
+            <field name="name">these</field>
+            <field name="phonetic">/ðiːz/</field>
+            <field name="part_of_speech">pron</field>
+            <field name="meaning">这些</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1370</field>
+        </record>
+        <record id="word_photo" model="learn.word">
+            <field name="name">photo</field>
+            <field name="phonetic">/ˈfəʊtəʊ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">照片</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1380</field>
+        </record>
+        <record id="word_clothes" model="learn.word">
+            <field name="name">clothes</field>
+            <field name="phonetic">/kləʊðz/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">衣服</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1390</field>
+        </record>
+        <record id="word_white" model="learn.word">
+            <field name="name">white</field>
+            <field name="phonetic">/waɪt/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">白色的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1400</field>
+        </record>
+        <record id="word_teeth" model="learn.word">
+            <field name="name">teeth</field>
+            <field name="phonetic">/tiːθ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">牙齿（复数）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1410</field>
+        </record>
+        <record id="word_June" model="learn.word">
+            <field name="name">June</field>
+            <field name="phonetic">/dʒuːn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">六月</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1420</field>
+        </record>
+        <record id="word_fruit" model="learn.word">
+            <field name="name">fruit</field>
+            <field name="phonetic">/fruːt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">水果</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1430</field>
+        </record>
+        <record id="word_blue" model="learn.word">
+            <field name="name">blue</field>
+            <field name="phonetic">/bluː/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">蓝色的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1440</field>
+        </record>
+        <record id="word_moon" model="learn.word">
+            <field name="name">moon</field>
+            <field name="phonetic">/muːn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">月亮</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1450</field>
+        </record>
+        <record id="word_new" model="learn.word">
+            <field name="name">new</field>
+            <field name="phonetic">/njuː/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">新的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1460</field>
+        </record>
+        <record id="word_July" model="learn.word">
+            <field name="name">July</field>
+            <field name="phonetic">/dʒuˈlaɪ/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">七月</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1470</field>
+        </record>
+        <record id="word_costume" model="learn.word">
+            <field name="name">costume</field>
+            <field name="phonetic">/ˈkɒstjuːm/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">服装；戏服</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1480</field>
+        </record>
+        <record id="word_suit" model="learn.word">
+            <field name="name">suit</field>
+            <field name="phonetic">/suːt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">套装</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1490</field>
+        </record>
+        <record id="word_true" model="learn.word">
+            <field name="name">true</field>
+            <field name="phonetic">/truː/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">真实的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1500</field>
+        </record>
+        <record id="word_spoon" model="learn.word">
+            <field name="name">spoon</field>
+            <field name="phonetic">/spuːn/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">勺子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1510</field>
+        </record>
+        <record id="word_stew" model="learn.word">
+            <field name="name">stew</field>
+            <field name="phonetic">/stjuː/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">炖菜</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1520</field>
+        </record>
+        <record id="word_music" model="learn.word">
+            <field name="name">music</field>
+            <field name="phonetic">/ˈmjuːzɪk/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">音乐</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1530</field>
+        </record>
+        <record id="word_wizard" model="learn.word">
+            <field name="name">wizard</field>
+            <field name="phonetic">/ˈwɪzəd/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">巫师</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1540</field>
+        </record>
+        <record id="word_student" model="learn.word">
+            <field name="name">student</field>
+            <field name="phonetic">/ˈstjuːdnt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">学生</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1550</field>
+        </record>
+        <record id="word_rabbit" model="learn.word">
+            <field name="name">rabbit</field>
+            <field name="phonetic">/ˈræbɪt/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">兔子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1560</field>
+        </record>
+        <record id="word_lemon" model="learn.word">
+            <field name="name">lemon</field>
+            <field name="phonetic">/ˈlemən/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">柠檬</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1570</field>
+        </record>
+        <record id="word_difficult" model="learn.word">
+            <field name="name">difficult</field>
+            <field name="phonetic">/ˈdɪfɪkəlt/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">困难的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1580</field>
+        </record>
+        <record id="word_tital" model="learn.word">
+            <field name="name">tital</field>
+            <field name="phonetic">/ˈtaɪtl/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">标题；头衔</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1590</field>
+        </record>
+        <record id="word_hundred" model="learn.word">
+            <field name="name">hundred</field>
+            <field name="phonetic">/ˈhʌndrəd/</field>
+            <field name="part_of_speech">num</field>
+            <field name="meaning">一百</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1600</field>
+        </record>
+        <record id="word_family" model="learn.word">
+            <field name="name">family</field>
+            <field name="phonetic">/ˈfæməli/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">家庭</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1610</field>
+        </record>
+        <record id="word_seasons" model="learn.word">
+            <field name="name">seasons</field>
+            <field name="phonetic">/ˈsiːznz/</field>
+            <field name="part_of_speech">noun</field>
+            <field name="meaning">季节（复数）</field>
+            <field name="difficulty">medium</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1620</field>
+        </record>
+        <record id="word_beautiful" model="learn.word">
+            <field name="name">beautiful</field>
+            <field name="phonetic">/ˈbjuːtɪfl/</field>
+            <field name="part_of_speech">adj</field>
+            <field name="meaning">美丽的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
+            <field name="sequence">1630</field>
+        </record>
+
+    </data>
+</odoo>
