@@ -8,6 +8,7 @@
             <field name="name">CASE FILE 01</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">10</field>
         </record>
         <record id="line_case_file_01_A" model="learn.group.line">
@@ -74,6 +75,7 @@
             <field name="name">CASE FILE 02</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">20</field>
         </record>
         <record id="line_case_file_02_J" model="learn.group.line">
@@ -140,6 +142,7 @@
             <field name="name">CASE FILE 03</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">30</field>
         </record>
         <record id="line_case_file_03_N" model="learn.group.line">
@@ -216,6 +219,7 @@
             <field name="name">CASE FILE 04</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">40</field>
         </record>
         <record id="line_case_file_04_U" model="learn.group.line">
@@ -282,6 +286,7 @@
             <field name="name">CASE FILE 05</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">50</field>
         </record>
         <record id="line_case_file_05_gift" model="learn.group.line">
@@ -348,6 +353,7 @@
             <field name="name">CASE FILE 06</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">60</field>
         </record>
         <record id="line_case_file_06_rain" model="learn.group.line">
@@ -394,6 +400,7 @@
             <field name="name">CASE FILE 07</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">70</field>
         </record>
         <record id="line_case_file_07_tree" model="learn.group.line">
@@ -460,6 +467,7 @@
             <field name="name">CASE FILE 08</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">80</field>
         </record>
         <record id="line_case_file_08_bucket" model="learn.group.line">
@@ -506,6 +514,7 @@
             <field name="name">CASE FILE 09</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">90</field>
         </record>
         <record id="line_case_file_09_tie" model="learn.group.line">
@@ -562,6 +571,7 @@
             <field name="name">CASE FILE 10</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">100</field>
         </record>
         <record id="line_case_file_10_stone_boat" model="learn.group.line">
@@ -623,6 +633,7 @@
             <field name="name">CASE FILE 11</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">110</field>
         </record>
         <record id="line_case_file_11_blanket" model="learn.group.line">
@@ -729,6 +740,7 @@
             <field name="name">CASE FILE 12</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">120</field>
         </record>
         <record id="line_case_file_12_whale" model="learn.group.line">
@@ -775,6 +787,7 @@
             <field name="name">CASE FILE 13</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">130</field>
         </record>
         <record id="line_case_file_13_June" model="learn.group.line">
@@ -841,6 +854,7 @@
             <field name="name">CASE FILE 14</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="selector_process_id" ref="sp_teen_wb"/>
+            <field name="content_type_id" ref="content_type_word"/>
             <field name="sequence">140</field>
         </record>
         <record id="line_case_file_14_wizard" model="learn.group.line">

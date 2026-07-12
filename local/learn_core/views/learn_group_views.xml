@@ -9,6 +9,7 @@
         <field name="arch" type="xml">
             <tree string="内容组">
                 <field name="name"/>
+                <field name="content_type_id"/>
                 <field name="selector_id"/>
                 <field name="selector_process_id"/>
             </tree>
@@ -26,6 +27,7 @@
                             <field name="name"/>
                             <field name="selector_id"/>
                             <field name="selector_process_id"/>
+                            <field name="content_type_id"/>
                         </group>
                         <group>
                             <field name="sequence"/>
@@ -34,9 +36,9 @@
                     </group>
                     <notebook>
                         <page string="内容列表" name="items">
-                            <field name="line_ids" nolabel="1">
+                            <field name="line_ids" nolabel="1"
+                                   context="{'default_content_type_id': content_type_id}">
                                 <tree editable="bottom">
-                                    <field name="content_type_id" optional="hide"/>
                                     <field name="title"/>
                                     <field name="phonetic" optional="hide"/>
                                     <field name="meaning" optional="hide"/>
@@ -44,26 +46,29 @@
                                 </tree>
                                 <form string="内容条目">
                                     <sheet>
+                                        <field name="group_id" invisible="1"/>
                                         <group>
-                                            <field name="content_type_id"/>
                                             <field name="sequence"/>
                                         </group>
-                                        <group string="单词" attrs="{'invisible': [('content_type', '!=', 'word')]}">
+                                        <group string="单词"
+                                               attrs="{'invisible': [('parent.content_type', '!=', 'word')]}">
                                             <field name="word_id"/>
                                             <field name="phonetic"/>
                                             <field name="meaning"/>
                                         </group>
-                                        <group string="视频" attrs="{'invisible': [('content_type', '!=', 'video')]}">
+                                        <group string="视频"
+                                               attrs="{'invisible': [('parent.content_type', '!=', 'video')]}">
                                             <field name="video_title"/>
                                             <field name="video_url"/>
                                             <field name="video_duration"/>
                                         </group>
-                                        <group string="文件" attrs="{'invisible': [('content_type', '!=', 'file')]}">
+                                        <group string="文件"
+                                               attrs="{'invisible': [('parent.content_type', '!=', 'file')]}">
                                             <field name="file_name"/>
                                             <field name="file_data" filename="file_name"/>
                                         </group>
                                         <group string="知识要点"
-                                               attrs="{'invisible': [('content_type', '!=', 'knowledge')]}">
+                                               attrs="{'invisible': [('parent.content_type', '!=', 'knowledge')]}">
                                             <field name="knowledge_title"/>
                                             <field name="knowledge_content"/>
                                         </group>

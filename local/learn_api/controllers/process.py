@@ -12,8 +12,57 @@ class LearnSelectorProcessController(http.Controller):
     def get_selector_processes(self, **kw):  # noqa
         """查询 selector 下绑定的过程列表，排序后第一个过程附带其内容组（分页）
 
-        请求体 (JSON):
-        { "header": {...}, "body": { "selector_code": "...", "page_num": 1, "page_size": 10 } }
+        Request Body:
+        {
+            "header": {
+                "clientId": "xxx", // 客户端ID
+                "X-Token": "xxx",  // 认证 Token
+                "X-Timestamp": "...", // 时间戳
+                "X-Nonce": "...",    // 随机串
+                "X-Sign": "..."      // 签名
+            },
+            "body": {
+                "selector_code": "CHILDREN_BEGINNER_AGE_6_TEEN_2025_S1_PHONICS_LESSON", // selector 的 code
+                "page_num": 1,        // 可选，页码，默认 1
+                "page_size": 10   // 可选，每页数量，默认 10
+            }
+        }
+
+        Response Body(JSON):
+        {
+            "success": true,
+            "data":  [
+                {
+                    "id": 1,
+                    "process_id": 1,
+                    "process_name": "单词基础",
+                    "process_code": "WORD_BASIC",
+                    "sequence": 10,
+                    "groups": {
+                        "list": [
+                            {
+                                "id": 1,
+                                "name": "CASE FILE 01",
+                                "sequence": 10,
+                                "item_count": 100
+                                "content_type": "word",
+                                "content_type_id": 1
+                            }
+                        ],
+                        "total": 1,
+                        "page_num": 1,
+                        "page_size": 10
+                    }
+                },
+                {
+                    "id": 2,
+                    "process_id": 2,
+                    "process_name": "默写专项",
+                    "process_code": "WRITING_SPECIAL",
+                    "sequence": 20,
+                    "groups": null
+                }
+            ]
         """
         try:
             header, body, user = api_verify_auth(require_token=True)  # noqa
@@ -52,16 +101,19 @@ class LearnSelectorProcessController(http.Controller):
                         [('selector_process_id', '=', sp.id)],
                         offset=offset, limit=page_size, order='sequence, id')
                     item["groups"] = {
-                        "list": [{"id": g.id, "name": g.name, "sequence": g.sequence, "item_count": len(g.line_ids)} for
-                                 g in groups],
+                        "list": [{
+                            "id": g.id,
+                            "name": g.name,
+                            "sequence": g.sequence,
+                            "content_type": g.content_type,
+                            "content_type_id": g.content_type_id.id,
+                            "item_count": len(g.line_ids),
+                        } for g in groups],
                         "total": total, "page_num": page_num, "page_size": page_size,
                     }
                 processes.append(item)
 
-            return json_response(data={
-                "selector": {"id": sel.id, "code": sel.code, "name": sel.name},
-                "processes": processes,
-            })
+            return json_response(data=processes)
         except ValueError as e:
             return error_response(str(e), status=401)
         except Exception as e:

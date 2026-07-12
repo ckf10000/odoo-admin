@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """导航 / 首页 / 选择器查询 API"""
-from collections import OrderedDict
-
 from odoo import http
 from odoo.http import request
 
@@ -124,6 +122,7 @@ class LearnSelectorController(http.Controller):
                                         "dim_type":"semester", "dim_desc":"学期", "children": [
                                         {
                                             "id": 70, "name": "语文", "code": "CHINESE",
+                                            "selector_code": "NINE_YEAR_PRIMARY_GRADE_1_PEP_2026_UP_CHINESE",
                                             "dim_type":"subject", "dim_desc":"科目", "children":[]
                                     ]}
                                 ]}
@@ -220,7 +219,7 @@ class LearnSelectorController(http.Controller):
                 for code, gdata in groups.items():
                     child_sels = [s_map[sid] for sid in gdata["sel_ids"]]
                     children = build_level(child_sels, level_idx + 1)
-                    nodes.append({
+                    node = {
                         "id": gdata["obj"].id,
                         "name": gdata["obj"].name,
                         "code": code,
@@ -228,7 +227,11 @@ class LearnSelectorController(http.Controller):
                         "dim_type": dim_type,
                         "dim_desc": dim_desc,
                         "children": children,
-                    })
+                    }
+                    # 最内层 subject 节点携带 selector_code
+                    if dim_type == "subject" and child_sels:
+                        node["selector_code"] = child_sels[0].code
+                    nodes.append(node)
 
                 nodes.sort(key=lambda x: x["sequence"])
                 return nodes
@@ -239,7 +242,9 @@ class LearnSelectorController(http.Controller):
             _pick_keys = ("id", "name", "code", "sequence", "dim_type", "dim_desc")
 
             def _pick_first(node):
-                copy = {k: node[k] for k in _pick_keys}
+                copy = {k: node[k] for k in _pick_keys if k in node}
+                if "selector_code" in node:
+                    copy["selector_code"] = node["selector_code"]
                 copy["children"] = [_pick_first(node["children"][0])] if node["children"] else []
                 return copy
 

@@ -59,15 +59,6 @@
               name="版本" parent="menu_learn_dims" sequence="50"
               action="action_learn_dim_version"/>
 
-    <record id="action_learn_content_type" model="ir.actions.act_window">
-        <field name="name">内容类型</field>
-        <field name="res_model">learn.content.type</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    <menuitem id="menu_learn_content_type"
-              name="内容类型" parent="menu_learn_content" sequence="3"
-              action="action_learn_content_type"/>
-
     <record id="action_learn_dim_year" model="ir.actions.act_window">
         <field name="name">年份</field>
         <field name="res_model">learn.dim.year</field>
@@ -121,6 +112,15 @@
               name="内容管理"
               parent="menu_learn_root"
               sequence="10"/>
+
+    <record id="action_learn_content_type" model="ir.actions.act_window">
+        <field name="name">内容类型</field>
+        <field name="res_model">learn.content.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_content_type"
+              name="内容类型" parent="menu_learn_content" sequence="3"
+              action="action_learn_content_type"/>
 
     <menuitem id="menu_learn_content_list"
               name="内容" parent="menu_learn_content" sequence="10"
