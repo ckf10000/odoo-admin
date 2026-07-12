@@ -219,11 +219,13 @@ class LearnSelectorController(http.Controller):
                 for code, gdata in groups.items():
                     child_sels = [s_map[sid] for sid in gdata["sel_ids"]]
                     children = build_level(child_sels, level_idx + 1)
+                    # 排序用组内 selector 的最小 sequence，而非维度表的 sequence
+                    min_sel_seq = min(s.sequence for s in child_sels) if child_sels else gdata["obj"].sequence
                     node = {
                         "id": gdata["obj"].id,
                         "name": gdata["obj"].name,
                         "code": code,
-                        "sequence": gdata["obj"].sequence,
+                        "sequence": min_sel_seq,
                         "dim_type": dim_type,
                         "dim_desc": dim_desc,
                         "children": children,
@@ -249,7 +251,6 @@ class LearnSelectorController(http.Controller):
                 return copy
 
             default_condition = [_pick_first(conditions[0])] if conditions else []
-
             return json_response(data={
                 "default_condition": default_condition,
                 "conditions": conditions,
