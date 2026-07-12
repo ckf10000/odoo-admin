@@ -43,7 +43,7 @@ class LearnWord(models.Model):
     active = fields.Boolean(string='启用', default=True)
     description = fields.Text(string='备注')
 
-    group_line_ids = fields.One2many('learn.word.group.line', 'word_id', string='所属单词组')
+    group_line_ids = fields.One2many('learn.group.line', 'word_id', string='所属内容组')
 
     _sql_constraints = [
         ('unique_word', 'UNIQUE(name)', '该单词已存在！'),

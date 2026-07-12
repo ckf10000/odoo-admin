@@ -1629,5 +1629,29 @@
             <field name="sequence">1510</field>
         </record>
 
+        <!-- ========== 选择器-过程绑定 ========== -->
+
+        <!-- selector_teen_phonics_2025 绑定的过程 -->
+        <record id="sp_teen_wb" model="learn.selector.process">
+            <field name="selector_id" ref="selector_teen_phonics_2025"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="sp_teen_dict" model="learn.selector.process">
+            <field name="selector_id" ref="selector_teen_phonics_2025"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="sp_teen_exercise" model="learn.selector.process">
+            <field name="selector_id" ref="selector_teen_phonics_2025"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="sp_teen_download" model="learn.selector.process">
+            <field name="selector_id" ref="selector_teen_phonics_2025"/>
+            <field name="process_id" ref="process_download"/>
+            <field name="sequence">40</field>
+        </record>
+
     </data>
 </odoo>

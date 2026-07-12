@@ -39,3 +39,5 @@ access_learn_group_user,learn.group.user,model_learn_group,base.group_user,1,0,0
 access_learn_group_admin,learn.group.admin,model_learn_group,base.group_system,1,1,1,1
 access_learn_group_line_user,learn.group.line.user,model_learn_group_line,base.group_user,1,0,0,0
 access_learn_group_line_admin,learn.group.line.admin,model_learn_group_line,base.group_system,1,1,1,1
+access_learn_content_type_user,learn.content.type.user,model_learn_content_type,base.group_user,1,0,0,0
+access_learn_content_type_admin,learn.content.type.admin,model_learn_content_type,base.group_system,1,1,1,1

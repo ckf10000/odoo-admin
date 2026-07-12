@@ -10,7 +10,7 @@
             <tree string="内容组">
                 <field name="name"/>
                 <field name="selector_id"/>
-                <field name="process_id"/>
+                <field name="selector_process_id"/>
             </tree>
         </field>
     </record>
@@ -25,7 +25,7 @@
                         <group>
                             <field name="name"/>
                             <field name="selector_id"/>
-                            <field name="process_id"/>
+                            <field name="selector_process_id"/>
                         </group>
                         <group>
                             <field name="sequence"/>
@@ -36,21 +36,39 @@
                         <page string="内容列表" name="items">
                             <field name="line_ids" nolabel="1">
                                 <tree editable="bottom">
-                                    <field name="content_type" optional="hide"/>
-                                    <field name="word_id"
-                                           attrs="{'column_invisible': [('content_type', '!=', 'word')]}"/>
-                                    <field name="phonetic"
-                                           attrs="{'column_invisible': [('content_type', '!=', 'word')]}"/>
-                                    <field name="meaning"
-                                           attrs="{'column_invisible': [('content_type', '!=', 'word')]}"/>
-                                    <field name="video_title"
-                                           attrs="{'column_invisible': [('content_type', '!=', 'video')]}"/>
-                                    <field name="video_url"
-                                           attrs="{'column_invisible': [('content_type', '!=', 'video')]}"/>
-                                    <field name="file_name"
-                                           attrs="{'column_invisible': [('content_type', '!=', 'file')]}"/>
+                                    <field name="content_type_id" optional="hide"/>
+                                    <field name="title"/>
+                                    <field name="phonetic" optional="hide"/>
+                                    <field name="meaning" optional="hide"/>
                                     <field name="sequence" widget="handle"/>
                                 </tree>
+                                <form string="内容条目">
+                                    <sheet>
+                                        <group>
+                                            <field name="content_type_id"/>
+                                            <field name="sequence"/>
+                                        </group>
+                                        <group string="单词" attrs="{'invisible': [('content_type', '!=', 'word')]}">
+                                            <field name="word_id"/>
+                                            <field name="phonetic"/>
+                                            <field name="meaning"/>
+                                        </group>
+                                        <group string="视频" attrs="{'invisible': [('content_type', '!=', 'video')]}">
+                                            <field name="video_title"/>
+                                            <field name="video_url"/>
+                                            <field name="video_duration"/>
+                                        </group>
+                                        <group string="文件" attrs="{'invisible': [('content_type', '!=', 'file')]}">
+                                            <field name="file_name"/>
+                                            <field name="file_data" filename="file_name"/>
+                                        </group>
+                                        <group string="知识要点"
+                                               attrs="{'invisible': [('content_type', '!=', 'knowledge')]}">
+                                            <field name="knowledge_title"/>
+                                            <field name="knowledge_content"/>
+                                        </group>
+                                    </sheet>
+                                </form>
                             </field>
                         </page>
                         <page string="描述" name="description">

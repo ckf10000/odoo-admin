@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========== 内容类型 视图 ========== -->
+
+    <record id="view_learn_content_type_tree" model="ir.ui.view">
+        <field name="name">learn.content.type.tree</field>
+        <field name="model">learn.content.type</field>
+        <field name="arch" type="xml">
+            <tree string="内容类型" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_content_type_form" model="ir.ui.view">
+        <field name="name">learn.content.type.form</field>
+        <field name="model">learn.content.type</field>
+        <field name="arch" type="xml">
+            <form string="内容类型">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="描述">
+                        <field name="description" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

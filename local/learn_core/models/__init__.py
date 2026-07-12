@@ -14,3 +14,4 @@ from . import learn_process
 from . import learn_word_source
 from . import learn_word
 from . import learn_group
+from . import learn_content_type
