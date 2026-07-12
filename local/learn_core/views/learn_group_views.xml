@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========== 内容组 视图 ========== -->
+
+    <record id="view_learn_group_tree" model="ir.ui.view">
+        <field name="name">learn.group.tree</field>
+        <field name="model">learn.group</field>
+        <field name="arch" type="xml">
+            <tree string="内容组">
+                <field name="name"/>
+                <field name="selector_id"/>
+                <field name="process_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_group_form" model="ir.ui.view">
+        <field name="name">learn.group.form</field>
+        <field name="model">learn.group</field>
+        <field name="arch" type="xml">
+            <form string="内容组">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="selector_id"/>
+                            <field name="process_id"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="内容列表" name="items">
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="content_type" optional="hide"/>
+                                    <field name="word_id"
+                                           attrs="{'column_invisible': [('content_type', '!=', 'word')]}"/>
+                                    <field name="phonetic"
+                                           attrs="{'column_invisible': [('content_type', '!=', 'word')]}"/>
+                                    <field name="meaning"
+                                           attrs="{'column_invisible': [('content_type', '!=', 'word')]}"/>
+                                    <field name="video_title"
+                                           attrs="{'column_invisible': [('content_type', '!=', 'video')]}"/>
+                                    <field name="video_url"
+                                           attrs="{'column_invisible': [('content_type', '!=', 'video')]}"/>
+                                    <field name="file_name"
+                                           attrs="{'column_invisible': [('content_type', '!=', 'file')]}"/>
+                                    <field name="sequence" widget="handle"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="描述" name="description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

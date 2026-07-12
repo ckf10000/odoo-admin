@@ -165,14 +165,14 @@
               parent="menu_learn_root"
               sequence="15"/>
 
-    <record id="action_learn_word_group" model="ir.actions.act_window">
-        <field name="name">单词基础</field>
-        <field name="res_model">learn.word.group</field>
+    <record id="action_learn_group" model="ir.actions.act_window">
+        <field name="name">内容组</field>
+        <field name="res_model">learn.group</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_learn_word_group"
-              name="单词基础" parent="menu_learn_workflow" sequence="10"
-              action="action_learn_word_group"/>
+    <menuitem id="menu_learn_group"
+              name="内容组" parent="menu_learn_content" sequence="5"
+              action="action_learn_group"/>
 
     <!-- 学习管理（TODO: learn.favorite / rating / wrong.book / exam.session 模型待建） -->
     <menuitem id="menu_learn_study"

@@ -32,7 +32,7 @@
         'views/learn_menus.xml',
         'views/learn_process_views.xml',
         'views/learn_word_source_views.xml',
-        'views/learn_word_group_views.xml',
+        'views/learn_group_views.xml',
         'data/learn_dim_category_data.xml',
         'data/learn_dim_stage_data.xml',
         'data/learn_dim_klass_data.xml',

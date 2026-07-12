@@ -4,891 +4,891 @@
 
         <!-- ========== 丽声瑞格 单词组 数据 ========== -->
 
-        <record id="group_case_file_01" model="learn.word.group">
+        <record id="group_case_file_01" model="learn.group">
             <field name="name">CASE FILE 01</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_01_A" model="learn.word.group.line">
+        <record id="line_case_file_01_A" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_A"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_01_a" model="learn.word.group.line">
+        <record id="line_case_file_01_a" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_a"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_01_B" model="learn.word.group.line">
+        <record id="line_case_file_01_B" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_B"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_01_b" model="learn.word.group.line">
+        <record id="line_case_file_01_b" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_b"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_01_C" model="learn.word.group.line">
+        <record id="line_case_file_01_C" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_C"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_01_c" model="learn.word.group.line">
+        <record id="line_case_file_01_c" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_c"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_01_D" model="learn.word.group.line">
+        <record id="line_case_file_01_D" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_D"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_01_d" model="learn.word.group.line">
+        <record id="line_case_file_01_d" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_d"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_01_E" model="learn.word.group.line">
+        <record id="line_case_file_01_E" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_E"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_01_e" model="learn.word.group.line">
+        <record id="line_case_file_01_e" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_e"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_01_F" model="learn.word.group.line">
+        <record id="line_case_file_01_F" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_F"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_01_f" model="learn.word.group.line">
+        <record id="line_case_file_01_f" model="learn.group.line">
             <field name="group_id" ref="group_case_file_01"/>
             <field name="word_id" ref="word_f"/>
             <field name="sequence">120</field>
         </record>
-        <record id="group_case_file_02" model="learn.word.group">
+        <record id="group_case_file_02" model="learn.group">
             <field name="name">CASE FILE 02</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_02_J" model="learn.word.group.line">
+        <record id="line_case_file_02_J" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_J"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_02_j" model="learn.word.group.line">
+        <record id="line_case_file_02_j" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_j"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_02_H" model="learn.word.group.line">
+        <record id="line_case_file_02_H" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_H"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_02_h" model="learn.word.group.line">
+        <record id="line_case_file_02_h" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_h"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_02_I" model="learn.word.group.line">
+        <record id="line_case_file_02_I" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_I"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_02_i" model="learn.word.group.line">
+        <record id="line_case_file_02_i" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_i"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_02_K" model="learn.word.group.line">
+        <record id="line_case_file_02_K" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_K"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_02_k" model="learn.word.group.line">
+        <record id="line_case_file_02_k" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_k"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_02_L" model="learn.word.group.line">
+        <record id="line_case_file_02_L" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_L"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_02_l" model="learn.word.group.line">
+        <record id="line_case_file_02_l" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_l"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_02_M" model="learn.word.group.line">
+        <record id="line_case_file_02_M" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_M"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_02_m" model="learn.word.group.line">
+        <record id="line_case_file_02_m" model="learn.group.line">
             <field name="group_id" ref="group_case_file_02"/>
             <field name="word_id" ref="word_m"/>
             <field name="sequence">120</field>
         </record>
-        <record id="group_case_file_03" model="learn.word.group">
+        <record id="group_case_file_03" model="learn.group">
             <field name="name">CASE FILE 03</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_03_N" model="learn.word.group.line">
+        <record id="line_case_file_03_N" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_N"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_03_n" model="learn.word.group.line">
+        <record id="line_case_file_03_n" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_n"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_03_O" model="learn.word.group.line">
+        <record id="line_case_file_03_O" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_O"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_03_o" model="learn.word.group.line">
+        <record id="line_case_file_03_o" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_o"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_03_P" model="learn.word.group.line">
+        <record id="line_case_file_03_P" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_P"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_03_p" model="learn.word.group.line">
+        <record id="line_case_file_03_p" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_p"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_03_Q" model="learn.word.group.line">
+        <record id="line_case_file_03_Q" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_Q"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_03_q" model="learn.word.group.line">
+        <record id="line_case_file_03_q" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_q"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_03_R" model="learn.word.group.line">
+        <record id="line_case_file_03_R" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_R"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_03_r" model="learn.word.group.line">
+        <record id="line_case_file_03_r" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_r"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_03_S" model="learn.word.group.line">
+        <record id="line_case_file_03_S" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_S"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_03_s" model="learn.word.group.line">
+        <record id="line_case_file_03_s" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_s"/>
             <field name="sequence">120</field>
         </record>
-        <record id="line_case_file_03_T" model="learn.word.group.line">
+        <record id="line_case_file_03_T" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_T"/>
             <field name="sequence">130</field>
         </record>
-        <record id="line_case_file_03_t" model="learn.word.group.line">
+        <record id="line_case_file_03_t" model="learn.group.line">
             <field name="group_id" ref="group_case_file_03"/>
             <field name="word_id" ref="word_t"/>
             <field name="sequence">140</field>
         </record>
-        <record id="group_case_file_04" model="learn.word.group">
+        <record id="group_case_file_04" model="learn.group">
             <field name="name">CASE FILE 04</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_04_U" model="learn.word.group.line">
+        <record id="line_case_file_04_U" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_U"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_04_u" model="learn.word.group.line">
+        <record id="line_case_file_04_u" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_u"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_04_V" model="learn.word.group.line">
+        <record id="line_case_file_04_V" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_V"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_04_v" model="learn.word.group.line">
+        <record id="line_case_file_04_v" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_v"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_04_W" model="learn.word.group.line">
+        <record id="line_case_file_04_W" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_W"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_04_w" model="learn.word.group.line">
+        <record id="line_case_file_04_w" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_w"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_04_X" model="learn.word.group.line">
+        <record id="line_case_file_04_X" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_X"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_04_x" model="learn.word.group.line">
+        <record id="line_case_file_04_x" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_x"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_04_Y" model="learn.word.group.line">
+        <record id="line_case_file_04_Y" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_Y"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_04_y" model="learn.word.group.line">
+        <record id="line_case_file_04_y" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_y"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_04_Z" model="learn.word.group.line">
+        <record id="line_case_file_04_Z" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_Z"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_04_z" model="learn.word.group.line">
+        <record id="line_case_file_04_z" model="learn.group.line">
             <field name="group_id" ref="group_case_file_04"/>
             <field name="word_id" ref="word_z"/>
             <field name="sequence">120</field>
         </record>
-        <record id="group_case_file_05" model="learn.word.group">
+        <record id="group_case_file_05" model="learn.group">
             <field name="name">CASE FILE 05</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_05_gift" model="learn.word.group.line">
+        <record id="line_case_file_05_gift" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_gift"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_05_milk" model="learn.word.group.line">
+        <record id="line_case_file_05_milk" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_milk"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_05_help" model="learn.word.group.line">
+        <record id="line_case_file_05_help" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_help"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_05_belt" model="learn.word.group.line">
+        <record id="line_case_file_05_belt" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_belt"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_05_camp" model="learn.word.group.line">
+        <record id="line_case_file_05_camp" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_camp"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_05_sand" model="learn.word.group.line">
+        <record id="line_case_file_05_sand" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_sand"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_05_plant" model="learn.word.group.line">
+        <record id="line_case_file_05_plant" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_plant"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_05_bank" model="learn.word.group.line">
+        <record id="line_case_file_05_bank" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_bank"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_05_desk" model="learn.word.group.line">
+        <record id="line_case_file_05_desk" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_desk"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_05_fast" model="learn.word.group.line">
+        <record id="line_case_file_05_fast" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_fast"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_05_cats" model="learn.word.group.line">
+        <record id="line_case_file_05_cats" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_cats"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_05_sing" model="learn.word.group.line">
+        <record id="line_case_file_05_sing" model="learn.group.line">
             <field name="group_id" ref="group_case_file_05"/>
             <field name="word_id" ref="word_sing"/>
             <field name="sequence">120</field>
         </record>
-        <record id="group_case_file_06" model="learn.word.group">
+        <record id="group_case_file_06" model="learn.group">
             <field name="name">CASE FILE 06</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_06_rain" model="learn.word.group.line">
+        <record id="line_case_file_06_rain" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_rain"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_06_say" model="learn.word.group.line">
+        <record id="line_case_file_06_say" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_say"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_06_lake" model="learn.word.group.line">
+        <record id="line_case_file_06_lake" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_lake"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_06_baby" model="learn.word.group.line">
+        <record id="line_case_file_06_baby" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_baby"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_06_name" model="learn.word.group.line">
+        <record id="line_case_file_06_name" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_name"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_06_paint" model="learn.word.group.line">
+        <record id="line_case_file_06_paint" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_paint"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_06_razor" model="learn.word.group.line">
+        <record id="line_case_file_06_razor" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_razor"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_06_play" model="learn.word.group.line">
+        <record id="line_case_file_06_play" model="learn.group.line">
             <field name="group_id" ref="group_case_file_06"/>
             <field name="word_id" ref="word_play"/>
             <field name="sequence">80</field>
         </record>
-        <record id="group_case_file_07" model="learn.word.group">
+        <record id="group_case_file_07" model="learn.group">
             <field name="name">CASE FILE 07</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_07_tree" model="learn.word.group.line">
+        <record id="line_case_file_07_tree" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_tree"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_07_read" model="learn.word.group.line">
+        <record id="line_case_file_07_read" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_read"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_07_lady" model="learn.word.group.line">
+        <record id="line_case_file_07_lady" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_lady"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_07_key" model="learn.word.group.line">
+        <record id="line_case_file_07_key" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_key"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_07_behind" model="learn.word.group.line">
+        <record id="line_case_file_07_behind" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_behind"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_07_green" model="learn.word.group.line">
+        <record id="line_case_file_07_green" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_green"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_07_meat" model="learn.word.group.line">
+        <record id="line_case_file_07_meat" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_meat"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_07_happy" model="learn.word.group.line">
+        <record id="line_case_file_07_happy" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_happy"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_07_valley" model="learn.word.group.line">
+        <record id="line_case_file_07_valley" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_valley"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_07_we" model="learn.word.group.line">
+        <record id="line_case_file_07_we" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_we"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_07_field" model="learn.word.group.line">
+        <record id="line_case_file_07_field" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_field"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_07_ceiling" model="learn.word.group.line">
+        <record id="line_case_file_07_ceiling" model="learn.group.line">
             <field name="group_id" ref="group_case_file_07"/>
             <field name="word_id" ref="word_ceiling"/>
             <field name="sequence">120</field>
         </record>
-        <record id="group_case_file_08" model="learn.word.group">
+        <record id="group_case_file_08" model="learn.group">
             <field name="name">CASE FILE 08</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_08_bucket" model="learn.word.group.line">
+        <record id="line_case_file_08_bucket" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_bucket"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_08_stretch" model="learn.word.group.line">
+        <record id="line_case_file_08_stretch" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_stretch"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_08_fish" model="learn.word.group.line">
+        <record id="line_case_file_08_fish" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_fish"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_08_cheese" model="learn.word.group.line">
+        <record id="line_case_file_08_cheese" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_cheese"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_08_shop" model="learn.word.group.line">
+        <record id="line_case_file_08_shop" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_shop"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_08_chicken" model="learn.word.group.line">
+        <record id="line_case_file_08_chicken" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_chicken"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_08_black" model="learn.word.group.line">
+        <record id="line_case_file_08_black" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_black"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_08_watch" model="learn.word.group.line">
+        <record id="line_case_file_08_watch" model="learn.group.line">
             <field name="group_id" ref="group_case_file_08"/>
             <field name="word_id" ref="word_watch"/>
             <field name="sequence">80</field>
         </record>
-        <record id="group_case_file_09" model="learn.word.group">
+        <record id="group_case_file_09" model="learn.group">
             <field name="name">CASE FILE 09</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_09_tie" model="learn.word.group.line">
+        <record id="line_case_file_09_tie" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_tie"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_09_kind" model="learn.word.group.line">
+        <record id="line_case_file_09_kind" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_kind"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_09_ride" model="learn.word.group.line">
+        <record id="line_case_file_09_ride" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_ride"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_09_night" model="learn.word.group.line">
+        <record id="line_case_file_09_night" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_night"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_09_sky" model="learn.word.group.line">
+        <record id="line_case_file_09_sky" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_sky"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_09_time" model="learn.word.group.line">
+        <record id="line_case_file_09_time" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_time"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_09_tidy" model="learn.word.group.line">
+        <record id="line_case_file_09_tidy" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_tidy"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_09_shy" model="learn.word.group.line">
+        <record id="line_case_file_09_shy" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_shy"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_09_light" model="learn.word.group.line">
+        <record id="line_case_file_09_light" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_light"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_09_pie" model="learn.word.group.line">
+        <record id="line_case_file_09_pie" model="learn.group.line">
             <field name="group_id" ref="group_case_file_09"/>
             <field name="word_id" ref="word_pie"/>
             <field name="sequence">100</field>
         </record>
-        <record id="group_case_file_10" model="learn.word.group">
+        <record id="group_case_file_10" model="learn.group">
             <field name="name">CASE FILE 10</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_10_stone_boat" model="learn.word.group.line">
+        <record id="line_case_file_10_stone_boat" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_stone_boat"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_10_bowl" model="learn.word.group.line">
+        <record id="line_case_file_10_bowl" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_bowl"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_10_robot" model="learn.word.group.line">
+        <record id="line_case_file_10_robot" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_robot"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_10_hotel" model="learn.word.group.line">
+        <record id="line_case_file_10_hotel" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_hotel"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_10_soap" model="learn.word.group.line">
+        <record id="line_case_file_10_soap" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_soap"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_10_home" model="learn.word.group.line">
+        <record id="line_case_file_10_home" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_home"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_10_cone" model="learn.word.group.line">
+        <record id="line_case_file_10_cone" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_cone"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_10_show" model="learn.word.group.line">
+        <record id="line_case_file_10_show" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_show"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_10_coat" model="learn.word.group.line">
+        <record id="line_case_file_10_coat" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_coat"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_10_yellow" model="learn.word.group.line">
+        <record id="line_case_file_10_yellow" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_yellow"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_10_mango" model="learn.word.group.line">
+        <record id="line_case_file_10_mango" model="learn.group.line">
             <field name="group_id" ref="group_case_file_10"/>
             <field name="word_id" ref="word_mango"/>
             <field name="sequence">110</field>
         </record>
-        <record id="group_case_file_11" model="learn.word.group">
+        <record id="group_case_file_11" model="learn.group">
             <field name="name">CASE FILE 11</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_11_blanket" model="learn.word.group.line">
+        <record id="line_case_file_11_blanket" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_blanket"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_11_clock" model="learn.word.group.line">
+        <record id="line_case_file_11_clock" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_clock"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_11_fly" model="learn.word.group.line">
+        <record id="line_case_file_11_fly" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_fly"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_11_glue" model="learn.word.group.line">
+        <record id="line_case_file_11_glue" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_glue"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_11_plane" model="learn.word.group.line">
+        <record id="line_case_file_11_plane" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_plane"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_11_sleep" model="learn.word.group.line">
+        <record id="line_case_file_11_sleep" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_sleep"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_11_brain" model="learn.word.group.line">
+        <record id="line_case_file_11_brain" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_brain"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_11_crab" model="learn.word.group.line">
+        <record id="line_case_file_11_crab" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_crab"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_11_drink" model="learn.word.group.line">
+        <record id="line_case_file_11_drink" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_drink"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_11_frame" model="learn.word.group.line">
+        <record id="line_case_file_11_frame" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_frame"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_11_grass" model="learn.word.group.line">
+        <record id="line_case_file_11_grass" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_grass"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_11_printer" model="learn.word.group.line">
+        <record id="line_case_file_11_printer" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_printer"/>
             <field name="sequence">120</field>
         </record>
-        <record id="line_case_file_11_train" model="learn.word.group.line">
+        <record id="line_case_file_11_train" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_train"/>
             <field name="sequence">130</field>
         </record>
-        <record id="line_case_file_11_scan" model="learn.word.group.line">
+        <record id="line_case_file_11_scan" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_scan"/>
             <field name="sequence">140</field>
         </record>
-        <record id="line_case_file_11_skate" model="learn.word.group.line">
+        <record id="line_case_file_11_skate" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_skate"/>
             <field name="sequence">150</field>
         </record>
-        <record id="line_case_file_11_smell" model="learn.word.group.line">
+        <record id="line_case_file_11_smell" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_smell"/>
             <field name="sequence">160</field>
         </record>
-        <record id="line_case_file_11_snow" model="learn.word.group.line">
+        <record id="line_case_file_11_snow" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_snow"/>
             <field name="sequence">170</field>
         </record>
-        <record id="line_case_file_11_spell" model="learn.word.group.line">
+        <record id="line_case_file_11_spell" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_spell"/>
             <field name="sequence">180</field>
         </record>
-        <record id="line_case_file_11_stand" model="learn.word.group.line">
+        <record id="line_case_file_11_stand" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_stand"/>
             <field name="sequence">190</field>
         </record>
-        <record id="line_case_file_11_swing" model="learn.word.group.line">
+        <record id="line_case_file_11_swing" model="learn.group.line">
             <field name="group_id" ref="group_case_file_11"/>
             <field name="word_id" ref="word_swing"/>
             <field name="sequence">200</field>
         </record>
-        <record id="group_case_file_12" model="learn.word.group">
+        <record id="group_case_file_12" model="learn.group">
             <field name="name">CASE FILE 12</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">120</field>
         </record>
-        <record id="line_case_file_12_whale" model="learn.word.group.line">
+        <record id="line_case_file_12_whale" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_whale"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_12_math" model="learn.word.group.line">
+        <record id="line_case_file_12_math" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_math"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_12_phone" model="learn.word.group.line">
+        <record id="line_case_file_12_phone" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_phone"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_12_these" model="learn.word.group.line">
+        <record id="line_case_file_12_these" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_these"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_12_photo" model="learn.word.group.line">
+        <record id="line_case_file_12_photo" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_photo"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_12_clothes" model="learn.word.group.line">
+        <record id="line_case_file_12_clothes" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_clothes"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_12_white" model="learn.word.group.line">
+        <record id="line_case_file_12_white" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_white"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_12_teeth" model="learn.word.group.line">
+        <record id="line_case_file_12_teeth" model="learn.group.line">
             <field name="group_id" ref="group_case_file_12"/>
             <field name="word_id" ref="word_teeth"/>
             <field name="sequence">80</field>
         </record>
-        <record id="group_case_file_13" model="learn.word.group">
+        <record id="group_case_file_13" model="learn.group">
             <field name="name">CASE FILE 13</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">130</field>
         </record>
-        <record id="line_case_file_13_June" model="learn.word.group.line">
+        <record id="line_case_file_13_June" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_June"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_13_fruit" model="learn.word.group.line">
+        <record id="line_case_file_13_fruit" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_fruit"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_13_blue" model="learn.word.group.line">
+        <record id="line_case_file_13_blue" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_blue"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_13_moon" model="learn.word.group.line">
+        <record id="line_case_file_13_moon" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_moon"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_13_new" model="learn.word.group.line">
+        <record id="line_case_file_13_new" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_new"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_13_July" model="learn.word.group.line">
+        <record id="line_case_file_13_July" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_July"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_13_costume" model="learn.word.group.line">
+        <record id="line_case_file_13_costume" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_costume"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_13_suit" model="learn.word.group.line">
+        <record id="line_case_file_13_suit" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_suit"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_13_true" model="learn.word.group.line">
+        <record id="line_case_file_13_true" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_true"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_13_spoon" model="learn.word.group.line">
+        <record id="line_case_file_13_spoon" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_spoon"/>
             <field name="sequence">100</field>
         </record>
-        <record id="line_case_file_13_stew" model="learn.word.group.line">
+        <record id="line_case_file_13_stew" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_stew"/>
             <field name="sequence">110</field>
         </record>
-        <record id="line_case_file_13_music" model="learn.word.group.line">
+        <record id="line_case_file_13_music" model="learn.group.line">
             <field name="group_id" ref="group_case_file_13"/>
             <field name="word_id" ref="word_music"/>
             <field name="sequence">120</field>
         </record>
-        <record id="group_case_file_14" model="learn.word.group">
+        <record id="group_case_file_14" model="learn.group">
             <field name="name">CASE FILE 14</field>
             <field name="selector_id" ref="selector_teen_phonics_2025"/>
             <field name="process_id" ref="process_word_basic"/>
             <field name="sequence">140</field>
         </record>
-        <record id="line_case_file_14_wizard" model="learn.word.group.line">
+        <record id="line_case_file_14_wizard" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_wizard"/>
             <field name="sequence">10</field>
         </record>
-        <record id="line_case_file_14_student" model="learn.word.group.line">
+        <record id="line_case_file_14_student" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_student"/>
             <field name="sequence">20</field>
         </record>
-        <record id="line_case_file_14_rabbit" model="learn.word.group.line">
+        <record id="line_case_file_14_rabbit" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_rabbit"/>
             <field name="sequence">30</field>
         </record>
-        <record id="line_case_file_14_lemon" model="learn.word.group.line">
+        <record id="line_case_file_14_lemon" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_lemon"/>
             <field name="sequence">40</field>
         </record>
-        <record id="line_case_file_14_difficult" model="learn.word.group.line">
+        <record id="line_case_file_14_difficult" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_difficult"/>
             <field name="sequence">50</field>
         </record>
-        <record id="line_case_file_14_total" model="learn.word.group.line">
+        <record id="line_case_file_14_total" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_total"/>
             <field name="sequence">60</field>
         </record>
-        <record id="line_case_file_14_hundred" model="learn.word.group.line">
+        <record id="line_case_file_14_hundred" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_hundred"/>
             <field name="sequence">70</field>
         </record>
-        <record id="line_case_file_14_family" model="learn.word.group.line">
+        <record id="line_case_file_14_family" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_family"/>
             <field name="sequence">80</field>
         </record>
-        <record id="line_case_file_14_seasons" model="learn.word.group.line">
+        <record id="line_case_file_14_seasons" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_seasons"/>
             <field name="sequence">90</field>
         </record>
-        <record id="line_case_file_14_beautiful" model="learn.word.group.line">
+        <record id="line_case_file_14_beautiful" model="learn.group.line">
             <field name="group_id" ref="group_case_file_14"/>
             <field name="word_id" ref="word_beautiful"/>
             <field name="sequence">100</field>

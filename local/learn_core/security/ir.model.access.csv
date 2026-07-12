@@ -35,7 +35,7 @@ access_learn_word_user,learn.word.user,model_learn_word,base.group_user,1,0,0,0
 access_learn_word_admin,learn.word.admin,model_learn_word,base.group_system,1,1,1,1
 access_learn_word_source_user,learn.word.source.user,model_learn_word_source,base.group_user,1,0,0,0
 access_learn_word_source_admin,learn.word.source.admin,model_learn_word_source,base.group_system,1,1,1,1
-access_learn_word_group_user,learn.word.group.user,model_learn_word_group,base.group_user,1,0,0,0
-access_learn_word_group_admin,learn.word.group.admin,model_learn_word_group,base.group_system,1,1,1,1
-access_learn_word_group_line_user,learn.word.group.line.user,model_learn_word_group_line,base.group_user,1,0,0,0
-access_learn_word_group_line_admin,learn.word.group.line.admin,model_learn_word_group_line,base.group_system,1,1,1,1
+access_learn_group_user,learn.group.user,model_learn_group,base.group_user,1,0,0,0
+access_learn_group_admin,learn.group.admin,model_learn_group,base.group_system,1,1,1,1
+access_learn_group_line_user,learn.group.line.user,model_learn_group_line,base.group_user,1,0,0,0
+access_learn_group_line_admin,learn.group.line.admin,model_learn_group_line,base.group_system,1,1,1,1
