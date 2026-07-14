@@ -3,21 +3,25 @@
     <data noupdate="1">
 
         <!-- ========== 分类 维度数据 ========== -->
+        <!-- 启蒙: 强交互、游戏化、语音主导、家长管控 -->
         <record id="dim_category_enlightenment" model="learn.dim.category">
             <field name="name">启蒙</field>
             <field name="code">ENLIGHTENMENT</field>
             <field name="sequence">10</field>
         </record>
+        <!-- 少儿: 强交互、游戏化、语音主导、家长管控 -->
         <record id="dim_category_children" model="learn.dim.category">
             <field name="name">少儿</field>
             <field name="code">CHILDREN</field>
             <field name="sequence">20</field>
         </record>
+        <!-- 中小学: 应试导向、结构化路径、错题本、知识点关联 -->
         <record id="dim_category_nine_year" model="learn.dim.category">
             <field name="name">中小学</field>
             <field name="code">NINE_YEAR</field>
             <field name="sequence">30</field>
         </record>
+        <!-- 成人: 效率导向、碎片化、资料检索、视频倍速、笔记 -->
         <record id="dim_category_adult" model="learn.dim.category">
             <field name="name">成人</field>
             <field name="code">ADULT</field>
