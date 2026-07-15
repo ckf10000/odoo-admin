@@ -205,7 +205,7 @@ class LearnExamAnswer(models.Model):
 
     _name = "learn.exam.answer"
     _description = "答题明细"
-    _order = "question_sequence"
+    _order = "question_sequence, id"
 
     session_id = fields.Many2one(
         "learn.exam.session", string="答题会话",
@@ -215,7 +215,7 @@ class LearnExamAnswer(models.Model):
         "learn.question", string="题目",
         required=True, ondelete="restrict",
     )
-    question_sequence = fields.Integer(string="题号", related="question_id.sequence", store=True)
+    question_sequence = fields.Integer(string="题号", default=0)
 
     # ---- 用户作答 ----
     user_answer = fields.Char(string="用户答案")

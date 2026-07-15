@@ -11,7 +11,9 @@
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="code"/>
+                <field name="storage_model"/>
                 <field name="active" widget="boolean_toggle"/>
+                <field name="description" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -25,6 +27,7 @@
                     <group>
                         <field name="name"/>
                         <field name="code"/>
+                        <field name="storage_model"/>
                         <field name="sequence"/>
                         <field name="active"/>
                     </group>

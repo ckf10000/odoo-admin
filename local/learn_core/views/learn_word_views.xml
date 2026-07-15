@@ -7,7 +7,7 @@
         <field name="name">learn.word.tree</field>
         <field name="model">learn.word</field>
         <field name="arch" type="xml">
-            <tree string="单词列表">
+            <tree string="单词">
                 <field name="name"/>
                 <field name="phonetic"/>
                 <field name="part_of_speech" widget="badge"/>

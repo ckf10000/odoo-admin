@@ -5,7 +5,7 @@ from odoo import models, fields
 
 class LearnWord(models.Model):
     _name = 'learn.word'
-    _description = '单词库'
+    _description = '单词'
     _order = 'sequence, id'
 
     name = fields.Char(string='单词', required=True, index=True)
@@ -31,7 +31,7 @@ class LearnWord(models.Model):
     etymology = fields.Text(string='词源解释')
 
     source_ids = fields.Many2many(
-        'learn.word.source', 'learn_word_source_rel', 'word_id', 'source_id', string='来源',
+        'learn.content.source', 'learn_word_source_rel', 'word_id', 'source_id', string='来源',
     )
     difficulty = fields.Selection([
         ('easy', '简单'),
@@ -46,5 +46,5 @@ class LearnWord(models.Model):
     group_line_ids = fields.One2many('learn.group.line', 'word_id', string='所属内容组')
 
     _sql_constraints = [
-        ('unique_word', 'UNIQUE(name)', '该单词已存在！'),
+        ('unique_word', 'UNIQUE(name)', '该字词已存在！'),
     ]

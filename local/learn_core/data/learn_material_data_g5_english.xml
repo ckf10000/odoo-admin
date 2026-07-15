@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 五年级英语（下册 湘少版） 视频/资料 数据 ========== -->
+
+        <!-- 在线视频组 -->
+        <record id="media_video_1" model="learn.media">
+            <field name="name">Unit 1 - What does she look like? 第1课时</field>
+            <field name="media_type">video</field>
+            <field name="url">https://example.com/videos/g5/unit1/lesson1</field>
+            <field name="duration">900</field>
+        </record>
+<record id="media_video_2" model="learn.media">
+            <field name="name">Unit 1 - What does she look like? 第2课时</field>
+            <field name="media_type">video</field>
+            <field name="url">https://example.com/videos/g5/unit1/lesson2</field>
+            <field name="duration">1200</field>
+        </record>
+<record id="media_file_3" model="learn.media">
+            <field name="name">Unit1_随堂练习纸.pdf</field>
+            <field name="media_type">file</field>
+            <field name="file_name">Unit1_随堂练习纸.pdf</field>
+        </record>
+<record id="media_file_4" model="learn.media">
+            <field name="name">Unit1_单词闪卡.pdf</field>
+            <field name="media_type">file</field>
+            <field name="file_name">Unit1_单词闪卡.pdf</field>
+        </record>
+<record id="article_knowledge_1" model="learn.article">
+            <field name="name">核心词汇</field>
+            <field name="article_type">knowledge</field>
+            <field name="content"><![CDATA[<![CDATA[<ul>
+<li><b>tall</b> - 高的</li>
+<li><b>short</b> - 矮的</li>
+<li><b>long</b> - 长的</li>
+<li><b>curly</b> - 卷曲的</li>
+<li><b>straight</b> - 直的</li>
+<li><b>glasses</b> - 眼镜</li>
+</ul>]]></field>
+        </record>
+<record id="article_knowledge_2" model="learn.article">
+            <field name="name">重点句型</field>
+            <field name="article_type">knowledge</field>
+            <field name="content"><![CDATA[<![CDATA[<ol>
+<li>What does he/she look like? — 他/她长什么样？</li>
+<li>He/She has long hair. — 他/她有长头发。</li>
+<li>He/She wears glasses. — 他/她戴眼镜。</li>
+</ol>]]></field>
+        </record>
+        <record id="group_g5ed_video_1" model="learn.group">
+            <field name="name">Unit 1 教学视频</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_online_video"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <record id="line_g5ed_video_lesson1" model="learn.group.line">
+            <field name="group_id" ref="group_g5ed_video_1"/>
+            <field name="media_id" ref="media_video_1"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5ed_video_lesson2" model="learn.group.line">
+            <field name="group_id" ref="group_g5ed_video_1"/>
+            <field name="media_id" ref="media_video_2"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- 资料下载组 -->
+        <record id="group_g5ed_download_1" model="learn.group">
+            <field name="name">Unit 1 学习资料</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_download"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <record id="line_g5ed_file_worksheet" model="learn.group.line">
+            <field name="group_id" ref="group_g5ed_download_1"/>
+            <field name="media_id" ref="media_file_3"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5ed_file_flashcard" model="learn.group.line">
+            <field name="group_id" ref="group_g5ed_download_1"/>
+            <field name="media_id" ref="media_file_4"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- 知识要点组 -->
+        <record id="group_g5ed_knowledge_1" model="learn.group">
+            <field name="name">Unit 1 知识要点</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_knowledge_summary"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <record id="line_g5ed_knowledge_vocab" model="learn.group.line">
+            <field name="group_id" ref="group_g5ed_knowledge_1"/>
+            <field name="article_id" ref="article_knowledge_1"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5ed_knowledge_grammar" model="learn.group.line">
+            <field name="group_id" ref="group_g5ed_knowledge_1"/>
+            <field name="article_id" ref="article_knowledge_2"/>
+            <field name="sequence">20</field>
+        </record>
+
+
+        
+        
+        
+        
+        
+        
+    </data>
+</odoo>

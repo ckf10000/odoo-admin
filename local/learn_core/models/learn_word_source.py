@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""单词来源（词库出处）"""
+"""通用内容来源：单词/生字/题目等共用"""
 from odoo import models, fields
 
 
-class LearnWordSource(models.Model):
-    _name = 'learn.word.source'
-    _description = '单词来源'
+class LearnContentSource(models.Model):
+    _name = 'learn.content.source'
+    _description = '内容来源'
     _order = 'sequence, id'
 
     name = fields.Char(string='名称', required=True)
@@ -16,6 +16,9 @@ class LearnWordSource(models.Model):
 
     word_ids = fields.Many2many(
         'learn.word', 'learn_word_source_rel', 'source_id', 'word_id', string='单词列表',
+    )
+    character_ids = fields.Many2many(
+        'learn.character', 'learn_character_source_rel', 'source_id', 'character_id', string='生字列表',
     )
 
     _sql_constraints = [

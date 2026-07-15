@@ -10,7 +10,7 @@ class LearnProcess(models.Model):
 
     name = fields.Char(string='名称', required=True)
     code = fields.Char(string='编码', required=True)
-    sequence = fields.Integer(string='排序', default=10)
+    sequence = fields.Integer(string='排序值', default=10)
     active = fields.Boolean(string='启用', default=True)
     description = fields.Text(string='描述')
 
@@ -36,7 +36,7 @@ class LearnSelectorProcess(models.Model):
     region_id = fields.Many2one(
         'learn.dim.region', string='地区', ondelete='restrict',
     )
-    sequence = fields.Integer(string='排序', default=10)
+    sequence = fields.Integer(string='排序值', default=10)
     sequence_str = fields.Char(string='排序', compute='_compute_sequence_str', store=True)
 
     # 辅助字段：region_id 非空则取 id，否则为 0，用于唯一约束（NULL 不参与唯一性检测）

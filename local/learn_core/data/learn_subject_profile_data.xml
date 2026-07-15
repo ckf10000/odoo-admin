@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 过程配置模板 ========== -->
+
+        <!-- 1. 少儿英语拼读模板 -->
+        <record id="profile_phonics_kids" model="learn.subject.profile">
+            <field name="name">少儿英语模板</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_phonics_wb" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_phonics_kids"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_phonics_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_phonics_kids"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_phonics_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_phonics_kids"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_phonics_dl" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_phonics_kids"/>
+            <field name="process_id" ref="process_download"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- ==================== 英语系列 ==================== -->
+
+        <!-- 2. 小学英语模板 -->
+        <record id="profile_primary_english" model="learn.subject.profile">
+            <field name="name">小学英语模板</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_pe_wb" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_english"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_pe_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_english"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_pe_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_english"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_pe_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_english"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_pe_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_english"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_pe_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_english"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- 3. 初中英语模板 -->
+        <record id="profile_junior_english" model="learn.subject.profile">
+            <field name="name">初中英语模板</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_je_wb" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_je_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_je_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_je_spec" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_special_training"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_je_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_je_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="plp_je_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="plp_je_vid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_online_video"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="plp_je_dl" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_english"/>
+            <field name="process_id" ref="process_download"/>
+            <field name="sequence">90</field>
+        </record>
+
+        <!-- 4. 高中英语模板 -->
+        <record id="profile_senior_english" model="learn.subject.profile">
+            <field name="name">高中英语模板</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_sne_wb" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_sne_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_sne_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_sne_spec" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_special_training"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_sne_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_sne_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="plp_sne_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="plp_sne_hol" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_holiday_review"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="plp_sne_vid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_online_video"/>
+            <field name="sequence">90</field>
+        </record>
+        <record id="plp_sne_dl" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_english"/>
+            <field name="process_id" ref="process_download"/>
+            <field name="sequence">100</field>
+        </record>
+
+        <!-- ==================== 语文系列 ==================== -->
+
+        <!-- 5. 小学语文模板 -->
+        <record id="profile_primary_chinese" model="learn.subject.profile">
+            <field name="name">小学语文模板</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_pch_poem" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_poem"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_pch_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_pch_ks" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_knowledge_summary"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_pch_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_pch_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_pch_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="plp_pch_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_chinese"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">70</field>
+        </record>
+
+        <!-- 6. 初中语文模板 -->
+        <record id="profile_junior_chinese" model="learn.subject.profile">
+            <field name="name">初中语文模板</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="plp_jch_poem" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_poem"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_jch_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_jch_ks" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_knowledge_summary"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_jch_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_jch_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_jch_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="plp_jch_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_chinese"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">70</field>
+        </record>
+
+        <!-- 7. 高中语文模板 -->
+        <record id="profile_senior_chinese" model="learn.subject.profile">
+            <field name="name">高中语文模板</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="plp_sch_poem" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_poem"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_sch_dict" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_sch_ks" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_knowledge_summary"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_sch_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_sch_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_sch_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="plp_sch_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_chinese"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">70</field>
+        </record>
+
+        <!-- ==================== 数学系列 ==================== -->
+
+        <!-- 8. 小学数学模板 -->
+        <record id="profile_primary_math" model="learn.subject.profile">
+            <field name="name">小学数学模板</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="plp_pma_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_math"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_pma_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_math"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_pma_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_math"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_pma_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_math"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_pma_hol" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_primary_math"/>
+            <field name="process_id" ref="process_holiday_review"/>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- 9. 初中数学模板 -->
+        <record id="profile_junior_math" model="learn.subject.profile">
+            <field name="name">初中数学模板</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="plp_jma_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_math"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_jma_spec" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_math"/>
+            <field name="process_id" ref="process_special_training"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_jma_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_math"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_jma_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_math"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_jma_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_math"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_jma_hol" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_junior_math"/>
+            <field name="process_id" ref="process_holiday_review"/>
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- 10. 高中数学模板 -->
+        <record id="profile_senior_math" model="learn.subject.profile">
+            <field name="name">高中数学模板</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="plp_sma_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_math"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_sma_spec" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_math"/>
+            <field name="process_id" ref="process_special_training"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_sma_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_math"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_sma_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_math"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_sma_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_math"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="plp_sma_hol" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_senior_math"/>
+            <field name="process_id" ref="process_holiday_review"/>
+            <field name="sequence">60</field>
+        </record>
+
+        <!-- ==================== 通用模板 ==================== -->
+
+        <!-- 11. 考试通用模板（史地政生物化等） -->
+        <record id="profile_exam_general" model="learn.subject.profile">
+            <field name="name">考试通用模板</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="plp_eg_ex" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_exam_general"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_eg_ut" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_exam_general"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_eg_mid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_exam_general"/>
+            <field name="process_id" ref="process_midterm"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_eg_fin" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_exam_general"/>
+            <field name="process_id" ref="process_final"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="plp_eg_hol" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_exam_general"/>
+            <field name="process_id" ref="process_holiday_review"/>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- 12. 资料模板 -->
+        <record id="profile_material" model="learn.subject.profile">
+            <field name="name">资料模板</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="plp_mat_vid" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_material"/>
+            <field name="process_id" ref="process_online_video"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="plp_mat_dl" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_material"/>
+            <field name="process_id" ref="process_download"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="plp_mat_ks" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_material"/>
+            <field name="process_id" ref="process_knowledge_summary"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="plp_mat_sm" model="learn.subject.profile.process">
+            <field name="profile_id" ref="profile_material"/>
+            <field name="process_id" ref="process_study_material"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- 13. 默认空模板 -->
+        <record id="profile_default" model="learn.subject.profile">
+            <field name="name">默认空模板</field>
+            <field name="sequence">999</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- ========== 单词来源 视图 ========== -->
+    <!-- ========== 内容来源 视图 ========== -->
 
     <record id="view_learn_word_source_tree" model="ir.ui.view">
-        <field name="name">learn.word.source.tree</field>
-        <field name="model">learn.word.source</field>
+        <field name="name">learn.content.source.tree</field>
+        <field name="model">learn.content.source</field>
         <field name="arch" type="xml">
-            <tree string="单词来源" editable="bottom">
+            <tree string="内容来源" editable="bottom">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="code"/>
@@ -17,10 +17,10 @@
     </record>
 
     <record id="view_learn_word_source_form" model="ir.ui.view">
-        <field name="name">learn.word.source.form</field>
-        <field name="model">learn.word.source</field>
+        <field name="name">learn.content.source.form</field>
+        <field name="model">learn.content.source</field>
         <field name="arch" type="xml">
-            <form string="单词来源">
+            <form string="内容来源">
                 <sheet>
                     <group>
                         <field name="name"/>

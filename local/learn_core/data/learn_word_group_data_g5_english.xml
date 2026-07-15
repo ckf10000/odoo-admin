@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 五年级英语（上册 湘少版） 内容组 数据 ========== -->
+
+        <!-- 单词基础：3 个单元 -->
+        <record id="group_g5e_unit1_words" model="learn.group">
+            <field name="name">Unit 1 - 单词</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_25up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+        <record id="group_g5e_unit2_words" model="learn.group">
+            <field name="name">Unit 2 - 单词</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_25up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">20</field>
+
+
+        </record>
+
+        <record id="group_g5e_unit3_words" model="learn.group">
+            <field name="name">Unit 3 - 单词</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_25up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">30</field>
+
+
+        </record>
+
+
+        <!-- 默写专项 -->
+        <record id="group_g5e_dictation_all" model="learn.group">
+            <field name="name">全册默写</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_25up"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <!-- 随堂练习 -->
+        <record id="group_g5e_exercise_1" model="learn.group">
+            <field name="name">随堂练习</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_25up"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <!-- 单元测试 -->
+        <record id="group_g5e_unit_test_1" model="learn.group">
+            <field name="name">单元测试</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_25up"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <!-- ========== 五年级英语（下册 湘少版） 内容组 数据 ========== -->
+
+        <!-- 单词基础：3 个单元 -->
+        <record id="group_g5ed_unit1_words" model="learn.group">
+            <field name="name">Unit 1 - 单词</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+        <record id="group_g5ed_unit2_words" model="learn.group">
+            <field name="name">Unit 2 - 单词</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">20</field>
+
+
+        </record>
+
+        <record id="group_g5ed_unit3_words" model="learn.group">
+            <field name="name">Unit 3 - 单词</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">30</field>
+
+
+        </record>
+
+
+        <!-- 默写专项 -->
+        <record id="group_g5ed_dictation_all" model="learn.group">
+            <field name="name">全册默写</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_dictation"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <!-- 随堂练习 -->
+        <record id="group_g5ed_exercise_1" model="learn.group">
+            <field name="name">随堂练习</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_class_exercise"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+        <!-- 单元测试 -->
+        <record id="group_g5ed_unit_test_1" model="learn.group">
+            <field name="name">单元测试</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_unit_test"/>
+            <field name="sequence">10</field>
+
+
+        </record>
+
+
+    </data>
+</odoo>

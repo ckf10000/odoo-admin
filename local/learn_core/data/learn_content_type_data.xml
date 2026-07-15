@@ -2,26 +2,134 @@
 <odoo>
     <data noupdate="1">
 
-        <!-- ========== 内容类型 数据 ========== -->
-        <record id="content_type_word" model="learn.content.type">
-            <field name="name">单词</field>
-            <field name="code">word</field>
+        <!-- ========== 内容类型（前端组件注册表） ========== -->
+
+        <!-- 一、单词类 → 对应 learn.word 模型 -->
+        <record id="content_type_word_card" model="learn.content.type">
+            <field name="name">单词卡片</field>
+            <field name="code">word_card</field>
+            <field name="storage_model">learn.word</field>
             <field name="sequence">10</field>
+            <field name="description">查看单词音标、释义、例句、词性</field>
         </record>
-        <record id="content_type_video" model="learn.content.type">
-            <field name="name">视频</field>
-            <field name="code">video</field>
+        <record id="content_type_word_dictation" model="learn.content.type">
+            <field name="name">单词默写</field>
+            <field name="code">word_dictation</field>
+            <field name="storage_model">learn.word</field>
             <field name="sequence">20</field>
+            <field name="description">听发音写单词，或看中文写英文</field>
+        </record>
+        <record id="content_type_word_phonics" model="learn.content.type">
+            <field name="name">单词拼读</field>
+            <field name="code">word_phonics</field>
+            <field name="storage_model">learn.word</field>
+            <field name="sequence">30</field>
+            <field name="description">跟读发音，语音评测</field>
+        </record>
+
+        <record id="content_type_word_spell" model="learn.content.type">
+            <field name="name">生字词默写</field>
+            <field name="code">char_dictation</field>
+            <field name="storage_model">learn.character</field>
+            <field name="sequence">35</field>
+            <field name="description">看释义默写生字词，或听音默写</field>
+        </record>
+        <record id="content_type_char_phonics" model="learn.content.type">
+            <field name="name">生字拼读</field>
+            <field name="code">char_phonics</field>
+            <field name="storage_model">learn.character</field>
+            <field name="sequence">36</field>
+            <field name="description">生字跟读发音，语音评测</field>
+        </record>
+        <record id="content_type_char_group" model="learn.content.type">
+            <field name="name">生字组词</field>
+            <field name="code">char_group</field>
+            <field name="storage_model">learn.character</field>
+            <field name="sequence">37</field>
+            <field name="description">生字组成词语，组词练习</field>
+        </record>
+
+        <!-- 二、题目类 → 对应 learn.question 模型 -->
+        <record id="content_type_single_choice" model="learn.content.type">
+            <field name="name">单选题</field>
+            <field name="code">single_choice</field>
+            <field name="storage_model">learn.question</field>
+            <field name="sequence">40</field>
+            <field name="description">四选一，单选正确答案</field>
+        </record>
+        <record id="content_type_multi_choice" model="learn.content.type">
+            <field name="name">多选题</field>
+            <field name="code">multi_choice</field>
+            <field name="storage_model">learn.question</field>
+            <field name="sequence">50</field>
+            <field name="description">多选，一个或多个正确答案</field>
+        </record>
+        <record id="content_type_fill_blank" model="learn.content.type">
+            <field name="name">填空题</field>
+            <field name="code">fill_blank</field>
+            <field name="storage_model">learn.question</field>
+            <field name="sequence">60</field>
+            <field name="description">填写空缺内容，支持多空</field>
+        </record>
+        <record id="content_type_true_false" model="learn.content.type">
+            <field name="name">判断题</field>
+            <field name="code">true_false</field>
+            <field name="storage_model">learn.question</field>
+            <field name="sequence">70</field>
+            <field name="description">判断对错</field>
+        </record>
+        <record id="content_type_calculation" model="learn.content.type">
+            <field name="name">计算题</field>
+            <field name="code">calculation</field>
+            <field name="storage_model">learn.question</field>
+            <field name="sequence">80</field>
+            <field name="description">数学计算，输入数值答案</field>
+        </record>
+        <record id="content_type_essay" model="learn.content.type">
+            <field name="name">问答题</field>
+            <field name="code">essay</field>
+            <field name="storage_model">learn.question</field>
+            <field name="sequence">90</field>
+            <field name="description">主观问答题/作文，需人工批阅</field>
+        </record>
+
+        <!-- 三、媒体类 → 对应 learn.media 模型（待建） -->
+        <record id="content_type_video" model="learn.content.type">
+            <field name="name">在线视频</field>
+            <field name="code">video</field>
+            <field name="storage_model">learn.media</field>
+            <field name="sequence">100</field>
+            <field name="description">播放教学视频</field>
+        </record>
+        <record id="content_type_audio" model="learn.content.type">
+            <field name="name">音频播放</field>
+            <field name="code">audio</field>
+            <field name="storage_model">learn.media</field>
+            <field name="sequence">110</field>
+            <field name="description">播放音频（听力、朗读）</field>
         </record>
         <record id="content_type_file" model="learn.content.type">
-            <field name="name">文件</field>
+            <field name="name">资料下载</field>
             <field name="code">file</field>
-            <field name="sequence">30</field>
+            <field name="storage_model">learn.media</field>
+            <field name="sequence">120</field>
+            <field name="description">下载 PDF/文档/图片等资料</field>
         </record>
+
+        <!-- 四、图文类 → 对应 learn.article 模型（待建） -->
         <record id="content_type_knowledge" model="learn.content.type">
             <field name="name">知识要点</field>
             <field name="code">knowledge</field>
-            <field name="sequence">40</field>
+            <field name="storage_model">learn.article</field>
+            <field name="sequence">130</field>
+            <field name="description">图文知识点、重难点总结</field>
+        </record>
+        <record id="content_type_poem_recite" model="learn.content.type">
+            <field name="name">诗词背诵</field>
+            <field name="code">poem_recite</field>
+            <field name="storage_model">learn.article</field>
+            <field name="sequence">140</field>
+            <field name="description">诗词原文、译文、注释，支持背诵检查</field>
         </record>
 
     </data>

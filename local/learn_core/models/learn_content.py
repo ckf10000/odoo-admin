@@ -7,7 +7,7 @@ from odoo import models, fields, api
 class LearnContent(models.Model):
     _name = "learn.content"
     _description = "学习内容"
-    _order = "sequence, id"
+    _order = "id"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="标题", required=True, translate=True)
@@ -177,30 +177,34 @@ class LearnTag(models.Model):
 class LearnQuestion(models.Model):
     _name = "learn.question"
     _description = "题目"
-    _order = "sequence, id"
+    _order = "id"
 
     name = fields.Char(string="题目标题")
-    sequence = fields.Integer(string="排序", default=10)
 
     content_id = fields.Many2one(
         "learn.content", string="所属内容",
-        required=True, ondelete="cascade",
+        ondelete="set null",
+    )
+
+    # 关联选择器，用于按年级/科目/版本等维度筛选题目
+    selector_ids = fields.Many2many(
+        "learn.selector", "learn_question_selector_rel", "question_id", "selector_id", string="适用选择器",
     )
 
     # ---- 题目类型 ----
     question_type = fields.Selection(
-        selection=[
-            ("single_choice", "单选题"),
-            ("multi_choice", "多选题"),
-            ("fill_blank", "填空题"),
-            ("calculation", "计算题"),
-            ("essay", "问答题"),
-            ("true_false", "判断题"),
-        ],
-        string="题目类型",
+        selection='_get_question_type_selection',
+        string="内容类型",
         required=True,
         default="single_choice",
     )
+
+    def _get_question_type_selection(self):
+        """动态从 learn.content.type 中读取 storage_model='learn.question' 的所有 code"""
+        types = self.env['learn.content.type'].sudo().search([
+            ('storage_model', '=', 'learn.question'),
+        ])
+        return [(t.code, t.name) for t in types]
 
     # ---- 题目内容 ----
     stem = fields.Html(string="题干", required=True)
@@ -222,8 +226,7 @@ class LearnQuestion(models.Model):
     # 答案解析
     answer_explanation = fields.Html(string="答案解析")
 
-    # ---- 分值 ----
-    score = fields.Float(string="分值", default=5.0)
+    # 分值定义在 group.section.line 层面（learn.group.line.score），原子数据无分值
 
     # ---- 难度 ----
     difficulty = fields.Selection(
@@ -237,9 +240,7 @@ class LearnQuestion(models.Model):
     )
 
     _sql_constraints = [
-        ("unique_sequence_content",
-         "UNIQUE(sequence, content_id)",
-         "同一内容下题目序号必须唯一！"),
+        # 序号和分值已移到 learn.group.line 层控制，此处不再需要
     ]
 
 
@@ -256,7 +257,7 @@ class LearnItem(models.Model):
     """
     _name = "learn.item"
     _description = "知识点条目"
-    _order = "sequence, id"
+    _order = "id"
 
     name = fields.Char(string="条目名称", required=True, translate=True)
     sequence = fields.Integer(string="排序", default=10)
@@ -356,7 +357,7 @@ class LearnWord(models.Model):
     """保留旧 learn.word 模型，兼容已有数据，后续可迁移到 learn.item"""
     _name = "learn.word"
     _description = "单词/知识点（旧）"
-    _order = "sequence, id"
+    _order = "id"
 
     name = fields.Char(string="单词/术语", required=True)
     sequence = fields.Integer(string="排序", default=10)

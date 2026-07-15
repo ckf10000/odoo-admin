@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_learn_subject_profile_tree" model="ir.ui.view">
+        <field name="name">learn.subject.profile.tree</field>
+        <field name="model">learn.subject.profile</field>
+        <field name="arch" type="xml">
+            <tree string="过程模板">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="description" optional="show"/>
+                <field name="active" widget="boolean_toggle" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_subject_profile_form" model="ir.ui.view">
+        <field name="name">learn.subject.profile.form</field>
+        <field name="model">learn.subject.profile</field>
+        <field name="arch" type="xml">
+            <form string="过程模板">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="学习过程（拖拽可调顺序）" name="processes">
+                            <field name="process_line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="sequence_str"/>
+                                    <field name="process_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="描述" name="description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

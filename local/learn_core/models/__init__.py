@@ -15,3 +15,7 @@ from . import learn_word_source
 from . import learn_word
 from . import learn_group
 from . import learn_content_type
+from . import learn_media
+from . import learn_article
+from . import learn_character
+from . import learn_subject_profile  # noqa

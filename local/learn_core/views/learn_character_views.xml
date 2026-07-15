@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_learn_character_tree" model="ir.ui.view">
+        <field name="name">learn.character.tree</field>
+        <field name="model">learn.character</field>
+        <field name="arch" type="xml">
+            <tree string="生字">
+                <field name="name"/>
+                <field name="pinyin"/>
+                <field name="radical"/>
+                <field name="strokes"/>
+                <field name="source_ids"/>
+                <field name="difficulty" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_character_form" model="ir.ui.view">
+        <field name="name">learn.character.form</field>
+        <field name="model">learn.character</field>
+        <field name="arch" type="xml">
+            <form string="生字">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="pinyin"/>
+                        <field name="strokes"/>
+                        <field name="radical"/>
+                        <field name="difficulty"/>
+                    </group>
+                    <group>
+                        <field name="source_ids"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="释义与组词">
+                        <field name="meaning"/>
+                        <field name="phrases"/>
+                    </group>
+                    <group string="备注">
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_learn_character_search" model="ir.ui.view">
+        <field name="name">learn.character.search</field>
+        <field name="model">learn.character</field>
+        <field name="arch" type="xml">
+            <search string="搜索生字">
+                <field name="name"/>
+                <field name="pinyin"/>
+                <field name="radical"/>
+                <field name="source_ids"/>
+                <filter name="filter_easy" string="简单"
+                        domain="[('difficulty', '=', 'easy')]"/>
+                <filter name="filter_medium" string="中等"
+                        domain="[('difficulty', '=', 'medium')]"/>
+                <filter name="filter_hard" string="困难"
+                        domain="[('difficulty', '=', 'hard')]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

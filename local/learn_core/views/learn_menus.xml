@@ -86,6 +86,15 @@
               name="科目" parent="menu_learn_dims" sequence="80"
               action="action_learn_dim_subject"/>
 
+    <record id="action_learn_subject_profile" model="ir.actions.act_window">
+        <field name="name">科目配置模板</field>
+        <field name="res_model">learn.subject.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_subject_profile"
+              name="科目配置" parent="menu_learn_dims" sequence="82"
+              action="action_learn_subject_profile"/>
+
     <!-- 过程（基础数据，归维度管理） -->
     <record id="action_learn_process" model="ir.actions.act_window">
         <field name="name">过程</field>
@@ -122,33 +131,31 @@
               name="内容类型" parent="menu_learn_content" sequence="3"
               action="action_learn_content_type"/>
 
-    <menuitem id="menu_learn_content_list"
-              name="内容" parent="menu_learn_content" sequence="10"
-              action="action_learn_content"/>
-
+    <record id="action_learn_question" model="ir.actions.act_window">
+        <field name="name">题目</field>
+        <field name="res_model">learn.question</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     <menuitem id="menu_learn_question"
-              name="题目管理"
+              name="题目"
               parent="menu_learn_content"
-              sequence="20"
+              sequence="7"
               action="action_learn_question"/>
 
-    <menuitem id="menu_learn_item"
-              name="知识点管理"
-              parent="menu_learn_content"
-              sequence="30"
-              action="action_learn_item"/>
+    <record id="action_learn_word_source" model="ir.actions.act_window">
+        <field name="name">内容来源</field>
+        <field name="res_model">learn.content.source</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_word_source"
+              name="内容来源" parent="menu_learn_content" sequence="4"
+              action="action_learn_word_source"/>
 
-    <menuitem id="menu_learn_tag"
-              name="标签管理"
-              parent="menu_learn_content"
-              sequence="40"
-              action="action_learn_tag"/>
-
-    <!-- 单词管理（一级菜单） -->
-    <menuitem id="menu_learn_words"
-              name="单词管理"
+    <!-- 知识库管理（一级菜单） -->
+    <menuitem id="menu_learn_knowledge_base"
+              name="知识库管理"
               parent="menu_learn_root"
-              sequence="12"/>
+              sequence="11"/>
 
     <record id="action_learn_word" model="ir.actions.act_window">
         <field name="name">单词库</field>
@@ -156,17 +163,17 @@
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="menu_learn_word"
-              name="单词库" parent="menu_learn_words" sequence="10"
+              name="单词库" parent="menu_learn_knowledge_base" sequence="10"
               action="action_learn_word"/>
 
-    <record id="action_learn_word_source" model="ir.actions.act_window">
-        <field name="name">单词来源</field>
-        <field name="res_model">learn.word.source</field>
+    <record id="action_learn_character" model="ir.actions.act_window">
+        <field name="name">生字库</field>
+        <field name="res_model">learn.character</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_learn_word_source"
-              name="单词来源" parent="menu_learn_words" sequence="20"
-              action="action_learn_word_source"/>
+    <menuitem id="menu_learn_character"
+              name="生字库" parent="menu_learn_knowledge_base" sequence="20"
+              action="action_learn_character"/>
 
     <!-- 过程管理（一级菜单） -->
     <menuitem id="menu_learn_workflow"
@@ -180,8 +187,26 @@
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="menu_learn_group"
-              name="内容组" parent="menu_learn_content" sequence="5"
+              name="内容组" parent="menu_learn_content" sequence="20"
               action="action_learn_group"/>
+
+    <record id="action_learn_media" model="ir.actions.act_window">
+        <field name="name">媒体</field>
+        <field name="res_model">learn.media</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_media"
+              name="媒体" parent="menu_learn_content" sequence="5"
+              action="action_learn_media"/>
+
+    <record id="action_learn_article" model="ir.actions.act_window">
+        <field name="name">图文</field>
+        <field name="res_model">learn.article</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_article"
+              name="图文" parent="menu_learn_content" sequence="6"
+              action="action_learn_article"/>
 
     <!-- 学习管理（TODO: learn.favorite / rating / wrong.book / exam.session 模型待建） -->
     <menuitem id="menu_learn_study"

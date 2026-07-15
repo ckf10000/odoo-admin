@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- 交互功能菜单挂到学习平台下 -->
+    <!-- 交互功能菜单挂到学习管理下 -->
     <menuitem id="menu_learn_exam_session"
               name="答题记录"
-              parent="learn_core.menu_learn_root"
-              sequence="40"
+              parent="learn_core.menu_learn_study"
+              sequence="10"
               action="action_learn_exam_session"/>
 
     <menuitem id="menu_learn_wrong_book"
               name="错题本"
-              parent="learn_core.menu_learn_root"
-              sequence="50"
+              parent="learn_core.menu_learn_study"
+              sequence="20"
               action="action_learn_wrong_book"/>
 
     <menuitem id="menu_learn_favorite"
               name="我的收藏"
-              parent="learn_core.menu_learn_root"
-              sequence="60"
+              parent="learn_core.menu_learn_study"
+              sequence="30"
               action="action_learn_favorite"/>
 
     <menuitem id="menu_learn_note"
               name="学习笔记"
-              parent="learn_core.menu_learn_root"
-              sequence="70"
+              parent="learn_core.menu_learn_study"
+              sequence="40"
               action="action_learn_note"/>
 
     <menuitem id="menu_learn_rating"
               name="评分评论"
-              parent="learn_core.menu_learn_root"
-              sequence="80"
+              parent="learn_core.menu_learn_study"
+              sequence="50"
               action="action_learn_rating"/>
 
 </odoo>

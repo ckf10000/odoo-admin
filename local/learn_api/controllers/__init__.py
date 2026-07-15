@@ -20,3 +20,4 @@ from . import process
 from . import content
 from . import exam
 from . import interact
+from . import group

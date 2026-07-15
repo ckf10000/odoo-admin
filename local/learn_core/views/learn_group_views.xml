@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- ========== 内容组 视图 ========== -->
-
+    <!-- ========== 内容组 tree ========== -->
     <record id="view_learn_group_tree" model="ir.ui.view">
         <field name="name">learn.group.tree</field>
         <field name="model">learn.group</field>
         <field name="arch" type="xml">
             <tree string="内容组">
                 <field name="name"/>
-                <field name="content_type_id"/>
                 <field name="selector_id"/>
-                <field name="selector_process_id"/>
+                <field name="process_id"/>
             </tree>
         </field>
     </record>
 
+    <!-- ========== 内容组 form ========== -->
     <record id="view_learn_group_form" model="ir.ui.view">
         <field name="name">learn.group.form</field>
         <field name="model">learn.group</field>
         <field name="arch" type="xml">
             <form string="内容组">
+                <header>
+                    <button name="action_create_default_section" type="object"
+                            string="创建默认章节" class="btn-secondary"
+                            invisible="section_ids"/>
+                </header>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="内容组名称"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name"/>
                             <field name="selector_id"/>
-                            <field name="selector_process_id"/>
-                            <field name="content_type_id"/>
+                            <field name="process_domain_ids" invisible="1"/>
+                            <field name="process_id" domain="[('id', 'in', process_domain_ids)]"/>
                         </group>
                         <group>
                             <field name="sequence"/>
@@ -35,45 +43,16 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="内容列表" name="items">
-                            <field name="line_ids" nolabel="1"
-                                   context="{'default_content_type_id': content_type_id}">
-                                <tree editable="bottom">
-                                    <field name="title"/>
-                                    <field name="phonetic" optional="hide"/>
-                                    <field name="meaning" optional="hide"/>
+                        <page string="章节编排" name="sections">
+                            <field name="section_ids" nolabel="1"
+                                   context="{'default_group_id': id}">
+                                <tree default_order="sequence">
                                     <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="content_type_id"/>
+                                    <field name="score" sum="总分数"/>
+                                    <field name="description" optional="hide"/>
                                 </tree>
-                                <form string="内容条目">
-                                    <sheet>
-                                        <field name="group_id" invisible="1"/>
-                                        <group>
-                                            <field name="sequence"/>
-                                        </group>
-                                        <group string="单词"
-                                               attrs="{'invisible': [('parent.content_type', '!=', 'word')]}">
-                                            <field name="word_id"/>
-                                            <field name="phonetic"/>
-                                            <field name="meaning"/>
-                                        </group>
-                                        <group string="视频"
-                                               attrs="{'invisible': [('parent.content_type', '!=', 'video')]}">
-                                            <field name="video_title"/>
-                                            <field name="video_url"/>
-                                            <field name="video_duration"/>
-                                        </group>
-                                        <group string="文件"
-                                               attrs="{'invisible': [('parent.content_type', '!=', 'file')]}">
-                                            <field name="file_name"/>
-                                            <field name="file_data" filename="file_name"/>
-                                        </group>
-                                        <group string="知识要点"
-                                               attrs="{'invisible': [('parent.content_type', '!=', 'knowledge')]}">
-                                            <field name="knowledge_title"/>
-                                            <field name="knowledge_content"/>
-                                        </group>
-                                    </sheet>
-                                </form>
                             </field>
                         </page>
                         <page string="描述" name="description">
@@ -83,6 +62,65 @@
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <!-- ========== 章节 form ========== -->
+    <record id="view_learn_group_section_form" model="ir.ui.view">
+        <field name="name">learn.group.section.form</field>
+        <field name="model">learn.group.section</field>
+        <field name="arch" type="xml">
+            <form string="章节">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="章节名称"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="group_id" invisible="1"/>
+                            <field name="storage_model" invisible="1"/>
+                            <field name="content_type_id"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="score" string="本章节满分"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="条目列表" name="items">
+                            <field name="line_ids" nolabel="1"
+                                   context="{'default_section_id': id}">
+                                <tree editable="bottom" default_order="sequence">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="word_id"
+                                           invisible="parent.storage_model != 'learn.word'"/>
+                                    <field name="question_id"
+                                           invisible="parent.storage_model != 'learn.question'"
+                                           optional="hide"/>
+                                    <field name="media_id"
+                                           invisible="parent.storage_model != 'learn.media'"
+                                           optional="hide"/>
+                                    <field name="article_id"
+                                           invisible="parent.storage_model != 'learn.article'"
+                                           optional="hide"/>
+                                    <field name="score" sum="总分"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="描述" name="description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_learn_question" model="ir.actions.act_window">
+        <field name="name">题目</field>
+        <field name="res_model">learn.question</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
 </odoo>

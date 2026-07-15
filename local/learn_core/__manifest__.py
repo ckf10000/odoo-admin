@@ -19,21 +19,25 @@
     'website': "https://gitee.com/mfkifhss/odoo-admin",
 
     'category': 'Customizations/Learn',
-    'version': '17.0.0.1',
+    'version': '17.0.1.1',
 
     'depends': ['base', 'web', 'mail'],
 
     'data': [
         'security/ir.model.access.csv',
         'views/learn_dim_views.xml',
-        'views/learn_content_views.xml',
         'views/learn_word_views.xml',
-        'views/learn_item_views.xml',
         'views/learn_menus.xml',
         'views/learn_process_views.xml',
         'views/learn_word_source_views.xml',
         'views/learn_group_views.xml',
         'views/learn_content_type_views.xml',
+        'views/learn_selector_views.xml',
+        'views/learn_media_views.xml',
+        'views/learn_article_views.xml',
+        'views/learn_character_views.xml',
+        'views/learn_subject_profile_views.xml',
+        'views/learn_content_views.xml',
         'data/learn_dim_category_data.xml',
         'data/learn_dim_stage_data.xml',
         'data/learn_dim_klass_data.xml',
@@ -44,10 +48,14 @@
         'data/learn_dim_version_data.xml',
         'data/learn_content_type_data.xml',
         'data/learn_process_data.xml',
+        'data/learn_subject_profile_data.xml',
         'data/learn_selector_data.xml',
         'data/learn_word_source_data_phonics.xml',
         'data/learn_word_data.xml',
         'data/learn_word_group_data_phonics.xml',
+        'data/learn_word_group_data_g5_english.xml',
+        'data/learn_question_data_g5_english.xml',
+        'data/learn_material_data_g5_english.xml',
     ],
 
     'assets': {
