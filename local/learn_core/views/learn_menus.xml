@@ -175,6 +175,15 @@
               name="生字库" parent="menu_learn_knowledge_base" sequence="20"
               action="action_learn_character"/>
 
+    <record id="action_learn_phrase" model="ir.actions.act_window">
+        <field name="name">字词</field>
+        <field name="res_model">learn.phrase</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_phrase"
+              name="字词" parent="menu_learn_content" sequence="9"
+              action="action_learn_phrase"/>
+
     <!-- 过程管理（一级菜单） -->
     <menuitem id="menu_learn_workflow"
               name="过程管理"

@@ -8,21 +8,21 @@
         <record id="content_type_word_card" model="learn.content.type">
             <field name="name">单词卡片</field>
             <field name="code">word_card</field>
-            <field name="storage_model">learn.word</field>
+            <field name="storage_model">learn.phrase</field>
             <field name="sequence">10</field>
             <field name="description">查看单词音标、释义、例句、词性</field>
         </record>
         <record id="content_type_word_dictation" model="learn.content.type">
             <field name="name">单词默写</field>
             <field name="code">word_dictation</field>
-            <field name="storage_model">learn.word</field>
+            <field name="storage_model">learn.phrase</field>
             <field name="sequence">20</field>
             <field name="description">听发音写单词，或看中文写英文</field>
         </record>
         <record id="content_type_word_phonics" model="learn.content.type">
             <field name="name">单词拼读</field>
             <field name="code">word_phonics</field>
-            <field name="storage_model">learn.word</field>
+            <field name="storage_model">learn.phrase</field>
             <field name="sequence">30</field>
             <field name="description">跟读发音，语音评测</field>
         </record>
@@ -30,21 +30,21 @@
         <record id="content_type_word_spell" model="learn.content.type">
             <field name="name">生字词默写</field>
             <field name="code">char_dictation</field>
-            <field name="storage_model">learn.character</field>
+            <field name="storage_model">learn.phrase</field>
             <field name="sequence">35</field>
             <field name="description">看释义默写生字词，或听音默写</field>
         </record>
         <record id="content_type_char_phonics" model="learn.content.type">
             <field name="name">生字拼读</field>
             <field name="code">char_phonics</field>
-            <field name="storage_model">learn.character</field>
+            <field name="storage_model">learn.phrase</field>
             <field name="sequence">36</field>
             <field name="description">生字跟读发音，语音评测</field>
         </record>
         <record id="content_type_char_group" model="learn.content.type">
             <field name="name">生字组词</field>
             <field name="code">char_group</field>
-            <field name="storage_model">learn.character</field>
+            <field name="storage_model">learn.phrase</field>
             <field name="sequence">37</field>
             <field name="description">生字组成词语，组词练习</field>
         </record>

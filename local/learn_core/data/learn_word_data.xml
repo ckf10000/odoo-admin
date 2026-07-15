@@ -12,7 +12,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">10</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_B" model="learn.word">
             <field name="name">B</field>
@@ -22,7 +21,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">20</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_C" model="learn.word">
             <field name="name">C</field>
@@ -32,7 +30,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">30</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_D" model="learn.word">
             <field name="name">D</field>
@@ -42,7 +39,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">40</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_E" model="learn.word">
             <field name="name">E</field>
@@ -52,7 +48,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">50</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_F" model="learn.word">
             <field name="name">F</field>
@@ -62,7 +57,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">60</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_G" model="learn.word">
             <field name="name">G</field>
@@ -72,7 +66,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">70</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_H" model="learn.word">
             <field name="name">H</field>
@@ -82,7 +75,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">80</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_I" model="learn.word">
             <field name="name">I</field>
@@ -92,7 +84,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">90</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_J" model="learn.word">
             <field name="name">J</field>
@@ -102,7 +93,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">100</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_K" model="learn.word">
             <field name="name">K</field>
@@ -112,7 +102,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">110</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_L" model="learn.word">
             <field name="name">L</field>
@@ -122,7 +111,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">120</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_M" model="learn.word">
             <field name="name">M</field>
@@ -132,7 +120,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">130</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_N" model="learn.word">
             <field name="name">N</field>
@@ -142,7 +129,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">140</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_O" model="learn.word">
             <field name="name">O</field>
@@ -152,7 +138,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">150</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_P" model="learn.word">
             <field name="name">P</field>
@@ -162,7 +147,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">160</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_Q" model="learn.word">
             <field name="name">Q</field>
@@ -172,7 +156,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">170</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_R" model="learn.word">
             <field name="name">R</field>
@@ -182,7 +165,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">180</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_S" model="learn.word">
             <field name="name">S</field>
@@ -192,7 +174,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">190</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_T" model="learn.word">
             <field name="name">T</field>
@@ -202,7 +183,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">200</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_U" model="learn.word">
             <field name="name">U</field>
@@ -212,7 +192,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">210</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_V" model="learn.word">
             <field name="name">V</field>
@@ -222,7 +201,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">220</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_W" model="learn.word">
             <field name="name">W</field>
@@ -232,7 +210,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">230</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_X" model="learn.word">
             <field name="name">X</field>
@@ -242,7 +219,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">240</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_Y" model="learn.word">
             <field name="name">Y</field>
@@ -252,7 +228,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">250</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_Z" model="learn.word">
             <field name="name">Z</field>
@@ -262,7 +237,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">260</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_a" model="learn.word">
             <field name="name">a</field>
@@ -272,7 +246,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">270</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_b" model="learn.word">
             <field name="name">b</field>
@@ -282,7 +255,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">280</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_c" model="learn.word">
             <field name="name">c</field>
@@ -292,7 +264,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">290</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_d" model="learn.word">
             <field name="name">d</field>
@@ -302,7 +273,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">300</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_e" model="learn.word">
             <field name="name">e</field>
@@ -312,7 +282,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">310</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_f" model="learn.word">
             <field name="name">f</field>
@@ -322,7 +291,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">320</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_g" model="learn.word">
             <field name="name">g</field>
@@ -332,7 +300,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">330</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_h" model="learn.word">
             <field name="name">h</field>
@@ -342,7 +309,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">340</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_i" model="learn.word">
             <field name="name">i</field>
@@ -352,7 +318,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">350</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_j" model="learn.word">
             <field name="name">j</field>
@@ -362,7 +327,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">360</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_k" model="learn.word">
             <field name="name">k</field>
@@ -372,7 +336,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">370</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_l" model="learn.word">
             <field name="name">l</field>
@@ -382,7 +345,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">380</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_m" model="learn.word">
             <field name="name">m</field>
@@ -392,7 +354,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">390</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_n" model="learn.word">
             <field name="name">n</field>
@@ -402,7 +363,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">400</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_o" model="learn.word">
             <field name="name">o</field>
@@ -412,7 +372,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">410</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_p" model="learn.word">
             <field name="name">p</field>
@@ -422,7 +381,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">420</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_q" model="learn.word">
             <field name="name">q</field>
@@ -432,7 +390,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">430</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_r" model="learn.word">
             <field name="name">r</field>
@@ -442,7 +399,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">440</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_s" model="learn.word">
             <field name="name">s</field>
@@ -452,7 +408,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">450</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_t" model="learn.word">
             <field name="name">t</field>
@@ -462,7 +417,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">460</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_u" model="learn.word">
             <field name="name">u</field>
@@ -472,7 +426,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">470</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_v" model="learn.word">
             <field name="name">v</field>
@@ -482,7 +435,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">480</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_w" model="learn.word">
             <field name="name">w</field>
@@ -492,7 +444,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">490</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_x" model="learn.word">
             <field name="name">x</field>
@@ -502,7 +453,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">500</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_y" model="learn.word">
             <field name="name">y</field>
@@ -512,7 +462,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">510</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_z" model="learn.word">
             <field name="name">z</field>
@@ -522,7 +471,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">520</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_gift" model="learn.word">
             <field name="name">gift</field>
@@ -532,7 +480,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">530</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_milk" model="learn.word">
             <field name="name">milk</field>
@@ -542,7 +489,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">540</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_help" model="learn.word">
             <field name="name">help</field>
@@ -552,7 +498,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">550</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_belt" model="learn.word">
             <field name="name">belt</field>
@@ -562,7 +507,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">560</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_camp" model="learn.word">
             <field name="name">camp</field>
@@ -572,7 +516,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">570</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_sand" model="learn.word">
             <field name="name">sand</field>
@@ -582,7 +525,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">580</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_plant" model="learn.word">
             <field name="name">plant</field>
@@ -592,7 +534,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">590</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_bank" model="learn.word">
             <field name="name">bank</field>
@@ -602,7 +543,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">600</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_desk" model="learn.word">
             <field name="name">desk</field>
@@ -612,7 +552,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">610</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_fast" model="learn.word">
             <field name="name">fast</field>
@@ -622,7 +561,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">620</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_cats" model="learn.word">
             <field name="name">cats</field>
@@ -632,7 +570,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">630</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_sing" model="learn.word">
             <field name="name">sing</field>
@@ -642,7 +579,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">640</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_rain" model="learn.word">
             <field name="name">rain</field>
@@ -652,7 +588,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">650</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_say" model="learn.word">
             <field name="name">say</field>
@@ -662,7 +597,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">660</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_lake" model="learn.word">
             <field name="name">lake</field>
@@ -672,7 +606,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">670</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_baby" model="learn.word">
             <field name="name">baby</field>
@@ -682,7 +615,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">680</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_name" model="learn.word">
             <field name="name">name</field>
@@ -692,7 +624,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">690</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_paint" model="learn.word">
             <field name="name">paint</field>
@@ -702,7 +633,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">700</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_razor" model="learn.word">
             <field name="name">razor</field>
@@ -712,7 +642,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">710</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_play" model="learn.word">
             <field name="name">play</field>
@@ -722,7 +651,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">720</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_tree" model="learn.word">
             <field name="name">tree</field>
@@ -732,7 +660,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">730</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_read" model="learn.word">
             <field name="name">read</field>
@@ -742,7 +669,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">740</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_lady" model="learn.word">
             <field name="name">lady</field>
@@ -752,7 +678,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">750</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_key" model="learn.word">
             <field name="name">key</field>
@@ -762,7 +687,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">760</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_behind" model="learn.word">
             <field name="name">behind</field>
@@ -772,7 +696,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">770</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_green" model="learn.word">
             <field name="name">green</field>
@@ -782,7 +705,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">780</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_meat" model="learn.word">
             <field name="name">meat</field>
@@ -792,7 +714,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">790</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_happy" model="learn.word">
             <field name="name">happy</field>
@@ -802,7 +723,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">800</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_valley" model="learn.word">
             <field name="name">valley</field>
@@ -812,7 +732,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">810</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_we" model="learn.word">
             <field name="name">we</field>
@@ -822,7 +741,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">820</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_field" model="learn.word">
             <field name="name">field</field>
@@ -832,7 +750,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">830</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_ceiling" model="learn.word">
             <field name="name">ceiling</field>
@@ -842,7 +759,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">840</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_bucket" model="learn.word">
             <field name="name">bucket</field>
@@ -852,7 +768,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">850</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_stretch" model="learn.word">
             <field name="name">stretch</field>
@@ -862,7 +777,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">860</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_fish" model="learn.word">
             <field name="name">fish</field>
@@ -872,7 +786,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">870</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_cheese" model="learn.word">
             <field name="name">cheese</field>
@@ -882,7 +795,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">880</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_shop" model="learn.word">
             <field name="name">shop</field>
@@ -892,7 +804,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">890</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_chicken" model="learn.word">
             <field name="name">chicken</field>
@@ -902,7 +813,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">900</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_black" model="learn.word">
             <field name="name">black</field>
@@ -912,7 +822,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">910</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_watch" model="learn.word">
             <field name="name">watch</field>
@@ -922,7 +831,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">920</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_tie" model="learn.word">
             <field name="name">tie</field>
@@ -932,7 +840,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">930</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_kind" model="learn.word">
             <field name="name">kind</field>
@@ -942,7 +849,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">940</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_ride" model="learn.word">
             <field name="name">ride</field>
@@ -952,7 +858,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">950</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_night" model="learn.word">
             <field name="name">night</field>
@@ -962,7 +867,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">960</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_sky" model="learn.word">
             <field name="name">sky</field>
@@ -972,7 +876,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">970</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_time" model="learn.word">
             <field name="name">time</field>
@@ -982,7 +885,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">980</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_tidy" model="learn.word">
             <field name="name">tidy</field>
@@ -992,7 +894,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">990</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_shy" model="learn.word">
             <field name="name">shy</field>
@@ -1002,7 +903,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1000</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_light" model="learn.word">
             <field name="name">light</field>
@@ -1012,7 +912,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1010</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_pie" model="learn.word">
             <field name="name">pie</field>
@@ -1022,7 +921,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1020</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_stone_boat" model="learn.word">
             <field name="name">stone boat</field>
@@ -1032,7 +930,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1030</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_bowl" model="learn.word">
             <field name="name">bowl</field>
@@ -1042,7 +939,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1040</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_robot" model="learn.word">
             <field name="name">robot</field>
@@ -1052,7 +948,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1050</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_hotel" model="learn.word">
             <field name="name">hotel</field>
@@ -1062,7 +957,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1060</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_soap" model="learn.word">
             <field name="name">soap</field>
@@ -1072,7 +966,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1070</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_home" model="learn.word">
             <field name="name">home</field>
@@ -1082,7 +975,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1080</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_cone" model="learn.word">
             <field name="name">cone</field>
@@ -1092,7 +984,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1090</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_show" model="learn.word">
             <field name="name">show</field>
@@ -1102,7 +993,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1100</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_coat" model="learn.word">
             <field name="name">coat</field>
@@ -1112,7 +1002,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1110</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_yellow" model="learn.word">
             <field name="name">yellow</field>
@@ -1122,7 +1011,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1120</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_mango" model="learn.word">
             <field name="name">mango</field>
@@ -1132,7 +1020,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1130</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_blanket" model="learn.word">
             <field name="name">blanket</field>
@@ -1142,7 +1029,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1140</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_clock" model="learn.word">
             <field name="name">clock</field>
@@ -1152,7 +1038,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1150</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_fly" model="learn.word">
             <field name="name">fly</field>
@@ -1162,7 +1047,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1160</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_glue" model="learn.word">
             <field name="name">glue</field>
@@ -1172,7 +1056,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1170</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_plane" model="learn.word">
             <field name="name">plane</field>
@@ -1182,7 +1065,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1180</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_sleep" model="learn.word">
             <field name="name">sleep</field>
@@ -1192,7 +1074,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1190</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_brain" model="learn.word">
             <field name="name">brain</field>
@@ -1202,7 +1083,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1200</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_crab" model="learn.word">
             <field name="name">crab</field>
@@ -1212,7 +1092,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1210</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_drink" model="learn.word">
             <field name="name">drink</field>
@@ -1222,7 +1101,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1220</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_frame" model="learn.word">
             <field name="name">frame</field>
@@ -1232,7 +1110,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1230</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_grass" model="learn.word">
             <field name="name">grass</field>
@@ -1242,7 +1119,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1240</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_printer" model="learn.word">
             <field name="name">printer</field>
@@ -1252,7 +1128,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1250</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_train" model="learn.word">
             <field name="name">train</field>
@@ -1262,7 +1137,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1260</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_scan" model="learn.word">
             <field name="name">scan</field>
@@ -1272,7 +1146,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1270</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_skate" model="learn.word">
             <field name="name">skate</field>
@@ -1282,7 +1155,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1280</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_smell" model="learn.word">
             <field name="name">smell</field>
@@ -1292,7 +1164,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1290</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_snow" model="learn.word">
             <field name="name">snow</field>
@@ -1302,7 +1173,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1300</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_spell" model="learn.word">
             <field name="name">spell</field>
@@ -1312,7 +1182,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1310</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_stand" model="learn.word">
             <field name="name">stand</field>
@@ -1322,7 +1191,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1320</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_swing" model="learn.word">
             <field name="name">swing</field>
@@ -1332,7 +1200,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1330</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_whale" model="learn.word">
             <field name="name">whale</field>
@@ -1342,7 +1209,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1340</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_math" model="learn.word">
             <field name="name">math</field>
@@ -1352,7 +1218,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1350</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_phone" model="learn.word">
             <field name="name">phone</field>
@@ -1362,7 +1227,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1360</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_these" model="learn.word">
             <field name="name">these</field>
@@ -1372,7 +1236,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1370</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_photo" model="learn.word">
             <field name="name">photo</field>
@@ -1382,7 +1245,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1380</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_clothes" model="learn.word">
             <field name="name">clothes</field>
@@ -1392,7 +1254,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1390</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_white" model="learn.word">
             <field name="name">white</field>
@@ -1402,7 +1263,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1400</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_teeth" model="learn.word">
             <field name="name">teeth</field>
@@ -1412,7 +1272,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1410</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_June" model="learn.word">
             <field name="name">June</field>
@@ -1422,7 +1281,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1420</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_fruit" model="learn.word">
             <field name="name">fruit</field>
@@ -1432,7 +1290,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1430</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_blue" model="learn.word">
             <field name="name">blue</field>
@@ -1442,7 +1299,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1440</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_moon" model="learn.word">
             <field name="name">moon</field>
@@ -1452,7 +1308,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1450</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_new" model="learn.word">
             <field name="name">new</field>
@@ -1462,7 +1317,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1460</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_July" model="learn.word">
             <field name="name">July</field>
@@ -1472,7 +1326,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1470</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_costume" model="learn.word">
             <field name="name">costume</field>
@@ -1482,7 +1335,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1480</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_suit" model="learn.word">
             <field name="name">suit</field>
@@ -1492,7 +1344,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1490</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_true" model="learn.word">
             <field name="name">true</field>
@@ -1502,7 +1353,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1500</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_spoon" model="learn.word">
             <field name="name">spoon</field>
@@ -1512,7 +1362,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1510</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_stew" model="learn.word">
             <field name="name">stew</field>
@@ -1522,7 +1371,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1520</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_music" model="learn.word">
             <field name="name">music</field>
@@ -1532,7 +1380,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1530</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_wizard" model="learn.word">
             <field name="name">wizard</field>
@@ -1542,7 +1389,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1540</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_student" model="learn.word">
             <field name="name">student</field>
@@ -1552,7 +1398,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1550</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_rabbit" model="learn.word">
             <field name="name">rabbit</field>
@@ -1562,7 +1407,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1560</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_lemon" model="learn.word">
             <field name="name">lemon</field>
@@ -1572,7 +1416,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1570</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_difficult" model="learn.word">
             <field name="name">difficult</field>
@@ -1582,7 +1425,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1580</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_total" model="learn.word">
             <field name="name">total</field>
@@ -1592,7 +1434,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1590</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_hundred" model="learn.word">
             <field name="name">hundred</field>
@@ -1602,7 +1443,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1600</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_family" model="learn.word">
             <field name="name">family</field>
@@ -1612,7 +1452,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1610</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_seasons" model="learn.word">
             <field name="name">seasons</field>
@@ -1622,7 +1461,6 @@
             <field name="difficulty">medium</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1620</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
         <record id="word_beautiful" model="learn.word">
             <field name="name">beautiful</field>
@@ -1632,7 +1470,6 @@
             <field name="difficulty">easy</field>
             <field name="source_ids" eval="[(6, 0, [ref('word_source_phonics_lesson')])]"/>
             <field name="sequence">1630</field>
-            <field name="selector_id" ref="selector_teen_phonics_2025"/>
         </record>
 
     </data>

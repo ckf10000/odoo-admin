@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_learn_phrase_tree" model="ir.ui.view">
+        <field name="name">learn.phrase.tree</field>
+        <field name="model">learn.phrase</field>
+        <field name="arch" type="xml">
+            <tree string="字词">
+                <field name="name"/>
+                <field name="phrase_type" widget="badge"/>
+                <field name="ref_model" widget="badge"/>
+                <field name="word_id" optional="hide"/>
+                <field name="character_id" optional="hide"/>
+                <field name="selector_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_learn_phrase_form" model="ir.ui.view">
+        <field name="name">learn.phrase.form</field>
+        <field name="model">learn.phrase</field>
+        <field name="arch" type="xml">
+            <form string="字词">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phrase_type"/>
+                        <field name="ref_model"/>
+                        <field name="word_id"
+                               invisible="ref_model != 'learn.word'"/>
+                        <field name="character_id"
+                               invisible="ref_model != 'learn.character'"/>
+                    </group>
+                    <group>
+                        <field name="selector_ids"/>
+                        <field name="active"/>
+                    </group>
+                    <group string="备注">
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

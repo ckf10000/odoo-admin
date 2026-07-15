@@ -93,8 +93,8 @@
                                    context="{'default_section_id': id}">
                                 <tree editable="bottom" default_order="sequence">
                                     <field name="sequence" widget="handle"/>
-                                    <field name="word_id"
-                                           invisible="parent.storage_model != 'learn.word'"/>
+                                    <field name="phrase_id"
+                                           invisible="parent.storage_model != 'learn.phrase'"/>
                                     <field name="question_id"
                                            invisible="parent.storage_model != 'learn.question'"
                                            optional="hide"/>

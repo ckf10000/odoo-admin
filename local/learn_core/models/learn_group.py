@@ -133,8 +133,7 @@ class LearnGroupLine(models.Model):
     # ---- Generic Reference ----
     res_model = fields.Selection(
         selection=[
-            ('learn.word', '字词'),
-            ('learn.character', '生字'),
+            ('learn.phrase', '字词'),
             ('learn.question', '题目'),
             ('learn.media', '媒体'),
             ('learn.article', '图文'),
@@ -144,6 +143,10 @@ class LearnGroupLine(models.Model):
     res_id = fields.Integer(string='引用记录 ID', index=True)
 
     # ---- 便捷字段 ----
+    phrase_id = fields.Many2one(
+        'learn.phrase', string='字词',
+        compute='_compute_ref', inverse='_inverse_ref', store=True,
+    )
     word_id = fields.Many2one(
         'learn.word', string='字词',
         compute='_compute_ref', inverse='_inverse_ref', store=True,
@@ -176,20 +179,16 @@ class LearnGroupLine(models.Model):
     @api.depends('res_model', 'res_id')
     def _compute_ref(self):
         for r in self:
-            r.word_id = r.res_id if r.res_model == 'learn.word' else False
-            r.character_id = r.res_id if r.res_model == 'learn.character' else False
+            r.phrase_id = r.res_id if r.res_model == 'learn.phrase' else False
             r.question_id = r.res_id if r.res_model == 'learn.question' else False
             r.media_id = r.res_id if r.res_model == 'learn.media' else False
             r.article_id = r.res_id if r.res_model == 'learn.article' else False
 
     def _inverse_ref(self):
         for r in self:
-            if r.word_id:
-                r.res_model = 'learn.word'
-                r.res_id = r.word_id.id
-            elif r.character_id:
-                r.res_model = 'learn.character'
-                r.res_id = r.character_id.id
+            if r.phrase_id:
+                r.res_model = 'learn.phrase'
+                r.res_id = r.phrase_id.id
             elif r.question_id:
                 r.res_model = 'learn.question'
                 r.res_id = r.question_id.id
@@ -200,11 +199,11 @@ class LearnGroupLine(models.Model):
                 r.res_model = 'learn.article'
                 r.res_id = r.article_id.id
 
-    @api.depends('word_id.name', 'character_id.name', 'question_id.stem', 'media_id.name', 'article_id.name')
+    @api.depends('phrase_id.name', 'question_id.stem', 'media_id.name', 'article_id.name')
     def _compute_title(self):
         for r in self:
             r.title = (
-                    r.word_id.name or r.character_id.name or r.question_id.stem
+                    r.phrase_id.name or r.question_id.stem
                     or r.media_id.name or r.article_id.name or '-'
             )
 

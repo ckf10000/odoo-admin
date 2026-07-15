@@ -12,8 +12,7 @@ class LearnContentType(models.Model):
     code = fields.Char(string='编码', required=True, index=True)
     storage_model = fields.Selection(
         selection=[
-            ('learn.word', '字词'),
-            ('learn.character', '生字'),
+            ('learn.phrase', '字词'),
             ('learn.question', '题目'),
             ('learn.media', '媒体'),
             ('learn.article', '图文'),

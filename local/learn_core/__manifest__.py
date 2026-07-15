@@ -36,6 +36,7 @@
         'views/learn_media_views.xml',
         'views/learn_article_views.xml',
         'views/learn_character_views.xml',
+        'views/learn_phrase_views.xml',
         'views/learn_subject_profile_views.xml',
         'views/learn_content_views.xml',
         'data/learn_dim_category_data.xml',
