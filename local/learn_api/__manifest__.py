@@ -22,7 +22,7 @@
     'category': 'Customizations/Learn',
     'version': '17.0.0.1',
 
-    'depends': ['base', 'common_lib', 'learn_core', 'learn_interact', 'auth_api'],
+    'depends': ['base', 'common_lib', 'learn_core', 'auth_api'],
 
     'data': [],
 
