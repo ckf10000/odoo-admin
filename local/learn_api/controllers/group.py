@@ -69,12 +69,45 @@ class LearnGroupController(http.Controller):
                         "score": line.score,
                     }
                     # 根据 res_model 填充数据
-                    if line.res_model == 'learn.word' and line.word_id:
+                    if line.res_model == 'learn.phrase' and line.phrase_id:
+                        p = line.phrase_id
+                        item["phrase"] = {
+                            "id": p.id, "name": p.name,
+                            "phrase_type": p.phrase_type,
+                            "ref_model": p.ref_model,
+                        }
+                        # 展开 phrase 的原子数据
+                        if p.ref_model == 'learn.word' and p.word_id:
+                            w = p.word_id
+                            item["word"] = {  # noqa
+                                "id": w.id, "name": w.name, "phonetic": w.phonetic,
+                                "meaning": w.meaning, "meaning_en": w.meaning_en or "",
+                                "example_sentence": w.example_sentence or "",
+                                "phrases": w.phrases or "", "difficulty": w.difficulty,
+                                "pos": [{"id": pos.id, "name": pos.name, "code": pos.code} for pos in w.pos_ids],
+                            }
+                        elif p.ref_model == 'learn.character' and p.character_id:
+                            ch = p.character_id
+                            item["character"] = {
+                                "id": ch.id, "name": ch.name,
+                                "pinyin": ch.pinyin or "", "strokes": ch.strokes or 0,
+                                "radical": ch.radical or "", "meaning": ch.meaning or "",
+                                "phrases": ch.phrases or "", "difficulty": ch.difficulty,
+                            }
+                    elif line.res_model == 'learn.word' and line.word_id:
                         w = line.word_id
                         item["word"] = {
                             "id": w.id, "name": w.name, "phonetic": w.phonetic,
                             "meaning": w.meaning, "part_of_speech": w.part_of_speech,
                             "difficulty": w.difficulty,
+                        }
+                    elif line.res_model == 'learn.character' and line.character_id:
+                        ch = line.character_id
+                        item["character"] = {
+                            "id": ch.id, "name": ch.name,
+                            "pinyin": ch.pinyin or "", "strokes": ch.strokes or 0,
+                            "radical": ch.radical or "", "meaning": ch.meaning or "",
+                            "phrases": ch.phrases or "", "difficulty": ch.difficulty,
                         }
                     elif line.res_model == 'learn.question' and line.question_id:
                         q = line.question_id

@@ -21,3 +21,5 @@ from . import content
 from . import exam
 from . import interact
 from . import group
+from . import search
+from . import progress
