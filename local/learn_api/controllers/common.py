@@ -44,24 +44,3 @@ def serialize_content(content, detail=False):
                 "question_count": content.question_count,
             })
     return data
-
-
-def sync_wrong_book(session):
-    """同步错题本"""
-    for answer in session.answer_ids:
-        if not answer.is_correct:
-            existing = request.env["learn.wrong.book"].sudo().search([
-                ("user_id", "=", session.user_id.id),
-                ("question_id", "=", answer.question_id.id),
-            ], limit=1)
-            if existing:
-                existing.write({
-                    "wrong_count": existing.wrong_count + 1,
-                    "last_wrong_time": fields.Datetime.now(),
-                })
-            else:
-                request.env["learn.wrong.book"].sudo().create({
-                    "user_id": session.user_id.id,
-                    "question_id": answer.question_id.id,
-                    "wrong_count": 1,
-                })

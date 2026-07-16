@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from . import _learn_dim_mixin
-from . import learn_content
 from . import learn_dim_category
 from . import learn_dim_klass
 from . import learn_dim_region
@@ -11,7 +10,7 @@ from . import learn_dim_version
 from . import learn_dim_year
 from . import learn_selector
 from . import learn_process
-from . import learn_word_source
+from . import learn_content_source
 from . import learn_word
 from . import learn_group
 from . import learn_content_type
