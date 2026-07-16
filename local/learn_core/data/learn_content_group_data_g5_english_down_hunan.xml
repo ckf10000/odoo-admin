@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 湘少版五年级下册 - group 编排 ========== -->
+        <record id="group_g5_down_u1" model="learn.group">
+            <field name="name">Unit 1 We are going to read stories.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="sec_g5_down_u1" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u1"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_story" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_story"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_listen_to" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_listen_to"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_interesting" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_interesting"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_talk_about" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_talk_about"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_put_on" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_put_on"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_play" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_play"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_great" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_great"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_write_about" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_write_about"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_email" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_email"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_week" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_week"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u1_word" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u1"/>
+            <field name="phrase_id" ref="phrase_g5_down_u1_word"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u2" model="learn.group">
+            <field name="name">Unit 2 We are going to do some research.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="sec_g5_down_u2" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u2"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_research" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_research"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_find" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_find"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_information" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_information"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_study" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_study"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_think" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_think"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_report" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_report"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_place" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_place"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_textbook" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_textbook"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u2_wild" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u2"/>
+            <field name="phrase_id" ref="phrase_g5_down_u2_wild"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u3" model="learn.group">
+            <field name="name">Unit 3 Let's make a kite.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="sec_g5_down_u3" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u3"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_kite" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_kite"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_show" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_show"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_paper" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_paper"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_bamboo" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_bamboo"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_cut" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_cut"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_tie" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_tie"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_a_piece_of" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_a_piece_of"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_above" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_above"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_by" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_by"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_lastly" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_lastly"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_need" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_need"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_next" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_next"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_string" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_string"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_try" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_try"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u3_turn" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u3"/>
+            <field name="phrase_id" ref="phrase_g5_down_u3_turn"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u4" model="learn.group">
+            <field name="name">Unit 4 Don't talk here.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="sec_g5_down_u4" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u4"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_here" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_here"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_mrs" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_mrs"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_take" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_take"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_library" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_library"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_throw" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_throw"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_waste" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_waste"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_floor" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_floor"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_road" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_road"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_park" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_park"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_don_t" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_don_t"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_problem" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_problem"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_really" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_really"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_roommate" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_roommate"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_rule" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_rule"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_same" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_same"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u4_subject" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u4"/>
+            <field name="phrase_id" ref="phrase_g5_down_u4_subject"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u5" model="learn.group">
+            <field name="name">Unit 5 When's your birthday?</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="sec_g5_down_u5" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u5"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_march" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_march"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_may" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_may"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_international_children_s_day" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_international_children_s_day"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_june" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_june"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_month" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_month"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_year" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_year"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_january" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_january"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_february" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_february"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_april" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_april"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_july" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_july"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_august" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_august"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_september" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_september"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_october" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_october"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_november" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_november"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_december" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_december"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_activity" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_activity"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_blow" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_blow"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_candle" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_candle"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_on_time" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_on_time"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_plan" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_plan"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u5_tonight" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u5"/>
+            <field name="phrase_id" ref="phrase_g5_down_u5_tonight"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u6" model="learn.group">
+            <field name="name">Unit 6 I'll make a beautiful card.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="sec_g5_down_u6" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u6"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_mother_s_day" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_mother_s_day"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_favourite" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_favourite"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_chocolate" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_chocolate"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_rose" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_rose"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_celebrate" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_celebrate"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_restaurant" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_restaurant"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_a_box_of" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_a_box_of"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_fan" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_fan"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_idea" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_idea"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_i_ll" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_i_ll"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u6_lucky" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u6"/>
+            <field name="phrase_id" ref="phrase_g5_down_u6_lucky"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u7" model="learn.group">
+            <field name="name">Unit 7 There's a post office near my school.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="sec_g5_down_u7" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u7"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_there" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_there"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_post_office" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_post_office"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_near" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_near"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_hometown" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_hometown"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_shop" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_shop"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_over_there" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_over_there"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_cinema" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_cinema"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_around" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_around"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_street" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_street"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_shopping_centre" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_shopping_centre"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_hotel" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_hotel"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_bank" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_bank"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_address" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_address"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_at_the_end_of" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_at_the_end_of"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_cafe" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_cafe"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_movie" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_movie"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_something" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_something"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u7_weekend" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u7"/>
+            <field name="phrase_id" ref="phrase_g5_down_u7_weekend"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u8" model="learn.group">
+            <field name="name">Unit 8 Can you show me the way to the Xinhua Hotel?</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="sec_g5_down_u8" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u8"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_way" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_way"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_straight" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_straight"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_along" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_along"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_crossing" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_crossing"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_take" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_take"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_get_off" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_get_off"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_stop" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_stop"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_get_on" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_get_on"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_hospital" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_hospital"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_airport" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_airport"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_railway_station" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_railway_station"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_bookstore" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_bookstore"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_bus_stop" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_bus_stop"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_holiday" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_holiday"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_inn" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_inn"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_learn" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_learn"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_police_station" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_police_station"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_should" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_should"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_supermarket" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_supermarket"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u8_theatre" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u8"/>
+            <field name="phrase_id" ref="phrase_g5_down_u8_theatre"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u9" model="learn.group">
+            <field name="name">Unit 9 He's kind to children.</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">90</field>
+        </record>
+        <record id="sec_g5_down_u9" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u9"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_kind" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_kind"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_village" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_village"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_teach" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_teach"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_interested" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_interested"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_active" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_active"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_friendly" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_friendly"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_smart" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_smart"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_serious" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_serious"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_farm" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_farm"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_job" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_job"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_life" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_life"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_primary_school" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_primary_school"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_quiet" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_quiet"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_tell" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_tell"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u9_writer" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u9"/>
+            <field name="phrase_id" ref="phrase_g5_down_u9_writer"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u10" model="learn.group">
+            <field name="name">Unit 10 Where were you yesterday?</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">100</field>
+        </record>
+        <record id="sec_g5_down_u10" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u10"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_were" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_were"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_yesterday" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_yesterday"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_was" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_was"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_sick" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_sick"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_better" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_better"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_last" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_last"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_work" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_work"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_the_great_wall" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_the_great_wall"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_the_west_lake" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_the_west_lake"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u10_west" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u10"/>
+            <field name="phrase_id" ref="phrase_g5_down_u10_west"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u11" model="learn.group">
+            <field name="name">Unit 11 Who was first?</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">110</field>
+        </record>
+        <record id="sec_g5_down_u11" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u11"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_first" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_first"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_sport" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_sport"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_metre" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_metre"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_race" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_race"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_second" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_second"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_third" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_third"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_fourth" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_fourth"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_fifth" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_fifth"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_sixth" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_sixth"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_seventh" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_seventh"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_eighth" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_eighth"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_ninth" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_ninth"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_tenth" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_tenth"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_cheer" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_cheer"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_each" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_each"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_indian" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_indian"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_joke" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_joke"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_laugh" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_laugh"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_poem" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_poem"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_place" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_place"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_ready" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_ready"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_result" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_result"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_runner" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_runner"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_song" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_song"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u11_win" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u11"/>
+            <field name="phrase_id" ref="phrase_g5_down_u11_win"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g5_down_u12" model="learn.group">
+            <field name="name">Unit 12 Where did you go?</field>
+            <field name="selector_id" ref="selector_g5_english_hunan_26down"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">120</field>
+        </record>
+        <record id="sec_g5_down_u12" model="learn.group.section">
+            <field name="group_id" ref="group_g5_down_u12"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_forest" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_forest"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_museum" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_museum"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_note" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_note"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_ask" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_ask"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_question" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_question"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_east" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_east"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_g5_down_u12_wait" model="learn.group.line">
+            <field name="section_id" ref="sec_g5_down_u12"/>
+            <field name="phrase_id" ref="phrase_g5_down_u12_wait"/>
+            <field name="sequence">10</field>
+        </record>
+    </data>
+</odoo>

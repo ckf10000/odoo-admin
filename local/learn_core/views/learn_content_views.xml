@@ -170,6 +170,7 @@
                     <group>
                         <group>
                             <field name="question_type"/>
+                            <field name="default_score"/>
                             <field name="difficulty"/>
                         </group>
                         <group>

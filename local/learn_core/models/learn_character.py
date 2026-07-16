@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """生字库"""
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class LearnCharacter(models.Model):
@@ -29,6 +29,22 @@ class LearnCharacter(models.Model):
     description = fields.Text(string='备注')
 
     group_line_ids = fields.One2many('learn.group.line', 'character_id', string='所属内容组')
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        new_vals = []
+        existing_records = self.browse()
+        for vals in vals_list:
+            existing = self.sudo().search([('name', '=', vals.get('name'))], limit=1)
+            if existing:
+                new_sources = vals.get('source_ids')
+                if new_sources:
+                    existing.sudo().write({'source_ids': new_sources})
+                existing_records += existing
+                continue
+            new_vals.append(vals)
+        records = super().create(new_vals) if new_vals else self.browse()
+        return records + existing_records
 
     _sql_constraints = [
         ('unique_character', 'UNIQUE(name)', '该生字已存在！'),

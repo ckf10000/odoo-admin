@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 丽声瑞格 - phrase 桥接 ========== -->
+        <record id="phrase_word_show" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_show"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_blue" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_blue"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_E" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_E"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_B" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_B"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_say" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_say"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_field" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_field"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_stone" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_stone"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_whale" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_whale"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_mango" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_mango"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_rabbit" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_rabbit"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_student" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_student"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_fast" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_fast"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_these" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_these"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_Y" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_Y"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_clock" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_clock"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_ride" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_ride"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_stand" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_stand"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_cats" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_cats"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_R" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_R"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_bucket" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_bucket"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_J" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_J"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_spoon" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_spoon"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_baby" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_baby"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_spell" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_spell"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_printer" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_printer"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_C" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_C"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_N" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_N"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_d" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_d"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_shy" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_shy"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_X" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_X"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_light" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_light"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_play" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_play"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_camp" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_camp"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_sky" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_sky"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_rain" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_rain"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_v" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_v"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_P" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_P"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_key" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_key"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_meat" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_meat"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_b" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_b"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_x" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_x"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_total" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_total"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_U" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_U"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_teeth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_teeth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_hundred" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_hundred"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_L" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_L"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_name" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_name"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_bank" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_bank"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_tree" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_tree"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_night" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_night"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_M" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_M"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_z" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_z"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_suit" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_suit"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_a" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_a"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_l" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_l"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_costume" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_costume"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_cone" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_cone"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_e" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_e"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_sand" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_sand"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_true" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_true"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_swing" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_swing"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_new" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_new"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_plane" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_plane"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_S" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_S"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_beautiful" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_beautiful"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_fish" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_fish"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_H" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_H"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_watch" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_watch"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_kind" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_kind"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_j" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_j"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_valley" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_valley"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_boat" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_boat"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_milk" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_milk"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_grass" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_grass"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_tie" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_tie"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_photo" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_photo"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_F" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_F"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_K" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_K"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_gift" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_gift"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_ceiling" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_ceiling"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_V" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_V"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_bowl" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_bowl"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_clothes" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_clothes"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_blanket" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_blanket"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_read" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_read"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_green" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_green"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_June" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_June"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_u" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_u"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_I" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_I"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_frame" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_frame"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_hotel" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_hotel"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_w" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_w"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_tidy" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_tidy"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_behind" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_behind"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_m" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_m"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_stew" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_stew"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_n" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_n"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_r" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_r"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_smell" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_smell"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_glue" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_glue"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_sleep" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_sleep"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_fruit" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_fruit"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_plant" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_plant"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_yellow" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_yellow"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_fly" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_fly"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_seasons" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_seasons"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_shop" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_shop"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_scan" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_scan"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_family" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_family"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_belt" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_belt"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_W" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_W"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_train" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_train"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_h" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_h"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_A" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_A"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_white" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_white"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_drink" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_drink"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_cheese" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_cheese"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_D" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_D"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_crab" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_crab"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_happy" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_happy"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_f" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_f"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_moon" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_moon"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_paint" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_paint"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_chicken" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_chicken"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_soap" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_soap"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_k" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_k"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_lake" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_lake"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_q" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_q"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_O" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_O"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_s" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_s"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_sing" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_sing"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_coat" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_coat"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_music" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_music"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_Q" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_Q"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_we" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_we"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_p" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_p"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_brain" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_brain"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_i" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_i"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_home" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_home"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_y" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_y"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_black" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_black"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_pie" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_pie"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_lady" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_lady"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_wizard" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_wizard"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_T" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_T"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_help" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_help"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_lemon" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_lemon"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_snow" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_snow"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_math" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_math"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_c" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_c"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_stretch" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_stretch"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_skate" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_skate"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_robot" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_robot"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_July" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_July"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_phone" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_phone"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_time" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_time"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_t" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_t"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_Z" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_Z"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_razor" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_razor"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_difficult" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_difficult"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_desk" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_desk"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+        <record id="phrase_word_o" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_o"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_teen_phonics_2025'))]"/>
+        </record>
+    </data>
+</odoo>

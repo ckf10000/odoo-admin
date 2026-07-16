@@ -19,4 +19,6 @@ from . import learn_media
 from . import learn_article
 from . import learn_character
 from . import learn_phrase
+from . import learn_knowledge_base
+from . import learn_pos
 from . import learn_subject_profile  # noqa

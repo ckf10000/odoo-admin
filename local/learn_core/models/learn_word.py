@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """单词库"""
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class LearnWord(models.Model):
@@ -10,20 +10,9 @@ class LearnWord(models.Model):
 
     name = fields.Char(string='单词', required=True, index=True)
     phonetic = fields.Char(string='音标')
-    part_of_speech = fields.Selection([
-        ('noun', '名词'),
-        ('verb', '动词'),
-        ('adj', '形容词'),
-        ('adv', '副词'),
-        ('prep', '介词'),
-        ('conj', '连词'),
-        ('pron', '代词'),
-        ('num', '数词'),
-        ('art', '冠词'),
-        ('interj', '感叹词'),
-        ('phrase', '短语'),
-        ('other', '其他'),
-    ], string='词性')
+    pos_ids = fields.Many2many(
+        'learn.word.pos', 'learn_word_pos_rel', 'word_id', 'pos_id', string='词性',
+    )
     meaning = fields.Char(string='中文释义', index=True)
     meaning_en = fields.Text(string='英文释义')
     example_sentence = fields.Text(string='例句')
@@ -45,6 +34,23 @@ class LearnWord(models.Model):
 
     group_line_ids = fields.One2many('learn.group.line', 'word_id', string='所属内容组')
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        new_vals = []
+        existing_records = self.browse()
+        for vals in vals_list:
+            existing = self.sudo().search([('name', '=', vals.get('name'))], limit=1)
+            if existing:
+                # 如果已存在，追加新的 source_ids
+                new_sources = vals.get('source_ids')
+                if new_sources:
+                    existing.sudo().write({'source_ids': new_sources})
+                existing_records += existing
+                continue
+            new_vals.append(vals)
+        records = super().create(new_vals) if new_vals else self.browse()
+        return records + existing_records
+
     _sql_constraints = [
-        ('unique_word', 'UNIQUE(name)', '该字词已存在！'),
+        ('unique_word', 'UNIQUE(name)', '该单词已存在！'),
     ]

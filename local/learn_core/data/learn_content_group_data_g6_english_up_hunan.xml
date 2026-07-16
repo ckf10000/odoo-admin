@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 湘少版六年级上册 - group 编排 ========== -->
+        <record id="group_g6_up_u1" model="learn.group">
+            <field name="name">Unit 1 What did you do during the holidays?</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="sec_group_g6_up_u1" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u1"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u1_word_g6up_u1_during" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u1"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u1_during"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u1_word_g6up_u1_holiday" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u1"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u1_holiday"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u1_word_g6up_u1_learn" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u1"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u1_learn"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u1_word_g6up_u1_practise" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u1"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u1_practise"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u1_word_g6up_u1_speak" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u1"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u1_speak"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u2" model="learn.group">
+            <field name="name">Unit 2 Katie always gets up early.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="sec_group_g6_up_u2" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u2"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_always" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_always"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_weekday" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_weekday"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_often" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_often"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_after" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_after"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_wave" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_wave"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_return" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_return"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_sometimes" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_sometimes"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u2_word_g6up_u2_never" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u2"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u2_never"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u3" model="learn.group">
+            <field name="name">Unit 3 I like my computer.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="sec_group_g6_up_u3" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u3"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u3_word_g6up_u3_search" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u3"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u3_search"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u3_word_g6up_u3_find_out_about" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u3"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u3_find_out_about"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u3_word_g6up_u3_world" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u3"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u3_world"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u3_word_g6up_u3_email" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u3"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u3_email"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u3_word_g6up_u3_send" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u3"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u3_send"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u3_word_g6up_u3_greeting" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u3"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u3_greeting"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u4" model="learn.group">
+            <field name="name">Unit 4 The Mid-Autumn Festival is coming.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="sec_group_g6_up_u4" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u4"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_the_mid_autumn_festival" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_the_mid_autumn_festival"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_nearby" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_nearby"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_centre" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_centre"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_mooncake" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_mooncake"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_type" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_type"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_lotus" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_lotus"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_seed" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_seed"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_bean" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_bean"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u4_word_g6up_u4_taste" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u4"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u4_taste"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u5" model="learn.group">
+            <field name="name">Unit 5 It will be sunny and cool tomorrow.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="sec_group_g6_up_u5" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u5"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u5_word_g6up_u5_forecast" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u5"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u5_forecast"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u5_word_g6up_u5_clear" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u5"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u5_clear"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u5_word_g6up_u5_light" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u5"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u5_light"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u5_word_g6up_u5_rain" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u5"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u5_rain"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u5_word_g6up_u5_heavy" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u5"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u5_heavy"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u6" model="learn.group">
+            <field name="name">Unit 6 I will bring a big bottle of orange juice.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="sec_group_g6_up_u6" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u6"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_bring" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_bring"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_bottle" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_bottle"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_picnic" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_picnic"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_fruit" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_fruit"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_bar" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_bar"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_peanut" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_peanut"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_candy" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_candy"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_wait" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_wait"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u6_word_g6up_u6_can" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u6"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u6_can"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u7" model="learn.group">
+            <field name="name">Unit 7 What can I do?</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="sec_group_g6_up_u7" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u7"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u7_word_g6up_u7_weak" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u7"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u7_weak"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u7_word_g6up_u7_slow" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u7"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u7_slow"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u8" model="learn.group">
+            <field name="name">Unit 8 We shouldn't waste water.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="sec_group_g6_up_u8" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u8"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_should" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_should"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_shouldn_t" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_shouldn_t"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_waste" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_waste"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_blouse" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_blouse"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_enough" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_enough"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_save" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_save"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_drop" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_drop"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u8_word_g6up_u8_fresh" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u8"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u8_fresh"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u9" model="learn.group">
+            <field name="name">Unit 9 Let's make a clay panda.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">90</field>
+        </record>
+        <record id="sec_group_g6_up_u9" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u9"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u9_word_g6up_u9_than" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u9"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u9_than"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u9_word_g6up_u9_clay" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u9"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u9_clay"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u9_word_g6up_u9_idea" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u9"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u9_idea"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u10" model="learn.group">
+            <field name="name">Unit 10 I feel a bit cold.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">100</field>
+        </record>
+        <record id="sec_group_g6_up_u10" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u10"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_feel" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_feel"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_well" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_well"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_cough" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_cough"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_headache" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_headache"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_fever" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_fever"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_medicine" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_medicine"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_rest" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_rest"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u10_word_g6up_u10_just" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u10"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u10_just"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u11" model="learn.group">
+            <field name="name">Unit 11 I want to go to the theatre.</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">110</field>
+        </record>
+        <record id="sec_group_g6_up_u11" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u11"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u11_word_g6up_u11_theatre" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u11"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u11_theatre"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u11_word_g6up_u11_call" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u11"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u11_call"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u11_word_g6up_u11_plan" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u11"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u11_plan"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u11_word_g6up_u11_receive" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u11"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u11_receive"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u11_word_g6up_u11_merry" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u11"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u11_merry"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u11_word_g6up_u11_greet" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u11"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u11_greet"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_g6_up_u12" model="learn.group">
+            <field name="name">Unit 12 Merry Christmas!</field>
+            <field name="selector_id" ref="selector_g6_english_hunan_26up"/>
+            <field name="process_id" ref="process_word_basic"/>
+            <field name="sequence">120</field>
+        </record>
+        <record id="sec_group_g6_up_u12" model="learn.group.section">
+            <field name="group_id" ref="group_g6_up_u12"/>
+            <field name="name">默认章节</field>
+            <field name="content_type_id" ref="content_type_word_card"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_christmas" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_christmas"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_decorate" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_decorate"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_colourful" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_colourful"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_light" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_light"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_present" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_present"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_dress_up" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_dress_up"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="line_group_g6_up_u12_word_g6up_u12_santa_claus" model="learn.group.line">
+            <field name="section_id" ref="sec_group_g6_up_u12"/>
+            <field name="phrase_id" ref="phrase_g6_up_word_g6up_u12_santa_claus"/>
+            <field name="sequence">10</field>
+        </record>
+    </data>
+</odoo>

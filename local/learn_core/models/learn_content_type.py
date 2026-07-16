@@ -22,6 +22,7 @@ class LearnContentType(models.Model):
     )
     sequence = fields.Integer(string='排序', default=10)
     active = fields.Boolean(string='启用', default=True)
+    has_score = fields.Boolean(string='支持分值', default=False)
     description = fields.Text(string='描述')
 
     _sql_constraints = [

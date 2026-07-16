@@ -50,7 +50,8 @@
                                     <field name="sequence" widget="handle"/>
                                     <field name="name"/>
                                     <field name="content_type_id"/>
-                                    <field name="score" sum="总分数"/>
+                                    <field name="has_score" column_invisible="1"/>
+                                    <field name="score" sum="总分数" invisible="not has_score"/>
                                     <field name="description" optional="hide"/>
                                 </tree>
                             </field>
@@ -80,11 +81,15 @@
                         <group>
                             <field name="group_id" invisible="1"/>
                             <field name="storage_model" invisible="1"/>
-                            <field name="content_type_id"/>
+                            <field name="available_type_ids" invisible="1"/>
+                            <field name="content_type_id"
+                                   domain="[('id', 'in', available_type_ids)]"/>
                             <field name="sequence"/>
                         </group>
                         <group>
-                            <field name="score" string="本章节满分"/>
+                            <field name="has_score" invisible="1"/>
+                            <field name="score" string="本章节满分"
+                                   invisible="not has_score"/>
                         </group>
                     </group>
                     <notebook>
@@ -104,7 +109,7 @@
                                     <field name="article_id"
                                            invisible="parent.storage_model != 'learn.article'"
                                            optional="hide"/>
-                                    <field name="score" sum="总分"/>
+                                    <field name="score" sum="总分" invisible="not parent.has_score"/>
                                 </tree>
                             </field>
                         </page>

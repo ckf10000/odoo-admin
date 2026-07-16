@@ -226,7 +226,8 @@ class LearnQuestion(models.Model):
     # 答案解析
     answer_explanation = fields.Html(string="答案解析")
 
-    # 分值定义在 group.section.line 层面（learn.group.line.score），原子数据无分值
+    # ---- 分值 ----
+    default_score = fields.Float(string="默认分值", default=5.0, help="编排时自动带入，可覆盖")
 
     # ---- 难度 ----
     difficulty = fields.Selection(

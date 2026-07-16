@@ -49,17 +49,7 @@ class LearnGroup(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        records = super().create(vals_list)
-        Section = self.env['learn.group.section'].sudo()
-        for record in records:
-            if not record.section_ids:
-                Section.create({
-                    'group_id': record.id,
-                    'name': '默认章节',
-                    'content_type_id': self.env.ref('learn_core.content_type_word_card', raise_if_not_found=False).id,
-                    'sequence': 10,
-                })
-        return records
+        return super().create(vals_list)
 
     def ensure_default_section_type(self, storage_model):
         """确保默认章节的 content_type 与存储模型匹配"""
@@ -109,12 +99,65 @@ class LearnGroupSection(models.Model):
     )
     content_type = fields.Char(string='类型编码', related='content_type_id.code', store=True)
     storage_model = fields.Selection(string='存储模型', related='content_type_id.storage_model', store=True)
+    has_score = fields.Boolean(string='支持分值', related='content_type_id.has_score', store=True)
 
     sequence = fields.Integer(string='排序', default=10)
     score = fields.Float(string='本章节满分', default=0.0, help='0 表示不计分')
     description = fields.Text(string='描述')
 
     line_ids = fields.One2many('learn.group.line', 'section_id', string='条目列表')
+
+    @api.onchange('group_id')
+    def _onchange_group_id(self):
+        if not self.group_id or not self.group_id.selector_id:
+            return {'domain': {'content_type_id': []}}
+        sel = self.group_id.selector_id
+        type_codes = set()
+        type_codes.update(self.env['learn.phrase'].sudo().search([
+            ('selector_ids', 'in', sel.id),
+        ]).mapped('phrase_type'))
+        type_codes.update(self.env['learn.question'].sudo().search([
+            ('selector_ids', 'in', sel.id),
+        ]).mapped('question_type'))
+        type_codes.update(self.env['learn.media'].sudo().search([
+            ('selector_ids', 'in', sel.id),
+        ]).mapped('media_type'))
+        type_codes.update(self.env['learn.article'].sudo().search([
+            ('selector_ids', 'in', sel.id),
+        ]).mapped('article_type'))
+        if type_codes:
+            return {'domain': {'content_type_id': [('code', 'in', list(type_codes))]}}
+        return {'domain': {'content_type_id': []}}
+
+    @api.depends('group_id.selector_id')
+    def _compute_available_type_ids(self):
+        for r in self:
+            ids = []
+            if r.group_id and r.group_id.selector_id:
+                sel = r.group_id.selector_id
+                type_codes = set()
+                type_codes.update(self.env['learn.phrase'].sudo().search([
+                    ('selector_ids', 'in', sel.id),
+                ]).mapped('phrase_type'))
+                type_codes.update(self.env['learn.question'].sudo().search([
+                    ('selector_ids', 'in', sel.id),
+                ]).mapped('question_type'))
+                type_codes.update(self.env['learn.media'].sudo().search([
+                    ('selector_ids', 'in', sel.id),
+                ]).mapped('media_type'))
+                type_codes.update(self.env['learn.article'].sudo().search([
+                    ('selector_ids', 'in', sel.id),
+                ]).mapped('article_type'))
+                if type_codes:
+                    ids = self.env['learn.content.type'].sudo().search([
+                        ('code', 'in', list(type_codes)),
+                    ]).ids
+            r.available_type_ids = [(6, 0, ids)]
+
+    available_type_ids = fields.Many2many(
+        'learn.content.type', string='可用内容类型',
+        compute='_compute_available_type_ids',
+    )
 
 
 class LearnGroupLine(models.Model):
@@ -240,9 +283,7 @@ class LearnGroupLine(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        groups_to_fix = set()
         for vals in vals_list:
-            # 如果传了 group_id 但没传 section_id，自动挂默认章节
             if vals.get('group_id') and not vals.get('section_id'):
                 group = self.env['learn.group'].browse(vals['group_id'])
                 default_sec = group.section_ids[:1] if group.section_ids else None
@@ -251,7 +292,6 @@ class LearnGroupLine(models.Model):
             if not vals.get('res_model') and vals.get('section_id'):
                 section = self.env['learn.group.section'].browse(vals['section_id'])
                 vals['res_model'] = section.content_type_id.storage_model
-            # 如果明确传了 word_id / question_id / media_id / article_id，自动设 res_model
             if vals.get('word_id') and not vals.get('res_model'):
                 vals['res_model'] = 'learn.word'
             if vals.get('question_id') and not vals.get('res_model'):
@@ -260,10 +300,14 @@ class LearnGroupLine(models.Model):
                 vals['res_model'] = 'learn.media'
             if vals.get('article_id') and not vals.get('res_model'):
                 vals['res_model'] = 'learn.article'
-            if vals.get('res_model') and vals.get('section_id'):
-                groups_to_fix.add(vals['section_id'])
+            if vals.get('phrase_id') and not vals.get('res_model'):
+                vals['res_model'] = 'learn.phrase'
+            # 题目自动取默认分
+            if vals.get('question_id') and not vals.get('score'):
+                q = self.env['learn.question'].sudo().browse(vals['question_id'])
+                if q.default_score:
+                    vals['score'] = q.default_score
         records = super().create(vals_list)
-        # 同步默认章节的 content_type
         for line in records:
             if line.section_id and line.res_model:
                 line.section_id.group_id.ensure_default_section_type(line.res_model)

@@ -10,7 +10,7 @@
             <tree string="单词">
                 <field name="name"/>
                 <field name="phonetic"/>
-                <field name="part_of_speech" widget="badge"/>
+                <field name="pos_ids" widget="many2many_tags"/>
                 <field name="meaning"/>
                 <field name="source_ids"/>
                 <field name="difficulty" widget="badge"/>
@@ -26,8 +26,8 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="pos_ids" widget="many2many_tags"/>
                         <field name="phonetic"/>
-                        <field name="part_of_speech"/>
                         <field name="difficulty"/>
                     </group>
                     <group>
@@ -67,15 +67,15 @@
                         domain="[('difficulty', '=', 'hard')]"/>
                 <group expand="0" string="按词性分组">
                     <filter name="pos_noun" string="名词"
-                            domain="[('part_of_speech', '=', 'noun')]"/>
+                            domain="[('pos_ids.code', '=', 'noun')]"/>
                     <filter name="pos_verb" string="动词"
-                            domain="[('part_of_speech', '=', 'verb')]"/>
+                            domain="[('pos_ids.code', '=', 'verb')]"/>
                     <filter name="pos_adj" string="形容词"
-                            domain="[('part_of_speech', '=', 'adj')]"/>
+                            domain="[('pos_ids.code', '=', 'adj')]"/>
                     <filter name="pos_adv" string="副词"
-                            domain="[('part_of_speech', '=', 'adv')]"/>
+                            domain="[('pos_ids.code', '=', 'adv')]"/>
                     <filter name="pos_phrase" string="短语"
-                            domain="[('part_of_speech', '=', 'phrase')]"/>
+                            domain="[('pos_ids.code', '=', 'phrase')]"/>
                 </group>
             </search>
         </field>

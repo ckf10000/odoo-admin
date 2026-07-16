@@ -11,7 +11,7 @@
     <menuitem id="menu_learn_dims"
               name="维度管理"
               parent="menu_learn_root"
-              sequence="5"/>
+              sequence="10"/>
 
     <!-- 8 个维度 -->
     <record id="action_learn_dim_category" model="ir.actions.act_window">
@@ -120,7 +120,7 @@
     <menuitem id="menu_learn_content"
               name="内容管理"
               parent="menu_learn_root"
-              sequence="10"/>
+              sequence="20"/>
 
     <record id="action_learn_content_type" model="ir.actions.act_window">
         <field name="name">内容类型</field>
@@ -155,7 +155,7 @@
     <menuitem id="menu_learn_knowledge_base"
               name="知识库管理"
               parent="menu_learn_root"
-              sequence="11"/>
+              sequence="1"/>
 
     <record id="action_learn_word" model="ir.actions.act_window">
         <field name="name">单词库</field>
@@ -175,6 +175,51 @@
               name="生字库" parent="menu_learn_knowledge_base" sequence="20"
               action="action_learn_character"/>
 
+    <record id="action_learn_audio" model="ir.actions.act_window">
+        <field name="name">音频库</field>
+        <field name="res_model">learn.audio</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_audio"
+              name="音频库" parent="menu_learn_knowledge_base" sequence="30"
+              action="action_learn_audio"/>
+
+    <record id="action_learn_video" model="ir.actions.act_window">
+        <field name="name">视频库</field>
+        <field name="res_model">learn.video</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_video"
+              name="视频库" parent="menu_learn_knowledge_base" sequence="40"
+              action="action_learn_video"/>
+
+    <record id="action_learn_document" model="ir.actions.act_window">
+        <field name="name">文档库</field>
+        <field name="res_model">learn.document</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_document"
+              name="文档库" parent="menu_learn_knowledge_base" sequence="50"
+              action="action_learn_document"/>
+
+    <record id="action_learn_image" model="ir.actions.act_window">
+        <field name="name">图片库</field>
+        <field name="res_model">learn.image</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_image"
+              name="图片库" parent="menu_learn_knowledge_base" sequence="60"
+              action="action_learn_image"/>
+
+    <record id="action_learn_question_bank" model="ir.actions.act_window">
+        <field name="name">题目库</field>
+        <field name="res_model">learn.question.bank</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_learn_question_bank"
+              name="题目库" parent="menu_learn_knowledge_base" sequence="70"
+              action="action_learn_question_bank"/>
+
     <record id="action_learn_phrase" model="ir.actions.act_window">
         <field name="name">字词</field>
         <field name="res_model">learn.phrase</field>
@@ -188,7 +233,7 @@
     <menuitem id="menu_learn_workflow"
               name="过程管理"
               parent="menu_learn_root"
-              sequence="15"/>
+              sequence="30"/>
 
     <record id="action_learn_group" model="ir.actions.act_window">
         <field name="name">内容组</field>
@@ -221,6 +266,6 @@
     <menuitem id="menu_learn_study"
               name="学习管理"
               parent="menu_learn_root"
-              sequence="20"/>
+              sequence="40"/>
 
 </odoo>

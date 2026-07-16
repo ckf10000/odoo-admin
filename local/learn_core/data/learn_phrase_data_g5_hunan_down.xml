@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 湘少版五年级下册 - phrase 桥接 ========== -->
+        <record id="phrase_g5_down_u1_story" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_story"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_listen_to" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_listen_to"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_interesting" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_interesting"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_talk_about" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_talk_about"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_put_on" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_put_on"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_play" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_play"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_great" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_great"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_write_about" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_write_about"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_email" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_email"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_week" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_week"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u1_word" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u1_word"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_research" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_research"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_find" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_find"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_information" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_information"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_study" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_study"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_think" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_think"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_report" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_report"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_place" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_place"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_textbook" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_textbook"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u2_wild" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u2_wild"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_kite" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_kite"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_show" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_show"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_paper" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_paper"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_bamboo" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_bamboo"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_cut" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_cut"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_tie" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_tie"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_a_piece_of" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_a_piece_of"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_above" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_above"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_by" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_by"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_lastly" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_lastly"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_need" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_need"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_next" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_next"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_string" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_string"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_try" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_try"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u3_turn" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u3_turn"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_here" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_here"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_mrs" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_mrs"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_take" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_take"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_library" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_library"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_throw" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_throw"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_waste" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_waste"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_floor" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_floor"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_road" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_road"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_park" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_park"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_don_t" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_don_t"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_problem" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_problem"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_really" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_really"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_roommate" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_roommate"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_rule" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_rule"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_same" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_same"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u4_subject" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u4_subject"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_march" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_march"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_may" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_may"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_international_children_s_day" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_international_children_s_day"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_june" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_june"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_month" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_month"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_year" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_year"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_january" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_january"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_february" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_february"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_april" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_april"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_july" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_july"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_august" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_august"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_september" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_september"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_october" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_october"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_november" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_november"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_december" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_december"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_activity" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_activity"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_blow" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_blow"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_candle" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_candle"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_on_time" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_on_time"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_plan" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_plan"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u5_tonight" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u5_tonight"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_mother_s_day" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_mother_s_day"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_favourite" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_favourite"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_chocolate" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_chocolate"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_rose" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_rose"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_celebrate" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_celebrate"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_restaurant" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_restaurant"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_a_box_of" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_a_box_of"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_fan" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_fan"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_idea" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_idea"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_i_ll" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_i_ll"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u6_lucky" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u6_lucky"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_there" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_there"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_post_office" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_post_office"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_near" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_near"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_hometown" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_hometown"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_shop" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_shop"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_over_there" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_over_there"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_cinema" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_cinema"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_around" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_around"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_street" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_street"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_shopping_centre" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_shopping_centre"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_hotel" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_hotel"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_bank" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_bank"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_address" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_address"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_at_the_end_of" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_at_the_end_of"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_cafe" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_cafe"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_movie" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_movie"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_something" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_something"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u7_weekend" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u7_weekend"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_way" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_way"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_straight" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_straight"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_along" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_along"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_crossing" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_crossing"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_take" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_take"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_get_off" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_get_off"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_stop" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_stop"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_get_on" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_get_on"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_hospital" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_hospital"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_airport" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_airport"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_railway_station" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_railway_station"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_bookstore" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_bookstore"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_bus_stop" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_bus_stop"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_holiday" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_holiday"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_inn" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_inn"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_learn" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_learn"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_police_station" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_police_station"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_should" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_should"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_supermarket" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_supermarket"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u8_theatre" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u8_theatre"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_kind" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_kind"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_village" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_village"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_teach" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_teach"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_interested" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_interested"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_active" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_active"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_friendly" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_friendly"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_smart" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_smart"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_serious" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_serious"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_farm" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_farm"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_job" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_job"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_life" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_life"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_primary_school" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_primary_school"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_quiet" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_quiet"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_tell" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_tell"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u9_writer" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u9_writer"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_were" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_were"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_yesterday" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_yesterday"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_was" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_was"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_sick" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_sick"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_better" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_better"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_last" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_last"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_work" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_work"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_the_great_wall" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_the_great_wall"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_the_west_lake" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_the_west_lake"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u10_west" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u10_west"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_first" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_first"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_sport" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_sport"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_metre" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_metre"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_race" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_race"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_second" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_second"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_third" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_third"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_fourth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_fourth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_fifth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_fifth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_sixth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_sixth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_seventh" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_seventh"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_eighth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_eighth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_ninth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_ninth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_tenth" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_tenth"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_cheer" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_cheer"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_each" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_each"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_indian" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_indian"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_joke" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_joke"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_laugh" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_laugh"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_poem" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_poem"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_place" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_place"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_ready" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_ready"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_result" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_result"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_runner" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_runner"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_song" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_song"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u11_win" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u11_win"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_forest" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_forest"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_museum" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_museum"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_note" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_note"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_ask" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_ask"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_question" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_question"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_east" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_east"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+        <record id="phrase_g5_down_u12_wait" model="learn.phrase">
+            <field name="ref_model">learn.word</field>
+            <field name="ref_int" ref="word_g5_down_u12_wait"/>
+            <field name="phrase_type">word_card</field>
+            <field name="selector_ids" eval="[(4, ref('selector_g5_english_hunan_26down'))]"/>
+        </record>
+    </data>
+</odoo>

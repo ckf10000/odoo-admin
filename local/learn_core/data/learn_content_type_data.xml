@@ -54,6 +54,7 @@
             <field name="name">单选题</field>
             <field name="code">single_choice</field>
             <field name="storage_model">learn.question</field>
+            <field name="has_score" eval="True"/>
             <field name="sequence">40</field>
             <field name="description">四选一，单选正确答案</field>
         </record>
@@ -61,6 +62,7 @@
             <field name="name">多选题</field>
             <field name="code">multi_choice</field>
             <field name="storage_model">learn.question</field>
+            <field name="has_score" eval="True"/>
             <field name="sequence">50</field>
             <field name="description">多选，一个或多个正确答案</field>
         </record>
@@ -68,6 +70,7 @@
             <field name="name">填空题</field>
             <field name="code">fill_blank</field>
             <field name="storage_model">learn.question</field>
+            <field name="has_score" eval="True"/>
             <field name="sequence">60</field>
             <field name="description">填写空缺内容，支持多空</field>
         </record>
@@ -75,6 +78,7 @@
             <field name="name">判断题</field>
             <field name="code">true_false</field>
             <field name="storage_model">learn.question</field>
+            <field name="has_score" eval="True"/>
             <field name="sequence">70</field>
             <field name="description">判断对错</field>
         </record>
@@ -82,6 +86,7 @@
             <field name="name">计算题</field>
             <field name="code">calculation</field>
             <field name="storage_model">learn.question</field>
+            <field name="has_score" eval="True"/>
             <field name="sequence">80</field>
             <field name="description">数学计算，输入数值答案</field>
         </record>
@@ -89,6 +94,7 @@
             <field name="name">问答题</field>
             <field name="code">essay</field>
             <field name="storage_model">learn.question</field>
+            <field name="has_score" eval="True"/>
             <field name="sequence">90</field>
             <field name="description">主观问答题/作文，需人工批阅</field>
         </record>

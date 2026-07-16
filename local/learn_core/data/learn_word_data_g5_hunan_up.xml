@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 湘少版五年级上册单词 ========== -->
+        <record id="word_g5_up_u1_tall" model="learn.word">
+            <field name="name">tall</field>
+            <field name="phonetic">/tɔːl/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">高的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u1_long" model="learn.word">
+            <field name="name">long</field>
+            <field name="phonetic">/lɒŋ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">长的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u1_round" model="learn.word">
+            <field name="name">round</field>
+            <field name="phonetic">/raʊnd/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">圆的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u1_short" model="learn.word">
+            <field name="name">short</field>
+            <field name="phonetic">/ʃɔːt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">短的；矮的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u1_young" model="learn.word">
+            <field name="name">young</field>
+            <field name="phonetic">/jʌŋ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">年轻的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u1_old" model="learn.word">
+            <field name="name">old</field>
+            <field name="phonetic">/əʊld/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">年老的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_hamburger" model="learn.word">
+            <field name="name">hamburger</field>
+            <field name="phonetic">/ˈhæmbɜːɡə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">汉堡包</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_coke" model="learn.word">
+            <field name="name">Coke</field>
+            <field name="phonetic">/kəʊk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">可乐</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_food" model="learn.word">
+            <field name="name">food</field>
+            <field name="phonetic">/fuːd/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">食物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_sandwich" model="learn.word">
+            <field name="name">sandwich</field>
+            <field name="phonetic">/ˈsænwɪtʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">三明治</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_fish" model="learn.word">
+            <field name="name">fish</field>
+            <field name="phonetic">/fɪʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">鱼；鱼肉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_chicken" model="learn.word">
+            <field name="name">chicken</field>
+            <field name="phonetic">/ˈtʃɪkɪn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">鸡；鸡肉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u2_beef" model="learn.word">
+            <field name="name">beef</field>
+            <field name="phonetic">/biːf/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">牛肉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_lunch" model="learn.word">
+            <field name="name">lunch</field>
+            <field name="phonetic">/lʌntʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">午餐</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_soup" model="learn.word">
+            <field name="name">soup</field>
+            <field name="phonetic">/suːp/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">汤</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_vegetable" model="learn.word">
+            <field name="name">vegetable</field>
+            <field name="phonetic">/ˈvedʒtəbl/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">蔬菜</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_breakfast" model="learn.word">
+            <field name="name">breakfast</field>
+            <field name="phonetic">/ˈbrekfəst/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">早餐</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_dinner" model="learn.word">
+            <field name="name">dinner</field>
+            <field name="phonetic">/ˈdɪnə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">晚餐；正餐</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_tomato" model="learn.word">
+            <field name="name">tomato</field>
+            <field name="phonetic">/təˈmɑːtəʊ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">西红柿</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u3_potato" model="learn.word">
+            <field name="name">potato</field>
+            <field name="phonetic">/pəˈteɪtəʊ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">土豆</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_use" model="learn.word">
+            <field name="name">use</field>
+            <field name="phonetic">/juːz/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">用；使用</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_excuse_me" model="learn.word">
+            <field name="name">excuse me</field>
+            <field name="phonetic">/ɪkˈskjuːz miː/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_phrase'))]"/>
+            <field name="meaning">请原谅；打扰了</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_english" model="learn.word">
+            <field name="name">English</field>
+            <field name="phonetic">/ˈɪŋɡlɪʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">英语；英语的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_thing" model="learn.word">
+            <field name="name">thing</field>
+            <field name="phonetic">/θɪŋ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">东西；事物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_borrow" model="learn.word">
+            <field name="name">borrow</field>
+            <field name="phonetic">/ˈbɒrəʊ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">借</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_chinese" model="learn.word">
+            <field name="name">Chinese</field>
+            <field name="phonetic">/ˌtʃaɪˈniːz/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">中文；中文的；中国的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_dictionary" model="learn.word">
+            <field name="name">dictionary</field>
+            <field name="phonetic">/ˈdɪkʃənri/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">字典</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_eraser" model="learn.word">
+            <field name="name">eraser</field>
+            <field name="phonetic">/ɪˈreɪzə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">橡皮擦</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_marker" model="learn.word">
+            <field name="name">marker</field>
+            <field name="phonetic">/ˈmɑːkə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">记号笔</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u4_glue" model="learn.word">
+            <field name="name">glue</field>
+            <field name="phonetic">/ɡluː/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">胶水</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u5_pet" model="learn.word">
+            <field name="name">pet</field>
+            <field name="phonetic">/pet/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">宠物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u5_rabbit" model="learn.word">
+            <field name="name">rabbit</field>
+            <field name="phonetic">/ˈræbɪt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">兔子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u5_basket" model="learn.word">
+            <field name="name">basket</field>
+            <field name="phonetic">/ˈbɑːskɪt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">篮子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u5_lovely" model="learn.word">
+            <field name="name">lovely</field>
+            <field name="phonetic">/ˈlʌvli/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">可爱的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u5_hold" model="learn.word">
+            <field name="name">hold</field>
+            <field name="phonetic">/həʊld/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">拿着；握着</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u5_sure" model="learn.word">
+            <field name="name">sure</field>
+            <field name="phonetic">/ʃʊə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">当然；的确</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_which" model="learn.word">
+            <field name="name">which</field>
+            <field name="phonetic">/wɪtʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_pron'))]"/>
+            <field name="meaning">哪一个</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_raincoat" model="learn.word">
+            <field name="name">raincoat</field>
+            <field name="phonetic">/ˈreɪnkəʊt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">雨衣</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_thick" model="learn.word">
+            <field name="name">thick</field>
+            <field name="phonetic">/θɪk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">厚的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_thin" model="learn.word">
+            <field name="name">thin</field>
+            <field name="phonetic">/θɪn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">薄的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_jacket" model="learn.word">
+            <field name="name">jacket</field>
+            <field name="phonetic">/ˈdʒækɪt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">夹克</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_umbrella" model="learn.word">
+            <field name="name">umbrella</field>
+            <field name="phonetic">/ʌmˈbrelə/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">雨伞</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_clothes" model="learn.word">
+            <field name="name">clothes</field>
+            <field name="phonetic">/kləʊðz/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">衣服；衣物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u6_old" model="learn.word">
+            <field name="name">old</field>
+            <field name="phonetic">/əʊld/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">旧的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_get_up" model="learn.word">
+            <field name="name">get up</field>
+            <field name="phonetic">/ɡet ʌp/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_phrase'))]"/>
+            <field name="meaning">起床</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_go_to_bed" model="learn.word">
+            <field name="name">go to bed</field>
+            <field name="phonetic">/ɡəʊ tə bed/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_phrase'))]"/>
+            <field name="meaning">上床睡觉</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_timetable" model="learn.word">
+            <field name="name">timetable</field>
+            <field name="phonetic">/ˈtaɪmteɪbl/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">时间表</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_computer" model="learn.word">
+            <field name="name">computer</field>
+            <field name="phonetic">/kəmˈpjuːtə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">电脑</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_lesson" model="learn.word">
+            <field name="name">lesson</field>
+            <field name="phonetic">/ˈlesn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">课</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_pe" model="learn.word">
+            <field name="name">PE</field>
+            <field name="phonetic">/ˌpiː ˈiː/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">体育</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_art" model="learn.word">
+            <field name="name">art</field>
+            <field name="phonetic">/ɑːt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">美术</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u7_maths" model="learn.word">
+            <field name="name">maths</field>
+            <field name="phonetic">/mæθs/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">数学</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_parent" model="learn.word">
+            <field name="name">parent</field>
+            <field name="phonetic">/ˈpeərənt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">父亲；母亲</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_make" model="learn.word">
+            <field name="name">make</field>
+            <field name="phonetic">/meɪk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">整理（床铺等）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_iron" model="learn.word">
+            <field name="name">iron</field>
+            <field name="phonetic">/ˈaɪən/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">熨烫</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_clean" model="learn.word">
+            <field name="name">clean</field>
+            <field name="phonetic">/kliːn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">把……弄干净</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_meal" model="learn.word">
+            <field name="name">meal</field>
+            <field name="phonetic">/miːl/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">一餐</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_water" model="learn.word">
+            <field name="name">water</field>
+            <field name="phonetic">/ˈwɔːtə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">给……浇水</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_plant" model="learn.word">
+            <field name="name">plant</field>
+            <field name="phonetic">/plɑːnt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">植物</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u8_wash" model="learn.word">
+            <field name="name">wash</field>
+            <field name="phonetic">/wɒʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">洗</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_hobby" model="learn.word">
+            <field name="name">hobby</field>
+            <field name="phonetic">/ˈhɒbi/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">爱好</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_take" model="learn.word">
+            <field name="name">take</field>
+            <field name="phonetic">/teɪk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">拍（照）；摄（影）</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_photo" model="learn.word">
+            <field name="name">photo</field>
+            <field name="phonetic">/ˈfəʊtəʊ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">照片</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_chess" model="learn.word">
+            <field name="name">chess</field>
+            <field name="phonetic">/tʃes/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">象棋</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_collect" model="learn.word">
+            <field name="name">collect</field>
+            <field name="phonetic">/kəˈlekt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">收集</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_stamp" model="learn.word">
+            <field name="name">stamp</field>
+            <field name="phonetic">/stæmp/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">邮票</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_storybook" model="learn.word">
+            <field name="name">storybook</field>
+            <field name="phonetic">/ˈstɔːribʊk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">故事书</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u9_violin" model="learn.word">
+            <field name="name">violin</field>
+            <field name="phonetic">/ˌvaɪəˈlɪn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">小提琴</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_sign" model="learn.word">
+            <field name="name">sign</field>
+            <field name="phonetic">/saɪn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">标志</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_mean" model="learn.word">
+            <field name="name">mean</field>
+            <field name="phonetic">/miːn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">表示……的意思</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_talk" model="learn.word">
+            <field name="name">talk</field>
+            <field name="phonetic">/tɔːk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">说话</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_fish" model="learn.word">
+            <field name="name">fish</field>
+            <field name="phonetic">/fɪʃ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">钓鱼</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_pick" model="learn.word">
+            <field name="name">pick</field>
+            <field name="phonetic">/pɪk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">摘</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_smoke" model="learn.word">
+            <field name="name">smoke</field>
+            <field name="phonetic">/sməʊk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">吸烟</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u10_spit" model="learn.word">
+            <field name="name">spit</field>
+            <field name="phonetic">/spɪt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">吐痰</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_sorry" model="learn.word">
+            <field name="name">sorry</field>
+            <field name="phonetic">/ˈsɒri/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">抱歉的；难过的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_noisy" model="learn.word">
+            <field name="name">noisy</field>
+            <field name="phonetic">/ˈnɔɪzi/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">嘈杂的；喧闹的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_loudly" model="learn.word">
+            <field name="name">loudly</field>
+            <field name="phonetic">/ˈlaʊdli/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adv'))]"/>
+            <field name="meaning">大声地</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_make" model="learn.word">
+            <field name="name">make</field>
+            <field name="phonetic">/meɪk/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">制造；制作</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_noise" model="learn.word">
+            <field name="name">noise</field>
+            <field name="phonetic">/nɔɪz/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">噪音</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_angry" model="learn.word">
+            <field name="name">angry</field>
+            <field name="phonetic">/ˈæŋɡri/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">生气的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_unhappy" model="learn.word">
+            <field name="name">unhappy</field>
+            <field name="phonetic">/ʌnˈhæpi/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">不快乐的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_proud" model="learn.word">
+            <field name="name">proud</field>
+            <field name="phonetic">/praʊd/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">自豪的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_excited" model="learn.word">
+            <field name="name">excited</field>
+            <field name="phonetic">/ɪkˈsaɪtɪd/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">兴奋的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_sad" model="learn.word">
+            <field name="name">sad</field>
+            <field name="phonetic">/sæd/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">悲伤的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u11_shy" model="learn.word">
+            <field name="name">shy</field>
+            <field name="phonetic">/ʃaɪ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">害羞的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_the_spring_festival" model="learn.word">
+            <field name="name">the Spring Festival</field>
+            <field name="phonetic">/ðə sprɪŋ ˈfestɪvl/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_phrase'))]"/>
+            <field name="meaning">春节</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_house" model="learn.word">
+            <field name="name">house</field>
+            <field name="phonetic">/haʊs/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">房子</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_eve" model="learn.word">
+            <field name="name">eve</field>
+            <field name="phonetic">/iːv/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">前夜</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_delicious" model="learn.word">
+            <field name="name">delicious</field>
+            <field name="phonetic">/dɪˈlɪʃəs/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">好吃的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_reunion" model="learn.word">
+            <field name="name">reunion</field>
+            <field name="phonetic">/ˌriːˈjuːniən/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">团聚</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_enjoy" model="learn.word">
+            <field name="name">enjoy</field>
+            <field name="phonetic">/ɪnˈdʒɔɪ/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">喜爱；享受</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_get" model="learn.word">
+            <field name="name">get</field>
+            <field name="phonetic">/ɡet/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_verb'))]"/>
+            <field name="meaning">得到；收到</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_packet" model="learn.word">
+            <field name="name">packet</field>
+            <field name="phonetic">/ˈpækɪt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">小包</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_firecracker" model="learn.word">
+            <field name="name">firecracker</field>
+            <field name="phonetic">/ˈfaɪəkrækə(r)/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">爆竹；鞭炮</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_lion_dance" model="learn.word">
+            <field name="name">lion dance</field>
+            <field name="phonetic">/ˈlaɪən dɑːns/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_phrase'))]"/>
+            <field name="meaning">舞狮</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_great" model="learn.word">
+            <field name="name">great</field>
+            <field name="phonetic">/ɡreɪt/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_adj'))]"/>
+            <field name="meaning">巨大的；强烈的</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+        <record id="word_g5_up_u12_fun" model="learn.word">
+            <field name="name">fun</field>
+            <field name="phonetic">/fʌn/</field>
+            <field name="sequence">10</field>
+            <field name="pos_ids" eval="[(4, ref('word_pos_noun'))]"/>
+            <field name="meaning">乐趣</field>
+            <field name="difficulty">easy</field>
+            <field name="source_ids" eval="[(4, ref('content_source_primary_hunan_english'))]"/>
+        </record>
+    </data>
+</odoo>

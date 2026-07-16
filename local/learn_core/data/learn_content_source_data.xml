@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========== 内容来源 数据 ========== -->
+        <record id="content_source_primary_pep_english" model="learn.content.source">
+            <field name="name">小学人教版英语</field>
+            <field name="code">PRIMARY_PEP_ENGLISH</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="content_source_primary_hunan_english" model="learn.content.source">
+            <field name="name">小学湘少版英语</field>
+            <field name="code">PRIMARY_HUNAN_ENGLISH</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="content_source_primary_pep_chinese" model="learn.content.source">
+            <field name="name">小学人教版语文</field>
+            <field name="code">PRIMARY_PEP_CHINESE</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="content_source_junior_pep_english" model="learn.content.source">
+            <field name="name">初中人教版英语</field>
+            <field name="code">JUNIOR_PEP_ENGLISH</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="content_source_junior_pep_chinese" model="learn.content.source">
+            <field name="name">初中人教版语文</field>
+            <field name="code">JUNIOR_PEP_CHINESE</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="content_source_senior_pep_english" model="learn.content.source">
+            <field name="name">高中人教版英语</field>
+            <field name="code">SENIOR_PEP_ENGLISH</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="content_source_senior_pep_chinese" model="learn.content.source">
+            <field name="name">高中人教版语文</field>
+            <field name="code">SENIOR_PEP_CHINESE</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="content_source_ielts" model="learn.content.source">
+            <field name="name">雅思</field>
+            <field name="code">IELTS</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="content_source_toefl" model="learn.content.source">
+            <field name="name">托福</field>
+            <field name="code">TOEFL</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="content_source_nce" model="learn.content.source">
+            <field name="name">新概念英语</field>
+            <field name="code">NCE</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="content_source_phonics_lesson" model="learn.content.source">
+            <field name="name">丽声瑞格叔叔自然拼读法</field>
+            <field name="code">PHONICS_LESSON</field>
+            <field name="sequence">110</field>
+        </record>
+
+    </data>
+</odoo>

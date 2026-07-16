@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="word_pos_noun" model="learn.word.pos">
+            <field name="name">名词</field>
+            <field name="code">noun</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="word_pos_verb" model="learn.word.pos">
+            <field name="name">动词</field>
+            <field name="code">verb</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="word_pos_adj" model="learn.word.pos">
+            <field name="name">形容词</field>
+            <field name="code">adj</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="word_pos_adv" model="learn.word.pos">
+            <field name="name">副词</field>
+            <field name="code">adv</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="word_pos_prep" model="learn.word.pos">
+            <field name="name">介词</field>
+            <field name="code">prep</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="word_pos_conj" model="learn.word.pos">
+            <field name="name">连词</field>
+            <field name="code">conj</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="word_pos_pron" model="learn.word.pos">
+            <field name="name">代词</field>
+            <field name="code">pron</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="word_pos_num" model="learn.word.pos">
+            <field name="name">数词</field>
+            <field name="code">num</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="word_pos_art" model="learn.word.pos">
+            <field name="name">冠词</field>
+            <field name="code">art</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="word_pos_interj" model="learn.word.pos">
+            <field name="name">感叹词</field>
+            <field name="code">interj</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="word_pos_phrase" model="learn.word.pos">
+            <field name="name">短语</field>
+            <field name="code">phrase</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="word_pos_other" model="learn.word.pos">
+            <field name="name">其他</field>
+            <field name="code">other</field>
+            <field name="sequence">120</field>
+        </record>
+
+    </data>
+</odoo>

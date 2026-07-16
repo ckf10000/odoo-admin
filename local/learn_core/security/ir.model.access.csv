@@ -53,3 +53,15 @@ access_learn_character_user,learn.character.user,model_learn_character,base.grou
 access_learn_character_admin,learn.character.admin,model_learn_character,base.group_system,1,1,1,1
 access_learn_phrase_user,learn.phrase.user,model_learn_phrase,base.group_user,1,0,0,0
 access_learn_phrase_admin,learn.phrase.admin,model_learn_phrase,base.group_system,1,1,1,1
+access_learn_audio_user,learn.audio.user,model_learn_audio,base.group_user,1,0,0,0
+access_learn_audio_admin,learn.audio.admin,model_learn_audio,base.group_system,1,1,1,1
+access_learn_video_user,learn.video.user,model_learn_video,base.group_user,1,0,0,0
+access_learn_video_admin,learn.video.admin,model_learn_video,base.group_system,1,1,1,1
+access_learn_document_user,learn.document.user,model_learn_document,base.group_user,1,0,0,0
+access_learn_document_admin,learn.document.admin,model_learn_document,base.group_system,1,1,1,1
+access_learn_image_user,learn.image.user,model_learn_image,base.group_user,1,0,0,0
+access_learn_image_admin,learn.image.admin,model_learn_image,base.group_system,1,1,1,1
+access_learn_question_bank_user,learn.question.bank.user,model_learn_question_bank,base.group_user,1,0,0,0
+access_learn_question_bank_admin,learn.question.bank.admin,model_learn_question_bank,base.group_system,1,1,1,1
+access_learn_word_pos_user,learn.word.pos.user,model_learn_word_pos,base.group_user,1,0,0,0
+access_learn_word_pos_admin,learn.word.pos.admin,model_learn_word_pos,base.group_system,1,1,1,1
