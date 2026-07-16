@@ -39,7 +39,7 @@
         'views/learn_phrase_views.xml',
         'views/learn_knowledge_base_views.xml',
         'views/learn_subject_profile_views.xml',
-        'views/learn_content_views.xml',
+        'views/learn_question_views.xml',
         'data/learn_dim_category_data.xml',
         'data/learn_dim_stage_data.xml',
         'data/learn_dim_klass_data.xml',

@@ -242,12 +242,15 @@ class LearnGroupLine(models.Model):
                 r.res_model = 'learn.article'
                 r.res_id = r.article_id.id
 
-    @api.depends('phrase_id.name', 'question_id.stem', 'media_id.name', 'article_id.name')
+    @api.depends('phrase_id', 'question_id', 'media_id', 'article_id')
     def _compute_title(self):
         for r in self:
             r.title = (
-                    r.phrase_id.name or r.question_id.stem
-                    or r.media_id.name or r.article_id.name or '-'
+                    (r.phrase_id.name if r.phrase_id else '')
+                    or (r.question_id.stem if r.question_id else '')
+                    or (r.media_id.name if r.media_id else '')
+                    or (r.article_id.name if r.article_id else '')
+                    or '-'
             )
 
     @api.depends('title', 'section_id.name')
