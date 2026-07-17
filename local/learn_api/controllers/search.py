@@ -2,7 +2,6 @@
 """全局搜索 API"""
 from odoo import http
 from odoo.http import request
-
 from .common import json_response, error_response, api_verify_auth  # noqa
 
 
@@ -24,6 +23,7 @@ class LearnSearchController(http.Controller):
             "body": {
                 "keyword": "apple",          // 必填，搜索关键词
                 "scope": "all",              // 可选：word / character / question / all，默认 all
+                "page_num": 1,               // 可选，页码，默认 1
                 "page_size": 20              // 可选，每页数量，默认 20，最大 50
             }
         }
@@ -74,7 +74,8 @@ class LearnSearchController(http.Controller):
                 return error_response("keyword 不能为空", status=400)
 
             scope = body.get("scope", "all").strip()
-            page_size = min(50, max(1, int(body.get("page_size", 20))))
+            page_num = max(1, int(body.get("page_num", 1)))
+            page_size = min(50, max(1, int(body.get("page_size", 10))))
 
             results = {}
 
@@ -83,7 +84,7 @@ class LearnSearchController(http.Controller):
                 words = request.env["learn.word"].sudo().search([
                     "|", ("name", "ilike", keyword),
                     ("meaning", "ilike", keyword),
-                ], order="sequence, id", limit=page_size)
+                ], order="sequence, id", limit=page_size, offset=(page_num - 1) * page_size)
                 results["words"] = [{
                     "id": w.id, "name": w.name,
                     "phonetic": w.phonetic or "", "meaning": w.meaning or "",

@@ -74,18 +74,22 @@ def api_verify_auth(require_token=True):
         raw_body = raw_body.decode('utf-8')
     data = json.loads(raw_body)
 
-    header = data.get('header', {}) or {}
     body = data.get('body', {}) or {}
+
+    # 用 Pydantic 校验 header
+    try:
+        from odoo.addons.common_lib.schemas import ApiHeader  # noqa
+        header_model = ApiHeader.model_validate(data.get('header', {}))
+        header = header_model.model_dump(by_alias=True)
+    except Exception as e:
+        _logger.warning("认证失败: header 校验失败: %s", e)
+        raise ValueError(f'请求头参数错误: {e}')
 
     client_id = header.get('clientId', '')
     token = header.get('X-Token', '') or ''
     timestamp = header.get('X-Timestamp', '') or ''
     nonce = header.get('X-Nonce', '') or ''
     sign = header.get('X-Sign', '') or ''
-
-    if not timestamp or not nonce or not sign:
-        _logger.warning("认证失败: 缺少签名参数 (ts=%s nonce=%s sign=%s)", timestamp, nonce, sign)
-        raise ValueError('缺少签名参数 (X-Timestamp/X-Nonce/X-Sign)')
 
     # 2. 查找客户端（空则使用默认客户端）
     if client_id:

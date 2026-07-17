@@ -2,7 +2,6 @@
 """内容类型 API"""
 from odoo import http
 from odoo.http import request
-
 from .common import json_response, error_response, api_verify_auth  # noqa
 
 

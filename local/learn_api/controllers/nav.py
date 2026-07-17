@@ -2,7 +2,6 @@
 """导航 / 首页 / 选择器查询 API"""
 from odoo import http
 from odoo.http import request
-
 from .common import json_response, error_response, api_verify_auth, encode_image, ALL_TAB, DIM_CHAIN  # noqa
 
 

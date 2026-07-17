@@ -2,7 +2,6 @@
 """选择器-过程 API"""
 from odoo import http
 from odoo.http import request
-
 from .common import json_response, error_response, api_verify_auth  # noqa
 
 
@@ -127,23 +126,53 @@ class LearnProfileController(http.Controller):
 
     @http.route("/api/v1/learn/profiles", type="http", auth="public", methods=["POST"], csrf=False)
     def get_profiles(self, **kw):  # noqa
-        """查询 Profile 及其过程列表
+        """获取所有启用的 Profile 模板列表
 
         Request Body:
         {
-            "header": {
-                "clientId": "xxx", // 客户端ID
-                "X-Token": "xxx",  // 认证 Token
-                "X-Timestamp": "...", // 时间戳
-                "X-Nonce": "...",    // 随机串
-                "X-Sign": "..."      // 签名
-            },
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {}
+        }
+
+        Response Body:
+        {
+            "success": true,
+            "data": [
+                {
+                    "id": 1,
+                    "name": "少儿英语拼读模板",
+                    "description": "...",
+                    "processes": [
+                        {"id": 5, "name": "单词基础", "code": "WORD_BASIC", "sequence": 10}
+                    ]
+                }
+            ]
+        }
+        """
+        try:
+            header, body, user = api_verify_auth(require_token=True)  # noqa
+            ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
+            profiles = request.env['learn.subject.profile'].sudo().with_context(lang=ctx_lang).search(
+                [('active', '=', True)], order='sequence, id')
+            return json_response(data=[_fmt_profile(p) for p in profiles])
+        except ValueError as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            return error_response(str(e))
+
+    @http.route("/api/v1/learn/profile", type="http", auth="public", methods=["POST"], csrf=False)
+    def get_profile(self, **kw):  # noqa
+        """根据 selector_code 获取单个 Profile
+
+        Request Body:
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
             "body": {
-                "selector_code": "NINE_YEAR_PRIMARY_GRADE_5_HUNAN_2025_UP_ENGLISH"   // 可选，不传则返回全部
+                "selector_code": "NINE_YEAR_PRIMARY_GRADE_5_HUNAN_2025_UP_ENGLISH"   // 必填
             }
         }
 
-        Response Body（传 selector_code）:
+        Response Body:
         {
             "success": true,
             "data": {
@@ -156,55 +185,33 @@ class LearnProfileController(http.Controller):
                 ]
             }
         }
-
-        Response Body（不传 selector_code）:
-        {
-            "success": true,
-            "data": [
-                {
-                    "id": 1,
-                    "name": "少儿英语拼读模板",
-                    "description": "...",
-                    "processes": [...]
-                },
-                {
-                    "id": 2,
-                    "name": "中小学语文模板",
-                    "description": "...",
-                    "processes": [...]
-                }
-            ]
-        }
         """
         try:
             header, body, user = api_verify_auth(require_token=True)  # noqa
             selector_code = body.get("selector_code", "").strip()
+            if not selector_code:
+                return error_response("selector_code 不能为空", status=400)
             ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
-
-            def _fmt(profile):
-                return {
-                    "id": profile.id,
-                    "name": profile.name,
-                    "description": profile.description,
-                    "processes": [{
-                        "id": pl.process_id.id,
-                        "name": pl.process_id.name,
-                        "code": pl.process_id.code,
-                        "sequence": pl.sequence,
-                    } for pl in profile.process_line_ids.sorted('sequence')],
-                }
-
-            if selector_code:
-                sel = request.env['learn.selector'].sudo().with_context(lang=ctx_lang).search(
-                    [('code', '=', selector_code)], limit=1)
-                if not sel:
-                    return error_response("选择器不存在", status=404)
-                return json_response(data=_fmt(sel.profile_id))
-            else:
-                profiles = request.env['learn.subject.profile'].sudo().with_context(lang=ctx_lang).search(
-                    [('active', '=', True)], order='sequence, id')
-                return json_response(data=[_fmt(p) for p in profiles])
+            sel = request.env['learn.selector'].sudo().with_context(lang=ctx_lang).search(
+                [('code', '=', selector_code)], limit=1)
+            if not sel:
+                return error_response("选择器不存在", status=404)
+            return json_response(data=_fmt_profile(sel.profile_id))
         except ValueError as e:
             return error_response(str(e), status=401)
         except Exception as e:
             return error_response(str(e))
+
+
+def _fmt_profile(profile):
+    return {
+        "id": profile.id,
+        "name": profile.name,
+        "description": profile.description,
+        "processes": [{
+            "id": pl.process_id.id,
+            "name": pl.process_id.name,
+            "code": pl.process_id.code,
+            "sequence": pl.sequence,
+        } for pl in profile.process_line_ids.sorted('sequence')],
+    }

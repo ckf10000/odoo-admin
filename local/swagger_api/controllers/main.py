@@ -10,6 +10,8 @@ import re
 import inspect
 from odoo import http
 from odoo.http import request, Response
+from .pydantic_utils import find_body_schema_for_route, find_response_schema_for_route, \
+    pydantic_response_to_openapi_example
 
 SWAGGER_UI_HTML = """\
 <!DOCTYPE html>
@@ -30,7 +32,8 @@ SWAGGER_UI_HTML = """\
 <body>
 <div id="swagger-ui"></div>
 <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-standalone-preset.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-standalone-preset.js" crossorigin="anonymous">
+</script>
 <script>
 window.onload = () => {
   window.ui = SwaggerUIBundle({
@@ -196,9 +199,9 @@ def _collect_from_map(routing_map, paths):
         if original_endpoint:
             description = _extract_description(original_endpoint)
             tag = _infer_tag(original_endpoint)
-            body_params = _extract_body_params(original_endpoint)
+            body_params = _extract_body_params_pydantic_first(original_endpoint)
             query_params = _extract_query_params(original_endpoint)
-            response_example = _extract_response_example(original_endpoint)
+            response_example = _extract_response_example_pydantic_first(original_endpoint)
 
         routing = _get_routing(endpoint)
 
@@ -215,7 +218,7 @@ def _collect_from_map(routing_map, paths):
                 "description": description,
                 "operationId": f"{method.lower()}_{_safe_operation_id(rule_str)}",
                 "responses": {
-                    "200": _build_response(routing, response_example),
+                    "200": _build_response(routing, response_example, original_endpoint),
                     "401": {"description": "未认证 - Token 无效或已过期"},
                     "403": {"description": "无权限"},
                     "500": {"description": "服务器内部错误"},
@@ -338,6 +341,18 @@ def _infer_tag(original_endpoint):
     return "其他"
 
 
+def _extract_body_params_pydantic_first(func):
+    """优先从 Pydantic 模型提取 body 参数，fallback 到 docstring 解析
+
+    Pydantic 模式下用 _pydantic_full_schema 标记，让 _build_body_schema 直接用 Pydantic schema
+    """
+    schema_cls, pydantic_params = find_body_schema_for_route(func)
+    if pydantic_params:
+        # 标记使用 Pydantic 完整 schema（包含 minLength/maximum/description/enum 等）
+        return [{"_pydantic_full_schema": pydantic_params}]
+    return _extract_body_params(func)
+
+
 def _extract_body_params(func):
     """从 docstring 提取请求体参数，支持嵌套结构（header/body）"""
     doc = inspect.getdoc(func)
@@ -346,8 +361,8 @@ def _extract_body_params(func):
 
     lines = doc.split('\n')
     in_body = False
-    nest_level = 0       # { 计数
-    current_key = None   # 当前嵌套对象的 key（"header" 或 "body"）
+    nest_level = 0  # { 计数
+    current_key = None  # 当前嵌套对象的 key（"header" 或 "body"）
 
     # 嵌套参数: { "header": [...], "body": [...] }
     nested = {}
@@ -362,30 +377,32 @@ def _extract_body_params(func):
         if not in_body:
             continue
 
-        # 遇到下一个章节（响应/返回值等），退出请求体解析
-        if any(kw in stripped for kw in ('响应', 'Response', '返回', 'Response Body')):
+        # 遇到下一个章节（响应/返回值等），退出请求体解析（仅顶层）
+        if nest_level <= 0 and any(kw in stripped for kw in ('响应', 'Response', '返回', 'Response Body')):
             in_body = False
             continue
 
-        # 跳过顶层 { 和 }
-        if stripped in ('{', '}'):
+        # 跳过顶层 { 和 }（仅 nest_level=0 时）
+        if nest_level <= 0 and stripped in ('{', '}'):
             continue
 
         # 匹配嵌套对象的开始: "key": {
         obj_match = re.match(r'"(\w+)":\s*\{', stripped)  # noqa
         if obj_match:
             key = obj_match.group(1)
+            # 跳过空对象 "key": {} 或 "key": { }（不进入嵌套）
+            if re.match(r'"(\w+)":\s*\{\s*\}', stripped):  # noqa
+                continue
             current_key = key
             if key not in nested:
                 nested[key] = []
             nest_level += 1
             continue
 
-        # 匹配嵌套对象结束: },
+        # 匹配嵌套对象结束: }, 或 }
         if stripped == '},' or stripped == '}':
             nest_level -= 1
             if nest_level <= 0:
-                current_key = None
                 nest_level = 0
             continue
 
@@ -435,6 +452,16 @@ def _extract_query_params(func):
                 "description": match.group(3),
             })
     return params
+
+
+def _extract_response_example_pydantic_first(func):
+    """优先从 Pydantic response schema 生成示例，fallback 到 docstring"""
+    schema_cls, data_schema = find_response_schema_for_route(func)
+    if schema_cls:
+        example = pydantic_response_to_openapi_example(schema_cls)
+        if example:
+            return {"success": True, **example}
+    return _extract_response_example(func)
 
 
 def _extract_response_example(func):
@@ -490,11 +517,29 @@ def _infer_type(value_str):
 
 
 def _build_body_schema(params):
-    """从参数列表构建请求体 JSON Schema，支持嵌套"""
+    """从参数列表构建请求体 JSON Schema，支持嵌套
+
+    Pydantic 模式：直接使用 Pydantic 生成的完整 JSON Schema（包含 minLength/maximum/description/enum 等所有元数据）
+    Docstring 模式：原嵌套/扁平参数构建（fallback）
+    """
     if not params:
         return {"type": "object"}
-    
-    # 检查是否有嵌套结构
+
+    # Pydantic 完整 schema 模式
+    if len(params) == 1 and "_pydantic_full_schema" in params[0]:
+        pydantic_schema = params[0]["_pydantic_full_schema"]
+        # 包装成 {header, body} 结构（与现有 API 协议保持一致）
+        # 去除 Pydantic 生成的 $defs 引用，确保 standalone
+        return {
+            "type": "object",
+            "properties": {
+                "header": {"$ref": "#/components/schemas/ApiHeader"},
+                "body": pydantic_schema,
+            },
+            "required": ["header", "body"],
+        }
+
+    # 检查是否有嵌套结构（docstring 解析）
     if len(params) == 1 and "nested" in params[0]:
         nested = params[0]["nested"]
         properties = {}
@@ -519,7 +564,7 @@ def _build_body_schema(params):
             schema["required"] = ["header", "body"]
         return schema
 
-    # 扁平参数
+    # 扁平参数（docstring 解析）
     properties = {}
     required = []
     for p in params:
@@ -533,16 +578,25 @@ def _build_body_schema(params):
     return schema
 
 
-def _build_response(routing, example):
-    """构建响应 schema"""
+def _build_response(routing, example, func=None):
+    """构建响应 schema（优先使用 Pydantic response schema）"""
     resp = {"description": "成功"}
-    if routing.get('type') == 'json':
+    routing_type = routing.get('type', '')
+
+    # 所有返回 JSON 的路由（http/json/jsonrequest）都应该生成 response schema
+    if routing_type in ('http', 'json', 'jsonrequest'):
+        data_schema = None
+        if func:
+            schema_cls, data_prop = find_response_schema_for_route(func)
+            if data_prop:
+                data_schema = data_prop
+
         schema = {
             "type": "object",
             "properties": {
                 "success": {"type": "boolean"},
                 "message": {"type": "string"},
-                "data": {"type": "object"},
+                "data": data_schema or {"type": "object"},
             },
         }
         resp["content"] = {
@@ -584,7 +638,42 @@ def _define_schemas():
                 "error": {"type": "string"},
             },
         },
-        "ApiHeader": {
+        "ApiHeader": _get_api_header_schema(),
+        "AuthResponse": {
+            "type": "object",
+            "properties": {
+                "success": {"type": "boolean"},
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "access_token": {"type": "string"},
+                        "refresh_token": {"type": "string"},
+                        "token_type": {"type": "string", "example": "Bearer"},
+                        "expires_in": {"type": "integer"},
+                        "user": {
+                            "type": "object",
+                            "properties": {
+                                "id": {"type": "integer"},
+                                "login": {"type": "string"},
+                                "name": {"type": "string"},
+                                "email": {"type": "string"},
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    }
+
+
+def _get_api_header_schema():
+    """从 common_lib.schemas.ApiHeader Pydantic 模型生成 OpenAPI schema"""
+    try:
+        from odoo.addons.common_lib.schemas import ApiHeader  # noqa
+        return ApiHeader.model_json_schema()
+    except (Exception,):
+        # fallback 兜底
+        return {
             "type": "object",
             "required": ["X-Timestamp", "X-Nonce", "X-Sign"],
             "properties": {
@@ -613,29 +702,4 @@ def _define_schemas():
                 "appChannel": {"type": "string", "description": "渠道"},
                 "appBuildType": {"type": "string", "description": "debug/release"},
             },
-        },
-        "AuthResponse": {
-            "type": "object",
-            "properties": {
-                "success": {"type": "boolean"},
-                "data": {
-                    "type": "object",
-                    "properties": {
-                        "access_token": {"type": "string"},
-                        "refresh_token": {"type": "string"},
-                        "token_type": {"type": "string", "example": "Bearer"},
-                        "expires_in": {"type": "integer"},
-                        "user": {
-                            "type": "object",
-                            "properties": {
-                                "id": {"type": "integer"},
-                                "login": {"type": "string"},
-                                "name": {"type": "string"},
-                                "email": {"type": "string"},
-                            },
-                        },
-                    },
-                },
-            },
-        },
-    }
+        }
