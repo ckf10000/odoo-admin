@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""auth_api 响应体 Pydantic 模型"""
+"""auth_api 响应体 Pydantic 模型 — 严格对应 controller 中 json_response(data=...) 的实际结构"""
 from typing import Optional
 from pydantic import BaseModel, Field
 
@@ -15,6 +15,8 @@ get_home_subcategories → HomeSubcategoriesBody, HomeSubcategoriesResponse
 check_login → LoginBody, LoginResponse
 """
 
+
+# ==================== 公共组件 ====================
 
 class TokenData(BaseModel):
     """Token 响应数据"""
@@ -38,42 +40,42 @@ class UserInfo(BaseModel):
 
 
 class RevokeData(BaseModel):
-    """撤销 Token 响应"""
+    """撤销 Token 响应数据"""
     revoked: bool = Field(default=True, description="是否已撤销")
 
 
 class LogoutData(BaseModel):
-    """登出响应"""
+    """登出响应数据"""
     revoked_count: int = Field(default=0, description="撤销的 Token 数量")
 
 
-# ========== 接口响应 ==========
+# ==================== 接口响应 ====================
 
 class TokenResponse(BaseModel):
-    """登录获取 Token"""
+    """登录获取 Token 响应"""
     data: TokenData
 
 
 class RefreshResponse(BaseModel):
-    """刷新 Token"""
+    """刷新 Token 响应"""
     data: TokenData
 
 
 class RevokeResponse(BaseModel):
-    """撤销 Token"""
+    """撤销 Token 响应"""
     data: RevokeData
 
 
 class UserinfoResponse(BaseModel):
-    """获取用户信息"""
+    """获取用户信息响应"""
     data: UserInfo
 
 
 class LogoutResponse(BaseModel):
-    """登出"""
+    """登出响应"""
     data: LogoutData
 
 
 class ChangePasswordResponse(BaseModel):
-    """修改密码（无 data，仅 message）"""
+    """修改密码响应（仅 message，无 data 字段）"""
     pass

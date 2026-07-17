@@ -8,6 +8,7 @@ Swagger / OpenAPI 3.0 文档生成器
 import json
 import re
 import inspect
+import logging
 from odoo import http
 from odoo.http import request, Response
 from .pydantic_utils import find_body_schema_for_route, find_response_schema_for_route, \
@@ -173,43 +174,49 @@ def _collect_api_paths():
 def _collect_from_map(routing_map, paths):
     """从 werkzeug routing map 中提取路由信息"""
     for rule in routing_map.iter_rules():
-        rule_str = rule.rule
-        # 只收集 /api/ 前缀的路由
-        if not rule_str.startswith('/api/'):
+        try:
+            rule_str = rule.rule
+            # 只收集 /api/ 前缀的路由
+            if not rule_str.startswith('/api/'):
+                continue
+
+            # 去掉末尾的斜杠变体（werkzeug 的 strict_slashes）
+            if rule_str.endswith('/'):
+                continue
+
+            methods = sorted(rule.methods - {'HEAD', 'OPTIONS'})
+            if not methods:
+                continue
+
+            # 获取端点信息
+            endpoint = rule.endpoint
+            description = ""
+            tag = "api"
+            body_params = []
+            query_params = []
+            response_example = None
+
+            # 尝试从 endpoint 提取元数据
+            original_endpoint = _get_original_endpoint(endpoint)
+            if original_endpoint:
+                description = _extract_description(original_endpoint)
+                tag = _infer_tag(original_endpoint)
+                body_params = _extract_body_params_pydantic_first(original_endpoint)
+                query_params = _extract_query_params(original_endpoint)
+                response_example = _extract_response_example_pydantic_first(original_endpoint)
+
+            routing = _get_routing(endpoint)
+
+            # 构建 OpenAPI path item
+            path_key = _convert_path_params(rule_str)
+
+            if path_key not in paths:
+                paths[path_key] = {}
+        except Exception as e:
+            import logging
+            _swagger_logger = logging.getLogger(__name__)
+            _swagger_logger.error("Swagger 扫描路由失败 [%s]: %s", rule.rule, str(e))
             continue
-
-        # 去掉末尾的斜杠变体（werkzeug 的 strict_slashes）
-        if rule_str.endswith('/'):
-            continue
-
-        methods = sorted(rule.methods - {'HEAD', 'OPTIONS'})
-        if not methods:
-            continue
-
-        # 获取端点信息
-        endpoint = rule.endpoint
-        description = ""
-        tag = "api"
-        body_params = []
-        query_params = []
-        response_example = None
-
-        # 尝试从 endpoint 提取元数据
-        original_endpoint = _get_original_endpoint(endpoint)
-        if original_endpoint:
-            description = _extract_description(original_endpoint)
-            tag = _infer_tag(original_endpoint)
-            body_params = _extract_body_params_pydantic_first(original_endpoint)
-            query_params = _extract_query_params(original_endpoint)
-            response_example = _extract_response_example_pydantic_first(original_endpoint)
-
-        routing = _get_routing(endpoint)
-
-        # 构建 OpenAPI path item
-        path_key = _convert_path_params(rule_str)
-
-        if path_key not in paths:
-            paths[path_key] = {}
 
         for method in methods:
             operation = {
@@ -342,14 +349,14 @@ def _infer_tag(original_endpoint):
 
 
 def _extract_body_params_pydantic_first(func):
-    """优先从 Pydantic 模型提取 body 参数，fallback 到 docstring 解析
-
-    Pydantic 模式下用 _pydantic_full_schema 标记，让 _build_body_schema 直接用 Pydantic schema
-    """
-    schema_cls, pydantic_params = find_body_schema_for_route(func)
-    if pydantic_params:
-        # 标记使用 Pydantic 完整 schema（包含 minLength/maximum/description/enum 等）
-        return [{"_pydantic_full_schema": pydantic_params}]
+    """优先从 Pydantic 模型提取 body 参数，fallback 到 docstring 解析"""
+    try:
+        schema_cls, pydantic_params = find_body_schema_for_route(func)
+        if pydantic_params:
+            return [{"_pydantic_full_schema": pydantic_params}]
+    except Exception as e:
+        _swagger_logger = logging.getLogger(__name__)
+        _swagger_logger.warning("Pydantic body schema 提取失败 [%s]: %s", func.__name__, str(e))
     return _extract_body_params(func)
 
 
@@ -456,11 +463,16 @@ def _extract_query_params(func):
 
 def _extract_response_example_pydantic_first(func):
     """优先从 Pydantic response schema 生成示例，fallback 到 docstring"""
-    schema_cls, data_schema = find_response_schema_for_route(func)
-    if schema_cls:
-        example = pydantic_response_to_openapi_example(schema_cls)
-        if example:
-            return {"success": True, **example}
+    try:
+        schema_cls, data_schema = find_response_schema_for_route(func)
+        if schema_cls:
+            example = pydantic_response_to_openapi_example(schema_cls)
+            if example is not None:
+                # data 可能是 dict 或 list，统一包成完整响应
+                return {"success": True, "message": "ok", "data": example}
+    except Exception as e:
+        _swagger_logger = logging.getLogger(__name__)
+        _swagger_logger.warning("Pydantic response example 生成失败 [%s]: %s", func.__name__, str(e))
     return _extract_response_example(func)
 
 
@@ -583,28 +595,43 @@ def _build_response(routing, example, func=None):
     resp = {"description": "成功"}
     routing_type = routing.get('type', '')
 
-    # 所有返回 JSON 的路由（http/json/jsonrequest）都应该生成 response schema
     if routing_type in ('http', 'json', 'jsonrequest'):
         data_schema = None
+        data_example = None
         if func:
             schema_cls, data_prop = find_response_schema_for_route(func)
             if data_prop:
                 data_schema = data_prop
+            if schema_cls:
+                data_example = pydantic_response_to_openapi_example(schema_cls)
 
         schema = {
             "type": "object",
             "properties": {
                 "success": {"type": "boolean"},
                 "message": {"type": "string"},
-                "data": data_schema or {"type": "object"},
             },
         }
+        # data 字段：Pydantic schema 优先，无 data 字段时省略
+        if data_schema:
+            schema["properties"]["data"] = data_schema
+        elif data_example is not None:
+            # 有 example 但无 schema（如 None/null），用 null 类型
+            schema["properties"]["data"] = {"type": "object", "nullable": True}
+
         resp["content"] = {
             "application/json": {
                 "schema": schema,
             },
         }
-        if example:
+        # 优先用 Pydantic 生成的 example
+        if data_example is not None:
+            resp["content"]["application/json"]["example"] = {
+                "success": True,
+                "message": "ok",
+                "data": data_example,
+            }
+        elif example:
             resp["content"]["application/json"]["example"] = _safe_json_parse(example)
     return resp
 

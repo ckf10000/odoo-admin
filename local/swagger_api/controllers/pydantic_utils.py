@@ -2,7 +2,7 @@
 """Pydantic 模型 → OpenAPI Schema 转换工具"""
 import inspect
 import importlib
-from typing import get_type_hints, get_origin, get_args, List, Optional
+from typing import get_type_hints, get_origin, get_args, List, Optional, Union
 
 PYDANTIC_TYPE_MAP = {
     "string": "string",
@@ -101,7 +101,7 @@ def _get_module_schemas(func, schema_type):
 
     try:
         mod = importlib.import_module(f"odoo.addons.{addon_name}.controllers.{schema_type}_schemas")
-    except ImportError:
+    except (Exception,):
         return None
 
     # 方法名 → 类名：get_content_types → ContentTypes, search → Search, check_login → Login/CheckLogin
@@ -150,9 +150,9 @@ def find_response_schema_for_route(func) -> tuple:
         props = json_schema.get("properties", {})
         data_prop = props.get("data")
         if data_prop:
-            # 展开 $ref 为内联 schema
             return schema_cls, _inline_refs(data_prop, json_schema)
-        return schema_cls, _inline_refs(json_schema, json_schema)
+        # 没有 data 字段（如 ChangePasswordResponse）→ 不传 data schema
+        return schema_cls, None
     return None, None
 
 
@@ -183,57 +183,29 @@ def _inline_refs(schema, root_schema):
     return result
 
 
-def pydantic_response_to_openapi_example(model_class) -> Optional[dict]:
-    """从 Pydantic 模型生成 OpenAPI response example"""
+def pydantic_response_to_openapi_example(model_class, data_field_only=True) -> Optional[Union[dict, list]]:
+    """从 Pydantic 模型生成 OpenAPI response example，用 model_construct 构造默认值再 dump"""
     if not model_class:
         return None
     try:
-        # 生成一个示例实例
-        example = _build_example(model_class)
-        return example
+        hints = get_type_hints(model_class)
+        data_type = hints.get('data')
+        if data_field_only:
+            if data_type is None:
+                return None  # 无 data 字段 → null
+            origin = get_origin(data_type)
+            # List[xxx] → 取第一个元素的 model_construct 再包成 list
+            if origin is list:
+                args = get_args(data_type)
+                item_type = args[0] if args else None
+                if item_type and hasattr(item_type, 'model_construct'):
+                    return [item_type.model_construct().model_dump(mode='json')]
+                return []
+            # 普通 Pydantic 模型
+            if hasattr(data_type, 'model_construct'):
+                return data_type.model_construct().model_dump(mode='json')
+        # fallback: 整个 response model
+        instance = model_class.model_construct()
+        return instance.model_dump(mode='json')
     except (Exception,):
         return None
-
-
-def _build_example(model_class, depth=0):
-    """递归构建示例数据"""
-    if depth > 3:
-        return "..."
-    hints = get_type_hints(model_class)
-    result = {}
-    for field_name, field_info in model_class.model_fields.items():
-        py_type = hints.get(field_name, str)
-        origin = get_origin(py_type)
-        if origin is list or origin is List:
-            args = get_args(py_type)
-            item_type = args[0] if args else str
-            if hasattr(item_type, 'model_fields'):
-                result[field_name] = [_build_example(item_type, depth + 1)]
-            else:
-                result[field_name] = [_type_default(item_type)]
-        elif hasattr(py_type, 'model_fields'):
-            result[field_name] = _build_example(py_type, depth + 1)
-        elif origin is not None:
-            # Optional[X]
-            for arg in get_args(py_type):
-                if arg is not type(None):
-                    result[field_name] = _type_default(arg)
-                    break
-        else:
-            result[field_name] = _type_default(py_type)
-    return result
-
-
-def _type_default(py_type):
-    """根据类型返回默认示例值"""
-    if py_type is str:
-        return "string"
-    if py_type is int:
-        return 0
-    if py_type is float:
-        return 0.0
-    if py_type is bool:
-        return True
-    if py_type is dict:
-        return {}
-    return "..."
