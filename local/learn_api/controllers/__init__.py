@@ -18,5 +18,5 @@ from . import common
 from . import nav
 from . import process
 from . import group
+from . import content_type
 from . import search
-from . import progress

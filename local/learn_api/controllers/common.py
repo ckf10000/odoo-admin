@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """公共工具：常量、导入、辅助函数"""
-from odoo import fields
-from odoo.http import request
 from odoo.addons.learn_core.utils import DIM_CHAIN  # noqa
 from odoo.addons.common_lib.common import json_response, error_response, api_verify_auth, encode_image  # noqa
 

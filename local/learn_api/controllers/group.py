@@ -2,45 +2,130 @@
 """内容组详情 API"""
 from odoo import http
 from odoo.http import request
-
 from .common import json_response, error_response, api_verify_auth, encode_image  # noqa
 
 
 class LearnGroupController(http.Controller):
+
+    @http.route("/api/v1/learn/groups", type="http", auth="public", methods=["POST"], csrf=False)
+    def get_groups(self, **kw):  # noqa
+        """根据 selector_code 和 process_code 获取内容组列表（分页）
+
+        Request Body:
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {
+                "selector_code": "NINE_YEAR_PRIMARY_GRADE_5_HUNAN_2025_UP_ENGLISH",  // 必填
+                "process_code": "WORD_BASIC",   // 必填，学习过程编码
+                "page_num": 1,          // 可选，默认 1
+                "page_size": 10         // 可选，默认 10
+            }
+        }
+
+        Response Body:
+        {
+            "success": true,
+            "data": {
+                "list": [
+                    {
+                        "id": 1,
+                        "name": "Unit 1",
+                        "sequence": 10,
+                        "description": "...",
+                        "section_count": 3,
+                        "item_count": 1
+                    }
+                ],
+                "total": 10,
+                "page_num": 1,
+                "page_size": 10
+            }
+        }
+        """
+        try:
+            header, body, user = api_verify_auth(require_token=True)  # noqa
+            selector_code = body.get("selector_code", "").strip()
+            process_code = body.get("process_code", "").strip()
+            if not selector_code:
+                return error_response("selector_code 不能为空", status=400)
+            if not process_code:
+                return error_response("process_code 不能为空", status=400)
+
+            page_num = max(1, int(body.get("page_num", 1)))
+            page_size = min(50, max(1, int(body.get("page_size", 10))))
+            ctx_lang = user.lang or request.env.context.get('lang', 'zh_CN')
+
+            Selector = request.env['learn.selector'].sudo().with_context(lang=ctx_lang)
+            sel = Selector.search([('code', '=', selector_code)], limit=1)
+            if not sel:
+                return error_response("选择器不存在", status=404)
+
+            Process = request.env['learn.process'].sudo().with_context(lang=ctx_lang)
+            proc = Process.search([('code', '=', process_code)], limit=1)
+            if not proc:
+                return error_response("学习过程不存在", status=404)
+
+            Group = request.env['learn.group'].sudo().with_context(lang=ctx_lang)
+            domain = [
+                ('selector_id', '=', sel.id),
+                ('process_id', '=', proc.id),
+                ('active', '=', True),
+            ]
+            total = Group.search_count(domain)
+            groups = Group.search(domain, offset=(page_num - 1) * page_size,
+                                  limit=page_size, order='sequence, id')
+
+            return json_response(data={
+                "list": [{
+                    "id": g.id,
+                    "name": g.name,
+                    "sequence": g.sequence,
+                    "description": g.description or "",
+                    "section_count": len(g.section_ids),
+                    "item_count": sum(len(s.line_ids) for s in g.section_ids),
+                } for g in groups],
+                "total": total,
+                "page_num": page_num,
+                "page_size": page_size,
+            })
+        except ValueError as e:
+            return error_response(str(e), status=401)
+        except Exception as e:
+            return error_response(str(e))
 
     @http.route("/api/v1/learn/group/<int:group_id>/sections", type="http", auth="public", methods=["POST"], csrf=False)
     def get_group_sections(self, group_id, **kw):  # noqa
         """获取内容组下所有章节及其条目
 
         Request Body:
-        { "header": {...}, "body": {} }
+        {
+            "header": { "clientId": "xxx", "X-Timestamp": "...", "X-Nonce": "...", "X-Sign": "..." },
+            "body": {}
+        }
 
         Response:
         {
             "success": true,
-            "data": {
-                "group": {"id": 1, "name": "Unit 1 单元测试"},
-                "sections": [
-                    {
-                        "id": 10, "name": "第一部分：单词默写", "sequence": 10,
-                        "content_type": "word_dictation", "score": 20.0,
-                        "lines": [
-                            {"id": 1, "sequence": 10, "content_type": "word_dictation",
-                             "score": 2.0, "word": {"id": 5, "name": "apple", ...}},
-                            ...
-                        ]
-                    },
-                    {
-                        "id": 20, "name": "第二部分：单选题", "sequence": 20,
-                        "content_type": "single_choice", "score": 30.0,
-                        "lines": [
-                            {"id": 6, "sequence": 10, "content_type": "single_choice",
-                             "score": 6.0, "question": {"id": 3, "stem": "1+1=?", ...}},
-                            ...
-                        ]
-                    }
-                ]
-            }
+            "data": [
+                {
+                    "id": 10, "name": "第一部分：单词默写", "sequence": 10,
+                    "content_type": "word_dictation", "score": 20.0,
+                    "lines": [
+                        {"id": 1, "sequence": 10, "content_type": "word_dictation",
+                         "score": 2.0, "word": {"id": 5, "name": "apple", ...}},
+                        ...
+                    ]
+                },
+                {
+                    "id": 20, "name": "第二部分：单选题", "sequence": 20,
+                    "content_type": "single_choice", "score": 30.0,
+                    "lines": [
+                        {"id": 6, "sequence": 10, "content_type": "single_choice",
+                         "score": 6.0, "question": {"id": 3, "stem": "1+1=?", ...}},
+                        ...
+                    ]
+                }
+            ]
         }
         """
         try:
@@ -136,10 +221,7 @@ class LearnGroupController(http.Controller):
                     sec["lines"].append(item)
                 sections_data.append(sec)
 
-            return json_response(data={
-                "group": {"id": group.id, "name": group.name},
-                "sections": sections_data,
-            })
+            return json_response(data=sections_data)
         except ValueError as e:
             return error_response(str(e), status=401)
         except Exception as e:

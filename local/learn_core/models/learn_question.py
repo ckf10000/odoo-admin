@@ -9,11 +9,6 @@ class LearnQuestion(models.Model):
 
     name = fields.Char(string="题目标题")
 
-    content_id = fields.Many2one(
-        "learn.content", string="所属内容",
-        ondelete="set null",
-    )
-
     # 关联选择器，用于按年级/科目/版本等维度筛选题目
     selector_ids = fields.Many2many(
         "learn.selector", "learn_question_selector_rel", "question_id", "selector_id", string="适用选择器",

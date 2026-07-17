@@ -26,7 +26,7 @@ class LearnSelector(models.Model):
     version_id = fields.Many2one('learn.dim.version', string='版本', index=True, ondelete='restrict')
 
     profile_id = fields.Many2one(
-        'learn.subject.profile', string='过程模板', required=True, index=True, ondelete='restrict',
+        'learn.subject.profile', string='科目模板', required=True, index=True, ondelete='restrict',
     )
 
     # 学习过程（直接读 Profile 的中间表，无需同步）

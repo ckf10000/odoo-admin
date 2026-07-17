@@ -3,7 +3,7 @@
 from odoo import http
 from odoo.http import request
 
-from .common import json_response, error_response, api_verify_auth, encode_image  # noqa
+from .common import json_response, error_response, api_verify_auth  # noqa
 
 
 class LearnSearchController(http.Controller):
@@ -14,12 +14,56 @@ class LearnSearchController(http.Controller):
 
         Request Body:
         {
-            "header": {...},
+            "header": {
+                "clientId": "xxx", // 客户端ID
+                "X-Token": "xxx",  // 认证 Token
+                "X-Timestamp": "...", // 时间戳
+                "X-Nonce": "...",    // 随机串
+                "X-Sign": "..."      // 签名
+            },
             "body": {
                 "keyword": "apple",          // 必填，搜索关键词
-                "scope": "all",              // 可选：word / character / question / content / all，默认 all
-                "page": 1,                   // 可选，页码
-                "page_size": 20              // 可选，每页数量
+                "scope": "all",              // 可选：word / character / question / all，默认 all
+                "page_size": 20              // 可选，每页数量，默认 20，最大 50
+            }
+        }
+
+        Response Body:
+        {
+            "success": true,
+            "data": {
+                "keyword": "apple",
+                "results": {
+                    "words": [
+                        {
+                            "id": 1,
+                            "name": "apple",
+                            "phonetic": "/ˈæp.əl/",
+                            "meaning": "苹果",
+                            "difficulty": "easy",
+                            "pos": [{"id": 1, "name": "名词", "code": "noun"}]
+                        }
+                    ],
+                    "characters": [
+                        {
+                            "id": 2,
+                            "name": "苹",
+                            "pinyin": "píng",
+                            "meaning": "苹果",
+                            "strokes": 8,
+                            "radical": "艹",
+                            "difficulty": "easy"
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "id": 3,
+                            "question_type": "single_choice",
+                            "stem": "What does 'apple' mean?",
+                            "difficulty": "easy"
+                        }
+                    ]
+                }
             }
         }
         """
@@ -69,19 +113,6 @@ class LearnSearchController(http.Controller):
                     "id": q.id, "question_type": q.question_type,
                     "stem": q.stem or "", "difficulty": q.difficulty,
                 } for q in questions]
-
-            # ---- 搜索内容（教材/试卷等） ----
-            if scope in ("all", "content"):
-                contents = request.env["learn.content"].sudo().search([
-                    ("name", "ilike", keyword),
-                    ("state", "=", "published"),
-                ], order="sequence, id", limit=page_size)
-                results["contents"] = [{
-                    "id": c.id, "name": c.name,
-                    "content_type": c.content_type,
-                    "subject": c.subject or "", "grade": c.grade or "",
-                    "cover_image": encode_image(c.cover_image),
-                } for c in contents]
 
             return json_response(data={"keyword": keyword, "results": results})
 
