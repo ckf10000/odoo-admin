@@ -5,3 +5,4 @@ from . import app_resource
 from . import app_channel
 from . import app_terminal
 from . import app_plugin
+from . import app_oss

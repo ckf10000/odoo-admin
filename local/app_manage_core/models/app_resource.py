@@ -2,6 +2,7 @@
 """App 素材管理 — 离线 icon、在线 icon、启动图等"""
 
 from odoo import models, fields
+from odoo.exceptions import UserError
 
 
 class AppResource(models.Model):
@@ -50,14 +51,18 @@ class AppResource(models.Model):
     )
 
     # ---- 素材资源 ----
+    oss_config_id = fields.Many2one(
+        "app.oss.config", string="OSS 配置",
+        help="选择用于上传素材的 OSS 配置，留空则使用默认启用的配置",
+    )
     offline_file = fields.Binary(
         string="离线素材文件", attachment=True,
         help="打包进 App 的离线素材",
     )
     offline_filename = fields.Char(string="离线文件名")
     online_url = fields.Char(
-        string="在线素材 URL",
-        help="在线动态更新素材的 URL",
+        string="在线素材 URL", readonly=True,
+        help="上传到 OSS 后自动填充",
     )
     file_size = fields.Integer(string="文件大小(字节)", compute="_compute_file_size", store=True)
 
@@ -87,3 +92,31 @@ class AppResource(models.Model):
     def _compute_file_size(self):
         for record in self:
             record.file_size = len(record.offline_file) if record.offline_file else 0
+
+    def action_upload_to_oss(self):
+        """手动上传素材文件到 OSS 并回填 online_url"""
+        self.ensure_one()
+        if not self.offline_file:
+            raise UserError("请先上传素材文件")
+        url = self.env["app.oss.config"].upload_file(
+            self.offline_file,
+            self.offline_filename or "resource.bin",
+        )
+        if url:
+            self.online_url = url
+        else:
+            raise UserError("OSS 上传失败，请检查 OSS 配置")
+
+    def write(self, vals):
+        """保存时上传到 OSS；上传后清空本地附件"""
+        result = super().write(vals)
+        for record in self:
+            if record.offline_file and not record.online_url:
+                record.action_upload_to_oss()
+            # 上传成功后清空本地附件（文件已在 OSS）
+            if record.online_url:
+                super(AppResource, record).write({
+                    "offline_file": False,
+                    "offline_filename": False,
+                })
+        return result

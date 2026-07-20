@@ -2,18 +2,15 @@
 """App 发布管理 — 版本发布、Release Note、强制更新、依赖"""
 
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 
 class AppRelease(models.Model):
     _name = "app.release"
     _description = "发布管理"
     _order = "baseline_id, version_code desc, id"
-    _sql_constraints = [
-        ("unique_baseline_version", "UNIQUE(baseline_id, app_version)",
-         "同一基线下的 App 版本号必须唯一！"),
-    ]
 
-    name = fields.Char(string="发布名称", required=True, compute="_compute_name", store=True)
+    name = fields.Char(string="发布名称", compute="_compute_name", store=True)
     active = fields.Boolean(string="启用", default=True)
 
     # ---- 关联基线 ----
@@ -30,7 +27,10 @@ class AppRelease(models.Model):
 
     # ---- 版本信息 ----
     app_version = fields.Char(string="App 版本号", required=True, help="如：1.0.0, 2.3.1")
-    version_code = fields.Integer(string="版本代码", required=True, help="整数递增，用于版本比较")
+    version_code = fields.Integer(
+        string="版本代码", required=True,
+        help="必须与 APK 打包时的 versionCode 完全一致（build.gradle 中的 versionCode），整数递增，用于版本比较",
+    )
     build_number = fields.Char(string="构建号", help="CI/CD 构建编号")
 
     # ---- 发布策略 ----
@@ -79,7 +79,11 @@ class AppRelease(models.Model):
     revoke_reason = fields.Text(string="撤回原因")
 
     # ---- 附件 ----
-    download_url = fields.Char(string="下载地址")
+    oss_config_id = fields.Many2one(
+        "app.oss.config", string="OSS 配置",
+        help="选择用于上传安装包的 OSS 配置，留空则使用默认启用的配置",
+    )
+    download_url = fields.Char(string="下载地址", readonly=True)
     package_file = fields.Binary(string="安装包文件", attachment=True)
     package_filename = fields.Char(string="安装包文件名")
     package_size = fields.Integer(string="包大小(字节)", compute="_compute_package_size", store=True)
@@ -122,12 +126,59 @@ class AppRelease(models.Model):
         for record in self:
             record.package_size = len(record.package_file) if record.package_file else 0
 
+    def action_upload_to_oss(self):
+        """手动上传安装包到 OSS 并回填 download_url"""
+        self.ensure_one()
+        if not self.package_file:
+            raise UserError("请先上传安装包文件")
+        # 不传 sub_path，路径完全由 OSS 配置的 base_path 决定
+        url = self.env["app.oss.config"].upload_file(
+            self.package_file,
+            self.package_filename or "app_release.bin",
+        )
+        if url:
+            self.download_url = url
+        else:
+            raise UserError("OSS 上传失败，请检查 OSS 配置")
+
+    def write(self, vals):
+        """已发布状态不允许编辑；草稿状态保留附件不删除"""
+        for record in self:
+            if record.state == "published" and not self.env.context.get("allow_revoke_write"):
+                raise UserError("已发布的版本不允许编辑，请先撤回后再修改")
+        return super().write(vals)
+
+    @api.constrains("state", "baseline_id", "app_version")
+    def _check_unique_published_version(self):
+        """同一基线下的已发布版本号必须唯一"""
+        for record in self:
+            if record.state != "published":
+                continue
+            duplicate = self.search([
+                ("id", "!=", record.id),
+                ("baseline_id", "=", record.baseline_id.id),
+                ("app_version", "=", record.app_version),
+                ("state", "=", "published"),
+            ], limit=1)
+            if duplicate:
+                raise UserError(
+                    f"同一基线 ({record.baseline_id.name}) 下已存在已发布的版本 {record.app_version}，"
+                    f"请先撤回旧版本或使用新的版本号"
+                )
+
     def action_publish(self):
-        """发布"""
+        """发布（先校验通过后再上传到 OSS）"""
+        for record in self:
+            if not record.package_file:
+                raise UserError("请先上传安装包文件")
         self.write({
             "state": "published",
             "publish_date": fields.Datetime.now(),
+
         })
+        for record in self:
+            if not record.download_url:
+                record.action_upload_to_oss()
 
     def action_revoke(self):
         """撤回"""
@@ -142,7 +193,7 @@ class AppRelease(models.Model):
 
     def action_revoke_confirm(self, reason=""):
         """确认撤回"""
-        self.write({
+        self.with_context(allow_revoke_write=True).write({
             "state": "revoked",
             "revoke_date": fields.Datetime.now(),
             "revoke_reason": reason,

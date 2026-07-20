@@ -44,9 +44,7 @@
                     <group string="关联基线版本">
                         <field name="baseline_ids" widget="many2many_tags"/>
                     </group>
-                    <group string="备注">
-                        <field name="description" nolabel="1" placeholder="备注说明..."/>
-                    </group>
+                    <field name="description" nolabel="1" placeholder="备注说明..." colspan="2"/>
                 </sheet>
             </form>
         </field>

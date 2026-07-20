@@ -18,16 +18,16 @@
               action="action_app_version_baseline"
               sequence="10"/>
 
-    <menuitem id="menu_app_release"
-              name="发布管理"
-              parent="menu_app_version_group"
-              action="action_app_release"
-              sequence="20"/>
-
     <menuitem id="menu_app_resource"
               name="素材管理"
               parent="menu_app_version_group"
               action="action_app_resource"
+              sequence="20"/>
+
+    <menuitem id="menu_app_release"
+              name="发布管理"
+              parent="menu_app_version_group"
+              action="action_app_release"
               sequence="30"/>
 
     <!-- 分发管理组 -->
@@ -65,4 +65,16 @@
               parent="menu_app_plugin_group"
               action="action_app_plugin_release"
               sequence="20"/>
+
+    <!-- 系统配置组 -->
+    <menuitem id="menu_app_config_group"
+              name="系统配置"
+              parent="menu_app_manage_root"
+              sequence="40"/>
+
+    <menuitem id="menu_app_oss_config"
+              name="OSS 配置"
+              parent="menu_app_config_group"
+              action="action_app_oss_config"
+              sequence="10"/>
 </odoo>

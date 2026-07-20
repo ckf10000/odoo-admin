@@ -13,7 +13,7 @@ class AppVersionBaseline(models.Model):
          "同一平台的同一系统版本只能有一条基线记录！"),
     ]
 
-    name = fields.Char(string="基线名称", required=True, compute="_compute_name", store=True)
+    name = fields.Char(string="基线名称", compute="_compute_name", store=True)
     sequence = fields.Integer(string="排序", default=10)
 
     # ---- 平台信息 ----

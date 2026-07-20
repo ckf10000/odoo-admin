@@ -13,7 +13,7 @@ class AppTerminal(models.Model):
          "同一平台下终端型号必须唯一！"),
     ]
 
-    name = fields.Char(string="终端名称", required=True, compute="_compute_name", store=True)
+    name = fields.Char(string="终端名称", compute="_compute_name", store=True)
     sequence = fields.Integer(string="排序", default=10)
     active = fields.Boolean(string="启用", default=True)
 

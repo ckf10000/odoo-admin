@@ -2,6 +2,7 @@
 """App 插件管理 — 插件上传、分发策略"""
 
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 
 class AppPlugin(models.Model):
@@ -175,10 +176,6 @@ class AppPluginRelease(models.Model):
     _name = "app.plugin.release"
     _description = "插件发布记录"
     _order = "version_code desc, id"
-    _sql_constraints = [
-        ("unique_plugin_version", "UNIQUE(plugin_id, version)",
-         "同一插件的版本号必须唯一！"),
-    ]
 
     name = fields.Char(string="发布名称", compute="_compute_name", store=True)
 
@@ -190,7 +187,10 @@ class AppPluginRelease(models.Model):
 
     # ---- 版本信息 ----
     version = fields.Char(string="版本号", required=True)
-    version_code = fields.Integer(string="版本代码", required=True)
+    version_code = fields.Integer(
+        string="版本代码", required=True,
+        help="必须与插件打包时的 versionCode 完全一致，整数递增，用于版本比较",
+    )
 
     # ---- 分发策略（可覆盖插件默认策略） ----
     distribution_mode = fields.Selection(
@@ -209,10 +209,14 @@ class AppPluginRelease(models.Model):
     change_log = fields.Text(string="变更日志")
 
     # ---- 附件 ----
-    package_file = fields.Binary(string="插件包文件", attachment=True, required=True)
+    oss_config_id = fields.Many2one(
+        "app.oss.config", string="OSS 配置",
+        help="选择用于上传插件包的 OSS 配置，留空则使用默认启用的配置",
+    )
+    package_file = fields.Binary(string="插件包文件", attachment=True)
     package_filename = fields.Char(string="插件包文件名")
     package_size = fields.Integer(string="包大小(字节)", compute="_compute_package_size", store=True)
-    download_url = fields.Char(string="下载地址")
+    download_url = fields.Char(string="下载地址", readonly=True)
 
     # ---- 状态 ----
     state = fields.Selection(
@@ -245,11 +249,58 @@ class AppPluginRelease(models.Model):
         for record in self:
             record.package_size = len(record.package_file) if record.package_file else 0
 
+    def action_upload_to_oss(self):
+        """手动上传插件包到 OSS 并回填 download_url"""
+        self.ensure_one()
+        if not self.package_file:
+            raise UserError("请先上传插件包文件")
+        url = self.env["app.oss.config"].upload_file(
+            self.package_file,
+            self.package_filename or "plugin_package.zip",
+        )
+        if url:
+            self.download_url = url
+        else:
+            raise UserError("OSS 上传失败，请检查 OSS 配置")
+
+    def write(self, vals):
+        """已发布状态不允许编辑；草稿状态保留附件不删除"""
+        for record in self:
+            if record.state == "published" and not self.env.context.get("allow_revoke_write"):
+                raise UserError("已发布的插件版本不允许编辑，请先撤回后再修改")
+        return super().write(vals)
+
+    @api.constrains("state", "plugin_id", "version")
+    def _check_unique_published_version(self):
+        """同一插件下的已发布版本号必须唯一"""
+        for record in self:
+            if record.state != "published":
+                continue
+            duplicate = self.search([
+                ("id", "!=", record.id),
+                ("plugin_id", "=", record.plugin_id.id),
+                ("version", "=", record.version),
+                ("state", "=", "published"),
+            ], limit=1)
+            if duplicate:
+                raise UserError(
+                    f"同一插件 ({record.plugin_id.name}) 下已存在已发布的版本 {record.version}，"
+                    f"请先撤回旧版本或使用新的版本号"
+                )
+
     def action_publish(self):
+        """发布（先校验通过后再上传到 OSS）"""
+        for record in self:
+            if not record.package_file:
+                raise UserError("请先上传插件包文件")
         self.write({
             "state": "published",
             "publish_date": fields.Datetime.now(),
+
         })
+        for record in self:
+            if not record.download_url:
+                record.action_upload_to_oss()
 
     def action_revoke(self):
-        self.write({"state": "revoked"})
+        self.with_context(allow_revoke_write=True).write({"state": "revoked"})

@@ -50,9 +50,7 @@
                                    invisible="whitelist_mode != 'organization'"/>
                         </group>
                     </group>
-                    <group string="备注">
-                        <field name="description" nolabel="1" placeholder="备注说明..."/>
-                    </group>
+                    <field name="description" nolabel="1" placeholder="备注说明..." colspan="2"/>
                 </sheet>
             </form>
         </field>

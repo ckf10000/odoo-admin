@@ -32,10 +32,11 @@
         'views/app_channel_views.xml',
         'views/app_terminal_views.xml',
         'views/app_plugin_views.xml',
+        'views/app_oss_views.xml',
         'views/app_menus.xml',
     ],
 
-    'application': False,
+    'application': True,
     'auto_install': False,
     'installable': True,
     'license': 'LGPL-3',

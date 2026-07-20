@@ -65,9 +65,7 @@
                     <group string="插件图标">
                         <field name="icon" widget="image" class="oe_avatar"/>
                     </group>
-                    <group string="描述">
-                        <field name="description" nolabel="1" placeholder="插件描述..."/>
-                    </group>
+                    <field name="description" nolabel="1" placeholder="插件描述..." colspan="2"/>
                 </sheet>
             </form>
         </field>
@@ -130,6 +128,11 @@
         <field name="arch" type="xml">
             <form string="插件发布记录">
                 <header>
+                    <button name="action_upload_to_oss" type="object"
+                            string="上传到 OSS" class="btn-secondary"
+                            icon="fa-cloud-upload"
+                            invisible="state != 'draft'"
+                            help="将插件包上传到 OSS 并自动填充下载地址"/>
                     <button name="action_publish" type="object"
                             string="发布" class="btn-primary"
                             invisible="state not in ('draft', 'testing')"/>
@@ -162,17 +165,16 @@
                     </group>
                     <group string="插件包">
                         <group>
+                            <field name="oss_config_id" string="上传到 OSS"/>
                             <field name="package_file" filename="package_filename"/>
                             <field name="package_filename" invisible="1"/>
                             <field name="package_size" invisible="1"/>
                         </group>
                         <group>
-                            <field name="download_url" widget="url"/>
+                            <field name="download_url" widget="url" string="下载地址（自动填充）"/>
                         </group>
                     </group>
-                    <group string="备注">
-                        <field name="description" nolabel="1" placeholder="备注说明..."/>
-                    </group>
+                    <field name="description" nolabel="1" placeholder="备注说明..." colspan="2"/>
                 </sheet>
             </form>
         </field>
